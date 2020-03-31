@@ -8,9 +8,9 @@ const tailwindcss = require('tailwindcss');
 const autoprefixer = require('autoprefixer');
 const postcssImport = require('postcss-import');
 const stylelint = require('stylelint');
-const postcssFontMagician = require('postcss-font-magician');
-const postcssCssnext = require('postcss-cssnext');
+const postcssPresetEnv = require('postcss-preset-env');
 const cssMqpacker = require('css-mqpacker');
+const cssnano = require('cssnano');
 
 const PATHS = {
   src: path.join(__dirname, 'src'),
@@ -59,14 +59,13 @@ module.exports = {
                     stylelint,
                   ],
                 }),
-                postcssFontMagician,
-                postcssCssnext({
-                  features: {
-                    autoprefixer,
-                  },
+                postcssPresetEnv({
+                  stage: 0,
                 }),
+                autoprefixer,
                 tailwindcss,
                 cssMqpacker,
+                cssnano,
               ],
             },
           },
