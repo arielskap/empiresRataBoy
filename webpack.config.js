@@ -17,11 +17,16 @@ const PATHS = {
 };
 
 module.exports = {
-  entry: './src/index.js',
+  entry: {
+    main: './src/index.js',
+  },
   output: {
-    path: path.resolve(__dirname, 'dist'),
+    path: path.join(__dirname, 'dist'),
+    publicPath: './',
     filename: 'bundle.js',
   },
+  target: 'web',
+  devtool: 'source-map',
   resolve: {
     extensions: ['.js', '.jsx'],
   },
@@ -99,6 +104,7 @@ module.exports = {
     new HtmlWebPackPlugin({
       template: './public/index.html',
       filename: './index.html',
+      excludeChunks: ['server'],
     }),
     new MiniCssExtractPlugin({
       filename: '[name].css',

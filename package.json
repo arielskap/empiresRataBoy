@@ -5,8 +5,9 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "webpack --mode production",
-    "start": "webpack-dev-server --open --mode development"
+    "build": "rm -rf dist && webpack --mode production --config webpack.server.config.js && webpack --mode production --config webpack.config.js",
+    "start": "node ./dist/server.js",
+    "startDev": "webpack-dev-server --open --mode development"
   },
   "keywords": [],
   "author": "",
@@ -14,6 +15,7 @@
   "dependencies": {
     "animate.css": "^3.7.2",
     "autoprefixer": "^9.7.5",
+    "express": "^4.17.1",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-router-dom": "^5.1.2",
@@ -47,6 +49,7 @@
     "stylelint-config-standard": "^20.0.0",
     "webpack": "^4.42.1",
     "webpack-cli": "^3.3.11",
-    "webpack-dev-server": "^3.10.3"
+    "webpack-dev-server": "^3.10.3",
+    "webpack-node-externals": "^1.7.2"
   }
 }
