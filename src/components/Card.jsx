@@ -1,4 +1,5 @@
 import React, { useRef } from 'react';
+import { vibrar } from '../funciones';
 import star from '../assets/static/star.png';
 import attackImg from '../assets/static/attack.png';
 import defenseImg from '../assets/static/defense.png';
@@ -84,7 +85,7 @@ const Card = ({ img, json, onClose }) => {
     <div className='Card max-w-sm rounded shadow-lg text-black'>
       <div className='relative text-white'>
         <div className='absolute top-0 flex w-full justify-center'>
-          <h2 className='text-center bg-black-transparent px-3 rounded-b'>{json.name}</h2>
+          <h2 className='text-center bg-black-transparent px-3 py-1 rounded-b text-lg'>{json.name}</h2>
         </div>
         <img className='object-contain w-full' src={img} alt='Sunset in the mountains' />
         <div className='absolute bottom-0 w-full grid grid-cols-3 gap-4 py-2 bg-black-transparent'>
@@ -118,15 +119,15 @@ const Card = ({ img, json, onClose }) => {
         <div className='grid grid-cols-3 gap-4'>
           <div className='flex justify-center items-center'>
             <img className='object-contain w-6 h-full mr-1' src={attackImg} alt='Attack' />
-            <p className='text-center text-xl'>{json.attack}</p>
+            <p className='text-center text-2xl'>{json.attack}</p>
           </div>
           <div className='flex justify-center items-center'>
             <img className='object-contain w-6 h-full mr-1' src={defenseImg} alt='Defense' />
-            <p className='text-center text-xl'>{json.defense}</p>
+            <p className='text-center text-2xl'>{json.defense}</p>
           </div>
           <div className='flex justify-center items-center'>
             <img className='object-contain w-6 h-full mr-1' src={healthImg} alt='Health' />
-            <p className='text-center text-xl'>{json.health}</p>
+            <p className='text-center text-2xl'>{json.health}</p>
           </div>
         </div>
         <div className='mt-4'>
@@ -177,7 +178,7 @@ const Card = ({ img, json, onClose }) => {
           </div>
         </a>
         <div className='mt-2 text-center'>
-          <button onClick={onClose} type='button' className='hover:underline text-sm'>Cerrar</button>
+          <button onClick={() => { vibrar(); onClose(); }} type='button' className='hover:underline text-sm'>Cerrar</button>
         </div>
       </div>
     </div>

@@ -108,9 +108,9 @@ module.exports = {
     new MiniCssExtractPlugin({
       filename: '[name].css',
     }),
-    new PurgecssPlugin({
-      paths: glob.sync(`${PATHS.src}/**/*`, { nodir: true }),
-      defaultExtractor: (content) => content.match(/[\w-/:]+(?<!:)/g) || [],
-    }),
+    //new PurgecssPlugin({
+    //  paths: glob.sync(`${PATHS.src}/**/*`, { nodir: true }),
+    //  defaultExtractor: (content) => content.match(/[\w-/:]+(?<!:)/g) || [],
+    //}),
   ],
 };

@@ -194,7 +194,7 @@
             "data": "El objetivo obtiene -44% de ataque durante 3 turnos. La duración del efecto se restablece si el objetivo está curado. Este efecto no puede ser disipado "
         }, {
             "id": 3,
-            "data": " se restablece si el objetivo está curado. Este efecto no puede ser disipado "
+            "data": ""
         }, {
             "id": 4,
             "data": ""
@@ -226,16 +226,16 @@
             "data": "El heroe cambia a Forma fantasma"
         }, {
             "id": 2,
-            "data": "La Forma fantasma elimina todos los beneficios y dolencias disipables y no disipables"
+            "data": "La Forma fantasma elimina todos los beneficios y dolencias disipables y no disipables del taumaturgo."
         }, {
             "id": 3,
-            "data": "Mientras está en forma Fantasma, el lanzador no puede obtener maná, pero es inmune a los ataques normales, ataques especiales y todos los efectos de estado."
+            "data": "Mientras está en forma Fantasma, el heroegana + 82% de ataque"
         }, {
             "id": 4,
-            "data": "La forma fantasma dura 4 turnos."
+            "data": "Mientras está en forma Fantasma, el lanzador no puede obtener maná, pero es inmune a los ataques normales, ataques especiales y todos los efectos de estado"
         }, {
             "id": 5,
-            "data": ""
+            "data": "La forma fantasma dura 4 turnos."
         }, {
             "id": 6,
             "data": ""
@@ -576,10 +576,10 @@
             "data": "Inflige 300% de daño al objetivo "
         }, {
             "id": 2,
-            "data": "El objetivo obtiene -35% de precisión durante 4 turnos. "
+            "data": "El objetivo obtiene -35% de precisión durante 4 turnos. La posibilidad de fallar también se aplica a habilidades especiales ofensivas "
         }, {
             "id": 3,
-            "data": "La posibilidad de fallar también se aplica a habilidades especiales ofensivas "
+            "data": ""
         }, {
             "id": 4,
             "data": ""
@@ -716,7 +716,7 @@
             "data": "Inflige un 200% de daño al objetivo. "
         }, {
             "id": 2,
-            "data": "Causa 350% de daño a un enemigo diferente al azar. Inflige daño adicional si el objetivo es Sagrado. "
+            "data": "Causa 350% de daño a un enemigo diferente al azar. Inflige daño adicional si el objetivo es Amarillo"
         }, {
             "id": 3,
             "data": ""
@@ -3210,7 +3210,7 @@
             "data": "Enlace de elemento da a todos los aliados de Fuego + 10% de probabilidad crítica por 6 turnos Este efecto no puede ser disipado "
         }, {
             "id": 5,
-            "data": ""
+            "data": "El héroe tiene una habilidad innata para resistir las dolencias de estado que roban salud."
         }, {
             "id": 6,
             "data": ""
@@ -4184,7 +4184,7 @@
             "data": "Todos los aliados obtienen + 36% de probabilidad crítica durante 4 turnos. "
         }, {
             "id": 3,
-            "data": "Elemento Link recupera un 4% de salud para todos los aliados oscuros durante 6 turnos. Este efecto no puede ser disipado "
+            "data": ""
         }, {
             "id": 4,
             "data": ""
@@ -4286,13 +4286,13 @@
             "data": "Inflige un 150% de daño al objetivo y a los enemigos cercanos. "
         }, {
             "id": 2,
-            "data": "Pila: el héroe obtiene + 10% de ataque. El tamaño máximo de la pila es 10 "
+            "data": "El héroe obtiene + 10% de ataque. El tamaño máximo de la pila es 10 "
         }, {
             "id": 3,
-            "data": "El objetivo obtiene -54% de defensa contra hielo durante 4 turnos. "
+            "data": ""
         }, {
             "id": 4,
-            "data": "El objetivo y los enemigos cercanos obtienen -64% de generación de maná durante 3 turnos. "
+            "data": ""
         }, {
             "id": 5,
             "data": ""
@@ -4359,10 +4359,10 @@
             "data": "El objetivo y los enemigos cercanos son inmunes a los nuevos beneficios durante 3 turnos. "
         }, {
             "id": 3,
-            "data": "Elemento Link da + 4% de generación de maná para todos los aliados de la Naturaleza durante 4 turnos. Este efecto no se puede disipar. "
+            "data": "El objetivo y los enemigos cercanos obtienen -34% de defensa contra habilidades especiales durante 3 turnos."
         }, {
             "id": 4,
-            "data": ""
+            "data": "El objetivo y los enemigos cercanos obtienen -64% de generación de maná durante 3 turnos."
         }, {
             "id": 5,
             "data": ""
@@ -4394,10 +4394,10 @@
             "data": "Reduce el maná del objetivo y los enemigos cercanos en un 20%. "
         }, {
             "id": 3,
-            "data": "El héroe y los aliados cercanos obtienen + 24% de generación de maná durante 4 turnos. "
+            "data": "Todos los aliados reflejan todos los efectos de estado y 115% de daño de las habilidades especiales de hielo de vuelta al atacante durante 4 turnos."
         }, {
             "id": 4,
-            "data": "Todos los aliados y enemigos oscuros son inmunes a este ataque. "
+            "data": ""
         }, {
             "id": 5,
             "data": ""
@@ -4779,7 +4779,7 @@
             "data": "El objetivo y los enemigos cercanos obtienen -54% de defensa contra hielo durante 4 turnos. "
         }, {
             "id": 3,
-            "data": "El héroe tiene una habilidad innata para resistir la disipación de beneficios. "
+            "data": ""
         }, {
             "id": 4,
             "data": ""
@@ -4852,7 +4852,7 @@
             "data": ""
         }, {
             "id": 4,
-            "data": "El héroe tiene una habilidad innata para resistir dolencias de estado que afectan la precisión. No se aplica a los efectos de estado de los aliados. "
+            "data": ""
         }, {
             "id": 5,
             "data": ""
@@ -4884,7 +4884,7 @@
             "data": "El Héroe roba el maná generado del objetivo y los enemigos cercanos durante 4 turnos comenzando bajo y aumentando cada turno hasta que en el último turno se robe todo el maná generado. Este efecto no se puede disipar, pero se elimina si el héroe muere. "
         }, {
             "id": 3,
-            "data": ""
+            "data": "recupera un 4% de salud para todos los aliados sagrados durante 6 turnos. Este efecto no puede ser disipado"
         }, {
             "id": 4,
             "data": ""
@@ -5024,7 +5024,7 @@
             "data": "Todos los aliados resisten nuevos efectos de maná negativos durante 3 turnos. "
         }, {
             "id": 3,
-            "data": ""
+            "data": "Todos los aliados resisten nuevos efectos que bloquean el uso de habilidades especiales durante 3 turnos."
         }, {
             "id": 4,
             "data": ""
@@ -5062,7 +5062,7 @@
             "data": ""
         }, {
             "id": 4,
-            "data": "El lanzador obtiene un 74% de defensa contra habilidades especiales durante 4 turnos. "
+            "data": ""
         }, {
             "id": 5,
             "data": ""
@@ -5164,10 +5164,10 @@
             "data": "Invoca a un Minion de naipes con un 13% de HP y un 30% de ataque heredado del Héroe "
         }, {
             "id": 3,
-            "data": ""
+            "data": " Minion le da a su dueño burla . La burla evita que los enemigos usen sus habilidades especiales en los aliados del dueño del súbdito"
         }, {
             "id": 4,
-            "data": ""
+            "data": "El lanzador obtiene un 74% de defensa contra habilidades especiales durante 4 turnos."
         }, {
             "id": 5,
             "data": ""
@@ -5202,7 +5202,7 @@
             "data": ""
         }, {
             "id": 4,
-            "data": "Disipa dolencias de estado del héroe "
+            "data": ""
         }, {
             "id": 5,
             "data": ""
@@ -5234,10 +5234,10 @@
             "data": "El objetivo y los enemigos cercanos reciben 402 de daño en 3 turnos. "
         }, {
             "id": 3,
-            "data": "Enlace de elemento da + 4% de regeneración de maná para todos los aliados de hielo durante 4 turnos. Este efecto no se puede eliminar. "
+            "data": "El objetivo y los enemigos cercanos obtienen un aumento del -75% por cualquier curación recibida durante 2 turnos. Este efecto no puede ser disipado"
         }, {
             "id": 4,
-            "data": "El héroe tiene una habilidad innata para resistir el Veneno. "
+            "data": "Disipa dolencias de estado del taumaturgo"
         }, {
             "id": 5,
             "data": ""
@@ -5269,7 +5269,7 @@
             "data": "Todos los aliados obtienen + 195% de ataque y -35% de precisión que solo se aplica cuando el enemigo tiene más salud que el atacante. El efecto dura 5 turnos. "
         }, {
             "id": 3,
-            "data": ""
+            "data": "Element Link otorga a todos los aliados sagrados + 46% de defensa contra Dark durante 4 turnos. Este efecto no se puede disipar."
         }, {
             "id": 4,
             "data": ""
@@ -5444,7 +5444,7 @@
             "data": "Disipa dolencias de estado de todos los aliados "
         }, {
             "id": 3,
-            "data": "Invoca a un minion elfo con un 10% de HP y un 10% de ataque heredado del héroe "
+            "data": ""
         }, {
             "id": 4,
             "data": ""
@@ -5479,10 +5479,10 @@
             "data": "Reduce el maná del objetivo en un 20% "
         }, {
             "id": 3,
-            "data": "El lanzador obtiene + 74% de defensa contra habilidades especiales durante 3 turnos. "
+            "data": "Invoca a un minion elfo con un 10% de HP y un 10% de ataque heredado del taumaturgo"
         }, {
             "id": 4,
-            "data": "Estrellas: Todos los enemigos obtienen -34% de defensa durante 3 turnos y todos los aliados obtienen + 48% de ataque durante 3 turnos. "
+            "data": ""
         }, {
             "id": 5,
             "data": ""
@@ -5514,10 +5514,10 @@
             "data": "Cráneo: Inflige 270% de daño a todos los enemigos y todos los enemigos reciben 156 daños en 3 turnos "
         }, {
             "id": 3,
-            "data": "Todos los aliados obtienen una pequeña cantidad de maná por cada golpe. "
+            "data": "Cruz: recupera un 27% de salud para todos los aliados y disipa las dolencias de estado de todos los aliados"
         }, {
             "id": 4,
-            "data": ""
+            "data": "Estrellas: Todos los enemigos obtienen -34% de defensa durante 3 turnos y todos los aliados obtienen + 48% de ataque durante 3 turnos."
         }, {
             "id": 5,
             "data": ""
@@ -5584,10 +5584,10 @@
             "data": "Invoca un Minion Elfo por cada aliado con un 10% de HP y un 10% de ataque heredado del Héroe "
         }, {
             "id": 3,
-            "data": "El lanzador obtiene + 74% de defensa contra habilidades especiales durante 3 turnos. "
+            "data": "Todos los enemigos reciben -34% de ataque durante 3 turnos."
         }, {
             "id": 4,
-            "data": ""
+            "data": "Todos los enemigos obtienen -44% de defensa durante 3 turnos."
         }, {
             "id": 5,
             "data": ""
@@ -5654,10 +5654,10 @@
             "data": "El objetivo recibe 294 daños en 6 turnos. "
         }, {
             "id": 3,
-            "data": "Disipa los beneficios del objetivo y de los enemigos cercanos. "
+            "data": ""
         }, {
             "id": 4,
-            "data": "El enlace elemental a todos los aliados oscuros otorga + 4% para regenerar maná durante 4 turnos. Este efecto no puede ser disipado "
+            "data": ""
         }, {
             "id": 5,
             "data": ""
@@ -5724,10 +5724,10 @@
             "data": "Invoca a un súbdito replicador con un 18% de HP y un 15% de ataque heredado del Héroe. Genera un clon de sí mismo cada 3 turnos. "
         }, {
             "id": 3,
-            "data": "Todos los aliados reflejan todos los efectos de estado y el 115% de daño de las habilidades especiales de hielo al atacante durante 4 turnos. "
+            "data": "Disipa los beneficios del objetivo y de los enemigos cercanos."
         }, {
             "id": 4,
-            "data": ""
+            "data": "Enlace elemental todos los aliados oscuros dan + 4% para regenerar maná durante 4 turnos. Este efecto no puede ser disipado"
         }, {
             "id": 5,
             "data": ""
@@ -5756,10 +5756,10 @@
             "data": "burla evita que los enemigos utilicen especiales por 4 turnos poder 2 +63% defensa por 4 turnos poder 3 +74% defensa contra especiales x 4 turnos "
         }, {
             "id": 2,
-            "data": ""
+            "data": "El heroeobtiene + 63% de defensa durante 4 turnos"
         }, {
             "id": 3,
-            "data": ""
+            "data": "El lanzador obtiene + 74% de defensa contra habilidades especiales durante 4 turnos"
         }, {
             "id": 4,
             "data": ""
@@ -5794,10 +5794,10 @@
             "data": "El héroe y los aliados cercanos reducen todo el daño recibido en un -50% durante 4 turnos. "
         }, {
             "id": 3,
-            "data": "Inflige daño extra contra Amarillos "
+            "data": "El heroey los aliados cercanos obtienen + 24% de generación de maná durante 4 turnos."
         }, {
             "id": 4,
-            "data": "Todos los aliados y enemigos oscuros son inmunes a este ataque. "
+            "data": ""
         }, {
             "id": 5,
             "data": ""
@@ -5940,7 +5940,7 @@
             "data": ""
         }, {
             "id": 5,
-            "data": "La forma de Fantasma temible dura 4 turnos. "
+            "data": ""
         }, {
             "id": 6,
             "data": ""
@@ -5969,10 +5969,10 @@
             "data": "El héroe obtiene -20% de defensa durante 3 turnos. Este efecto no puede ser disipado "
         }, {
             "id": 3,
-            "data": "Mientras está en forma de Fantasma temible, el héroe inflige automáticamente un 150% de daño contra un enemigo aleatorio cada turno. "
+            "data": ""
         }, {
             "id": 4,
-            "data": "Mientras está en forma de Fantasma temible, el héroe no puede obtener maná, pero es inmune a los ataques normales, ataques de Habilidad especial, efectos de estado y acumulaciones, excepto el daño de los enemigos cuyo elemento es fuerte contra el héroe. "
+            "data": ""
         }, {
             "id": 5,
             "data": ""
@@ -6004,13 +6004,13 @@
             "data": "El héroe cambia a la forma de Fantasma temible. "
         }, {
             "id": 3,
-            "data": ""
+            "data": "Mientras está en forma de Fantasma Dire, el heroeinflige automáticamente un 150% de daño contra un enemigo aleatorio cada turno."
         }, {
             "id": 4,
-            "data": ""
+            "data": "Mientras está en forma de Fantasma temible, el heroeno puede obtener maná, pero es inmune a los ataques normales, ataques de Habilidad especial, efectos de estado y acumulaciones, excepto el daño de los enemigos cuyo elemento es fuerte contra el taumaturgo."
         }, {
             "id": 5,
-            "data": ""
+            "data": "La forma de Fantasma temible dura 4 turnos."
         }, {
             "id": 6,
             "data": ""
@@ -6039,7 +6039,7 @@
             "data": "El héroe contraataca con el 135% del daño recibido durante 5 turnos. "
         }, {
             "id": 3,
-            "data": ""
+            "data": "El heroeregenera una cantidad moderada de maná por cada contraataque. Este efecto disminuye para activaciones consecutivas durante el mismo turno."
         }, {
             "id": 4,
             "data": ""
@@ -6109,10 +6109,10 @@
             "data": "Todos los aliados regeneran 324 HP en 4 turnos. "
         }, {
             "id": 3,
-            "data": "Invoca un Minion Elfo por cada aliado con un 10% de HP y un 10% de ataque heredado del héroe "
+            "data": ""
         }, {
             "id": 4,
-            "data": "Todos los enemigos obtienen -34% de generación de maná durante 3 turnos. "
+            "data": ""
         }, {
             "id": 5,
             "data": ""
@@ -6144,18 +6144,18 @@
             "data": "Invoca un Minion familiar del bosque para todos los aliados con un 18% de HP y un 13% de ataque heredado del héroe. "
         }, {
             "id": 3,
-            "data": ""
+            "data": "Todos los aliados regeneran 411 de vida  en 3 turnos.  137 cada turno"
         }, {
             "id": 4,
-            "data": ""
+            "data": "Todos los enemigos obtienen -34% de generación de maná durante 3 turnos."
         }, {
             "id": 5,
-            "data": ""
+            "data": "Enlace de elemento ofrece a todos los aliados de la Naturaleza + 10% de probabilidad crítica durante 6 turnos. Este efecto no se puede disipar."
         }, {
             "id": 6,
             "data": ""
         }],
-        "video": "https://www.youtube.com/user/ratabboy/videos",
+        "video": "https://youtu.be/gMdWVSwRLpY",
         "img": "https://lh3.googleusercontent.com/5q09zdNynkxa47K9fHuhAXCqZ9PS9ITIJh-E-cmnIArUlPggPBzv6UPMzY9m24GM4fRsfogUgPg27Hf-k4l9mRCaG1CiDa6Nk3D-nD7oFGPE2dztQm36CJr3gO5lFBzJDIyq55aCc18PsSA2x1hM6XgFCR58a3QZDLuPd1HI75qkXYOFecWl3Hl4Uem5PNCMKPvhOzOE7cKWmb0OtQLqXMGpVuMTNaavUPz2mNjVhnUNIlSb4DMqp3l_yQ_yJA3r7cB4Wx8q6y4S8lbeO0IkLF8SQI2NLReWWTjUkHgYNwv2vsreHgoHdBmR5lqGPwBkqFCtWNVAbLolkg8UujuctH-z_-jrlmUo9LpUctUKmd3Y2Bi_Kjp4SzArU2U9gz5dWRG9xIClOtBjE5SNDqhB9JDsc0yUDALHaw0kxDyq6imMZLlySt5T4W920JjVqbVT1pJG-DYtZOA4nJ2KFCa4oTCxUuVWSuZ6R5KmVQci_5U0apdO21zUzZuT-SSyvN1nY5hzcU59GfbDND2uhz4pm53yY8XFTyuHFHnd0DfgmV8GmD_pkA225ETOxD_YIsWvI3T6nX6nssuw53WfedvFWqcYuIXow_0woYEFu8cdMPHpYZH1jZZopxXbdlKq8RDD4-3QS_U1XzzRnNTsOCxzKKgd_aOatZWMEJjMKXoJPAyVux7KA1XdJ9IrWDW7i3AvnhrINciOHhKQJtvCyEN7G9HPC1LlIYZtnsbRFyxFOf6ymHxgOW_GdQ=w231-h184-no"
     },
     {
@@ -6179,7 +6179,7 @@
             "data": "Roba todos los beneficios disipables de todos los enemigos y los asigna aleatoriamente a todos los aliados. "
         }, {
             "id": 3,
-            "data": "El objetivo lanza automáticamente Ataque sin sentido sobre un aliado aleatorio cuando el maná está lleno durante 3 turnos "
+            "data": ""
         }, {
             "id": 4,
             "data": ""
@@ -6214,7 +6214,7 @@
             "data": ""
         }, {
             "id": 3,
-            "data": "El héroe regenera una cantidad moderada de maná por cada contraataque. Este efecto disminuye para activaciones consecutivas durante el mismo turno. "
+            "data": ""
         }, {
             "id": 4,
             "data": ""
@@ -6284,10 +6284,10 @@
             "data": "El objetivo y los enemigos cercanos obtienen -34% de defensa durante 6 turnos. "
         }, {
             "id": 3,
-            "data": "Todos los enemigos obtienen un aumento del 50% por cualquier sanación recibida durante 2 turnos. Este efecto no puede ser disipado "
+            "data": ""
         }, {
             "id": 4,
-            "data": "Disipa dolencias de estado del héroe "
+            "data": ""
         }, {
             "id": 5,
             "data": ""
@@ -6360,7 +6360,7 @@
             "data": "El lanzador regenera 548 HP en 4 turnos."
         }, {
             "id": 5,
-            "data": "Si el taumaturgo muere durante los siguientes 4 turnos, resucita al comienzo de su próximo turno con un 32% de vida. Todos los efectos de estado se eliminan cuando el taumaturgo muere."
+            "data": "Si el heroemuere durante los siguientes 4 turnos, resucita al comienzo de su próximo turno con un 32% de vida. Todos los efectos de estado se eliminan cuando el heroemuere."
         }, {
             "id": 6,
             "data": ""
@@ -6459,10 +6459,10 @@
             "data": "Inflige un 260% de daño si el objetivo tiene más del 50% de vida restante. "
         }, {
             "id": 3,
-            "data": ""
+            "data": "Todos los aliados reflejan todos los efectos de estado y el 115% de las Habilidades Especiales Sagradas de los enemigos de vuelta al atacante durante 4 turnos."
         }, {
             "id": 4,
-            "data": ""
+            "data": "Inflige daño extra contra Amarillos"
         }, {
             "id": 5,
             "data": ""
@@ -6494,7 +6494,7 @@
             "data": "El objetivo obtiene -34% de defensa durante 6 turnos. "
         }, {
             "id": 3,
-            "data": "El héroe roba el 61% de cualquier curación aplicada al objetivo durante 3 turnos. "
+            "data": ""
         }, {
             "id": 4,
             "data": ""
@@ -6529,13 +6529,13 @@
             "data": "El objetivo recibe 150 daños en 5 turnos. Si un objetivo ya tiene este efecto, la duración se actualizará y el daño aumentará en 220, hasta un total de 580 daños. "
         }, {
             "id": 3,
-            "data": ""
+            "data": "El heroeroba el 61% de cualquier curación aplicada al objetivo durante 3 turnos."
         }, {
             "id": 4,
             "data": ""
         }, {
             "id": 5,
-            "data": "El aliado azul obtiene +10% de critico por 6 turno no se descarta "
+            "data": ""
         }, {
             "id": 6,
             "data": ""
@@ -6564,13 +6564,13 @@
             "data": "todos los enemigos reciben 208 de daño x 4 turno "
         }, {
             "id": 3,
-            "data": "Inflige daño extra contra la naturaleza "
+            "data": "Todos los enemigos de Fuego obtienen -54% de ataque durante 4 turnos."
         }, {
             "id": 4,
-            "data": ""
+            "data": "Inflige daño extra contra fuego ."
         }, {
             "id": 5,
-            "data": ""
+            "data": "Enlace de elemento ofrece a todos los aliados de hielo + 10% de probabilidad crítica durante 6 turnos. Este efecto no se puede disipar."
         }, {
             "id": 6,
             "data": ""
@@ -6599,13 +6599,13 @@
             "data": "El objetivo recibe 225 daños en 5 turnos. Si un objetivo ya tiene este efecto, la duración se actualizará y el daño aumentará en 300, hasta un total de 825 daños "
         }, {
             "id": 3,
-            "data": "Disipa dolencias de estado de todos los aliados "
+            "data": "El heroeroba el 61% de cualquier curación aplicada al objetivo durante 3 turnos."
         }, {
             "id": 4,
-            "data": ""
+            "data": "Todos los aliados obtienen + 30% de defensa durante 3 turnos."
         }, {
             "id": 5,
-            "data": "Resiste estados que detiene la regeneracion de mana "
+            "data": ""
         }, {
             "id": 6,
             "data": ""
@@ -6634,10 +6634,10 @@
             "data": "Todos los aliados obtienen + 63% de defensa durante 4 turnos. "
         }, {
             "id": 3,
-            "data": "-35% de precisión por 4 turnos a todos los enemigos especial tmb "
+            "data": "Disipa dolencias de estado de todos los aliados"
         }, {
             "id": 4,
-            "data": "regeneración de mana a los amarillos +4% por 4 turnos no se puede descartar "
+            "data": ""
         }, {
             "id": 5,
             "data": ""
@@ -6704,10 +6704,10 @@
             "data": "Cuanto más maná tengan los enemigos, más daño recibirán, hasta un 400% "
         }, {
             "id": 3,
-            "data": "Todos los enemigos comparten el daño recibido entre ellos durante 4 turnos. "
+            "data": ""
         }, {
             "id": 4,
-            "data": "Todos los enemigos obtienen -44% de defensa durante 4 turnos "
+            "data": ""
         }, {
             "id": 5,
             "data": ""
@@ -6733,10 +6733,10 @@
         "event": "evento de Heroe",
         "effect": [{
             "id": 1,
-            "data": "causa 289% daño al enemigo y cercano poder 2 el enemigo obtiene -34% defensa x 4 turnos no se puede descartar y si se cura se reinicia los tiempos "
+            "data": "Inflige un 280% de daño al objetivo y a los enemigos cercanos"
         }, {
             "id": 2,
-            "data": ""
+            "data": "El objetivo obtiene -34% de defensa durante 4 turnos. La duración del efecto se restablece si el objetivo está curado. Este efecto no se puede disipar."
         }, {
             "id": 3,
             "data": ""
@@ -6774,10 +6774,10 @@
             "data": "Todos los aliados obtienen + 63% de defensa durante 4 turnos. "
         }, {
             "id": 3,
-            "data": ""
+            "data": "Todos los enemigos comparten el daño recibido entre ellos durante 4 turnos."
         }, {
             "id": 4,
-            "data": ""
+            "data": "Todos los enemigos obtienen -44% de defensa durante 4 turnos."
         }, {
             "id": 5,
             "data": ""
@@ -6844,10 +6844,10 @@
             "data": "Todos los enemigos reciben 339 de daño en 3 turnos. "
         }, {
             "id": 3,
-            "data": ""
+            "data": "Todos los enemigos obtienen un aumento del 50% por cualquier curación recibida durante 2 turnos. Este efecto no puede ser disipado"
         }, {
             "id": 4,
-            "data": ""
+            "data": "Disipa dolencias de estado del taumaturgo"
         }, {
             "id": 5,
             "data": ""
@@ -6879,10 +6879,10 @@
             "data": "Todos los enemigos reciben -34% de ataque durante 4 turnos. "
         }, {
             "id": 3,
-            "data": "Todos los enemigos reciben 276 daños en 4 turnos. Este efecto no puede ser disipado "
+            "data": "Inflige daño extra contra hielo"
         }, {
             "id": 4,
-            "data": ""
+            "data": "Disipa los beneficios de todos los enemigos."
         }, {
             "id": 5,
             "data": ""
@@ -6911,13 +6911,13 @@
             "data": "Inflige 155% de daño a todos los enemigos "
         }, {
             "id": 2,
-            "data": "Todos los aliados obtienen + 25% de ataque durante 4 turnos. "
+            "data": "Todos los aliados obtienen + 25% de ataque durante 4 turnos."
         }, {
             "id": 3,
-            "data": "Mientras está en forma Fantasma, el lanzador no puede obtener maná, pero es inmune a los ataques normales, ataques especiales y todos los efectos de estado."
+            "data": "Disipa dolencias de estado de todos los aliados"
         }, {
             "id": 4,
-            "data": "La forma fantasma dura 4 turnos."
+            "data": "Enlace de elemento recupera un 4% de salud para todos los aliados de Fuego durante 6 turnos. Este efecto no puede ser disipado"
         }, {
             "id": 5,
             "data": ""
@@ -7043,7 +7043,7 @@
         "defense": 472,
         "health": 707,
         "manaSpeed": "Promedio",
-        "class": "Hechicero",
+        "class": "Hechizero",
         "family": "",
         "event": "Camara de Atuendos",
         "effect": [{
@@ -7393,7 +7393,7 @@
         "defense": 659,
         "health": 1293,
         "manaSpeed": "Lento",
-        "class": "Hechicero",
+        "class": "Hechizero",
         "family": "",
         "event": "Camara de Atuendos",
         "effect": [{
@@ -7568,7 +7568,7 @@
         "defense": 735,
         "health": 1475,
         "manaSpeed": "Lento",
-        "class": "Hechicero",
+        "class": "Hechizero",
         "family": "",
         "event": "Camara de Atuendos",
         "effect": [{
@@ -7629,7 +7629,7 @@
         "img": "https://lh3.googleusercontent.com/McshEAzcIIihdxMO7ub5qiYKuTWgPJI3-Flpk7fNN2k69ctsslbzTtz98pMR5rmIU6TG2olXeu1LE__KHVhy4iFedWCJCprrnz9YGMsNHv4HkHvPedbg7mx02Wvs7898IwAJx5lNQopVgcr31aDKfpBnL5O4dpuPK7puqNkCR1rjYIsSC4VLt7E2UqPlfav8FFHLHZK2VvE-gGWpVAESc_lQ9Swsj_wb_gjjLieh0_oeJv6W2y-MhraetMp0_Trloxay2-yrQEeNwVvS5WP5WakfvubM5UYN13PSFxgf2kVvdCnZ48J8RyIjA4Dg6D330MXGMeWT93Y-OjAdEmPvQQ6tmcYv_uIEFe1kWanoVzZuGdjI-M5SnqwVIi90-z7bciyY9-nDQfYEQkXvIBGZWp4KZvQQqzlk3e7wlQvp7sxiYPrwszRNgLHPIOeed7HALaWAet0V8xSOEOCVtRBgjw4pkXwgzOxqzoULHSNob1_9pzCdI0vCWm-Ay0IMxr8tLaaS5Z0o8LMUedDOkEDfCOZDuQZ_QySgfIc-cGh6NwJ-dGX45HtHEv_cttVFFD6c5ywIH5cJm2xtodlxBPFXqxzL4lPiH17ey66xO4eWQyaYEbRGITS46QtBYwvhhEdrnJjEUOCtkrPXPAA3ECX-Lu8sXPpRPFV6RDsyFBN79G7k4K_LdyhPSl0m2WdR14W8OLpYGgS29W5UgTXloOqDmy3hHCfhZe6QLmFWee9giWRs9XkjkTE7Qw=w231-h184-no"
     },
     {
-        "id": 218,
+        "id": 219,
         "name": "Norns",
         "power": 787,
         "element": "Amarillo Sagrado",
@@ -7638,7 +7638,7 @@
         "defense": 718,
         "health": 1369,
         "manaSpeed": "Promedio",
-        "class": "Hechicero",
+        "class": "Hechizero",
         "family": " Vanaheim",
         "event": "Tercera Temporada",
         "effect": [{
@@ -7662,5 +7662,40 @@
         }],
         "video": "https://youtu.be/3egOsnaRkbw",
         "img": "https://lh3.googleusercontent.com/yINvg0QyPMtiyZ3lHuAiNddzh41nE6-s03AI8Tewg1GdvSJVjuI6h8Y7WE9zSGQrj3bYIkRGLoGBpHqY0k3iuoUvso20kPLKLWhgcNPd0y3vX7_b77wwEX7F6AHNnLyBGIpr9PhUlaM7066e6rycqW_Z4z0recS7NnmHfEks8PUOMm5Q8lEK2vWWqKR_7Rz8dT0chldrv2Y2Nurmlx9XpRSsqbWjEhbRug-G-0nODfLAcbZmbpLDA3yzwj5H6ziJMMmYAvZ0DABRdMk8qO79PSXdJBTI-ejwF1dsv29yekxXPNwwbUjNn2kkOWx9aN4JF7LbtBP04lbWTwHS3B44WCAO95m-SeMVmbKEB78aqhMoFLGbpmhT1ERnALKnGsI0_WfHLECjxOwPcW0yS2_Y6Tqm2b7I_BVMrnyxJX6qwH-68Ud5V5rRIWspajC12wFysWsXrv8WEjJa9SdHFdCHmTqwYltUgm-97vcvhi-dC-f5Ro7XGy3PEAYV87LVk5oViB6mvotAHJSkFZnf9edw2zDJHIbbkZhTHWSs4CJ2vsEZmAmqrUqFCoAgkQ34IhnpmS7Y4ucc167j_DunRzUVBZ0pHNsf41BOewkaPEGHG7vtkUKMg5RJbfDsrWeVwb5P1ETd33AOXl8k-unptlfHm-oS673C-8CZTOmbq442dsOScDX18azmRG1CMROJhftxrO1jq4MQXLocO_dbMfFLoAcL__85dc4Vkw19eYwBkwCavII5IHLHDQ=w231-h184-no"
+    },
+    {
+        "id": 220,
+        "name": "Malosi ",
+        "power": 771,
+        "element": "Amarillo Sagrado",
+        "stars": 5,
+        "attack": 743,
+        "defense": 729,
+        "health": 1303,
+        "manaSpeed": "Muy Rapido",
+        "class": "Barbaro",
+        "family": "Hero del Mes",
+        "event": "04/2020",
+        "effect": [{
+            "id": 1,
+            "data": "Causa 300 % daño al objetivo"
+        }, {
+            "id": 2,
+            "data": "El Heroe no puede lanzar ningun edecto de estado nuevo o acumulacion sobre enemigos o aliados durante 3 turno"
+        }, {
+            "id": 3,
+            "data": "Enlace de elemento: proporciona a todos los aliados amarillis  +10% de probabilidad de critico  durante 6 turnos. Este efecto no se puede descartar "
+        }, {
+            "id": 4,
+            "data": "Resiste: Poder inato de resiste estados de alteracion de defensa, A excepcion de los estados de defensa elementales osea amarillos "
+        }, {
+            "id": 5,
+            "data": ""
+        }, {
+            "id": 6,
+            "data": ""
+        }],
+        "video": "https://youtu.be/3egOsnaRkbw",
+        "img": "https://lh3.googleusercontent.com/g7X-LoMuNEIXVQrMebBiuOKnPa33m-Vjq_vpz7Tyub-o6zLL_iw47PWWWBriubfAcVYbdaJ7y5i63wj2B64oW-G0HFAl-PiMSYIZGvvjh-un1iFL4EcNOdG83w2Cl5txYOprokZeHLCZgpx0sdZIGXrCJevKvEWQxuy25SrnUJVprBLqrZFZCj4qTocvO4dB5PX1IJ5a7RZ3BJmxv2To_yBm4M7LJLKxJLtoH4exStWBN2Vb4_Z65Ym2FeNkCLG-EATVD5Sk-9AJDmJS_kjhUX5ZEaXRdKsAoDEueyz88ukc5rs6KaFTCJM05LgwLtdtxynTCxG3aLJfxAUGYBcYwR0TuGimTtYsZ1IShycYwsT1v1htb4fOQV_eSekwpH4BqbkSDwApGsJI1BOJiYm2LPfytuzn4IMuV0YiC0XWp3lKd0mW6p6vREsplDmjEpMvuH1qqUARL-iKpnlijBs4ZyBGb61-uDMxisSumcAE4q0d9bQ6yELZkP90nmOObfIRmi-1J4qI2rpwImmNow3qCsDywGA8ZiCsUZLrkMfES_2fT-8PKbT43BeY7JxvVAXGvvnFmAL1Zr-tH6wNLoTMcihtNlHnY3nFGCa8Yl06ze3UikhPuk_1BL_MhKlyHd7BrvAch007WW5OaZReyr0NGtL8wqNWVcNtOhMBS7rABVr14A9esCLPgIBC-b5t00XNtJLqZRVj-0DGvE9k3Yg0RRozo-3tx08Q068R7t0zDuQ4A6Fzlqaq2w=w963-h768-no"
     }
 ]

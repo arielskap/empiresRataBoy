@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import Modal from './Modal';
-import { animateCSS } from '../funciones';
+import { animateCSS, vibrar } from '../funciones';
 import Card from './Card';
 
 const Face = ({ children, img, json }) => {
@@ -24,7 +24,7 @@ const Face = ({ children, img, json }) => {
 
   return (
     <>
-      <button type='button' className='w-full relative' onClick={handleOpenModal}>
+      <button type='button' className='w-full relative' onClick={() => { vibrar();handleOpenModal(); }}>
         <img className='object-contain w-full' src={img} alt={children} />
         <h3 className='text-center text-lg font-bold absolute bottom-0 text-center w-full bg-black-transparent truncate'>{children}</h3>
       </button>
