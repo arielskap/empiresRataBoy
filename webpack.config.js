@@ -15,7 +15,7 @@ const cssnano = require('cssnano');
 const PATHS = {
   src: path.join(__dirname, 'src'),
 };
-//
+
 module.exports = {
   entry: {
     main: './src/index.js',
@@ -108,13 +108,9 @@ module.exports = {
     new MiniCssExtractPlugin({
       filename: '[name].css',
     }),
-    new FaviconsWebpackPlugin({
-      logo: './src/assets/static/logo.png',
-      publicPath: './',
+    new PurgecssPlugin({
+      paths: glob.sync(`${PATHS.src}/**/*`, { nodir: true }),
+      defaultExtractor: (content) => content.match(/[\w-/:]+(?<!:)/g) || [],
     }),
-    //new PurgecssPlugin({
-    //  paths: glob.sync(`${PATHS.src}/**/*`, { nodir: true }),
-    //  defaultExtractor: (content) => content.match(/[\w-/:]+(?<!:)/g) || [],
-    //}),
   ],
 };
