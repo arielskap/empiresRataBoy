@@ -16,7 +16,7 @@ const Modal = ({ children, isOpen, onClose }) => {
   }, []);
   return ReactDOM.createPortal(
     <div className='Modal animated fadeIn faster z-30'>
-      <div className='Modal__container animated slideInDown faster rounded-lg'>
+      <div className='Modal__container animated slideInDown faster rounded-lg overflow-auto'>
         <button className='Modal__close-button z-10 m-2' type='button' onClick={onClose}>
           <img className='object-contain h-6 w-6' src={cross} alt='close' />
         </button>

@@ -29,7 +29,7 @@ const Face = ({ children, img, json }) => {
         <h3 className='text-center text-lg font-bold absolute bottom-0 text-center w-full bg-black-transparent truncate'>{children}</h3>
       </button>
       <Modal isOpen={open} onClose={handleCloseModal}>
-        <Card img={img} json={json} />
+        <Card img={img} json={json} onClose={handleCloseModal} />
       </Modal>
     </>
   );
