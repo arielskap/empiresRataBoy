@@ -1,10 +1,14 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
+import BlackBackground from '../components/BlackBackground';
+import LoaderColors from '../components/LoaderColors';
+import { animateCSS } from '../funciones';
 import '../assets/styles/home.css';
 import '../assets/styles/hr.css';
 import redAlianzas from '../assets/static/redAlianzas2.png';
 import '../twitch';
 
 const Home = () => {
+  const [pageLoad, setPageLoad] = useState(true);
   useEffect(() => {
     const twitch = new Twitch.Embed('twitch-embed', {
       width: '100%',
@@ -13,10 +17,14 @@ const Home = () => {
       // only needed if your site is also embedded on embed.example.com and othersite.example.com
       parent: ['embed.example.com', 'othersite.example.com'],
     });
+    animateCSS('.BlackBackground', 'fadeOut faster', () => {
+      setPageLoad(false);
+    });
+    animateCSS('.LoaderColors', 'fadeOut faster');
   }, []);
   return (
-    <div>
-      <div>
+    <>
+      <div className='animated fadeIn faster'>
         <div>
           <img className='object-contain w-full max-h-screen' src={redAlianzas} alt='Red Alianzas' />
         </div>
@@ -46,7 +54,12 @@ const Home = () => {
           </div>
         </div>
       </div>
-    </div>
+      {pageLoad && (
+        <BlackBackground>
+          <LoaderColors />
+        </BlackBackground>
+      )}
+    </>
   );
 };
 

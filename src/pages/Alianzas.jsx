@@ -10,7 +10,7 @@ import planetaKaio from '../assets/static/planetaKaio.png';
 
 const Alianzas = () => {
   return (
-    <div>
+    <div className='animated fadeIn faster'>
       <h2 className='text-center mb-4 text-xl font-bold'>Alianzas</h2>
       <div className='grid grid-cols-1 lg:grid-cols-4 gap-4'>
         <div>

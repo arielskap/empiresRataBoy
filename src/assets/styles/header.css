@@ -4,11 +4,11 @@ header{
 
 .header_content {
     max-height: 0;
-    transition: max-height 0.5s ease-out;
+    transition: max-height 0.4s ease-out;
     overflow: hidden;
 }
 
 .menuOpen{
     max-height: 500px;
-    transition: max-height 0.5s ease-in;
+    transition: max-height 0.4s ease-in;
 }
