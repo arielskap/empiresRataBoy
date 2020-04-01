@@ -2,7 +2,6 @@ const path = require('path');
 const glob = require('glob');
 const HtmlWebPackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-const FaviconsWebpackPlugin = require('favicons-webpack-plugin');
 const PurgecssPlugin = require('purgecss-webpack-plugin');
 const tailwindcss = require('tailwindcss');
 const autoprefixer = require('autoprefixer');
@@ -108,9 +107,9 @@ module.exports = {
     new MiniCssExtractPlugin({
       filename: '[name].css',
     }),
-    //new PurgecssPlugin({
-    //  paths: glob.sync(`${PATHS.src}/**/*`, { nodir: true }),
-    //  defaultExtractor: (content) => content.match(/[\w-/:]+(?<!:)/g) || [],
-    //}),
+    new PurgecssPlugin({
+      paths: glob.sync(`${PATHS.src}/**/*`, { nodir: true }),
+      defaultExtractor: (content) => content.match(/[\w-/:]+(?<!:)/g) || [],
+    }),
   ],
 };
