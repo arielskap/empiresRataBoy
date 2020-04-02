@@ -20,38 +20,19 @@ const useSearchHeroes = (json, options) => {
   const [element, setElement] = useState('');
   const [clean, setClean] = useState(false);
   const [jsonSearch, setJsonSearch] = useState(json);
-  const fuseQuery = useRef(new Fuse(json, options.query));
-  const fuseStars = useRef(new Fuse(json, options.stars));
-  const fuseElement = useRef(new Fuse(json, options.element));
 
-  const searching = (search) => {
+  const searching = (json, options, key) => {
     const newJson = [];
-
+    const fuse = new Fuse(json, options);
+    const search = fuse.search(key);
     search.forEach((element) => {
       newJson.push(element.item);
     });
-
-    setJsonSearch(newJson);
-  };
-
-  const moreTwoSearching = (firstFuse, key, secondOption, secondKey) => {
-    let search;
-    let newJson = [];
-    search = firstFuse.current.search(key);
-    search.forEach((element) => {
-      newJson.push(element.item);
-    });
-    const fuse = new Fuse(newJson, secondOption);
-    newJson = [];
-    search = fuse.search(secondKey);
-    search.forEach((element) => {
-      newJson.push(element.item);
-    });
-    setJsonSearch(newJson);
+    return newJson;
   };
 
   useMemo(() => {
-    let search;
+    let newJson;
     if (clean) {
       setQuery('');
       setStars('0');
@@ -62,22 +43,31 @@ const useSearchHeroes = (json, options) => {
       if (query === '' && stars === '0' && element === '') { //No tiene nada
         setJsonSearch(json);
       } else if (query !== '' && stars === '0' && element === '') { //Tiene texto
-        search = fuseQuery.current.search(query);
-        searching(search);
+        newJson = searching(json, options.query, query);
+        setJsonSearch(newJson);
       } else if (query === '' && stars !== '0' && element === '') { //Tiene estrellas
-        search = fuseStars.current.search(stars);
-        searching(search);
+        newJson = searching(json, options.stars, stars);
+        setJsonSearch(newJson);
       } else if (query === '' && stars === '0' && element !== '') { //Tiene Elemento
-        search = fuseElement.current.search(element);
-        searching(search);
+        newJson = searching(json, options.element, element);
+        setJsonSearch(newJson);
       } else if (query !== '' && stars !== '0' && element === '') { //Tiene texto y estrellas
-        moreTwoSearching(fuseStars, stars, options.query, query);
+        newJson = searching(json, options.stars, stars);
+        newJson = searching(newJson, options.query, query);
+        setJsonSearch(newJson);
       } else if (query !== '' && stars === '0' && element !== '') { //Tiene texto y elemento
-        moreTwoSearching(fuseElement, element, options.query, query);
+        newJson = searching(json, options.element, element);
+        newJson = searching(newJson, options.query, query);
+        setJsonSearch(newJson);
       } else if (query === '' && stars !== '0' && element !== '') { //Tiene estrellas y elemento
-        moreTwoSearching(fuseElement, element, options.stars, stars);
+        newJson = searching(json, options.stars, stars);
+        newJson = searching(newJson, options.element, element);
+        setJsonSearch(newJson);
       } else { //Tiene todo
-        //allSearching();
+        newJson = searching(json, options.stars, stars);
+        newJson = searching(newJson, options.element, element);
+        newJson = searching(newJson, options.query, query);
+        setJsonSearch(newJson);
       }
     }
   }, [json, query, element, stars, clean]);
