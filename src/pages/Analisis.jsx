@@ -5,14 +5,23 @@ import Face from '../components/Face';
 import BlackBackground from '../components/BlackBackground';
 import LoaderColors from '../components/LoaderColors';
 import { animateCSS } from '../funciones';
-import star from '../assets/static/star.png';
 import '../assets/styles/analisis.css';
+import star from '../assets/static/star.png';
+import fuego from '../assets/static/fuego.png';
+import naturaleza from '../assets/static/naturaleza.png';
+import oscuro from '../assets/static/oscuro.png';
+import sagrado from '../assets/static/sagrado.png';
+import hielo from '../assets/static/hielo.png';
 
 const useSearchHeroes = (json, options) => {
   const [query, setQuery] = useState('');
   const [stars, setStars] = useState('0');
+  const [element, setElement] = useState('');
+  const [clean, setClean] = useState(false);
   const [jsonSearch, setJsonSearch] = useState(json);
-  const [fuse, setFuse] = useState(new Fuse(json, options));
+  const fuseQuery = useRef(new Fuse(json, options.query));
+  const fuseStars = useRef(new Fuse(json, options.stars));
+  const fuseElement = useRef(new Fuse(json, options.element));
 
   const searching = (search) => {
     const newJson = [];
@@ -24,59 +33,105 @@ const useSearchHeroes = (json, options) => {
     setJsonSearch(newJson);
   };
 
+  const allSearching = () => {
+    let search;
+    let newJson = [];
+    search = fuseStars.current.search(stars);
+    search.forEach((element) => {
+      newJson.push(element.item);
+    });
+    const fuse = new Fuse(newJson, options.query);
+    newJson = [];
+    search = fuse.search(query);
+    search.forEach((element) => {
+      newJson.push(element.item);
+    });
+    setJsonSearch(newJson);
+  };
+
   useMemo(() => {
     let search;
-    if (query === '' && stars === '0') {
+    if (clean) {
+      setQuery('');
+      setStars('0');
+      setElement('');
       setJsonSearch(json);
-    } else if (query === '' && stars !== '0') {
-      search = fuse.search(stars);
-      searching(search);
+      setClean(false);
     } else {
-      search = fuse.search(query);
-      searching(search);
+      if (query === '' && stars === '0' && element === '') {
+        setJsonSearch(json);
+      } else if (query !== '' && stars === '0' && element === '') {
+        search = fuseQuery.current.search(query);
+        searching(search);
+      } else if (query === '' && stars !== '0' && element === '') {
+        search = fuseStars.current.search(stars);
+        searching(search);
+      } else {
+        allSearching();
+      }
     }
-  }, [json, query, stars]);
-  return { query, setQuery, jsonSearch, setFuse, setStars };
+  }, [json, query, stars, clean]);
+  return { query, setQuery, jsonSearch, setStars, setElement, setClean };
 };
 
 const Analisis = () => {
   const [pageLoad, setPageLoad] = useState(true);
   const options = useRef({
-    threshold: 0.0,
-    keys: [
-      'name',
-    ],
+    query: {
+      threshold: 0.0,
+      keys: [
+        'name',
+      ],
+    },
+    stars: {
+      keys: [
+        'stars',
+      ],
+    },
+    element: {
+      keys: [
+        'element',
+      ],
+    },
   });
-  const { query, setQuery, jsonSearch, setFuse, setStars } = useSearchHeroes(json, options.current);
+  const { query, setQuery, jsonSearch, setStars, setClean } = useSearchHeroes(json, options.current);
 
   const handleFilterStars = (cantStars) => {
-    if (query === '') {
-      options.current = {
-        isCaseSensitive: false,
-        findAllMatches: false,
-        includeMatches: false,
-        includeScore: false,
-        useExtendedSearch: false,
-        minMatchCharLength: 1,
-        shouldSort: true,
-        threshold: 0.6,
-        location: 0,
-        distance: 100,
-        keys: [
-          'stars',
-        ],
-      };
-    } else {
-      options.current = {
-        threshold: 0.0,
-        keys: [
-          'name',
-          'stars',
-        ],
-      };
+    for (let i = 1; i <= cantStars; i++) {
+      if (document.querySelector(`.star-${i}`).classList.contains('filter-gray')) {
+        document.querySelector(`.star-${i}`).classList.remove('filter-gray');
+      }
     }
-    setFuse(new Fuse(json, options));
+    for (let i = cantStars + 1; i <= 5; i++) {
+      if (!document.querySelector(`.star-${i}`).classList.contains('filter-gray')) {
+        document.querySelector(`.star-${i}`).classList.add('filter-gray');
+      }
+    }
     setStars(`${cantStars}`);
+  };
+
+  const handleClean = () => {
+    setClean(true);
+    handleFilterStars(0);
+  };
+
+  const handleElement = (element) => {
+    const FUEGO = 1;
+    const HIELO = 2;
+    const NATURALEZA = 3;
+    const OSCURO = 4;
+    const SAGRADO = 5;
+    for (let i = 1; i <= 5; i++) {
+      if (i === element) {
+        if (document.querySelector(`.element-${element}`).classList.contains('filter-gray')) {
+          document.querySelector(`.element-${element}`).classList.remove('filter-gray');
+        }
+      } else {
+        if (!document.querySelector(`.element-${i}`).classList.contains('filter-gray')) {
+          document.querySelector(`.element-${i}`).classList.add('filter-gray');
+        }
+      }
+    }
   };
 
   useEffect(() => {
@@ -101,20 +156,40 @@ const Analisis = () => {
             <h2>Filtros</h2>
             <div className='flex'>
               <button type='button' onClick={() => { handleFilterStars(1); }}>
-                <img className='object-contain filter-gray w-8 h-full' src={star} alt='star' />
+                <img className='star star-1 object-contain filter-gray w-8 h-full' src={star} alt='star' />
               </button>
               <button type='button' onClick={() => { handleFilterStars(2); }}>
-                <img className='object-contain filter-gray w-8 h-full' src={star} alt='star' />
+                <img className='star star-2 object-contain filter-gray w-8 h-full' src={star} alt='star' />
               </button>
               <button type='button' onClick={() => { handleFilterStars(3); }}>
-                <img className='object-contain filter-gray w-8 h-full' src={star} alt='star' />
+                <img className='star star-3 object-contain filter-gray w-8 h-full' src={star} alt='star' />
               </button>
               <button type='button' onClick={() => { handleFilterStars(4); }}>
-                <img className='object-contain filter-gray w-8 h-full' src={star} alt='star' />
+                <img className='star star-4 object-contain filter-gray w-8 h-full' src={star} alt='star' />
               </button>
               <button type='button' onClick={() => { handleFilterStars(5); }}>
-                <img className='object-contain filter-gray w-8 h-full' src={star} alt='star' />
+                <img className='star star-5 object-contain filter-gray w-8 h-full' src={star} alt='star' />
               </button>
+            </div>
+            <div className='flex'>
+              <button type='button' onClick={() => { handleElement(1); }}>
+                <img className='element element-1 object-contain filter-gray w-8 h-full' src={fuego} alt='Fuego' />
+              </button>
+              <button type='button' onClick={() => { handleElement(2); }}>
+                <img className='element element-2 object-contain filter-gray w-8 h-full' src={hielo} alt='Hielo' />
+              </button>
+              <button type='button' onClick={() => { handleElement(3); }}>
+                <img className='element element-3 object-contain filter-gray w-8 h-full' src={naturaleza} alt='naturaleza' />
+              </button>
+              <button type='button' onClick={() => { handleElement(4); }}>
+                <img className='element element-4 object-contain filter-gray w-8 h-full' src={oscuro} alt='Oscuro' />
+              </button>
+              <button type='button' onClick={() => { handleElement(5); }}>
+                <img className='element element-5 object-contain filter-gray w-8 h-full' src={sagrado} alt='sagrado' />
+              </button>
+            </div>
+            <div>
+              <button type='button' onClick={handleClean}>Limpiar</button>
             </div>
           </div>
         </div>
