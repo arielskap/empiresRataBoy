@@ -12,6 +12,7 @@ import naturaleza from '../assets/static/naturaleza.png';
 import oscuro from '../assets/static/oscuro.png';
 import sagrado from '../assets/static/sagrado.png';
 import hielo from '../assets/static/hielo.png';
+import FilterButton from '../components/FilterButton';
 
 const useSearchHeroes = (json, options) => {
   const [query, setQuery] = useState('');
@@ -33,16 +34,16 @@ const useSearchHeroes = (json, options) => {
     setJsonSearch(newJson);
   };
 
-  const allSearching = () => {
+  const moreTwoSearching = (firstFuse, key, secondOption, secondKey) => {
     let search;
     let newJson = [];
-    search = fuseStars.current.search(stars);
+    search = firstFuse.current.search(key);
     search.forEach((element) => {
       newJson.push(element.item);
     });
-    const fuse = new Fuse(newJson, options.query);
+    const fuse = new Fuse(newJson, secondOption);
     newJson = [];
-    search = fuse.search(query);
+    search = fuse.search(secondKey);
     search.forEach((element) => {
       newJson.push(element.item);
     });
@@ -58,19 +59,28 @@ const useSearchHeroes = (json, options) => {
       setJsonSearch(json);
       setClean(false);
     } else {
-      if (query === '' && stars === '0' && element === '') {
+      if (query === '' && stars === '0' && element === '') { //No tiene nada
         setJsonSearch(json);
-      } else if (query !== '' && stars === '0' && element === '') {
+      } else if (query !== '' && stars === '0' && element === '') { //Tiene texto
         search = fuseQuery.current.search(query);
         searching(search);
-      } else if (query === '' && stars !== '0' && element === '') {
+      } else if (query === '' && stars !== '0' && element === '') { //Tiene estrellas
         search = fuseStars.current.search(stars);
         searching(search);
-      } else {
-        allSearching();
+      } else if (query === '' && stars === '0' && element !== '') { //Tiene Elemento
+        search = fuseElement.current.search(element);
+        searching(search);
+      } else if (query !== '' && stars !== '0' && element === '') { //Tiene texto y estrellas
+        moreTwoSearching(fuseStars, stars, options.query, query);
+      } else if (query !== '' && stars === '0' && element !== '') { //Tiene texto y elemento
+        moreTwoSearching(fuseElement, element, options.query, query);
+      } else if (query === '' && stars !== '0' && element !== '') { //Tiene estrellas y elemento
+        moreTwoSearching(fuseElement, element, options.stars, stars);
+      } else { //Tiene todo
+        //allSearching();
       }
     }
-  }, [json, query, stars, clean]);
+  }, [json, query, element, stars, clean]);
   return { query, setQuery, jsonSearch, setStars, setElement, setClean };
 };
 
@@ -94,7 +104,7 @@ const Analisis = () => {
       ],
     },
   });
-  const { query, setQuery, jsonSearch, setStars, setClean } = useSearchHeroes(json, options.current);
+  const { query, setQuery, jsonSearch, setStars, setElement, setClean } = useSearchHeroes(json, options.current);
 
   const handleFilterStars = (cantStars) => {
     for (let i = 1; i <= cantStars; i++) {
@@ -110,17 +120,8 @@ const Analisis = () => {
     setStars(`${cantStars}`);
   };
 
-  const handleClean = () => {
-    setClean(true);
-    handleFilterStars(0);
-  };
-
   const handleElement = (element) => {
-    const FUEGO = 1;
-    const HIELO = 2;
-    const NATURALEZA = 3;
-    const OSCURO = 4;
-    const SAGRADO = 5;
+    let nameElement;
     for (let i = 1; i <= 5; i++) {
       if (i === element) {
         if (document.querySelector(`.element-${element}`).classList.contains('filter-gray')) {
@@ -132,6 +133,30 @@ const Analisis = () => {
         }
       }
     }
+    switch (element) {
+      case 1:
+        nameElement = 'Rojo Fuego';
+        break;
+      case 2:
+        nameElement = 'Azul Hielo';
+        break;
+      case 3:
+        nameElement = 'Verde Naturaleza';
+        break;
+      case 4:
+        nameElement = 'Violeta Oscuro';
+        break;
+      case 5:
+        nameElement = 'Amarillo Sagrado';
+        break;
+    }
+    setElement(`${nameElement}`);
+  };
+
+  const handleClean = () => {
+    setClean(true);
+    handleFilterStars(0);
+    handleElement(0);
   };
 
   useEffect(() => {
@@ -148,48 +173,29 @@ const Analisis = () => {
           <div className='text-center mb-2'>
             <h1 className='text-xl font-bold'>Analisis de Heroes</h1>
           </div>
-          <div>
+          <div className='sm:grid sm:grid-cols-2 sm:gap-2'>
             <label htmlFor='search'>
               <h2 className='text-lg font-bold'>Buscador: </h2>
               <input className='bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full max-w-xs py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-purple-500' value={query} onChange={(e) => { setQuery(e.target.value); }} type='text' name='search' id='search' placeholder='Gobbler' tabIndex='0' />
             </label>
-            <h2>Filtros</h2>
-            <div className='flex'>
-              <button type='button' onClick={() => { handleFilterStars(1); }}>
-                <img className='star star-1 object-contain filter-gray w-8 h-full' src={star} alt='star' />
-              </button>
-              <button type='button' onClick={() => { handleFilterStars(2); }}>
-                <img className='star star-2 object-contain filter-gray w-8 h-full' src={star} alt='star' />
-              </button>
-              <button type='button' onClick={() => { handleFilterStars(3); }}>
-                <img className='star star-3 object-contain filter-gray w-8 h-full' src={star} alt='star' />
-              </button>
-              <button type='button' onClick={() => { handleFilterStars(4); }}>
-                <img className='star star-4 object-contain filter-gray w-8 h-full' src={star} alt='star' />
-              </button>
-              <button type='button' onClick={() => { handleFilterStars(5); }}>
-                <img className='star star-5 object-contain filter-gray w-8 h-full' src={star} alt='star' />
-              </button>
+            <div className='mt-1 w-full'>
+              <div className='my-2 grid grid-cols-5 gap-1'>
+                <FilterButton handleOnClick={handleFilterStars} number={1} img={star} identity='star'>star</FilterButton>
+                <FilterButton handleOnClick={handleFilterStars} number={2} img={star} identity='star'>star</FilterButton>
+                <FilterButton handleOnClick={handleFilterStars} number={3} img={star} identity='star'>star</FilterButton>
+                <FilterButton handleOnClick={handleFilterStars} number={4} img={star} identity='star'>star</FilterButton>
+                <FilterButton handleOnClick={handleFilterStars} number={5} img={star} identity='star'>star</FilterButton>
+              </div>
+              <div className='my-2 grid grid-cols-5 gap-1'>
+                <FilterButton handleOnClick={handleElement} number={1} img={fuego} identity='element'>Fuego</FilterButton>
+                <FilterButton handleOnClick={handleElement} number={2} img={hielo} identity='element'>Hielo</FilterButton>
+                <FilterButton handleOnClick={handleElement} number={3} img={naturaleza} identity='element'>Naturaleza</FilterButton>
+                <FilterButton handleOnClick={handleElement} number={4} img={oscuro} identity='element'>Oscuro</FilterButton>
+                <FilterButton handleOnClick={handleElement} number={5} img={sagrado} identity='element'>Sagrado</FilterButton>
+              </div>
             </div>
-            <div className='flex'>
-              <button type='button' onClick={() => { handleElement(1); }}>
-                <img className='element element-1 object-contain filter-gray w-8 h-full' src={fuego} alt='Fuego' />
-              </button>
-              <button type='button' onClick={() => { handleElement(2); }}>
-                <img className='element element-2 object-contain filter-gray w-8 h-full' src={hielo} alt='Hielo' />
-              </button>
-              <button type='button' onClick={() => { handleElement(3); }}>
-                <img className='element element-3 object-contain filter-gray w-8 h-full' src={naturaleza} alt='naturaleza' />
-              </button>
-              <button type='button' onClick={() => { handleElement(4); }}>
-                <img className='element element-4 object-contain filter-gray w-8 h-full' src={oscuro} alt='Oscuro' />
-              </button>
-              <button type='button' onClick={() => { handleElement(5); }}>
-                <img className='element element-5 object-contain filter-gray w-8 h-full' src={sagrado} alt='sagrado' />
-              </button>
-            </div>
-            <div>
-              <button type='button' onClick={handleClean}>Limpiar</button>
+            <div className='text-right'>
+              <button className='bg-transparent hover:bg-pink-500 text-pink-700 font-semibold hover:text-white py-1 px-2 border border-pink-500 hover:border-transparent rounded' type='button' onClick={handleClean}>Limpiar</button>
             </div>
           </div>
         </div>
