@@ -75,7 +75,7 @@ const Card = ({ img, json, onClose }) => {
     case 'Hechizero':
       srcClassHero.current = sorcer;
       break;
-    case 'Mago':
+    case 'Brujo':
       srcClassHero.current = wizard;
       break;
     default:

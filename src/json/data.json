@@ -113,7 +113,7 @@
         "defense": 706,
         "health": 1336,
         "manaSpeed": "Rapido",
-        "class": "Guardabosques",
+        "class": "Guardabosquess",
         "family": "Hero del Mes",
         "event": "05/2018",
         "effect": [{
@@ -393,7 +393,7 @@
         "defense": 692,
         "health": 1349,
         "manaSpeed": "Promedio",
-        "class": "Guardabosques",
+        "class": "Guardabosquess",
         "family": "Hero del Mes",
         "event": "07/2017",
         "effect": [{
@@ -673,7 +673,7 @@
         "defense": 425,
         "health": 688,
         "manaSpeed": "Rapido",
-        "class": "Guardabosques",
+        "class": "Guardabosquess",
         "family": "",
         "event": "Primera Temporada",
         "effect": [{
@@ -988,7 +988,7 @@
         "defense": 690,
         "health": 1323,
         "manaSpeed": "Promedio",
-        "class": "Guardabosques",
+        "class": "Guardabosquess",
         "family": "",
         "event": "evento de Navidad",
         "effect": [{
@@ -1198,7 +1198,7 @@
         "defense": 675,
         "health": 1115,
         "manaSpeed": "Rapido",
-        "class": "Guardabosques",
+        "class": "Guardabosquess",
         "family": "",
         "event": "Primera Temporada",
         "effect": [{
@@ -1653,7 +1653,7 @@
         "defense": 712,
         "health": 1355,
         "manaSpeed": "Rapido",
-        "class": "Guardabosques",
+        "class": "Guardabosquess",
         "family": "Hero del Mes",
         "event": "12/2018",
         "effect": [{
@@ -1723,7 +1723,7 @@
         "defense": 745,
         "health": 1314,
         "manaSpeed": "Rapido",
-        "class": "Guardabosques",
+        "class": "Guardabosquess",
         "family": "Pirata",
         "event": "Piratas de Corellia",
         "effect": [{
@@ -2213,7 +2213,7 @@
         "defense": 710,
         "health": 1351,
         "manaSpeed": "Promedio",
-        "class": "Guardabosques",
+        "class": "Guardabosquess",
         "family": "Hero del Mes",
         "event": "07/2018",
         "effect": [{
@@ -2590,7 +2590,7 @@
     },
     {
         "id": 75,
-        "name": "Guardian Panther",
+        "name": "Guardian Pantera",
         "power": 765,
         "element": "Violeta Oscuro",
         "stars": 5,
@@ -2621,7 +2621,7 @@
             "data": ""
         }],
         "video": "https://www.youtube.com/watch?v=dQWkyrBNyJk",
-        "img": "https://drive.google.com/open?id=13-kago25r_-6qWIRn2z8giAhxeODNQuv"
+        "img": "https://lh3.googleusercontent.com/o1iwaHyMId5nSyZU4Wyi7Zhs5bO9S0Jdl9tQPWENNOSvcg-DVs8bGSmreGjS75us-ZBR69CfgkbY2C8NAbvYYTOYXlWMpbTBzAhwFADZaAHNbFS0YhWHMXRMjVTpzL-QCsitHziexR4Jl97vjR7EnX5JkdZI0dXToKc7lwZynwHbxBI5hcpQXjyZfa4RUoRias_zxTjyrTWupc8Fj8O1vZi0i8GKgulHZ2wPAFjGtZ2VV8_WI_ReCRlYYGV3WA9C301JhqbcTq4Z1Mrus02TRrv85KmvI6Jrtcxpgwu-iBbNRKaq8rc-IIqpZHJZClhd4UPNyac6Yu5h9Co8R3csoVXTiRcqPUGKkb4gRHCNzqgZRuL3vSLRk26ixOI474Y4LHvwRkbwtq2zMovUJZNJ-sglEdZxhUV8ysm-ag7N5W-p95oFBceSx4iIHhmsupRxaG6fOBFAaqk_9FbtDh6tJgTusa7-LuivP6eq-45KutncWYQIkn1Gi2mWSxrLqQ_z9xEADp3PXRV0WSun5GG2vwjHYX4PHvs_9XIt_LzGQtBzT3x3JGSqfVSsa1Plj8w08sG5qyJVVkRsfHDy7LoK8EU-AGHWjC-H7nZKSYJH_39cDgFLeOUT2P9yc1sNgd-fRrmw0IvOFr5D-7frn13wRu2eRKXQk2PSnGU5uDDEZLXUzE3thI-_ZDLNXXiV1DwT5lQUvAXSTivPtSh4-sOwl8ch0pVHa1-4Dz6-Lx9ctjYNbNPv7WQBPQ=w231-h184-no"
     },
     {
         "id": 76,
@@ -2656,7 +2656,7 @@
             "data": ""
         }],
         "video": "https://youtu.be/5FGHAnfGc4Q?t=1574",
-        "img": "https://lh3.googleusercontent.com/JQYeA-UCxHRMOLx7nrR4RyfkYiPoPTvM-YwQ_dvdaeg8SOeAkeh9FHHK5Ag606F_r6mMT0XI0cN_5QBtaiNrIAwDKfItEQEW9-88r_1RuyTr2UWqym5ndr9ymy57rSKiy2SdQXeR6XohTAU7T_k0QdDU4k4SP4xLVR88r1AYYZJYhMNFQvLMpFdUBJU5mciZ9otkyeAwQh0UpIkw4EIjMt7re4UWPZSoFTkxJvHuBcaIEn8CbPo5uiCb5MIIc2PIZ7yJBQTwBQWfq2rEG1hiFRgE4ligeG7yTgQ5i6DWkMhIg-SH1Gm9rPzwKbVXoOiMOn7olNu4Z_vJYf2ApF3Mfydumt4XbxGMOHfaOTBEgBzEyOXMNa2TGfgzn2b09aHryO3tB6L-WL8f5t3NSnAwnN5z3ke04i3TBhivXXfi-nGYerDd7uw_WnOfFn-vxoK0i5PCCZfFy9eadZLEa7DCbGWWwIg3ucjuWYM4RBkf-LNognYDCwYbTN253d-sbfmnZ_qw0exO37YpgZE-Tqmqw_9MZoUIISp0HHaRlU2jMy9GUEMoHL38uohCsQHJW1fjw7dO-h3qZHegp1KyzcazLhB-oF9WnINqn4dpPuUOt-k06qTAaV8qX9HOCYB7mLxhuZsA8vGJcvU6PsElpf6DQOzbq8vOFFXFrddtCmvYgVS8Cl1WEoPZT4Bhm_WdYB0mfD0EtHTkijvD33dPlRDtMTPSCRY4dsFqTsuNYeQ__-bqlpNFLb64Kg=w231-h184-no"
+        "img": "https://lh3.googleusercontent.com/pxpbLU-K0wYYriCiHDgvEpg3eXIfyrwAtDbCHTwJtOoA1z5Vz3v2LGpZSAYxxGwAwe34MBegXvrAJ9Yf_W2UR5x_hfIbqoLCN_clBzpU9V8-M21itk8V-sXu0m8JP__Ohst4UkXb2B0IYLye1MXUGXhzUSROPgu7_Yy-j4f7UWZHoY2veF9uGjyLW-NMUTjckijKUlL6DD-pHL0zEhpf81VqlAfwXk1o9Dk-kedHuJ3RjdNKdevI6t73r_XA0NBaJocUC1pT5SEIghN4XIoQsC6G5GOrTjgFlaAal4Ll3KgumcB2Fbe7A1nYYaOkwHwlLE_9aVYoL0tttX1-2PP4yIBlSmCvVwux3mqDpHZ3pOQXt6K_JKYDuuBOtyowc-dbnmxaQzq4A13WcsoOQMqDN6UG-aLFLcF8q6QhV1c4XqkV8l3X75rehvrjrFQCNQM7yUgb2V-Tcvy2kO0poOdaDQxmkg9aJUbHEWEViyZZbS8QXuU7BEC6DoBbdEgxO7Hr8WNso-7zzC9M0k3fOZ0K5tp7Dij7hzOBXbLA-ujVLDP-mFihB0amGhzRaQM2RQcrEPd03RihheqlQankXqQ3W84hxCzpYLyb5fXO8mSkdzN5n47OpSudsYrLSPvqaRqG-FeHqcIPafSAkKDrXk7dsi0Fc-iBBe54vuBPNycoS8uvPlbYmRCZfKdTKvAdJ75zbJjTAoEDxnP99McOngqa3YyqcF1ht8aWHiRUW6sTUz16-QX-Y7IRUg=w231-h184-no"
     },
     {
         "id": 77,
@@ -3018,7 +3018,7 @@
         "defense": 417,
         "health": 764,
         "manaSpeed": "Promedio",
-        "class": "Guardabosques",
+        "class": "Guardabosquess",
         "family": "",
         "event": "Primera Temporada",
         "effect": [{
@@ -3123,7 +3123,7 @@
         "defense": 603,
         "health": 960,
         "manaSpeed": "Rapido",
-        "class": "Guardabosque",
+        "class": "Guardabosques",
         "family": "",
         "event": "Pascua",
         "effect": [{
@@ -3508,7 +3508,7 @@
         "defense": 642,
         "health": 1458,
         "manaSpeed": "Lento ",
-        "class": "Guardabosques",
+        "class": "Guardabosquess",
         "family": "",
         "event": "Primera Temporada",
         "effect": [{
@@ -3543,7 +3543,7 @@
         "defense": 708,
         "health": 1336,
         "manaSpeed": "Promedio",
-        "class": "Guardabosques",
+        "class": "Guardabosquess",
         "family": "Hero del Mes",
         "event": "09/2018",
         "effect": [{
@@ -3893,7 +3893,7 @@
         "defense": 718,
         "health": 1248,
         "manaSpeed": "Rapido",
-        "class": "Guardabosques",
+        "class": "Guardabosquess",
         "family": "",
         "event": "Primera Temporada",
         "effect": [{
@@ -4278,7 +4278,7 @@
         "defense": 592,
         "health": 1166,
         "manaSpeed": "Muy Rapido",
-        "class": "Guardabosques",
+        "class": "Guardabosquess",
         "family": "Vanaheim",
         "event": "tercera temporada",
         "effect": [{
@@ -4733,7 +4733,7 @@
         "defense": 737,
         "health": 1299,
         "manaSpeed": "Promedio",
-        "class": "Guardabosques",
+        "class": "Guardabosquess",
         "family": "Hero del Mes",
         "event": "11/2019",
         "effect": [{
@@ -5328,7 +5328,7 @@
         "defense": 708,
         "health": 1353,
         "manaSpeed": "Promedio",
-        "class": "Guardabosques",
+        "class": "Guardabosquess",
         "family": "Bosque Sombrio",
         "event": "Fábulas del Bosque Sombrío",
         "effect": [{
@@ -5713,7 +5713,7 @@
         "defense": 683,
         "health": 1345,
         "manaSpeed": "Rapido",
-        "class": "Guardabosques",
+        "class": "Guardabosquess",
         "family": "Hero del Mes",
         "event": "07/2019",
         "effect": [{
@@ -5958,7 +5958,7 @@
         "defense": 382,
         "health": 608,
         "manaSpeed": "Rapido",
-        "class": "Guardabosques",
+        "class": "Guardabosquess",
         "family": "",
         "event": "evento de Temporada",
         "effect": [{
@@ -6273,7 +6273,7 @@
         "defense": 633,
         "health": 1045,
         "manaSpeed": "Promedio",
-        "class": "Guardabosques",
+        "class": "Guardabosquess",
         "family": "",
         "event": "Primera Temporada",
         "effect": [{
@@ -6308,7 +6308,7 @@
         "defense": 601,
         "health": 1049,
         "manaSpeed": "Rapido",
-        "class": "Guardabosques",
+        "class": "Guardabosquess",
         "family": "Atlantis",
         "event": "Segunda Temporada",
         "effect": [{
@@ -6938,7 +6938,7 @@
         "defense": 423,
         "health": 682,
         "manaSpeed": "Rapido",
-        "class": "Guardabosque",
+        "class": "Guardabosques",
         "family": "",
         "event": "Camara de Atuendos",
         "effect": [{
@@ -7218,7 +7218,7 @@
         "defense": 702,
         "health": 1271,
         "manaSpeed": "Promedio",
-        "class": "Guardabosque",
+        "class": "Guardabosques",
         "family": "",
         "event": "Camara de Atuendos",
         "effect": [{
