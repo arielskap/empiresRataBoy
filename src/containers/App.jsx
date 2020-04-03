@@ -9,6 +9,7 @@ import ScrollToTop from '../components/ScrollToTop';
 import Alianzas from '../pages/Alianzas';
 import Footer from '../components/Footer';
 import Analisis from '../pages/Analisis';
+import Guias from '../pages/Guias';
 
 const App = () => {
   return (
@@ -19,6 +20,10 @@ const App = () => {
           <Route exact path='/'>
             <ScrollToTop />
             <Home />
+          </Route>
+          <Route path='/guias'>
+            <ScrollToTop />
+            <Guias />
           </Route>
           <Route path='/alianzas'>
             <ScrollToTop />

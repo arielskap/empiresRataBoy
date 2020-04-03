@@ -5,6 +5,7 @@ import { animateCSS } from '../funciones';
 import '../assets/styles/home.css';
 import '../assets/styles/hr.css';
 import redAlianzas from '../assets/static/redAlianzas2.png';
+import redDeAlianzas from '../assets/static/redDeAlianzas.png';
 import '../twitch';
 
 const Home = () => {
@@ -25,18 +26,23 @@ const Home = () => {
   return (
     <>
       <div className='animated fadeIn faster'>
-        <div>
+        <div className='lg:hidden'>
           <img className='object-contain w-full max-h-screen' src={redAlianzas} alt='Red Alianzas' />
         </div>
+        <div className='hidden lg:flex lg:items-center lg:justify-center lg:my-6'>
+          <img className='object-contain lg:max-w-4xl xl:max-w-6xl' src={redDeAlianzas} alt='Red de Alianzas' />
+        </div>
         <div className='px-8'>
-          <hr className='my-8' />
+          <hr className='my-8 lg:hidden' />
           <div>
-            <h2 className='text-center mb-4 text-xl font-bold'>¡Ver Directo Ahora!</h2>
-            <div id='twitch-embed' />
+            <h2 className='text-center mb-4 text-xl lg:text-2xl font-bold'>¡Ver Directo Ahora!</h2>
+            <div className='flex justify-center items-center'>
+              <div id='twitch-embed' className='max-w-6xl w-full' />
+            </div>
           </div>
           <hr className='my-8' />
           <div>
-            <h2 className='text-center mb-4 text-xl font-bold'>¡Listas de Reproducción!</h2>
+            <h2 className='text-center mb-4 text-xl lg:text-2xl font-bold'>¡Listas de Reproducción!</h2>
             <div className='grid grid-cols-1 lg:grid-cols-3 gap-4'>
               <div>
                 <h3 className='text-center mb-4 text-lg font-bold underline'>Ultimo Video</h3>

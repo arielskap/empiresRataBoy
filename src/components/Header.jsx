@@ -1,10 +1,11 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React, { useEffect } from 'react';
+import { Link, useLocation } from 'react-router-dom';
 import { vibrar } from '../funciones';
 import logo from '../assets/static/logo.png';
 import '../assets/styles/header.css';
 
 const Header = () => {
+  const location = useLocation();
 
   const handleMenu = () => {
     document.querySelector('.header_content').classList.toggle('menuOpen');
@@ -15,6 +16,44 @@ const Header = () => {
       document.querySelector('.header_content').classList.remove('menuOpen');
     }
   };
+
+  const pageActive = (className) => {
+    const ALL_LINKS = 4;
+    if (!document.querySelector(`.${className}`).classList.contains('font-bold')) {
+      for (let i = 1; i <= ALL_LINKS; i++) {
+        if (`Link_${i}` === className) {
+          document.querySelector(`.${className}`).classList.remove('text-white');
+          document.querySelector(`.${className}`).classList.add('font-bold', 'text-pink-500');
+        } else {
+          if (document.querySelector(`.Link_${i}`).classList.contains('font-bold')) {
+            document.querySelector(`.Link_${i}`).classList.add('text-white');
+            document.querySelector(`.Link_${i}`).classList.remove('font-bold', 'text-pink-500');
+          }
+        }
+      }
+    }
+  };
+
+  useEffect(() => {
+    switch (location.pathname) {
+      case '/':
+        document.querySelector('.Link_home').classList.remove('text-white');
+        document.querySelector('.Link_home').classList.add('text-pink-500', 'font-bold');
+        break;
+      case '/guias':
+        document.querySelector('.Link_guias').classList.remove('text-white');
+        document.querySelector('.Link_guias').classList.add('text-pink-500', 'font-bold');
+        break;
+      case '/alianzas':
+        document.querySelector('.Link_alianzas').classList.remove('text-white');
+        document.querySelector('.Link_alianzas').classList.add('text-pink-500', 'font-bold');
+        break;
+      case '/analisis':
+        document.querySelector('.Link_analisis').classList.remove('text-white');
+        document.querySelector('.Link_analisis').classList.add('text-pink-500', 'font-bold');
+        break;
+    }
+  }, []);
 
   return (
     <header className='w-full fixed top-0 left-0 lg:static px-6 py-4 z-10 border-b border-black'>
@@ -32,18 +71,18 @@ const Header = () => {
             </svg>
           </button>
         </div>
-        <div className='header_content truncate w-full block flex-grow lg:flex lg:items-center lg:w-auto text-center'>
+        <div className='header_content w-full block flex-grow lg:flex lg:items-center lg:w-auto text-center'>
           <div className='text-sm lg:flex-grow'>
-            <Link onClick={() => { vibrar();handleMenu(); }} to='/' className='block mt-4 lg:inline-block lg:mt-0 text-white hover:text-black lg:mr-4'>
+            <Link onClick={() => { vibrar();handleMenu(); pageActive('Link_1'); }} to='/' className='Link_home Link_1 block mt-4 lg:inline-block lg:mt-0 text-white hover:text-pink-500 lg:mr-4 lg:text-lg'>
               Home
             </Link>
-            <Link onClick={() => { vibrar();handleMenu(); }} to='/guias' className='block mt-4 lg:inline-block lg:mt-0 text-white hover:text-black lg:mr-4'>
+            <Link onClick={() => { vibrar();handleMenu(); pageActive('Link_2'); }} to='/guias' className='Link_guias Link_2 block mt-4 lg:inline-block lg:mt-0 text-white hover:text-pink-500 lg:mr-4 lg:text-lg'>
               Guias
             </Link>
-            <Link onClick={() => { vibrar();handleMenu(); }} to='/alianzas' className='block mt-4 lg:inline-block lg:mt-0 text-white hover:text-black lg:mr-4'>
+            <Link onClick={() => { vibrar();handleMenu(); pageActive('Link_3'); }} to='/alianzas' className='Link_alianzas Link_3 block mt-4 lg:inline-block lg:mt-0 text-white hover:text-pink-500 lg:mr-4 lg:text-lg'>
               Alianzas
             </Link>
-            <Link onClick={() => { vibrar();handleMenu(); }} to='/analisis' className='block mt-4 lg:inline-block lg:mt-0 text-white hover:text-black'>
+            <Link onClick={() => { vibrar();handleMenu(); pageActive('Link_4'); }} to='/analisis' className='Link_analisis Link_4 block mt-4 lg:inline-block lg:mt-0 text-white hover:text-pink-500 lg:text-lg'>
               Analisis de Heroes
             </Link>
           </div>

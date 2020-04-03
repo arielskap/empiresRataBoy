@@ -158,12 +158,12 @@ const Analisis = () => {
 
   return (
     <>
-      <div className='pt-2 mx-2 animated fadeIn faster'>
-        <div className='mb-4'>
+      <div className='pt-2 mx-2 animated fadeIn faster lg:grid lg:grid-cols-12 lg:gap-2'>
+        <div className='mb-4 lg:col-span-2'>
           <div className='text-center mb-2'>
             <h1 className='text-xl font-bold'>Analisis de Heroes</h1>
           </div>
-          <div className='sm:grid sm:grid-cols-2 sm:gap-2'>
+          <div className='sm:grid sm:grid-cols-3 sm:gap-2 lg:grid-cols-1'>
             <label htmlFor='search'>
               <h2 className='text-lg font-bold'>Buscador: </h2>
               <input className='bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full max-w-xs py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-purple-500' value={query} onChange={(e) => { setQuery(e.target.value); }} type='text' name='search' id='search' placeholder='Gobbler' tabIndex='0' />
@@ -184,12 +184,12 @@ const Analisis = () => {
                 <FilterButton handleOnClick={handleElement} number={5} img={sagrado} identity='element'>Sagrado</FilterButton>
               </div>
             </div>
-            <div className='text-right'>
+            <div className='text-right sm:flex sm:justify-center sm:items-center'>
               <button className='bg-transparent hover:bg-pink-500 text-pink-700 font-semibold hover:text-white py-1 px-2 border border-pink-500 hover:border-transparent rounded' type='button' onClick={handleClean}>Limpiar</button>
             </div>
           </div>
         </div>
-        <div className='grid grid-cols-3 sm:grid-cols-5 md:grid-cols-8  lg:grid-cols-12 gap-4'>
+        <div className='grid grid-cols-3 sm:grid-cols-5 md:grid-cols-8 lg:col-span-10 lg:mr-12 xl:grid-cols-10 gap-4'>
           {jsonSearch.map((heroe) => {
             const { id, name, power, element, stars, attack, defense, health, manaSpeed, family, event, effect, video, img } = heroe;
             const classHero = heroe.class;
