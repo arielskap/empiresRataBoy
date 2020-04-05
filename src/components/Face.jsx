@@ -1,10 +1,12 @@
 import React, { useState } from 'react';
 import Modal from './Modal';
-import { animateCSS, vibrar } from '../funciones';
+import { animateCSS } from '../funciones';
 import Card from './Card';
+import ButtonModal from './ButtonModal';
 
 const Face = ({ children, img, json }) => {
   const [open, setOpen] = useState(false);
+
   const handleOpenModal = () => {
     if (!document.body.classList.contains('overflow-hidden')) {
       document.body.classList.add('overflow-hidden');
@@ -24,10 +26,10 @@ const Face = ({ children, img, json }) => {
 
   return (
     <>
-      <button type='button' className='w-full relative transform duration-500 hover:scale-110 border-transparent border-2 hover:border-pink-500' onClick={() => { vibrar();handleOpenModal(); }}>
+      <ButtonModal onClick={handleOpenModal}>
         <img className='object-contain w-full' src={img} alt={children} />
         <h3 className='text-center text-lg font-bold absolute bottom-0 text-center w-full bg-black-transparent truncate'>{children}</h3>
-      </button>
+      </ButtonModal>
       <Modal isOpen={open} onClose={handleCloseModal}>
         <Card img={img} json={json} onClose={handleCloseModal} />
       </Modal>

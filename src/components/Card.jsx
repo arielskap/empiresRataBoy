@@ -87,7 +87,7 @@ const Card = ({ img, json, onClose }) => {
         <div className='absolute top-0 flex w-full justify-center'>
           <h2 className='text-center bg-black-transparent px-3 py-1 rounded-b text-lg'>{json.name}</h2>
         </div>
-        <img className='object-contain w-full' src={img} alt='Sunset in the mountains' />
+        <img className='object-contain w-full' src={img} alt={json.name} />
         <div className='absolute bottom-0 w-full grid grid-cols-3 gap-4 py-2 bg-black-transparent'>
           <div className='flex items-center justify-center'>
             <img className='object-contain w-8 h-full' src={srcElement.current} alt={json.element} />

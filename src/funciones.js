@@ -74,3 +74,9 @@ export const animateCSS = (element, animationName, callback) => {
 export const vibrar = () => {
   window.navigator.vibrate(50);
 };
+
+export const changeDevice = () => {
+  const TAM_DESKTOP = 1024;
+  const tamaño = window.innerWidth ;
+  return tamaño < TAM_DESKTOP ? 'mobile' : 'desktop';
+};

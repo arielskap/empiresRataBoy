@@ -1,14 +1,29 @@
-import React from 'react';
+import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
+import { vibrar } from '../funciones';
+import pageActive from '../localFunction';
 import '../assets/styles/footer.css';
 import facebook from '../assets/static/facebook.svg';
 import twitch from '../assets/static/twitch.png';
 import youtube from '../assets/static/youtube.svg';
 import firma from '../assets/static/firma.png';
+import github from '../assets/static/github.svg';
+import instagram from '../assets/static/instagram.svg';
 
 const Footer = () => {
+  const [buttonTranslate, setButtonTranslate] = useState(true);
+  const translatePage = () => {
+    document.querySelector('#google_translate_element').classList.remove('hidden');
+    const googleConst = new google.translate.TranslateElement({ pageLanguage: 'es' }, 'google_translate_element');
+    setButtonTranslate(false);
+    window.scrollTo(0, document.body.scrollHeight);
+    setTimeout(() => {
+      document.body.style.top = 'auto';
+    }, 1500);
+  };
   return (
-    <footer className='p-3 mt-16 lg:grid lg:grid-cols-2 lg:gap-4'>
-      <div>
+    <footer className='p-3 mt-16 lg:grid lg:grid-cols-2'>
+      <div className='lg:border-r lg:border-pink-500'>
         <div className='flex justify-center items-center lg:hidden'>
           <img className='object-contain lg:max-w-lg' src={firma} alt='firma' />
         </div>
@@ -33,29 +48,49 @@ const Footer = () => {
               </div>
             </div>
           </div>
-          <div className='mt-4 lg:mt-0'>
-            <h3 className='text-center font-bold text-lg underline'>Contacto</h3>
-            <form action=''>
-              <label className='mb-4' htmlFor='nombre'>
-                <p className='block uppercase tracking-wide text-xs font-bold mb-2'>Email:</p>
-                <input className='appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white' type='email' name='nombre' id='nombre' placeholder='rataboy@alianza.com' required />
-              </label>
-              <label className='mb-4' htmlFor='texto'>
-                <p className='block uppercase tracking-wide text-xs font-bold mb-2'>Comentario:</p>
-                <textarea className='resize-none appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white' name='texto' id='texto' cols='30' rows='4' placeholder='Hola...' required />
-              </label>
-              <div className='text-right'>
-                <button className='bg-transparent hover:bg-pink-500 text-pink-700 font-semibold hover:text-white py-2 px-4 border border-pink-500 hover:border-transparent rounded' type='submit'>¡Enviar!</button>
-              </div>
-            </form>
+          <div className='mt-4 lg:mt-0 flex justify-center items-center'>
+            <a target='_blank' rel='noopener noreferrer' href='https://forms.gle/qAhte7R124TcLw9X6' className='text-lg font-bold text-blue-600 hover:text-blue-500 underline lg:hover:underline lg:no-underline'>¡Contactame!</a>
+          </div>
+          <div className='flex items-center justify-center mt-4 lg:mt-0 lg:col-span-2'>
+            <Link onClick={() => { vibrar(); pageActive('Link_5'); }} to='/donar' className='Link_donar Link_5 inline-block text-lg px-6 py-2 leading-none border rounded text-white border-white hover:border-gold hover:text-gold'>
+              <span role='img' aria-label='$'>💰</span>
+              {' '}
+              ¡Donar!
+              {' '}
+              <span role='img' aria-label='$'>💰</span>
+            </Link>
           </div>
         </div>
         <div className='flex justify-center items-center'>
           <img className='object-contain lg:max-w-lg' src={firma} alt='firma' />
         </div>
       </div>
-      <div className='my-6'>
+      <div className='my-6 lg:p-2'>
         <p className='text-gray-600 text-xs italic'>Programador: Ariel Santiago Villarreal Gutierrez</p>
+        <a href='mailto:Arielvillagu@hotmail.com' className='text-gray-600 text-xs italic' target='_blank' rel='noopener noreferrer'>Contacto: Arielvillagu@hotmail.com</a>
+        <div className='sm:grid sm:grid-cols-2 sm:gap-4'>
+          <div className='mt-4'>
+            <h3 className='font-bold text-center text-xl'>Redes</h3>
+            <div className='grid grid-cols-2 sm:grid-cols-4 my-4'>
+              <div className='flex justify-center items-center sm:col-start-2'>
+                <a href='https://github.com/arielskap' target='_blank' rel='noopener noreferrer'>
+                  <img className='object-contain w-10 h-full' src={github} alt='Github' />
+                </a>
+              </div>
+              <div className='flex justify-center items-center'>
+                <a href='https://www.instagram.com/ecstasy_ring/' target='_blank' rel='noopener noreferrer'>
+                  <img className='object-contain w-10 h-full' src={instagram} alt='Instagram' />
+                </a>
+              </div>
+            </div>
+          </div>
+          <div className='flex justify-center items-center flex-col mt-2'>
+            {buttonTranslate && (
+              <button type='button' onClick={translatePage} className='button_translate bg-blue-500 hover:bg-blue-400 text-white font-bold py-2 px-4 border-b-4 border-blue-700 hover:border-blue-500 rounded'>Translate Page</button>
+            )}
+            <div id='google_translate_element' className='w-full border border-pink-500 p-2 hidden' />
+          </div>
+        </div>
       </div>
     </footer>
   );

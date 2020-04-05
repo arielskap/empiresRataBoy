@@ -7,17 +7,20 @@ import '../assets/styles/hr.css';
 import redAlianzas from '../assets/static/redAlianzas2.png';
 import redDeAlianzas from '../assets/static/redDeAlianzas.png';
 import '../twitch';
+import json from '../json/home.json';
 
 const Home = () => {
   const [pageLoad, setPageLoad] = useState(true);
   useEffect(() => {
     const twitch = new Twitch.Embed('twitch-embed', {
+      theme: 'dark',
       width: '100%',
       height: 480,
       channel: 'ratabboypda',
-      // only needed if your site is also embedded on embed.example.com and othersite.example.com
-      parent: ['embed.example.com', 'othersite.example.com'],
     });
+    const iframe = document.querySelector('iframe');
+    iframe.setAttribute('allow', 'fullscreen'); // must be 1st
+    iframe.setAttribute('allowFullScreen', '');
     animateCSS('.BlackBackground', 'fadeOut faster', () => {
       setPageLoad(false);
     });
@@ -44,18 +47,15 @@ const Home = () => {
           <div>
             <h2 className='text-center mb-4 text-xl lg:text-2xl font-bold'>¡Listas de Reproducción!</h2>
             <div className='grid grid-cols-1 lg:grid-cols-3 gap-4'>
-              <div>
-                <h3 className='text-center mb-4 text-lg font-bold underline'>Ultimo Video</h3>
-                <iframe className='w-full lg:h-64' title='Presentacion Alianzas' src='https://www.youtube.com/embed/FvTvQCiHbao?controls=0' frameBorder='0' allow='accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture' allowFullScreen />
-              </div>
-              <div>
-                <h3 className='text-center mb-4 text-lg font-bold underline'>Otro Video</h3>
-                <iframe className='w-full lg:h-64' title='Empires y Puzzles Super Guía' src='https://www.youtube.com/embed/videoseries?list=PLAXmR7GJjquU7xdOCIYuLr_wvNN6P0BkD' frameBorder='0' allow='accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture' allowFullScreen />
-              </div>
-              <div>
-                <h3 className='text-center mb-4 text-lg font-bold underline'>Otro Video</h3>
-                <iframe className='w-full lg:h-64' title='Jugando desde 0' src='https://www.youtube.com/embed/videoseries?list=PLAXmR7GJjquUABKJI6q_EL66vsqFO0ToX' frameBorder='0' allow='accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture' allowFullScreen />
-              </div>
+              {json.map((video) => {
+                const { id, name, link } = video;
+                return (
+                  <div className='mt-2 lg:mt-0' key={id}>
+                    <h3 className='text-center mb-2 text-lg font-bold underline'>{name}</h3>
+                    <iframe className='w-full lg:h-64' title={name} src={link} frameBorder='0' allow='accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture' allowFullScreen />
+                  </div>
+                );
+              })}
             </div>
           </div>
         </div>
