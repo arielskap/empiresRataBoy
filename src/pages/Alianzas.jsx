@@ -21,7 +21,7 @@ const Alianzas = () => {
   };
 
   useEffect(() => {
-    fetchJson('alianzas', '5e8b22a10cb49e48ce238215', { setOpen, setErrorResponse, setJson });
+    fetchJson('alianzas', '5e8b28480cb49e48ce238544', { setOpen, setErrorResponse, setJson });
   }, []);
   return (
     <>
