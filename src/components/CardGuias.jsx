@@ -7,6 +7,7 @@ const CardGuias = ({ json }) => {
   const [imgDevice, setImgDevice] = useState('mobile');
 
   const handleOpenModal = () => {
+    console.log(json.mobile);
     const device = changeDevice();
     if (device !== imgDevice) {
       if (device === 'mobile') {

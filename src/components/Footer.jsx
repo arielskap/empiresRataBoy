@@ -22,53 +22,59 @@ const Footer = () => {
     }, 1500);
   };
   return (
-    <footer className='p-3 mt-16 lg:grid lg:grid-cols-2'>
-      <div className='lg:border-r lg:border-pink-500'>
-        <div className='flex justify-center items-center lg:hidden'>
-          <img className='object-contain lg:max-w-lg' src={firma} alt='firma' />
-        </div>
-        <div className='lg:grid lg:grid-cols-2 lg:gap-4'>
-          <div className='lg:flex lg:flex-col lg:items-center lg:justify-center'>
-            <h3 className='text-center font-bold text-xl mb-4'>¡Seguime en mis redes!</h3>
-            <div className='grid grid-cols-3 gap-4 lg:grid-cols-7'>
-              <div className='flex justify-center lg:col-start-3'>
-                <a href='https://www.facebook.com/groups/alianzaratabboy' target='_blank' rel='noopener noreferrer'>
-                  <img className='object-contain w-10 h-full' src={facebook} alt='' />
-                </a>
-              </div>
-              <div className='flex justify-center'>
-                <a href='https://www.twitch.tv/ratabboypda' target='_blank' rel='noopener noreferrer'>
-                  <img className='object-contain w-10 h-full' src={twitch} alt='twitch' />
-                </a>
-              </div>
-              <div className='flex justify-center'>
-                <a href='https://www.youtube.com/user/ratabboy' target='_blank' rel='noopener noreferrer'>
-                  <img className='object-contain w-10 h-full' src={youtube} alt='' />
-                </a>
+    <footer className='p-3 mt-16'>
+      <div className='flex justify-center items-center flex-col mt-2 mb-4'>
+        {buttonTranslate && (
+          <button type='button' onClick={translatePage} className='button_translate bg-indigo-500 hover:bg-indigo-400 text-white font-bold py-2 px-4 border-b-4 border-indigo-700 hover:border-indigo-500 rounded'>Translate Page</button>
+        )}
+        <div id='google_translate_element' className='w-full border rounded border-pink-500 p-2 hidden' />
+      </div>
+      <div className='lg:grid lg:grid-cols-2'>
+        <div className='lg:border-r lg:border-pink-500'>
+          <div className='flex justify-center items-center lg:hidden'>
+            <img className='object-contain lg:max-w-lg' src={firma} alt='firma' />
+          </div>
+          <div className='lg:grid lg:grid-cols-2 lg:gap-4'>
+            <div className='lg:flex lg:flex-col lg:items-center lg:justify-center'>
+              <h3 className='text-center font-bold text-xl mb-4'>¡Seguime en mis redes!</h3>
+              <div className='grid grid-cols-3 gap-4 lg:grid-cols-7'>
+                <div className='flex justify-center lg:col-start-3'>
+                  <a href='https://www.facebook.com/groups/alianzaratabboy' target='_blank' rel='noopener noreferrer'>
+                    <img className='object-contain w-10 h-full' src={facebook} alt='' />
+                  </a>
+                </div>
+                <div className='flex justify-center'>
+                  <a href='https://www.twitch.tv/ratabboypda' target='_blank' rel='noopener noreferrer'>
+                    <img className='object-contain w-10 h-full' src={twitch} alt='twitch' />
+                  </a>
+                </div>
+                <div className='flex justify-center'>
+                  <a href='https://www.youtube.com/user/ratabboy' target='_blank' rel='noopener noreferrer'>
+                    <img className='object-contain w-10 h-full' src={youtube} alt='' />
+                  </a>
+                </div>
               </div>
             </div>
+            <div className='mt-4 lg:mt-0 flex justify-center items-center'>
+              <a target='_blank' rel='noopener noreferrer' href='https://forms.gle/qAhte7R124TcLw9X6' className='text-lg font-bold text-blue-600 hover:text-blue-500 underline lg:hover:underline lg:no-underline'>¡Contactame!</a>
+            </div>
+            <div className='flex items-center justify-center mt-4 lg:mt-0 lg:col-span-2'>
+              <Link onClick={() => { vibrar(); pageActive('Link_5'); }} to='/donar' className='Link_donar Link_5 inline-block text-lg px-6 py-2 leading-none border rounded text-white border-white hover:border-gold hover:text-gold'>
+                <span role='img' aria-label='$'>💰</span>
+                {' '}
+                ¡Donar!
+                {' '}
+                <span role='img' aria-label='$'>💰</span>
+              </Link>
+            </div>
           </div>
-          <div className='mt-4 lg:mt-0 flex justify-center items-center'>
-            <a target='_blank' rel='noopener noreferrer' href='https://forms.gle/qAhte7R124TcLw9X6' className='text-lg font-bold text-blue-600 hover:text-blue-500 underline lg:hover:underline lg:no-underline'>¡Contactame!</a>
-          </div>
-          <div className='flex items-center justify-center mt-4 lg:mt-0 lg:col-span-2'>
-            <Link onClick={() => { vibrar(); pageActive('Link_5'); }} to='/donar' className='Link_donar Link_5 inline-block text-lg px-6 py-2 leading-none border rounded text-white border-white hover:border-gold hover:text-gold'>
-              <span role='img' aria-label='$'>💰</span>
-              {' '}
-              ¡Donar!
-              {' '}
-              <span role='img' aria-label='$'>💰</span>
-            </Link>
+          <div className='flex justify-center items-center'>
+            <img className='object-contain lg:max-w-lg' src={firma} alt='firma' />
           </div>
         </div>
-        <div className='flex justify-center items-center'>
-          <img className='object-contain lg:max-w-lg' src={firma} alt='firma' />
-        </div>
-      </div>
-      <div className='my-6 lg:p-2'>
-        <p className='text-gray-600 text-xs italic'>Programador: Ariel Santiago Villarreal Gutierrez</p>
-        <a href='mailto:Arielvillagu@hotmail.com' className='text-gray-600 text-xs italic' target='_blank' rel='noopener noreferrer'>Contacto: Arielvillagu@hotmail.com</a>
-        <div className='sm:grid sm:grid-cols-2 sm:gap-4'>
+        <div className='my-6 border rounded border-pink-500 p-4 lg:p-2 lg:ml-3 lg:border-2'>
+          <h3 className='text-center text-lg'>Pagina hecha por:</h3>
+          <p className='text-center font-bold'>Ariel Santiago Villarreal Gutierrez</p>
           <div className='mt-4'>
             <h3 className='font-bold text-center text-xl'>Redes</h3>
             <div className='grid grid-cols-2 sm:grid-cols-4 my-4'>
@@ -84,11 +90,9 @@ const Footer = () => {
               </div>
             </div>
           </div>
-          <div className='flex justify-center items-center flex-col mt-2'>
-            {buttonTranslate && (
-              <button type='button' onClick={translatePage} className='button_translate bg-blue-500 hover:bg-blue-400 text-white font-bold py-2 px-4 border-b-4 border-blue-700 hover:border-blue-500 rounded'>Translate Page</button>
-            )}
-            <div id='google_translate_element' className='w-full border rounded border-pink-500 p-2 hidden' />
+
+          <div className='text-right'>
+            <a href='mailto:Arielvillagu@hotmail.com' className='text-gray-600 text-xs italic' target='_blank' rel='noopener noreferrer'>Contacto: Arielvillagu@hotmail.com</a>
           </div>
         </div>
       </div>

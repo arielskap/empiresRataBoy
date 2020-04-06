@@ -54,7 +54,7 @@ const CardAlianza = ({ json }) => {
             </div>
             <div className='mt-2'>
               <p>
-                <span className='font-bold'>Review:</span>
+                <span className='font-bold'>Reseña:</span>
                 {` ${json.review}`}
               </p>
             </div>

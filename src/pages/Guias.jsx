@@ -21,7 +21,7 @@ const Guias = () => {
   };
 
   useEffect(() => {
-    fetchJson('guias', '5e8b22bf0ac8b85189960a03', { setOpen, setErrorResponse, setJson });
+    fetchJson('guias', '5e8ba4cfff9c906bdf1d1275', { setOpen, setErrorResponse, setJson });
   }, []);
   return (
     <>
@@ -31,7 +31,7 @@ const Guias = () => {
             <h1 className='text-xl font-bold text-center'>¡Todas mis Guías!</h1>
           </div>
           <div className='w-full flex items-center justify-center'>
-            <a target='_blank' rel='noopener noreferrer' href='https://drive.google.com/drive/folders/1DqpgV7wugGVlbo5TvehZ7YrBG5NpMPEA' className='bg-blue-500 hover:bg-blue-400 text-white font-bold py-2 px-4 border-b-4 border-blue-700 hover:border-blue-500 rounded'>Guías Drive</a>
+            <a target='_blank' rel='noopener noreferrer' href='https://drive.google.com/drive/folders/1DqpgV7wugGVlbo5TvehZ7YrBG5NpMPEA' className='bg-pink-500 hover:bg-pink-400 text-white font-bold py-2 px-4 border-b-4 border-pink-700 hover:border-pink-500 rounded'>Ir al Drive</a>
           </div>
         </div>
         <div className='mt-4'>
