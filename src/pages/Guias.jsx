@@ -3,6 +3,7 @@ import CardGuias from '../components/CardGuias';
 import Modal from '../components/Modal';
 import MessageErrorFetch from '../components/MessageErrorFetch';
 import { fetchJson } from '../localFunction';
+import { animateCSS } from '../funciones';
 
 const Guias = () => {
   const [json, setJson] = useState(false);
@@ -20,7 +21,7 @@ const Guias = () => {
   };
 
   useEffect(() => {
-    fetchJson('guias', '5e8a7f600ac8b8518995c520', { setOpen, setErrorResponse, setJson });
+    fetchJson('guias', '5e8b22bf0ac8b85189960a03', { setOpen, setErrorResponse, setJson });
   }, []);
   return (
     <>

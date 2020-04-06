@@ -3,6 +3,7 @@ import CardAlianza from '../components/CardAlianza';
 import Modal from '../components/Modal';
 import MessageErrorFetch from '../components/MessageErrorFetch';
 import { fetchJson } from '../localFunction';
+import { animateCSS } from '../funciones';
 
 const Alianzas = () => {
   const [json, setJson] = useState(false);
@@ -20,7 +21,7 @@ const Alianzas = () => {
   };
 
   useEffect(() => {
-    fetchJson('alianzas', '5e8a486d542ba448ee0ecbd2', { setOpen, setErrorResponse, setJson });
+    fetchJson('alianzas', '5e8b22a10cb49e48ce238215', { setOpen, setErrorResponse, setJson });
   }, []);
   return (
     <>

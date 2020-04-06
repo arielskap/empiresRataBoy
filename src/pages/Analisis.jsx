@@ -12,6 +12,7 @@ import oscuro from '../assets/static/oscuro.png';
 import sagrado from '../assets/static/sagrado.png';
 import hielo from '../assets/static/hielo.png';
 import FilterButton from '../components/FilterButton';
+import { animateCSS } from '../funciones';
 
 const useSearchHeroes = (json, options) => {
   const [query, setQuery] = useState('');
@@ -164,7 +165,7 @@ const Analisis = () => {
   };
 
   useEffect(() => {
-    fetchJson('analisis', '5e8a82310ac8b8518995c672', { setOpen, setErrorResponse, setJson });
+    fetchJson('analisis', '5e8b22d10cb49e48ce238226', { setOpen, setErrorResponse, setJson });
   }, []);
 
   return (

@@ -44,7 +44,7 @@ export const fetchJson = (name, link, setFunctions) => {
         return response.json();
       })
       .then((myJson) => {
-        if (!myJson.success && myJson.lenght <= 0) {
+        if ((!myJson.success && myJson.success !== undefined) || myJson.lenght <= 0) {
           if (!document.body.classList.contains('overflow-hidden')) {
             document.body.classList.add('overflow-hidden');
           }

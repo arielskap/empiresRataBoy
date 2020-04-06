@@ -34,7 +34,7 @@ const Home = () => {
     const iframe = document.querySelector('iframe');
     iframe.setAttribute('allow', 'fullscreen'); // must be 1st
     iframe.setAttribute('allowFullScreen', '');
-    fetchJson('home', '5e8a81095eb7f3517e298a18', { setOpen, setErrorResponse, setJson });
+    fetchJson('home', '5e8b22e55eb7f3517e29cd78', { setOpen, setErrorResponse, setJson });
   }, []);
   return (
     <>
