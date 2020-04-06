@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { vibrar } from '../funciones';
-import pageActive from '../localFunction';
+import { pageActive } from '../localFunction';
 import '../assets/styles/footer.css';
 import facebook from '../assets/static/facebook.svg';
 import twitch from '../assets/static/twitch.png';
@@ -88,7 +88,7 @@ const Footer = () => {
             {buttonTranslate && (
               <button type='button' onClick={translatePage} className='button_translate bg-blue-500 hover:bg-blue-400 text-white font-bold py-2 px-4 border-b-4 border-blue-700 hover:border-blue-500 rounded'>Translate Page</button>
             )}
-            <div id='google_translate_element' className='w-full border border-pink-500 p-2 hidden' />
+            <div id='google_translate_element' className='w-full border rounded border-pink-500 p-2 hidden' />
           </div>
         </div>
       </div>

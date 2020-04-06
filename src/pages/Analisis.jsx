@@ -1,10 +1,9 @@
-import React, { useState, useEffect, useMemo, useRef } from 'react';
+import React, { useState, useMemo, useRef, useEffect } from 'react';
 import Fuse from 'fuse.js';
-import json from '../json/data.json';
 import Face from '../components/Face';
-import BlackBackground from '../components/BlackBackground';
-import LoaderColors from '../components/LoaderColors';
-import { animateCSS } from '../funciones';
+import Modal from '../components/Modal';
+import MessageErrorFetch from '../components/MessageErrorFetch';
+import { fetchJson } from '../localFunction';
 import '../assets/styles/analisis.css';
 import star from '../assets/static/star.png';
 import fuego from '../assets/static/fuego.png';
@@ -19,7 +18,7 @@ const useSearchHeroes = (json, options) => {
   const [stars, setStars] = useState('0');
   const [element, setElement] = useState('');
   const [clean, setClean] = useState(false);
-  const [jsonSearch, setJsonSearch] = useState(json);
+  const [jsonSearch, setJsonSearch] = useState(false);
 
   const searching = (json, options, key) => {
     const newJson = [];
@@ -75,7 +74,10 @@ const useSearchHeroes = (json, options) => {
 };
 
 const Analisis = () => {
-  const [pageLoad, setPageLoad] = useState(true);
+  const [json, setJson] = useState(false);
+  const [open, setOpen] = useState(false);
+  const [errorResponse, setErrorResponse] = useState(false);
+
   const options = useRef({
     query: {
       threshold: 0.3,
@@ -110,6 +112,16 @@ const Analisis = () => {
       }
     }
     setStars(`${cantStars}`);
+  };
+
+  const handleCloseModal = () => {
+    animateCSS('.Modal', 'fadeOut faster');
+    animateCSS('.Modal__container', 'slideOutUp faster', () => {
+      if (document.body.classList.contains('overflow-hidden')) {
+        document.body.classList.remove('overflow-hidden');
+      }
+      setOpen(false);
+    });
   };
 
   const handleElement = (element) => {
@@ -152,10 +164,7 @@ const Analisis = () => {
   };
 
   useEffect(() => {
-    animateCSS('.BlackBackground', 'fadeOut faster', () => {
-      setPageLoad(false);
-    });
-    animateCSS('.LoaderColors', 'fadeOut faster');
+    fetchJson('analisis', '5e8a82310ac8b8518995c672', { setOpen, setErrorResponse, setJson });
   }, []);
 
   return (
@@ -194,7 +203,7 @@ const Analisis = () => {
           </div>
         </div>
         <div className='grid grid-cols-3 sm:grid-cols-5 md:grid-cols-8 lg:col-span-10 lg:mr-12 xl:grid-cols-10 gap-4'>
-          {jsonSearch.map((heroe) => {
+          {jsonSearch && jsonSearch.map((heroe) => {
             const { id, name, power, element, stars, attack, defense, health, manaSpeed, family, event, effect, video, img } = heroe;
             const classHero = heroe.class;
             const newJson = {
@@ -220,11 +229,9 @@ const Analisis = () => {
           })}
         </div>
       </div>
-      {pageLoad && (
-        <BlackBackground>
-          <LoaderColors />
-        </BlackBackground>
-      )}
+      <Modal isOpen={open} onClose={handleCloseModal}>
+        <MessageErrorFetch errorResponse={errorResponse} handleCloseModal={handleCloseModal}>Traer la Lista de Heroes</MessageErrorFetch>
+      </Modal>
     </>
   );
 };

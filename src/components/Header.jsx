@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { vibrar } from '../funciones';
-import pageActive from '../localFunction';
+import { pageActive } from '../localFunction';
 import logo from '../assets/static/logo.png';
 import '../assets/styles/header.css';
 

@@ -1,16 +1,29 @@
 import React, { useEffect, useState } from 'react';
-import BlackBackground from '../components/BlackBackground';
-import LoaderColors from '../components/LoaderColors';
-import { animateCSS } from '../funciones';
 import '../assets/styles/home.css';
 import '../assets/styles/hr.css';
 import redAlianzas from '../assets/static/redAlianzas2.png';
 import redDeAlianzas from '../assets/static/redDeAlianzas.png';
+import Modal from '../components/Modal';
 import '../twitch';
-import json from '../json/home.json';
+import MessageErrorFetch from '../components/MessageErrorFetch';
+import { animateCSS } from '../funciones';
+import { fetchJson } from '../localFunction';
 
 const Home = () => {
-  const [pageLoad, setPageLoad] = useState(true);
+  const [json, setJson] = useState(false);
+  const [open, setOpen] = useState(false);
+  const [errorResponse, setErrorResponse] = useState(false);
+
+  const handleCloseModal = () => {
+    animateCSS('.Modal', 'fadeOut faster');
+    animateCSS('.Modal__container', 'slideOutUp faster', () => {
+      if (document.body.classList.contains('overflow-hidden')) {
+        document.body.classList.remove('overflow-hidden');
+      }
+      setOpen(false);
+    });
+  };
+
   useEffect(() => {
     const twitch = new Twitch.Embed('twitch-embed', {
       theme: 'dark',
@@ -21,10 +34,7 @@ const Home = () => {
     const iframe = document.querySelector('iframe');
     iframe.setAttribute('allow', 'fullscreen'); // must be 1st
     iframe.setAttribute('allowFullScreen', '');
-    animateCSS('.BlackBackground', 'fadeOut faster', () => {
-      setPageLoad(false);
-    });
-    animateCSS('.LoaderColors', 'fadeOut faster');
+    fetchJson('home', '5e8a81095eb7f3517e298a18', { setOpen, setErrorResponse, setJson });
   }, []);
   return (
     <>
@@ -47,7 +57,7 @@ const Home = () => {
           <div>
             <h2 className='text-center mb-4 text-xl lg:text-2xl font-bold'>¡Listas de Reproducción!</h2>
             <div className='grid grid-cols-1 lg:grid-cols-3 gap-4'>
-              {json.map((video) => {
+              {json && json.map((video) => {
                 const { id, name, link } = video;
                 return (
                   <div className='mt-2 lg:mt-0' key={id}>
@@ -60,11 +70,9 @@ const Home = () => {
           </div>
         </div>
       </div>
-      {pageLoad && (
-        <BlackBackground>
-          <LoaderColors />
-        </BlackBackground>
-      )}
+      <Modal isOpen={open} onClose={handleCloseModal}>
+        <MessageErrorFetch errorResponse={errorResponse} handleCloseModal={handleCloseModal}>Traer la Lista de Reproducción</MessageErrorFetch>
+      </Modal>
     </>
   );
 };
