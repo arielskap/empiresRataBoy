@@ -26,7 +26,7 @@ const Face = ({ children, img, json }) => {
 
   return (
     <>
-      <ButtonModal onClick={handleOpenModal}>
+      <ButtonModal onClick={handleOpenModal} onTouchEnd={handleOpenModal}>
         <img className='object-contain w-full rounded' src={img} alt={children} />
         <h3 className='text-center text-lg font-bold absolute bottom-0 text-center w-full bg-black-transparent truncate'>{children}</h3>
       </ButtonModal>

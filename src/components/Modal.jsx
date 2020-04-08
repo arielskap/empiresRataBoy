@@ -8,11 +8,18 @@ const Modal = ({ children, isOpen, onClose }) => {
   if (!isOpen) {
     return null;
   }
+  const closeModal = (e) => {
+    if (e.target === document.querySelector('.Modal')) {
+      onClose();
+    }
+  };
+
   useEffect(() => {
     document.querySelector('.Modal').addEventListener('click', (e) => {
-      if (e.target === document.querySelector('.Modal')) {
-        onClose();
-      }
+      closeModal(e);
+    });
+    document.querySelector('.Modal').addEventListener('touchend', (e) => {
+      closeModal(e);
     });
   }, []);
   return ReactDOM.createPortal(

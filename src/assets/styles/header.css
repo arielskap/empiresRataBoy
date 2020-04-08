@@ -1,17 +1,17 @@
-header{
+header {
     background-color: rgba(1, 31, 105, 0.99);
 }
 
-@media screen and (max-width: 1024px){
+@media screen and (max-width: 1024px) {
     .header_content {
         max-height: 0;
         transition: max-height 0.4s ease-out;
         overflow: hidden;
     }
-    
-    .menuOpen{
+
+    .menuOpen {
         max-height: 500px;
         transition: max-height 0.4s ease-in;
     }
-    
+
 }

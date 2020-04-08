@@ -39,6 +39,11 @@ export const fetchJson = (name, link, setFunctions) => {
     })
       .catch((error) => {
         console.log(`Hubo un problema con la petición Fetch:${error.message}`);
+        if (!document.body.classList.contains('overflow-hidden')) {
+          document.body.classList.add('overflow-hidden');
+        }
+        setOpen(true);
+        setErrorResponse(error.message);
       })
       .then((response) => {
         return response.json();

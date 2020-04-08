@@ -63,7 +63,7 @@ const Header = () => {
           <span role='img' aria-label='$'>💰</span>
         </Link>
         <div className='block lg:hidden'>
-          <button type='button' className='button_header flex items-center px-3 py-2 border rounded text-pink-200 border-pink-400 hover:text-white hover:border-white' onClick={() => { vibrar();handleMenu(); }}>
+          <button type='button' className='button_header flex items-center px-3 py-2 border rounded text-pink-200 border-pink-400 hover:text-white hover:border-white' onClick={() => { vibrar();handleMenu(); }} onTouchEnd={() => { vibrar();handleMenu(); }}>
             <svg className='fill-current h-3 w-3' viewBox='0 0 20 20' xmlns='http://www.w3.org/2000/svg'>
               <title>Menu</title>
               <path d='M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z' />
