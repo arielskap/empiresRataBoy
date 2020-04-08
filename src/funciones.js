@@ -72,7 +72,8 @@ export const animateCSS = (element, animationName, callback) => {
 };
 
 export const vibrar = () => {
-  window.navigator.vibrate(50);
+  /*No funciona en iphone*/
+  //window.navigator.vibrate(50);
 };
 
 export const changeDevice = () => {
