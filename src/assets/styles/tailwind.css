@@ -3,14 +3,17 @@
 @tailwind components;
 
 @tailwind utilities;
+
 :root {
-    --color-gold: #FFD700;
+  --color-gold: #FFD700;
 }
+
 @variants hover {
-    .border-gold {
-      border-color: var(--color-gold);
-    }
-    .text-gold{
-        color: var(--color-gold);
-    }
+  .border-gold {
+    border-color: var(--color-gold);
   }
+
+  .text-gold {
+    color: var(--color-gold);
+  }
+}

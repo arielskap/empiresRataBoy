@@ -34,8 +34,8 @@ const CardGuias = ({ json }) => {
   };
   return (
     <>
-      <button type='button' className='relative transform duration-500 hover:scale-110 border-transparent border-2 hover:border-pink-500 px-2' onClick={() => { vibrar();handleOpenModal(); }}>
-        {json.name}
+      <button type='button' className='relative transform duration-500 hover:scale-105 border-transparent border-2 hover:border-pink-500 px-2 rounded' onClick={() => { vibrar();handleOpenModal(); }}>
+        {`${json.id}. ${json.name}`}
       </button>
       <Modal isOpen={open} onClose={handleCloseModal}>
         <img className='object-contain w-full h-full' src={imgDevice === 'mobile' ? json.mobile : json.pc} alt={json.name} />

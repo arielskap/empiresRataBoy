@@ -36,11 +36,11 @@ const Guias = () => {
         </div>
         <div className='mt-4'>
           <h2 className='text-lg font-bold'>Listado de Guías</h2>
-          <ul className='rounded border-2 border-pink-500 flex flex-col items-center mt-2 list-decimal sm:grid sm:grid-cols-2 list-inside p-2'>
+          <ul className='rounded border-2 border-pink-500 flex flex-col items-center mt-2 sm:grid sm:grid-cols-2 p-2'>
             {json && json.map((guia) => {
               const { id } = guia;
               return (
-                <li className='text-center' key={id}>
+                <li className='text-center mb-1' key={id}>
                   <CardGuias json={guia} />
                 </li>
               );
