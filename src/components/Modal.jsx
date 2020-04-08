@@ -18,9 +18,6 @@ const Modal = ({ children, isOpen, onClose }) => {
     document.querySelector('.Modal').addEventListener('click', (e) => {
       closeModal(e);
     });
-    document.querySelector('.Modal').addEventListener('touchend', (e) => {
-      closeModal(e);
-    });
   }, []);
   return ReactDOM.createPortal(
     <div className='Modal animated fadeIn faster z-30'>
