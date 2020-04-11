@@ -1,8 +1,27 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import mercadoPago from '../assets/static/mercadoPago.png';
 import payPal from '../assets/static/payPal.png';
+import qr from '../assets/static/qr.jpg';
+import { fetchJson } from '../localFunction';
+import Modal from '../components/Modal';
+import MessageErrorFetch from '../components/MessageErrorFetch';
+import { animateCSS } from '../funciones';
 
 const Donar = () => {
+  const [json, setJson] = useState(false);
+  const [open, setOpen] = useState(false);
+  const [errorResponse, setErrorResponse] = useState(false);
+
+  const handleCloseModal = () => {
+    animateCSS('.Modal', 'fadeOut faster');
+    animateCSS('.Modal__container', 'slideOutUp faster', () => {
+      if (document.body.classList.contains('overflow-hidden')) {
+        document.body.classList.remove('overflow-hidden');
+      }
+      setOpen(false);
+    });
+  };
+
   useEffect(() => {
     function $MPC_load() {
       window.$MPC_loaded !== true && (
@@ -20,29 +39,49 @@ const Donar = () => {
         window.attachEvent('onload', $MPC_load) :
         window.addEventListener('load', $MPC_load, false)
     ) : null;
+    fetchJson('donacion', '5e8f46738e85c84370133500', { setOpen, setErrorResponse, setJson });
   }, []);
 
   return (
-    <div className='animated fadeIn faster'>
-      <div className='flex flex-col w-full justify-around items-center mt-5 lg:flex-row lg:px-48'>
-        <div className='flex items-center justify-center flex-col lg:border-2 lg:border-blue-500 lg:rounded lg:p-4'>
-          <img className='object-contain mb-5' src={mercadoPago} alt='Mercado Pago' />
-          <a target='_blank' rel='noopener noreferrer' className='bg-transparent hover:bg-gold text-gold font-semibold hover:bg-yellow-500 hover:text-white py-2 px-4 border border-gold hover:border-transparent rounded' mp-mode='dftl' href='https://www.mercadopago.com.ar/checkout/v1/redirect?pref_id=68436190-f2ac5faa-f172-4d5e-8261-5b729a2dcd71' name='MP-payButton'>
-            Donar 100 pesos ARS
-          </a>
-        </div>
-        <div className='flex items-center justify-center flex-col mt-12 lg:mt-0 lg:border-2 lg:border-blue-500 lg:rounded lg:p-4'>
-          <img className='object-contain mb-5' src={payPal} alt='Pay Pal' />
-          <form action='https://www.paypal.com/cgi-bin/webscr' method='post' target='_blank'>
-            <input type='hidden' name='cmd' value='_s-xclick' />
-            <input type='hidden' name='hosted_button_id' value='JDSLK287NKDRQ' />
-            <button className='bg-transparent hover:bg-gold text-gold font-semibold hover:bg-yellow-500 hover:text-white py-2 px-4 border border-gold hover:border-transparent rounded' type='submit'>
-              Donación Libre USD
-            </button>
-          </form>
+    <>
+      <div className='animated fadeIn faster'>
+        <h1 className='text-center my-4 text-2xl font-bold'>
+          <span role='img' aria-label='$'>💸</span>
+          Donaciones
+          <span role='img' aria-label='$'>💸</span>
+        </h1>
+        <div className='flex flex-col w-full justify-around items-center mt-5 lg:grid lg:grid-cols-2 lg:gap-4 lg:px-40'>
+          <div className='flex items-center justify-center flex-col lg:border-2 lg:border-blue-500 lg:rounded lg:p-4'>
+            <a className='border-2 border-gold py-2 px-4 rounded hover:border-transparent hover:bg-yellow-500' href='https://www.paypal.me/ratabboy' target='__blank'>
+              <img className='object-contain bg-white p-2 rounded' src={payPal} alt='Pay Pal' />
+            </a>
+          </div>
+          <div className='flex items-center justify-center flex-col lg:border-2 lg:border-blue-500 lg:rounded lg:p-4 mt-12 lg:mt-0 lg:row-span-2'>
+            <img className='object-contain bg-white p-2 rounded mb-5' src={mercadoPago} alt='Mercado Pago' />
+            <div className='grid grid-cols-1 gap-4 mx-4'>
+              {json && json.map((donativo) => {
+                const { id, name, cost, link } = donativo;
+                return (
+                  <a target='_blank' rel='noopener noreferrer' className='bg-transparent text-gold font-semibold hover:bg-yellow-500 hover:text-white py-2 px-4 border border-gold hover:border-transparent rounded text-center' mp-mode='dftl' href={link} name='MP-payButton' key={id}>
+                    {`${name} $${cost}`}
+                  </a>
+                );
+              })}
+            </div>
+          </div>
+          <div className='hidden lg:block lg:flex lg:flex-col lg:justify-start lg:h-full'>
+            <h2 className='text-center text-xl font-bold'>Pagar con Qr</h2>
+            <h3 className='text-center mb-4 text-lg font-bold'>Mercado Pago</h3>
+            <div className='flex items-center justify-center'>
+              <img className='object-contain rounded' src={qr} alt={qr} />
+            </div>
+          </div>
         </div>
       </div>
-    </div>
+      <Modal isOpen={open} onClose={handleCloseModal}>
+        <MessageErrorFetch errorResponse={errorResponse} handleCloseModal={handleCloseModal}>Traer la de Alianzas</MessageErrorFetch>
+      </Modal>
+    </>
   );
 };
 

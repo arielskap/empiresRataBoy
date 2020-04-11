@@ -29,6 +29,7 @@ export const pageActive = (className) => {
 export const fetchJson = (name, link, setFunctions) => {
   const { setOpen, setErrorResponse, setJson } = setFunctions;
   const storage = sessionStorage.getItem(name);
+  console.log(JSON.parse(sessionStorage.getItem(name)));
   if (storage) {
     setJson(JSON.parse(sessionStorage.getItem(name)));
   } else {

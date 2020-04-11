@@ -17,3 +17,9 @@
     color: var(--color-gold);
   }
 }
+
+@responsive {
+  .h-100 {
+    height: 32rem;
+}
+}

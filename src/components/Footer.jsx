@@ -9,6 +9,7 @@ import youtube from '../assets/static/youtube.svg';
 import firma from '../assets/static/firma.png';
 import github from '../assets/static/github.svg';
 import instagram from '../assets/static/instagram.svg';
+import logoDeveloper from '../assets/static/logoDeveloper.png';
 
 const Footer = () => {
   const [buttonTranslate, setButtonTranslate] = useState(true);
@@ -75,6 +76,10 @@ const Footer = () => {
         <div className='my-6 border rounded border-pink-500 p-4 lg:p-2 lg:ml-3 lg:border-2'>
           <h3 className='text-center text-lg'>Pagina hecha por:</h3>
           <p className='text-center font-bold'>Ariel Santiago Villarreal Gutierrez</p>
+          <div className='flex items-center justify-center'>
+            <p className='text-center text-sm mr-4 font-bold'>Marte</p>
+            <img className='object-contain w-6 h-6' src={logoDeveloper} alt='Marte Industria' />
+          </div>
           <div className='mt-4'>
             <h3 className='font-bold text-center text-xl'>Redes</h3>
             <div className='grid grid-cols-2 sm:grid-cols-4 my-4'>
@@ -90,7 +95,6 @@ const Footer = () => {
               </div>
             </div>
           </div>
-
           <div className='text-right'>
             <a href='mailto:Arielvillagu@hotmail.com' className='text-gray-600 text-xs italic' target='_blank' rel='noopener noreferrer'>Contacto: Arielvillagu@hotmail.com</a>
           </div>
