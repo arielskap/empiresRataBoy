@@ -92,6 +92,7 @@ module.exports = {
     new PurgecssPlugin({
       paths: glob.sync(`${PATHS.src}/**/*`, { nodir: true }),
       defaultExtractor: (content) => content.match(/[\w-/:]+(?<!:)/g) || [],
+      keyframes: true,
     }),
     new webpack.DllReferencePlugin({
       manifest: require('./modules-manifest.json'),

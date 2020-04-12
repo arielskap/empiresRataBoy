@@ -76,9 +76,11 @@ const Footer = () => {
         <div className='my-6 border rounded border-pink-500 p-4 lg:p-2 lg:ml-3 lg:border-2'>
           <h3 className='text-center text-lg'>Pagina hecha por:</h3>
           <p className='text-center font-bold'>Ariel Santiago Villarreal Gutierrez</p>
-          <div className='flex items-center justify-center'>
-            <p className='text-center text-sm mr-4 font-bold'>Marte</p>
-            <img className='object-contain w-6 h-6' src={logoDeveloper} alt='Marte Industria' />
+          <div className='flex justify-center items-center'>
+            <a className='flex' href='https://play.google.com/store/apps/developer?id=Marte&hl=es_419' target='_blank' rel='noopener noreferrer'>
+              <p className='text-center text-sm mr-4 font-bold'>Marte</p>
+              <img className='object-contain w-6 h-6' src={logoDeveloper} alt='Marte Industria' />
+            </a>
           </div>
           <div className='mt-4'>
             <h3 className='font-bold text-center text-xl'>Redes</h3>
