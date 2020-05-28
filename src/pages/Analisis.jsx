@@ -179,7 +179,7 @@ const Analisis = () => {
             <div className='sm:grid sm:grid-cols-3 sm:gap-2 lg:grid-cols-1'>
               <label htmlFor='search'>
                 <h2 className='text-lg font-bold'>Buscador: </h2>
-                <input className='bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full max-w-xs py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-purple-500' value={query} onChange={(e) => { setQuery(e.target.value); }} type='text' name='search' id='search' placeholder='Gobbler' tabIndex='0' />
+                <input className='bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full max-w-xs py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-purple-500' value={query} onChange={(e) => { setQuery(e.target.value); }} type='text' name='search' id='search' placeholder='Ameonna' tabIndex='0' />
               </label>
               <div className='mt-1 w-full'>
                 <div className='my-2 grid grid-cols-5 gap-1'>
