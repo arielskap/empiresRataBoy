@@ -1,7 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import CardGuias from '../components/CardGuias';
-import Modal from '../components/Modal';
-import MessageErrorFetch from '../components/MessageErrorFetch';
+import { Modal, CardGuias, MessageErrorFetch } from '../components';
 import { fetchJson } from '../localFunction';
 import { animateCSS } from '../funciones';
 

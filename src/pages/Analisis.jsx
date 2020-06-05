@@ -1,8 +1,6 @@
 import React, { useState, useMemo, useRef, useEffect } from 'react';
 import Fuse from 'fuse.js';
-import Face from '../components/Face';
-import Modal from '../components/Modal';
-import MessageErrorFetch from '../components/MessageErrorFetch';
+import { Face, Modal, MessageErrorFetch } from '../components';
 import { fetchJson } from '../localFunction';
 import '../assets/styles/analisis.css';
 import star from '../assets/static/star.png';

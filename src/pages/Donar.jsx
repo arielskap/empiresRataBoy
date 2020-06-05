@@ -1,11 +1,10 @@
 import React, { useEffect, useState } from 'react';
+import { MessageErrorFetch, Modal } from '../components';
+import { fetchJson } from '../localFunction';
+import { animateCSS } from '../funciones';
 import mercadoPago from '../assets/static/mercadoPago.png';
 import payPal from '../assets/static/payPal.png';
 import qr from '../assets/static/qr.jpg';
-import { fetchJson } from '../localFunction';
-import Modal from '../components/Modal';
-import MessageErrorFetch from '../components/MessageErrorFetch';
-import { animateCSS } from '../funciones';
 
 const Donar = () => {
   const [json, setJson] = useState(false);
@@ -23,6 +22,7 @@ const Donar = () => {
   };
 
   useEffect(() => {
+    const isBrowser = typeof window !== 'undefined';
     function $MPC_load() {
       window.$MPC_loaded !== true && (
         function () {
@@ -34,11 +34,13 @@ const Donar = () => {
           x.parentNode.insertBefore(s, x);window.$MPC_loaded = true;
         })();
     }
-    window.$MPC_loaded !== true ? (
-      window.attachEvent ?
-        window.attachEvent('onload', $MPC_load) :
-        window.addEventListener('load', $MPC_load, false)
-    ) : null;
+    if (isBrowser) {
+      window.$MPC_loaded !== true ? (
+        window.attachEvent ?
+          window.attachEvent('onload', $MPC_load) :
+          window.addEventListener('load', $MPC_load, false)
+      ) : null;
+    }
     fetchJson('donacion', '5e8f46738e85c84370133500', { setOpen, setErrorResponse, setJson });
   }, []);
 

@@ -1,0 +1,14 @@
+export { default as Footer } from './Footer';
+export { default as Header } from './Header';
+export { default as BlackBackground } from './BlackBackground';
+export { default as ButtonModal } from './ButtonModal';
+export { default as SEO } from './seo';
+export { default as Card } from './Card';
+export { default as CardAlianza } from './CardAlianza';
+export { default as CardGuias } from './CardGuias';
+export { default as Face } from './Face';
+export { default as FilterButton } from './FilterButton';
+export { default as LoaderColors } from './LoaderColors';
+export { default as MessageErrorFetch } from './MessageErrorFetch';
+export { default as Modal } from './Modal';
+export { default as Twitch } from './Twitch';

@@ -77,7 +77,11 @@ export const vibrar = () => {
 };
 
 export const changeDevice = () => {
-  const TAM_DESKTOP = 1024;
-  const tamaño = window.innerWidth ;
-  return tamaño < TAM_DESKTOP ? 'mobile' : 'desktop';
+  const isBrowser = typeof window !== 'undefined';
+  if (isBrowser) {
+    const TAM_DESKTOP = 1024;
+    const tamaño = window.innerWidth ;
+    return tamaño < TAM_DESKTOP ? 'mobile' : 'desktop';
+  }
+  return null;
 };

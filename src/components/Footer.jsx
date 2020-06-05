@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link } from 'gatsby';
 import { vibrar } from '../funciones';
 import { pageActive } from '../localFunction';
 import '../assets/styles/footer.css';
