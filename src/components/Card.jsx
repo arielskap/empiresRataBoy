@@ -1,4 +1,4 @@
-import React, { useRef } from 'react';
+import React, { useRef, useEffect } from 'react';
 import { vibrar } from '../funciones';
 import star from '../assets/static/star.png';
 import attackImg from '../assets/static/attack.png';
@@ -25,62 +25,64 @@ const Card = ({ img, json, onClose }) => {
   const starsNode = useRef([]);
   const srcElement = useRef('');
   const srcClassHero = useRef('');
-  for (let i = 0; i < json.stars; i++) {
-    starsNode.current.push(i);
-  }
-  switch (json.element) {
-    case 'Azul Hielo':
-      srcElement.current = hielo;
-      break;
-    case 'Violeta Oscuro':
-      srcElement.current = oscuro;
-      break;
-    case 'Verde Naturaleza':
-      srcElement.current = naturaleza;
-      break;
-    case 'Rojo Fuego':
-      srcElement.current = fuego;
-      break;
-    case 'Amarillo Sagrado':
-      srcElement.current = sagrado;
-      break;
-    default:
-      break;
-  }
-  switch (json.classHero) {
-    case 'Barbaro':
-      srcClassHero.current = barbarian;
-      break;
-    case 'Clerico':
-      srcClassHero.current = cleric;
-      break;
-    case 'Druida':
-      srcClassHero.current = druid;
-      break;
-    case 'Luchador':
-      srcClassHero.current = fighter;
-      break;
-    case 'Monje':
-      srcClassHero.current = monk;
-      break;
-    case 'Paladin':
-      srcClassHero.current = paladin;
-      break;
-    case 'Guardabosques':
-      srcClassHero.current = ranger;
-      break;
-    case 'Rebelde':
-      srcClassHero.current = rogue;
-      break;
-    case 'Hechizero':
-      srcClassHero.current = sorcer;
-      break;
-    case 'Brujo':
-      srcClassHero.current = wizard;
-      break;
-    default:
-      break;
-  }
+  useEffect(() => {
+    for (let i = 0; i < json.stars; i++) {
+      starsNode.current.push(i);
+    }
+    switch (json.element) {
+      case 'Azul Hielo':
+        srcElement.current = hielo;
+        break;
+      case 'Violeta Oscuro':
+        srcElement.current = oscuro;
+        break;
+      case 'Verde Naturaleza':
+        srcElement.current = naturaleza;
+        break;
+      case 'Rojo Fuego':
+        srcElement.current = fuego;
+        break;
+      case 'Amarillo Sagrado':
+        srcElement.current = sagrado;
+        break;
+      default:
+        break;
+    }
+    switch (json.classHero) {
+      case 'Barbaro':
+        srcClassHero.current = barbarian;
+        break;
+      case 'Clerico':
+        srcClassHero.current = cleric;
+        break;
+      case 'Druida':
+        srcClassHero.current = druid;
+        break;
+      case 'Luchador':
+        srcClassHero.current = fighter;
+        break;
+      case 'Monje':
+        srcClassHero.current = monk;
+        break;
+      case 'Paladin':
+        srcClassHero.current = paladin;
+        break;
+      case 'Guardabosques':
+        srcClassHero.current = ranger;
+        break;
+      case 'Rebelde':
+        srcClassHero.current = rogue;
+        break;
+      case 'Hechizero':
+        srcClassHero.current = sorcer;
+        break;
+      case 'Brujo':
+        srcClassHero.current = wizard;
+        break;
+      default:
+        break;
+    }
+  }, []);
   return (
     <div className='Card max-w-sm rounded shadow-lg text-black'>
       <div className='relative text-white'>
@@ -96,7 +98,7 @@ const Card = ({ img, json, onClose }) => {
             {
               starsNode.current.map((id) => {
                 return (
-                  <div key={id}>
+                  <div key={`star-${id}`}>
                     <img className='object-contain w-6 h-full' src={star} alt='star' />
                   </div>
                 );

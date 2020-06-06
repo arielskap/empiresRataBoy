@@ -1,8 +1,8 @@
 import React, { useEffect } from 'react';
-import ReactDOM from 'react-dom';
 import '../assets/styles/modal.css';
 import cross from '../assets/static/cross.svg';
 import { vibrar } from '../funciones';
+import Portal from './Portal';
 
 const Modal = ({ children, isOpen, onClose }) => {
   if (!isOpen) {
@@ -19,16 +19,18 @@ const Modal = ({ children, isOpen, onClose }) => {
       closeModal(e);
     });
   }, []);
-  return ReactDOM.createPortal(
-    <div className='Modal animated fadeIn faster z-30'>
-      <div className='Modal__container animated slideInDown faster rounded-lg overflow-auto'>
-        <button className='Modal__close-button z-10 m-2' type='button' onClick={() => { vibrar();onClose(); }}>
-          <img className='object-contain h-6 w-6' src={cross} alt='close' />
-        </button>
-        {children}
+
+  return (
+    <Portal>
+      <div className='Modal animated fadeIn faster z-30'>
+        <div className='Modal__container animated slideInDown faster rounded-lg overflow-auto'>
+          <button className='Modal__close-button z-10 m-2' type='button' onClick={() => { vibrar();onClose(); }}>
+            <img className='object-contain h-6 w-6' src={cross} alt='close' />
+          </button>
+          {children}
+        </div>
       </div>
-    </div>,
-    document.getElementById('modal'),
+    </Portal>
   );
 };
 

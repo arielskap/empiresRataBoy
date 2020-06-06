@@ -102,6 +102,7 @@ yarn-error.log
 
 # Build
 dist/
+public/
 
 modules-manifest.json
 package-lock.json

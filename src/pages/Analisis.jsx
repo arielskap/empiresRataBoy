@@ -1,6 +1,6 @@
 import React, { useState, useMemo, useRef, useEffect } from 'react';
 import Fuse from 'fuse.js';
-import { Face, Modal, MessageErrorFetch } from '../components';
+import { Face, Modal, MessageErrorFetch, SEO } from '../components';
 import { fetchJson } from '../localFunction';
 import '../assets/styles/analisis.css';
 import star from '../assets/static/star.png';
@@ -114,6 +114,7 @@ const Analisis = () => {
   };
 
   const handleCloseModal = () => {
+    console.log('asdh');
     animateCSS('.Modal', 'fadeOut faster');
     animateCSS('.Modal__container', 'slideOutUp faster', () => {
       if (document.body.classList.contains('overflow-hidden')) {
@@ -168,6 +169,7 @@ const Analisis = () => {
 
   return (
     <>
+      <SEO title='Analisis' />
       <div className='pt-2 mx-2 animated fadeIn faster lg:grid lg:grid-cols-12 lg:gap-2'>
         <div className='mb-4 lg:col-span-2'>
           <div className='lg:sticky lg:top-0 lg:w-full lg:top_search'>

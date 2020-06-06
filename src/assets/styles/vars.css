@@ -5,3 +5,12 @@
 .text-border-black {
   text-shadow: 2px 0 0 #000, -2px 0 0 #000, 0 2px 0 #000, 0 -2px 0 #000, 1px 1px #000, -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000;
 }
+
+.bg-blue-rataBBoy {
+  background-color: rgba(1, 31, 105, 0.99);
+}
+
+.center-horizontally-absolute {
+  left: 50%;
+  transform: translate(-50%, 0);
+}

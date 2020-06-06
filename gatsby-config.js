@@ -1,8 +1,8 @@
 module.exports = {
   siteMetadata: {
-    title: 'MixesKeuken',
-    description: 'MixesKeuken Page',
-    author: '@ramonChozas',
+    title: 'Empires Puzzle: Rata B Boy',
+    description: 'Empires Puzzle Tutoriales en español',
+    author: '@arielskap',
   },
   plugins: [
     'gatsby-plugin-react-helmet',
@@ -13,16 +13,23 @@ module.exports = {
         path: `${__dirname}/src/assets/static`,
       },
     },
+    {
+      resolve: 'gatsby-plugin-portal',
+      options: {
+        key: 'modal',
+        id: 'modal',
+      },
+    },
     'gatsby-transformer-sharp',
     'gatsby-plugin-sharp',
     {
       resolve: 'gatsby-plugin-manifest',
       options: {
-        name: 'MixesKeukenPage',
-        short_name: 'MK',
+        name: 'Empires Puzzle: Rata B Boy',
+        short_name: 'EPRBB',
         start_url: '/',
-        background_color: '#663399',
-        theme_color: '#663399',
+        background_color: '#011f67',
+        theme_color: '#011f67',
         display: 'minimal-ui',
         icon: 'src/assets/static/logo.png', // This path is relative to the root of the site.
       },

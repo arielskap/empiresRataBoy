@@ -12,3 +12,4 @@ export { default as LoaderColors } from './LoaderColors';
 export { default as MessageErrorFetch } from './MessageErrorFetch';
 export { default as Modal } from './Modal';
 export { default as Twitch } from './Twitch';
+export { default as LinkH1 } from './LinkH1';

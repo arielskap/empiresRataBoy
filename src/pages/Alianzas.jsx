@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { CardAlianza, Modal, MessageErrorFetch } from '../components';
+import { CardAlianza, Modal, MessageErrorFetch, SEO } from '../components';
 import { fetchJson } from '../localFunction';
 import { animateCSS } from '../funciones';
 
@@ -23,6 +23,7 @@ const Alianzas = () => {
   }, []);
   return (
     <>
+      <SEO title='Alianzas' />
       <div className='animated fadeIn faster'>
         <h2 className='text-center mb-4 text-2xl font-bold'>
           Alianzas

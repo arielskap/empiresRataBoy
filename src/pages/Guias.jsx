@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Modal, CardGuias, MessageErrorFetch } from '../components';
+import { Modal, CardGuias, MessageErrorFetch, SEO } from '../components';
 import { fetchJson } from '../localFunction';
 import { animateCSS } from '../funciones';
 
@@ -23,6 +23,7 @@ const Guias = () => {
   }, []);
   return (
     <>
+      <SEO title='Guias' />
       <div className='animate fadeIn faster mx-4 lg:grid lg:grid-cols-2'>
         <div className='lg:flex lg:flex-col lg:justify-center lg:items-center'>
           <div className='py-4'>

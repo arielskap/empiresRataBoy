@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { MessageErrorFetch, Modal } from '../components';
+import { MessageErrorFetch, Modal, SEO } from '../components';
 import { fetchJson } from '../localFunction';
 import { animateCSS } from '../funciones';
 import mercadoPago from '../assets/static/mercadoPago.png';
@@ -46,6 +46,7 @@ const Donar = () => {
 
   return (
     <>
+      <SEO title='Donar' />
       <div className='animated fadeIn faster'>
         <h1 className='text-center my-4 text-2xl font-bold'>
           <span role='img' aria-label='$'>💸</span>
