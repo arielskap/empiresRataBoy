@@ -55,7 +55,7 @@ const Header = () => {
         <Link onClick={() => { vibrar();closeMenu(); pageActive('Link_1'); }} to='/'>
           <img className='object-contain h-full w-8 mb-0' src={logo} alt='logo' />
         </Link>
-        <Link onClick={() => { vibrar();closeMenu(); pageActive('Link_5'); }} to='/donar' className='Link_donar_center inline-block text-sm px-4 py-2 leading-none border rounded text-white border-white hover:border-gold hover:text-gold lg:hidden'>
+        <Link onClick={() => { vibrar();closeMenu(); pageActive('Link_5'); }} to='/Donar' className='Link_donar_center inline-block text-sm px-4 py-2 leading-none border rounded text-white border-white hover:border-gold hover:text-gold lg:hidden'>
           <span role='img' aria-label='$'>💰</span>
           {' '}
           ¡Donar!
@@ -75,16 +75,16 @@ const Header = () => {
             <Link onClick={() => { vibrar();handleMenu(); pageActive('Link_1'); }} to='/' className='Link_home Link_1 block mt-4 lg:inline-block lg:mt-0 text-white hover:text-pink-500 lg:mr-4 lg:text-lg'>
               Home
             </Link>
-            <Link onClick={() => { vibrar();handleMenu(); pageActive('Link_2'); }} to='/guias' className='Link_guias Link_2 block mt-4 lg:inline-block lg:mt-0 text-white hover:text-pink-500 lg:mr-4 lg:text-lg'>
+            <Link onClick={() => { vibrar();handleMenu(); pageActive('Link_2'); }} to='/Guias' className='Link_guias Link_2 block mt-4 lg:inline-block lg:mt-0 text-white hover:text-pink-500 lg:mr-4 lg:text-lg'>
               Guías
             </Link>
-            <Link onClick={() => { vibrar();handleMenu(); pageActive('Link_3'); }} to='/alianzas' className='Link_alianzas Link_3 block mt-4 lg:inline-block lg:mt-0 text-white hover:text-pink-500 lg:mr-4 lg:text-lg'>
+            <Link onClick={() => { vibrar();handleMenu(); pageActive('Link_3'); }} to='/Alianzas' className='Link_alianzas Link_3 block mt-4 lg:inline-block lg:mt-0 text-white hover:text-pink-500 lg:mr-4 lg:text-lg'>
               Alianzas
             </Link>
-            <Link onClick={() => { vibrar();handleMenu(); pageActive('Link_4'); }} to='/analisis' className='Link_analisis Link_4 block mt-4 lg:inline-block lg:mt-0 text-white hover:text-pink-500 lg:text-lg'>
+            <Link onClick={() => { vibrar();handleMenu(); pageActive('Link_4'); }} to='/Analisis' className='Link_analisis Link_4 block mt-4 lg:inline-block lg:mt-0 text-white hover:text-pink-500 lg:text-lg'>
               Analisis de Heroes
             </Link>
-            <Link onClick={() => { vibrar();handleMenu(); pageActive('Link_5'); }} to='/donar' className='Link_donar Link_5 inline-block text-sm px-4 py-2 leading-none border rounded text-white border-white hover:border-gold hover:text-gold mt-4 lg:mt-0 lg:ml-4'>
+            <Link onClick={() => { vibrar();handleMenu(); pageActive('Link_5'); }} to='/Donar' className='Link_donar Link_5 inline-block text-sm px-4 py-2 leading-none border rounded text-white border-white hover:border-gold hover:text-gold mt-4 lg:mt-0 lg:ml-4'>
               <span role='img' aria-label='$'>💰</span>
               {' '}
               ¡Donar!

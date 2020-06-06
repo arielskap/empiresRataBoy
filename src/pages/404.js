@@ -12,7 +12,7 @@ const NotFoundPage = () => (
         <h2 className='text-center font-bold'>Error 404</h2>
       </div>
       <img className='object-contain rounded' src={muggy} alt='muggy not found' />
-      <Link className='hover:underline font-bold text-lg' to='/'>Volver al Home</Link>
+      <Link className='hover:underline hover:scale-105 font-bold text-lg' to='/'>Volver al Home</Link>
     </main>
   </>
 );

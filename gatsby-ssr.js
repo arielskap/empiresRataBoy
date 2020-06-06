@@ -10,7 +10,7 @@ const { Header, Footer } = require('./src/components');
 export const wrapRootElement = ({ element }) => (
   <div className='min-h-screen'>
     <Header />
-    <div className='lg:pt-6'>
+    <div style={{ padding: '1.5rem' }}>
       {element}
     </div>
     <Footer />
