@@ -1,16 +1,14 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
+import useFetch from '../hooks/useFetch';
 import { MessageErrorFetch, Modal, Twitch, LinkH1, SEO } from '../components';
 import { animateCSS } from '../funciones';
-import { fetchJson } from '../localFunction';
 import '../assets/styles/home.css';
 import '../assets/styles/hr.css';
 import redAlianzas from '../assets/static/redAlianzas2.png';
 import redDeAlianzas from '../assets/static/redDeAlianzas.png';
 
-const Index = () => {
-  const [json, setJson] = useState(false);
-  const [open, setOpen] = useState(false);
-  const [errorResponse, setErrorResponse] = useState(false);
+export default () => {
+  const { open, setOpen, errorResponse, data } = useFetch('5edebe04655d87580c467697');
 
   const handleCloseModal = () => {
     animateCSS('.Modal', 'fadeOut faster');
@@ -22,15 +20,6 @@ const Index = () => {
     });
   };
 
-  useEffect(() => {
-    if (typeof window !== 'undefined' && document.querySelector('iframe')) {
-      const iframe = document.querySelector('iframe');
-      iframe.setAttribute('allow', 'fullscreen'); // must be 1st
-      iframe.setAttribute('allowFullScreen', '');
-    }
-    fetchJson('home', '5e8b22e55eb7f3517e29cd78', { setOpen, setErrorResponse, setJson });
-  }, []);
-
   return (
     <>
       <SEO title='Home' />
@@ -40,6 +29,7 @@ const Index = () => {
           <LinkH1 />
         </div>
         <div className='hidden md:flex md:flex-col md:items-center md:justify-center md:my-6'>
+          <LinkH1 />
           <img className='object-contain md:max-w-4xl xl:max-w-6xl' src={redDeAlianzas} alt='Red de Alianzas' />
         </div>
         <div className='px-8'>
@@ -54,7 +44,7 @@ const Index = () => {
           <div>
             <h2 className='text-center mb-4 text-xl md:text-2xl font-bold'>¡Listas de Reproducción!</h2>
             <div className='grid grid-cols-1 md:grid-cols-3 gap-4'>
-              {json && json.map((video) => {
+              {data && data.map((video) => {
                 const { id, name, link } = video;
                 return (
                   <div className='mt-2 md:mt-0' key={id}>
@@ -73,5 +63,3 @@ const Index = () => {
     </>
   );
 };
-
-export default Index;

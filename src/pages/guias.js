@@ -1,12 +1,10 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import { Modal, CardGuias, MessageErrorFetch, SEO } from '../components';
-import { fetchJson } from '../localFunction';
 import { animateCSS } from '../funciones';
+import useFetch from '../hooks/useFetch';
 
-const Guias = () => {
-  const [json, setJson] = useState(false);
-  const [open, setOpen] = useState(false);
-  const [errorResponse, setErrorResponse] = useState(false);
+export default () => {
+  const { open, setOpen, errorResponse, data } = useFetch('5edebd64655d87580c46763d');
 
   const handleCloseModal = () => {
     animateCSS('.Modal', 'fadeOut faster');
@@ -18,9 +16,6 @@ const Guias = () => {
     });
   };
 
-  useEffect(() => {
-    fetchJson('guias', '5e8ba4cfff9c906bdf1d1275', { setOpen, setErrorResponse, setJson });
-  }, []);
   return (
     <>
       <SEO title='Guias' />
@@ -36,7 +31,7 @@ const Guias = () => {
         <div className='mt-4'>
           <h2 className='text-lg font-bold'>Listado de Guías</h2>
           <ul className='rounded border-2 border-pink-500 flex flex-col items-center mt-2 sm:grid sm:grid-cols-2 p-2'>
-            {json && json.map((guia) => {
+            {data && data.map((guia) => {
               const { id } = guia;
               return (
                 <li className='text-center mb-1' key={id}>
@@ -53,5 +48,3 @@ const Guias = () => {
     </>
   );
 };
-
-export default Guias;

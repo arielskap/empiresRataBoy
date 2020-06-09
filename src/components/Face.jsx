@@ -15,7 +15,6 @@ const Face = ({ children, img, json }) => {
   };
 
   const handleCloseModal = () => {
-    console.log('kelokee');
     animateCSS('.Modal', 'fadeOut faster');
     animateCSS('.Modal__container', 'slideOutUp faster', () => {
       if (document.body.classList.contains('overflow-hidden')) {

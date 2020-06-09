@@ -1,4 +1,5 @@
 import React from 'react';
+import headerLink from '../assets/static/headerLink.png';
 import '../assets/styles/tooltip.css';
 
 const LinkH1 = () => {
@@ -20,7 +21,8 @@ const LinkH1 = () => {
     <div className='text-center mt-1 lg:m-0 mb-6 px-2 tooltip'>
       <button type='button' onClick={() => copyText('#titleCopy')} className='text-lg sm:text-xl font-bold break-all bg-black bg-opacity-25 lg:bg-transparent py-1 px-2 rounded'>
         <span className='tooltiptext text-sm' id='myTooltip'>Copiar Link</span>
-        <h1 id='titleCopy'>https://ratabboy.herokuapp.com/</h1>
+        <h1 id='titleCopy' className='hidden'>https://ratabboy.herokuapp.com/</h1>
+        <img className='object-contain md:max-w-2xl xl:max-w-4xl' src={headerLink} alt='https://ratabboy.herokuapp.com/' />
       </button>
     </div>
   );

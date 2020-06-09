@@ -1,15 +1,13 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
+import useFetch from '../hooks/useFetch';
 import { MessageErrorFetch, Modal, SEO } from '../components';
-import { fetchJson } from '../localFunction';
 import { animateCSS } from '../funciones';
 import mercadoPago from '../assets/static/mercadoPago.png';
 import payPal from '../assets/static/payPal.png';
 import qr from '../assets/static/qr.jpg';
 
-const Donar = () => {
-  const [json, setJson] = useState(false);
-  const [open, setOpen] = useState(false);
-  const [errorResponse, setErrorResponse] = useState(false);
+export default () => {
+  const { open, setOpen, errorResponse, data } = useFetch('sgihiu');
 
   const handleCloseModal = () => {
     animateCSS('.Modal', 'fadeOut faster');
@@ -41,7 +39,6 @@ const Donar = () => {
           window.addEventListener('load', $MPC_load, false)
       ) : null;
     }
-    fetchJson('donacion', '5e8f46738e85c84370133500', { setOpen, setErrorResponse, setJson });
   }, []);
 
   return (
@@ -62,7 +59,7 @@ const Donar = () => {
           <div className='flex items-center justify-center flex-col lg:border-2 lg:border-blue-500 lg:rounded lg:p-4 mt-12 lg:mt-0 lg:row-span-2'>
             <img className='object-contain bg-white p-2 rounded mb-5' src={mercadoPago} alt='Mercado Pago' />
             <div className='grid grid-cols-1 gap-4 mx-4'>
-              {json && json.map((donativo) => {
+              {data && !data.message && data.map((donativo) => {
                 const { id, name, cost, link } = donativo;
                 return (
                   <a target='_blank' rel='noopener noreferrer' className='bg-transparent text-gold font-semibold hover:bg-yellow-500 hover:text-white py-2 px-4 border border-gold hover:border-transparent rounded text-center' mp-mode='dftl' href={link} name='MP-payButton' key={id}>
@@ -87,5 +84,3 @@ const Donar = () => {
     </>
   );
 };
-
-export default Donar;

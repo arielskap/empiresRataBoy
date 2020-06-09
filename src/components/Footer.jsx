@@ -60,7 +60,7 @@ const Footer = () => {
               <a target='_blank' rel='noopener noreferrer' href='https://forms.gle/qAhte7R124TcLw9X6' className='text-lg font-bold text-blue-600 hover:text-blue-500 underline lg:hover:underline lg:no-underline'>¡Contactame!</a>
             </div>
             <div className='flex items-center justify-center mt-4 lg:mt-0 lg:col-span-2'>
-              <Link onClick={() => { vibrar(); pageActive('Link_5'); }} to='/Donar' className='Link_donar Link_5 inline-block text-lg px-6 py-2 leading-none border rounded text-white border-white hover:border-gold hover:text-gold'>
+              <Link onClick={() => { vibrar(); pageActive('Link_5'); }} to='/donar' className='Link_donar Link_5 inline-block text-lg px-6 py-2 leading-none border rounded text-white border-white hover:border-gold hover:text-gold'>
                 <span role='img' aria-label='$'>💰</span>
                 {' '}
                 ¡Donar!

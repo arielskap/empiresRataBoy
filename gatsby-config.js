@@ -25,7 +25,7 @@ module.exports = {
     {
       resolve: 'gatsby-plugin-manifest',
       options: {
-        name: 'Empires Puzzle: Rata B Boy',
+        name: 'Empires Puzzles: Rata B Boy',
         short_name: 'EPRBB',
         start_url: '/',
         background_color: '#011f67',

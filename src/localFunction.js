@@ -34,7 +34,7 @@ export const fetchJson = (name, link, setFunctions) => {
   } else {
     fetch(`https://api.jsonbin.io/b/${link}`, {
       headers: {
-        'secret-key': '$2b$10$EHpukrk1pPZzpkiyrMh1FOlbuwAP9FVrF0jGlM038V9DVWNQTpIgm',
+        'secret-key': '$2b$10$rMiLIzrwZN3L0coOy9YBuO.EbU9bdYqwH79HBShMOATzq1YNKzSvC',
       },
     })
       .catch((error) => {
@@ -61,5 +61,16 @@ export const fetchJson = (name, link, setFunctions) => {
         }
       });
   }
+};
+
+export const fetchJson2 = (url) => {
+  return fetch(`https://api.jsonbin.io/b/${url}`, {
+    headers: {
+      'secret-key': '$2b$10$rMiLIzrwZN3L0coOy9YBuO.EbU9bdYqwH79HBShMOATzq1YNKzSvC',
+    },
+  })
+    .then((response) => {
+      return response.json();
+    });
 };
 

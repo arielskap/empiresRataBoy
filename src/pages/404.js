@@ -3,7 +3,7 @@ import { Link } from 'gatsby';
 import SEO from '../components/seo';
 import muggy from '../assets/static/muggy.png';
 
-const NotFoundPage = () => (
+export default () => (
   <>
     <SEO title='404: Not found' />
     <main className='flex flex-col justify-center items-center py-12 space-y-4'>
@@ -16,5 +16,3 @@ const NotFoundPage = () => (
     </main>
   </>
 );
-
-export default NotFoundPage;

@@ -1,7 +1,7 @@
-import React, { useState, useMemo, useRef, useEffect } from 'react';
+import React, { useState, useMemo, useRef } from 'react';
 import Fuse from 'fuse.js';
+import useFetch from '../hooks/useFetch';
 import { Face, Modal, MessageErrorFetch, SEO } from '../components';
-import { fetchJson } from '../localFunction';
 import '../assets/styles/analisis.css';
 import star from '../assets/static/star.png';
 import fuego from '../assets/static/fuego.png';
@@ -72,10 +72,8 @@ const useSearchHeroes = (json, options) => {
   return { query, setQuery, jsonSearch, setStars, setElement, setClean };
 };
 
-const Analisis = () => {
-  const [json, setJson] = useState(false);
-  const [open, setOpen] = useState(false);
-  const [errorResponse, setErrorResponse] = useState(false);
+export default () => {
+  const { open, setOpen, errorResponse, data } = useFetch('5edebde42f5fd957fda675ee');
 
   const options = useRef({
     query: {
@@ -97,7 +95,7 @@ const Analisis = () => {
       ],
     },
   });
-  const { query, setQuery, jsonSearch, setStars, setElement, setClean } = useSearchHeroes(json, options.current);
+  const { query, setQuery, jsonSearch, setStars, setElement, setClean } = useSearchHeroes(data, options.current);
 
   const handleFilterStars = (cantStars) => {
     for (let i = 1; i <= cantStars; i++) {
@@ -162,10 +160,6 @@ const Analisis = () => {
     handleFilterStars(0);
     handleElement(0);
   };
-
-  useEffect(() => {
-    fetchJson('analisis', '5e8b22d10cb49e48ce238226', { setOpen, setErrorResponse, setJson });
-  }, []);
 
   return (
     <>
@@ -236,5 +230,3 @@ const Analisis = () => {
     </>
   );
 };
-
-export default Analisis;

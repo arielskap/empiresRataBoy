@@ -1,12 +1,10 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
+import useFetch from '../hooks/useFetch';
 import { CardAlianza, Modal, MessageErrorFetch, SEO } from '../components';
-import { fetchJson } from '../localFunction';
 import { animateCSS } from '../funciones';
 
-const Alianzas = () => {
-  const [json, setJson] = useState(false);
-  const [open, setOpen] = useState(false);
-  const [errorResponse, setErrorResponse] = useState(false);
+export default () => {
+  const { open, setOpen, errorResponse, data } = useFetch('5edebdbd655d87580c467674');
 
   const handleCloseModal = () => {
     animateCSS('.Modal', 'fadeOut faster');
@@ -18,9 +16,6 @@ const Alianzas = () => {
     });
   };
 
-  useEffect(() => {
-    fetchJson('alianzas', '5ed032f960775a568583d797', { setOpen, setErrorResponse, setJson });
-  }, []);
   return (
     <>
       <SEO title='Alianzas' />
@@ -31,7 +26,7 @@ const Alianzas = () => {
           que Conforman la Red
         </h2>
         <div className='grid grid-cols-3 lg:grid-cols-6 gap-4 mx-2 lg:mx-6'>
-          {json && json.map((alianza) => {
+          {data && data.map((alianza) => {
             const { id } = alianza;
             return (
               <div key={id}>
@@ -48,4 +43,3 @@ const Alianzas = () => {
   );
 };
 
-export default Alianzas;
