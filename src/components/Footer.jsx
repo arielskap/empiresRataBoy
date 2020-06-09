@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import { Link } from 'gatsby';
 import { vibrar } from '../funciones';
 import { pageActive } from '../localFunction';
@@ -13,20 +13,33 @@ import logoDeveloper from '../assets/static/logoDeveloper.png';
 
 const Footer = () => {
   const [buttonTranslate, setButtonTranslate] = useState(true);
+  const timeOut = useRef(null);
+
   const translatePage = () => {
-    document.querySelector('#google_translate_element').classList.remove('hidden');
-    const googleConst = new google.translate.TranslateElement({ pageLanguage: 'es' }, 'google_translate_element');
-    setButtonTranslate(false);
-    window.scrollTo(0, document.body.scrollHeight);
-    setTimeout(() => {
-      document.body.style.top = 'auto';
-    }, 1500);
+    document.querySelector('#buttonTranslate').disabled = true;
+    if (document.querySelector('#googleScript')) {
+      if (timeOut.current) {
+        window.clearTimeout(timeOut.current);
+      }
+      document.querySelector('#google_translate_element').classList.remove('hidden');
+      const googleConst = new google.translate.TranslateElement({ pageLanguage: 'es' }, 'google_translate_element');
+      setButtonTranslate(false);
+      window.scrollTo(0, document.body.scrollHeight);
+      setTimeout(() => {
+        document.body.style.top = 'auto';
+      }, 1500);
+    } else {
+      timeOut.current = setTimeout(() => {
+        translatePage();
+      }, 1000);
+    }
   };
+
   return (
     <footer className='p-3 mt-16'>
       <div className='flex justify-center items-center flex-col mt-2 mb-4'>
         {buttonTranslate && (
-          <button type='button' onClick={translatePage} className='button_translate bg-indigo-500 hover:bg-indigo-400 text-white font-bold py-2 px-4 border-b-4 border-indigo-700 hover:border-indigo-500 rounded'>Translate Page</button>
+          <button id='buttonTranslate' type='button' onClick={translatePage} className='button_translate bg-indigo-500 hover:bg-indigo-400 text-white font-bold py-2 px-4 border-b-4 border-indigo-700 hover:border-indigo-500 rounded'>Translate Page</button>
         )}
         <div id='google_translate_element' className='w-full border rounded border-pink-500 p-2 hidden' />
       </div>
