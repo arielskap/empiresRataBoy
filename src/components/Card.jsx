@@ -1,4 +1,4 @@
-import React, { useRef, useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { vibrar } from '../funciones';
 import star from '../assets/static/star.png';
 import attackImg from '../assets/static/attack.png';
@@ -22,66 +22,78 @@ import wizard from '../assets/static/wizard.png';
 import '../assets/styles/card.css';
 
 const Card = ({ img, json, onClose }) => {
-  const starsNode = useRef([]);
-  const srcElement = useRef('');
-  const srcClassHero = useRef('');
+  const [dataPj, setDataPj] = useState({
+    starsNode: [],
+    srcElement: '',
+    srcClassHero: '',
+  });
   useEffect(() => {
+    let type,
+      className;
+    const stars = [];
     for (let i = 0; i < json.stars; i++) {
-      starsNode.current.push(i);
+      stars.push(i);
     }
-    switch (json.element) {
-      case 'Azul Hielo':
-        srcElement.current = hielo;
+    type = json.element.toLowerCase();
+    className = json.classHero.toLowerCase();
+    switch (type) {
+      case 'azul hielo':
+        type = hielo;
         break;
-      case 'Violeta Oscuro':
-        srcElement.current = oscuro;
+      case 'violeta oscuro':
+        type = oscuro;
         break;
-      case 'Verde Naturaleza':
-        srcElement.current = naturaleza;
+      case 'verde naturaleza':
+        type = naturaleza;
         break;
-      case 'Rojo Fuego':
-        srcElement.current = fuego;
+      case 'rojo fuego':
+        type = fuego;
         break;
-      case 'Amarillo Sagrado':
-        srcElement.current = sagrado;
+      case 'amarillo sagrado':
+        type = sagrado;
         break;
       default:
         break;
     }
-    switch (json.classHero) {
-      case 'Barbaro':
-        srcClassHero.current = barbarian;
+    switch (className) {
+      case 'barbaro':
+        className = barbarian;
         break;
-      case 'Clerico':
-        srcClassHero.current = cleric;
+      case 'clerico':
+        className = cleric;
         break;
-      case 'Druida':
-        srcClassHero.current = druid;
+      case 'druida':
+        className = druid;
         break;
-      case 'Luchador':
-        srcClassHero.current = fighter;
+      case 'luchador':
+        className = fighter;
         break;
-      case 'Monje':
-        srcClassHero.current = monk;
+      case 'monje':
+        className = monk;
         break;
-      case 'Paladin':
-        srcClassHero.current = paladin;
+      case 'paladin':
+        className = paladin;
         break;
-      case 'Guardabosques':
-        srcClassHero.current = ranger;
+      case 'guardabosques':
+        className = ranger;
         break;
-      case 'Rebelde':
-        srcClassHero.current = rogue;
+      case 'rebelde':
+        className = rogue;
         break;
-      case 'Hechizero':
-        srcClassHero.current = sorcer;
+      case 'hechizero':
+        className = sorcer;
         break;
-      case 'Brujo':
-        srcClassHero.current = wizard;
+      case 'brujo':
+        className = wizard;
         break;
       default:
         break;
     }
+    setDataPj({
+      starsNode: stars,
+      srcElement: type,
+      srcClassHero: className,
+    });
   }, []);
   return (
     <div className='Card max-w-sm rounded shadow-lg text-black'>
@@ -92,11 +104,11 @@ const Card = ({ img, json, onClose }) => {
         <img className='object-contain w-full' src={img} alt={json.name} />
         <div className='absolute bottom-0 w-full grid grid-cols-3 gap-4 py-2 bg-black-transparent'>
           <div className='flex items-center justify-center'>
-            <img className='object-contain w-8 h-full' src={srcElement.current} alt={json.element} />
+            <img className='object-contain w-8 h-full' src={dataPj.srcElement} alt={json.element} />
           </div>
           <div className='flex items-center justify-around'>
             {
-              starsNode.current.map((id) => {
+              dataPj.starsNode.map((id) => {
                 return (
                   <div key={`star-${id}`}>
                     <img className='object-contain w-6 h-full' src={star} alt='star' />
@@ -142,7 +154,7 @@ const Card = ({ img, json, onClose }) => {
           </div>
           <div className='flex items-center'>
             <p>Clase:</p>
-            <img className='ml-2 mr-1 object-contain h-full w-4' src={srcClassHero.current} alt={json.classHero} />
+            <img className='ml-2 mr-1 object-contain h-full w-4' src={dataPj.srcClassHero} alt={json.classHero} />
             <p>{json.classHero}</p>
           </div>
           <div>

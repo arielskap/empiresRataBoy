@@ -7,7 +7,7 @@ import payPal from '../assets/static/payPal.png';
 import qr from '../assets/static/qr.jpg';
 
 export default () => {
-  const { open, setOpen, errorResponse, data } = useFetch('sgihiu');
+  const { open, setOpen, errorResponse, data } = useFetch('5edf0d421f9e4e57881a1dde');
 
   const handleCloseModal = () => {
     animateCSS('.Modal', 'fadeOut faster');

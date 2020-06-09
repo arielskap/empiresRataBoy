@@ -14,6 +14,21 @@ import logoDeveloper from '../assets/static/logoDeveloper.png';
 const Footer = () => {
   const [buttonTranslate, setButtonTranslate] = useState(true);
   const timeOut = useRef(null);
+  const timeOutGoogleOptions = useRef(null);
+
+  const hideGoogleOptions = () => {
+    if (document.body.style.top === '40px' && document.querySelector('.skiptranslate')) {
+      if (timeOutGoogleOptions.current) {
+        window.clearTimeout(timeOutGoogleOptions.current);
+      }
+      document.body.style.top = '0px';
+      document.querySelector('.skiptranslate').classList.add('hidden');
+    } else {
+      timeOutGoogleOptions.current = setTimeout(() => {
+        hideGoogleOptions();
+      }, 1500);
+    }
+  };
 
   const translatePage = () => {
     document.querySelector('#buttonTranslate').disabled = true;
@@ -24,10 +39,7 @@ const Footer = () => {
       document.querySelector('#google_translate_element').classList.remove('hidden');
       const googleConst = new google.translate.TranslateElement({ pageLanguage: 'es' }, 'google_translate_element');
       setButtonTranslate(false);
-      window.scrollTo(0, document.body.scrollHeight);
-      setTimeout(() => {
-        document.body.style.top = 'auto';
-      }, 1500);
+      hideGoogleOptions();
     } else {
       timeOut.current = setTimeout(() => {
         translatePage();
