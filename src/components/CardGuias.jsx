@@ -1,13 +1,12 @@
 import React, { useState } from 'react';
 import Modal from './Modal';
-import { animateCSS, changeDevice, vibrar } from '../funciones';
+import { changeDevice } from '../funciones';
 
 const CardGuias = ({ json }) => {
   const [open, setOpen] = useState(false);
   const [imgDevice, setImgDevice] = useState('mobile');
 
   const handleOpenModal = () => {
-    console.log(json.mobile);
     const device = changeDevice();
     if (device !== imgDevice) {
       if (device === 'mobile') {
@@ -16,28 +15,15 @@ const CardGuias = ({ json }) => {
         setImgDevice('desktop');
       }
     }
-
-    if (!document.body.classList.contains('overflow-hidden')) {
-      document.body.classList.add('overflow-hidden');
-    }
     setOpen(true);
   };
 
-  const handleCloseModal = () => {
-    animateCSS('.Modal', 'fadeOut faster');
-    animateCSS('.Modal__container', 'slideOutUp faster', () => {
-      if (document.body.classList.contains('overflow-hidden')) {
-        document.body.classList.remove('overflow-hidden');
-      }
-      setOpen(false);
-    });
-  };
   return (
     <>
-      <button type='button' className='relative transform duration-500 hover:scale-105 border-transparent border-2 hover:border-pink-500 px-2 rounded' onClick={() => { vibrar();handleOpenModal(); }}>
+      <button type='button' className='relative transform duration-500 hover:scale-105 border-transparent border-2 hover:border-pink-500 px-2 rounded' onClick={() => { handleOpenModal(); }}>
         {`${json.id}. ${json.name}`}
       </button>
-      <Modal isOpen={open} onClose={handleCloseModal}>
+      <Modal data={{ open, setOpen }}>
         <img className='object-contain w-full h-full' src={imgDevice === 'mobile' ? json.mobile : json.pc} alt={json.name} />
       </Modal>
     </>

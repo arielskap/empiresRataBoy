@@ -1,34 +1,16 @@
 import React, { useState } from 'react';
 import ButtonModal from './ButtonModal';
 import Modal from './Modal';
-import { animateCSS } from '../funciones';
 
 const CardAlianza = ({ json }) => {
   const [open, setOpen] = useState(false);
 
-  const handleOpenModal = () => {
-    if (!document.body.classList.contains('overflow-hidden')) {
-      document.body.classList.add('overflow-hidden');
-    }
-    setOpen(true);
-  };
-
-  const handleCloseModal = () => {
-    animateCSS('.Modal', 'fadeOut faster');
-    animateCSS('.Modal__container', 'slideOutUp faster', () => {
-      if (document.body.classList.contains('overflow-hidden')) {
-        document.body.classList.remove('overflow-hidden');
-      }
-      setOpen(false);
-    });
-  };
-
   return (
     <>
-      <ButtonModal onClick={handleOpenModal}>
+      <ButtonModal onClick={() => setOpen(true)}>
         <img className='object-contain lg:w-48' src={json.picture} alt={json.name} />
       </ButtonModal>
-      <Modal isOpen={open} onClose={handleCloseModal}>
+      <Modal data={{ open, setOpen }}>
         <div className='max-w-sm rounded shadow-lg text-black'>
           <div className='relative text-white'>
             <div className='absolute top-0 flex w-full justify-center'>

@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react';
-import { vibrar } from '../funciones';
 import star from '../assets/static/star.png';
 import attackImg from '../assets/static/attack.png';
 import defenseImg from '../assets/static/defense.png';
@@ -21,7 +20,7 @@ import sorcer from '../assets/static/sorcer.png';
 import wizard from '../assets/static/wizard.png';
 import '../assets/styles/card.css';
 
-const Card = ({ img, json, onClose }) => {
+const Card = ({ img, json }) => {
   const [dataPj, setDataPj] = useState({
     starsNode: [],
     srcElement: '',
@@ -191,9 +190,6 @@ const Card = ({ img, json, onClose }) => {
             Tutorial
           </div>
         </a>
-        <div className='mt-2 text-center'>
-          <button onClick={() => { vibrar(); onClose(); }} type='button' className='hover:underline text-sm'>Cerrar</button>
-        </div>
       </div>
     </div>
   );
