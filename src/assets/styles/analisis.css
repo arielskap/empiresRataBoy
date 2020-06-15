@@ -2,6 +2,10 @@
   filter: grayscale(100%);
 }
 
+.hover\:filter-gray-none:hover {
+  filter: grayscale(0%);
+}
+
 @media screen and (min-width: 1024px) {
   .lg\:top_search {
     top: 4.5rem;

@@ -14,3 +14,11 @@
   left: 50%;
   transform: translate(-50%, 0);
 }
+
+.max-w-85 {
+  max-width: 85%;
+}
+
+.buttonClassSearch-active {
+  @apply scale-110 border-purple-600;
+}

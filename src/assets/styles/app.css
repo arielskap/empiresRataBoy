@@ -5,3 +5,7 @@ body {
   color: #ac59c2;
   font-family: 'Roboto', sans-serif;
 }
+
+button:focus {
+  outline: 0 !important;
+}

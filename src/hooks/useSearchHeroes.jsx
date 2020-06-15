@@ -1,64 +1,128 @@
 import { useState, useMemo } from 'react';
 import Fuse from 'fuse.js';
 
-const useSearchHeroes = (json, options) => {
-  const [query, setQuery] = useState('');
-  const [stars, setStars] = useState('0');
-  const [element, setElement] = useState('');
+const useSearchHeroes = (json) => {
+  const [data, setData] = useState({
+    query: '',
+    stars: '',
+    element: '',
+    class: '',
+    family: '',
+    event: '',
+  });
   const [clean, setClean] = useState(false);
   const [jsonSearch, setJsonSearch] = useState(false);
 
+  const createFuse = (json, options) => {
+    let newOptions = options.keys.filter((option) => option !== '');
+    newOptions = { threshold: 0.3, keys: newOptions };
+    return new Fuse(json, newOptions);
+  };
+
+  const createOperator = (key) => {
+    let flag = 0;
+    let operator;
+    let newKey;
+
+    const result = key.some((object) => {
+      const value = Object.values(object);
+      if (value[0] !== '') {
+        flag++;
+        operator = value[0];
+      }
+      return flag >= 2;
+    });
+    if (result) {
+      newKey = key.filter((object) => {
+        const value = Object.values(object);
+        return value[0] !== '';
+      });
+      operator = {
+        $and: newKey,
+      };
+    }
+    return operator;
+  };
+
   const searching = (json, options, key) => {
     const newJson = [];
-    const fuse = new Fuse(json, options);
-    const search = fuse.search(key);
+    const fuse = createFuse(json, options);
+    const operator = createOperator(key);
+    const search = fuse.search(operator);
     search.forEach((element) => {
       newJson.push(element.item);
     });
+    console.log(newJson);
     return newJson;
+  };
+
+  const compare = (a, b) => {
+    if (a.name.trim() < b.name.trim()) {
+      return -1;
+    }
+    if (a.name.trim() > b.name.trim()) {
+      return 1;
+    }
+    return 0;
   };
 
   useMemo(() => {
     let newJson;
+    const { query, stars, element, class: classHero, family, event } = data;
     if (clean) {
-      setQuery('');
-      setStars('0');
-      setElement('');
+      setData({
+        query: '',
+        stars: '',
+        element: '',
+        class: '',
+        family: '',
+        event: '',
+      });
       setJsonSearch(json);
       setClean(false);
     } else {
-      if (query === '' && stars === '0' && element === '') { //No tiene nada
-        setJsonSearch(json);
-      } else if (query !== '' && stars === '0' && element === '') { //Tiene texto
-        newJson = searching(json, options.query, query);
-        setJsonSearch(newJson);
-      } else if (query === '' && stars !== '0' && element === '') { //Tiene estrellas
-        newJson = searching(json, options.stars, stars);
-        setJsonSearch(newJson);
-      } else if (query === '' && stars === '0' && element !== '') { //Tiene Elemento
-        newJson = searching(json, options.element, element);
-        setJsonSearch(newJson);
-      } else if (query !== '' && stars !== '0' && element === '') { //Tiene texto y estrellas
-        newJson = searching(json, options.stars, stars);
-        newJson = searching(newJson, options.query, query);
-        setJsonSearch(newJson);
-      } else if (query !== '' && stars === '0' && element !== '') { //Tiene texto y elemento
-        newJson = searching(json, options.element, element);
-        newJson = searching(newJson, options.query, query);
-        setJsonSearch(newJson);
-      } else if (query === '' && stars !== '0' && element !== '') { //Tiene estrellas y elemento
-        newJson = searching(json, options.stars, stars);
-        newJson = searching(newJson, options.element, element);
-        setJsonSearch(newJson);
-      } else { //Tiene todo
-        newJson = searching(json, options.stars, stars);
-        newJson = searching(newJson, options.element, element);
-        newJson = searching(newJson, options.query, query);
+      if (query === '' && stars === '' && element === '' && classHero === '' && family === '' && event === '') { //No tiene nada
+        if (json) {
+          newJson = json.sort(compare);
+          setJsonSearch(newJson);
+        }
+      } else {
+        newJson = searching(json, {
+          threshold: 0.3,
+          keys: [
+            query && {
+              name: 'name',
+            },
+            stars && {
+              name: 'stars',
+            },
+            element && {
+              name: 'element',
+            },
+            classHero && {
+              name: 'class',
+            },
+            family && {
+              name: 'family',
+            },
+            event && {
+              name: 'event',
+            },
+          ],
+        },
+        [
+          { name: query },
+          { stars },
+          { element },
+          { class: classHero },
+          { family },
+          { event },
+        ]);
         setJsonSearch(newJson);
       }
     }
-  }, [json, query, element, stars, clean]);
-  return { query, setQuery, jsonSearch, setStars, setElement, setClean };
+  }, [json, data, clean]);
+  return { data, setData, jsonSearch, setClean };
 };
 
 export default useSearchHeroes;

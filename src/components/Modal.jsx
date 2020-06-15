@@ -1,7 +1,6 @@
 import React, { useEffect } from 'react';
 import { animated } from 'react-spring';
 import '../assets/styles/modal.css';
-import cross from '../assets/static/cross.svg';
 import Portal from './Portal';
 import { useFade, useSlide } from '../animations';
 
@@ -28,7 +27,7 @@ const Modal = ({ children, data }) => {
   };
 
   const handleClickBackground = (e) => {
-    if (e.target === document.querySelector('.Modal')) {
+    if (e.target === document.querySelector('.Modal__bg')) {
       closeModal();
     }
   };
@@ -38,7 +37,7 @@ const Modal = ({ children, data }) => {
       if (!document.body.classList.contains('overflow-hidden')) {
         document.body.classList.add('overflow-hidden');
       }
-      document.querySelector('.Modal').addEventListener('click', (e) => {
+      document.querySelector('.Modal__bg').addEventListener('click', (e) => {
         handleClickBackground(e);
       });
     }
@@ -51,13 +50,15 @@ const Modal = ({ children, data }) => {
 
   return (
     <Portal>
-      <animated.div className='Modal z-30' style={fade}>
-        <animated.div className='Modal__container rounded-lg overflow-auto' style={slide}>
-          <button className='Modal__close-button z-10 m-2' type='button' onClick={() => { closeModal(); }}>
-            <img className='object-contain h-6 w-6' src={cross} alt='close' />
-          </button>
-          {children}
-        </animated.div>
+      <animated.div className='Modal z-30 overflow-y-auto overflow-x-hidden' style={fade}>
+        <div className='Modal__bg w-full min-h-screen py-6 flex justify-center items-center'>
+          <animated.div className='Modal__container rounded-lg' style={slide}>
+            <button className='Modal__close-button leading-none z-10 text-white text-border-black bg-red-800 hover:bg-red-600 shadow border border-black px-2 py-1 rounded-lg font-bold text-xl absolute' type='button' onClick={() => { closeModal(); }}>
+              x
+            </button>
+            {children}
+          </animated.div>
+        </div>
       </animated.div>
     </Portal>
   );

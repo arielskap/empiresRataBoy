@@ -25,10 +25,12 @@ const Card = ({ img, json }) => {
     starsNode: [],
     srcElement: '',
     srcClassHero: '',
+    color: '',
   });
   useEffect(() => {
     let type,
-      className;
+      className,
+      color;
     const stars = [];
     for (let i = 0; i < json.stars; i++) {
       stars.push(i);
@@ -38,18 +40,23 @@ const Card = ({ img, json }) => {
     switch (type) {
       case 'azul hielo':
         type = hielo;
+        color = 'blue';
         break;
       case 'violeta oscuro':
         type = oscuro;
+        color = 'purple';
         break;
       case 'verde naturaleza':
         type = naturaleza;
+        color = 'green';
         break;
       case 'rojo fuego':
         type = fuego;
+        color = 'red';
         break;
       case 'amarillo sagrado':
         type = sagrado;
+        color = 'yellow';
         break;
       default:
         break;
@@ -92,101 +99,107 @@ const Card = ({ img, json }) => {
       starsNode: stars,
       srcElement: type,
       srcClassHero: className,
+      color,
     });
   }, []);
+
   return (
-    <div className='Card max-w-sm rounded shadow-lg text-black'>
-      <div className='relative text-white'>
-        <div className='absolute top-0 flex w-full justify-center'>
-          <h2 className='text-center bg-black-transparent px-3 py-1 rounded-b text-lg'>{json.name}</h2>
+    <div className={`Card max-w-sm rounded-lg shadow-lg text-white pt-5 pb-6 px-4 bg-${dataPj.color}-700 border-2 border-${dataPj.color}-500`}>
+      <div className='div-name absolute bg-yellow-700 border-t-4 border-b-4 border-yellow-600 center-horizontally-absolute max-w-85'>
+        <div className='relative'>
+          <img className='object-contain w-10 absolute img-element' src={dataPj.srcElement} alt={json.element} />
         </div>
-        <img className='object-contain w-full' src={img} alt={json.name} />
-        <div className='absolute bottom-0 w-full grid grid-cols-3 gap-4 py-2 bg-black-transparent'>
-          <div className='flex items-center justify-center'>
-            <img className='object-contain w-8 h-full' src={dataPj.srcElement} alt={json.element} />
-          </div>
-          <div className='flex items-center justify-around'>
-            {
-              dataPj.starsNode.map((id) => {
-                return (
-                  <div key={`star-${id}`}>
-                    <img className='object-contain w-6 h-full' src={star} alt='star' />
-                  </div>
-                );
-              })
-            }
-          </div>
-          <div className='flex justify-center items-start'>
-            <div className='relative'>
-              <p className='text-center rounded-full px-4 bg-red-900 border-4 border-red-500 text-border-black'>
-                {`${json.power}`}
-              </p>
-              <div className='absolute div_power w-full text-center font-bold text-red-400'>
-                <p className='text-border-black text-xs italic'>PODER</p>
-              </div>
+        <h2 className='text-center text-lg font-bold px-12 truncate'>{json.name}</h2>
+      </div>
+      <div className='flex justify-center'>
+        <div className='flex items-center justify-center w-2/5 bg-gray-900 border-r-4 border-l-4 border-gray-800 p-1'>
+          {
+            dataPj.starsNode.map((id) => {
+              return (
+                <div key={`star-${id}`}>
+                  <img className='object-contain w-6 h-full' src={star} alt='star' />
+                </div>
+              );
+            })
+          }
+        </div>
+      </div>
+      <div className='relative'>
+        <div className='flex justify-center items-start absolute div-power'>
+          <div className='relative'>
+            <p className='text-center rounded-full px-4 bg-red-900 border-4 border-red-500 text-border-black font-bold text-lg'>
+              {`${json.power}`}
+            </p>
+            <div className='absolute div_power w-full text-center font-bold text-red-400'>
+              <p className='text-border-black text-xs italic'>PODER</p>
             </div>
           </div>
         </div>
+        <img className='object-contain w-full rounded-lg' src={img} alt={json.name} />
       </div>
-      <div className='px-6 py-4'>
-        <div className='grid grid-cols-3 gap-4'>
+      <div className='my-2 shadow-inner rounded-lg'>
+        <div className={`px-4 py-2 grid grid-cols-3 gap-4 rounded-t-lg bg-${dataPj.color}-800 border-b border-${dataPj.color}-600`}>
           <div className='flex justify-center items-center'>
             <img className='object-contain w-6 h-full mr-1' src={attackImg} alt='Attack' />
-            <p className='text-center text-2xl'>{json.attack}</p>
+            <p className='text-center text-2xl font-bold text-border-black'>{json.attack}</p>
           </div>
           <div className='flex justify-center items-center'>
             <img className='object-contain w-6 h-full mr-1' src={defenseImg} alt='Defense' />
-            <p className='text-center text-2xl'>{json.defense}</p>
+            <p className='text-center text-2xl font-bold text-border-black'>{json.defense}</p>
           </div>
           <div className='flex justify-center items-center'>
             <img className='object-contain w-6 h-full mr-1' src={healthImg} alt='Health' />
-            <p className='text-center text-2xl'>{json.health}</p>
+            <p className='text-center text-2xl font-bold text-border-black'>{json.health}</p>
           </div>
         </div>
-        <div className='mt-4'>
-          <h3 className='font-bold text-xl mb-2 text-center'>Informacion Extra</h3>
+        <div className={`px-4 py-2 space-y-4 bg-${dataPj.color}-900 rounded-b-lg`}>
           <div>
-            <p>
-              Velocidad de Mana:
-              {` ${json.manaSpeed}`}
-            </p>
-          </div>
-          <div className='flex items-center'>
-            <p>Clase:</p>
-            <img className='ml-2 mr-1 object-contain h-full w-4' src={dataPj.srcClassHero} alt={json.classHero} />
-            <p>{json.classHero}</p>
+            <h3 className='font-bold text-xl mb-2 text-center'>Informacion Extra</h3>
+            <div>
+              <p>
+                Velocidad de Mana:
+                {` ${json.manaSpeed}`}
+              </p>
+            </div>
+            <div className='flex items-center'>
+              <p>Clase:</p>
+              <img className='ml-2 mr-1 object-contain h-full w-4' src={dataPj.srcClassHero} alt={json.classHero} />
+              <p className='capitalize'>{json.classHero}</p>
+            </div>
+            <div>
+              <p>
+                Familia:
+                <span className='capitalize'>{` ${json.family}`}</span>
+              </p>
+            </div>
+            <div>
+              <p>
+                Evento:
+                <span className='capitalize'>{` ${json.event}`}</span>
+              </p>
+            </div>
           </div>
           <div>
-            <p>
-              Familia:
-              {` ${json.family}`}
-            </p>
-          </div>
-          <div>
-            <p>
-              Evento:
-              {` ${json.event}`}
-            </p>
+            <h3 className='font-bold text-xl mb-2 text-center'>Efectos</h3>
+            <ul className='list-inside list-disc'>
+              {
+                json.effect.map((effect) => {
+                  const { id, data } = effect;
+                  if (!data) {
+                    return null;
+                  }
+                  return (
+                    <li key={id} className='capitalize'>{data}</li>
+                  );
+                })
+              }
+            </ul>
           </div>
         </div>
-        <div className='mt-4'>
-          <h3 className='font-bold text-xl mb-2 text-center'>Efectos</h3>
-          <ul className='list-inside list-disc'>
-            {
-              json.effect.map((effect) => {
-                const { id, data } = effect;
-                if (!data) {
-                  return null;
-                }
-                return (
-                  <li key={id}>{data}</li>
-                );
-              })
-            }
-          </ul>
-        </div>
+      </div>
+      <div className='absolute button-tutorial inset-x-0 flex justify-center'>
         <a href={json.video} target='_blank' rel='noopener noreferrer'>
-          <div className='text-center lg:no-underline mt-4 bg-blue-500 hover:bg-blue-400 text-white font-bold py-2 px-4 border-b-4 border-blue-700 hover:border-blue-500 rounded'>
+          <div className='text-center lg:no-underline mt-4 bg-blue-500 hover:bg-blue-400 font-bold py-2 px-4 border-b-4 border-black rounded'>
             Tutorial
           </div>
         </a>

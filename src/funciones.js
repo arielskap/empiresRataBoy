@@ -51,31 +51,6 @@ export const deleteCookie = (name) => {
   document.cookie = `${name}=; Path=/; Expires=Thu, 01 Jan 1970 00:00:01 GMT;`;
 };
 
-export const animateCSS = (element, animationName, callback) => {
-  const node = document.querySelector(element);
-  const animationNames = animationName.split(' ');
-  node.classList.add('animated');
-  for (let i = 0; i < animationNames.length; i++) {
-    node.classList.add(animationNames[i]);
-  }
-  const handleAnimationEnd = () => {
-    node.classList.remove('animated');
-    for (let i = 0; i < animationNames.length; i++) {
-      node.classList.remove(animationNames[i]);
-    }
-    node.removeEventListener('animationend', handleAnimationEnd);
-
-    if (typeof callback === 'function') callback();
-  };
-
-  node.addEventListener('animationend', handleAnimationEnd);
-};
-
-export const vibrar = () => {
-  /*No funciona en iphone*/
-  //window.navigator.vibrate(50);
-};
-
 export const changeDevice = () => {
   const isBrowser = typeof window !== 'undefined';
   if (isBrowser) {
