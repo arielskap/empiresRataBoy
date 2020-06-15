@@ -22,3 +22,7 @@
 .buttonClassSearch-active {
   @apply scale-110 border-purple-600;
 }
+
+.max-w-xxs {
+  max-width: 10rem;
+}

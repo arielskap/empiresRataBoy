@@ -1,10 +1,9 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { animated } from 'react-spring';
 import { useFetch, useSearchHeroes } from '../hooks';
 import { useFade } from '../animations';
-import { Face, Modal, MessageErrorFetch, SEO } from '../components';
-import FilterButton from '../components/FilterButton';
-import LabelInput from '../components/LabelInput';
+import { Face, Modal, MessageErrorFetch, SEO, FilterButton, LabelInput, ModalHero } from '../components';
+import CompareHeroes from '../components/CompareHeroes';
 import '../assets/styles/analisis.css';
 import star from '../assets/static/star.png';
 import fuego from '../assets/static/fuego.png';
@@ -22,9 +21,23 @@ import ranger from '../assets/static/ranger.png';
 import rogue from '../assets/static/rogue.png';
 import sorcer from '../assets/static/sorcer.png';
 import wizard from '../assets/static/wizard.png';
+import black from '../assets/static/black.png';
 import ButtonClassSearch from '../components/ButtonClassSearch';
 
 export default () => {
+  const [compareHeroes, setCompareHeroes] = useState([{
+    id: 1,
+    img: black,
+    alt: '',
+  }, {
+    id: 2,
+    img: black,
+    alt: '',
+  }, {
+    id: 3,
+    img: black,
+    alt: '',
+  }]);
   const { fade } = useFade();
   const { open, setOpen, errorResponse, data } = useFetch('5edebde42f5fd957fda675ee');
 
@@ -120,7 +133,7 @@ export default () => {
               <h1 className='text-xl font-bold'>Analisis de Heroes</h1>
             </div>
             <div className='sm:grid sm:grid-cols-3 sm:gap-2 lg:grid-cols-1'>
-              <h2 className='text-lg font-bold'>Buscador:</h2>
+              <h2 className='text-xl md:text-lg font-bold flex justify-center items-center md:block'>Buscador:</h2>
               <LabelInput
                 value={dataHeroes.query}
                 handleChange={(e) => {
@@ -148,18 +161,18 @@ export default () => {
                   <FilterButton handleOnClick={handleElement} number={4} img={oscuro} identity='element'>Oscuro</FilterButton>
                   <FilterButton handleOnClick={handleElement} number={5} img={sagrado} identity='element'>Sagrado</FilterButton>
                 </div>
-                <div className='grid grid-cols-5 gap-2 border border-pink-400 rounded p-2 lg:p-1 xl:p-2'>
-                  <ButtonClassSearch image={barbarian} name='Barbaro' handleClick={handleClassSearch} />
-                  <ButtonClassSearch image={cleric} name='Clerigo' handleClick={handleClassSearch} />
-                  <ButtonClassSearch image={druid} name='Druida' handleClick={handleClassSearch} />
-                  <ButtonClassSearch image={fighter} name='Luchador' handleClick={handleClassSearch} />
-                  <ButtonClassSearch image={monk} name='Monje' handleClick={handleClassSearch} />
-                  <ButtonClassSearch image={paladin} name='Paladin' handleClick={handleClassSearch} />
-                  <ButtonClassSearch image={ranger} name='Guardabosques' handleClick={handleClassSearch} />
-                  <ButtonClassSearch image={rogue} name='Rebelde' handleClick={handleClassSearch} />
-                  <ButtonClassSearch image={sorcer} name='Hechicero' handleClick={handleClassSearch} />
-                  <ButtonClassSearch image={wizard} name='Brujo' handleClick={handleClassSearch} />
-                </div>
+              </div>
+              <div className='grid grid-cols-5 gap-2 border border-pink-400 rounded p-2 mt-4 lg:p-1 xl:p-2'>
+                <ButtonClassSearch image={barbarian} name='Barbaro' handleClick={handleClassSearch} />
+                <ButtonClassSearch image={cleric} name='Clerigo' handleClick={handleClassSearch} />
+                <ButtonClassSearch image={druid} name='Druida' handleClick={handleClassSearch} />
+                <ButtonClassSearch image={fighter} name='Luchador' handleClick={handleClassSearch} />
+                <ButtonClassSearch image={monk} name='Monje' handleClick={handleClassSearch} />
+                <ButtonClassSearch image={paladin} name='Paladin' handleClick={handleClassSearch} />
+                <ButtonClassSearch image={ranger} name='Guardabosques' handleClick={handleClassSearch} />
+                <ButtonClassSearch image={rogue} name='Rebelde' handleClick={handleClassSearch} />
+                <ButtonClassSearch image={sorcer} name='Hechicero' handleClick={handleClassSearch} />
+                <ButtonClassSearch image={wizard} name='Brujo' handleClick={handleClassSearch} />
               </div>
               <div className='mt-2 w-full space-y-2'>
                 <div>
@@ -191,10 +204,11 @@ export default () => {
                   </LabelInput>
                 </div>
               </div>
-              <div className='text-right sm:flex sm:justify-center sm:items-center'>
+              <div className='text-right pt-4 sm:flex sm:justify-center sm:items-center'>
                 <button className='bg-transparent hover:bg-pink-500 text-pink-700 font-semibold hover:text-white py-1 px-2 border border-pink-500 hover:border-transparent rounded' type='button' onClick={handleClean}>Limpiar</button>
               </div>
             </div>
+            <CompareHeroes state={{ compareHeroes, setCompareHeroes }} />
           </div>
         </div>
         <div className='lg:col-span-10'>
@@ -219,13 +233,14 @@ export default () => {
               };
               return (
                 <div key={id}>
-                  <Face img={img} json={newJson}>{name}</Face>
+                  <Face data={{ id, img, json: newJson }} compareHeroes={{ compareHeroes, setCompareHeroes }}>{name}</Face>
                 </div>
               );
             })}
           </div>
         </div>
       </animated.main>
+      <ModalHero data={{ open, setOpen }} setCompareHeroes={setCompareHeroes} dataCard={{ img: data.img, json: data.json }} />
       <Modal data={{ open, setOpen }}>
         <MessageErrorFetch errorResponse={errorResponse}>Traer la Lista de Heroes</MessageErrorFetch>
       </Modal>
