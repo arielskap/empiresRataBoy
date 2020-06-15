@@ -38,6 +38,7 @@ module.exports = {
     {
       resolve: 'gatsby-plugin-purgecss',
       options: {
+        whitelistPatterns: [/^bg/],
         tailwind: true,
       },
     },
