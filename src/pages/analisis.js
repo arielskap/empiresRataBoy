@@ -240,7 +240,7 @@ export default () => {
           </div>
         </div>
       </animated.main>
-      <ModalHero data={{ open, setOpen }} setCompareHeroes={setCompareHeroes} dataCard={{ img: data.img, json: data.json }} />
+      {data && <ModalHero data={{ open, setOpen }} setCompareHeroes={setCompareHeroes} dataCard={{ img: data.img, json: data.json }} />}
       <Modal data={{ open, setOpen }}>
         <MessageErrorFetch errorResponse={errorResponse}>Traer la Lista de Heroes</MessageErrorFetch>
       </Modal>
