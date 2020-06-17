@@ -25,14 +25,14 @@ export default () => {
           <img className='object-contain md:max-w-4xl xl:max-w-6xl' src={redDeAlianzas} alt='Red de Alianzas' />
         </div>
         <div className='px-8'>
-          <hr className='my-8 md:hidden' />
+          <hr className='hr-home my-8 md:hidden' />
           <div>
             <h2 className='text-center mb-4 text-xl md:text-2xl font-bold'>¡Ver Directo Ahora!</h2>
             <div className='flex justify-center items-center'>
               <Twitch theme='dark' width='100%' height={480} channel='ratabboypda' />
             </div>
           </div>
-          <hr className='my-8' />
+          <hr className='hr-home my-8' />
           <div>
             <h2 className='text-center mb-4 text-xl md:text-2xl font-bold'>¡Listas de Reproducción!</h2>
             <div className='grid grid-cols-1 md:grid-cols-3 gap-4'>

@@ -1,0 +1,29 @@
+.carta-box {
+  max-width: 24rem;
+  width: 100%;
+  position: relative;
+  perspective: 1000px;
+  display: flex;
+}
+
+.carta {
+  transform-style: preserve-3d;
+}
+
+.cara {
+  backface-visibility: hidden;
+  margin: auto;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+}
+
+.cara.detras {
+  transform: rotateY(180deg);
+}
+
+.Modal__container {
+  background-color: rgba(255, 255, 255, 0);
+}

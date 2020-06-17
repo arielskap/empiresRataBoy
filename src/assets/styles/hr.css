@@ -1,4 +1,4 @@
-hr {
+.hr-home {
   overflow: visible; /* For IE */
   padding: 0;
   border: none;
@@ -9,7 +9,7 @@ hr {
   text-align: center;
 }
 
-hr::after {
+.hr-home::after {
   content: "🕹️";
   display: inline-block;
   position: relative;

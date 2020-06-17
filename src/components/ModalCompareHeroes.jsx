@@ -48,12 +48,11 @@ const ModalCompareHeroes = ({ dataCards, data }) => {
       }
     };
   }, []);
-  console.log(dataCards);
 
   return (
     <Portal>
       <animated.div className='Modal z-30 overflow-y-auto overflow-x-hidden' style={fade}>
-        <div className='Modal__bg w-full min-h-screen py-6 flex justify-center items-center flex-col space-y-16 md:space-y-0 md:grid md:grid-cols-3'>
+        <div className='Modal__bg w-full min-h-screen py-6 flex justify-center items-start space-x-3'>
           {dataCards.map((card) => {
             const { id, img, json } = card;
             if (!json) {

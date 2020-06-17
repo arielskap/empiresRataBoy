@@ -60,3 +60,7 @@ export const changeDevice = () => {
   }
   return null;
 };
+
+export const viewportOrientation = () => {
+  return window.innerHeight > window.innerWidth ? 'portrait' : 'landscape';
+};

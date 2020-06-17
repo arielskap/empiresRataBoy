@@ -15,3 +15,11 @@ export const useFade = (isReverse = false) => {
   }));
   return { fade, setFade, stopFade };
 };
+
+export const useRotateY = (isReverse = false) => {
+  const [rotateY, setRotateY, stopRotateY] = useSpring(() => ({
+    to: { transform: isReverse ? 'rotateY(0deg)' : 'rotateY(180deg)' },
+    from: { transform: isReverse ? 'rotateY(180deg)' : 'rotateY(0deg)' },
+  }));
+  return { rotateY, setRotateY, stopRotateY };
+};
