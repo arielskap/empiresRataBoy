@@ -4,7 +4,6 @@ import ButtonModal from './ButtonModal';
 
 const Face = ({ children, data, compareHeroes }) => {
   const [open, setOpen] = useState(false);
-
   return (
     <>
       <ButtonModal onClick={() => setOpen(true)}>

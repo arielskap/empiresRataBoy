@@ -16,6 +16,15 @@ export const useFade = (isReverse = false) => {
   return { fade, setFade, stopFade };
 };
 
+export const useRenderImg = () => {
+  const [renderImg, setRenderImg, stopRenderImg] = useSpring(() => ({
+    config: { duration: 1000 },
+    to: { opacity: 1, filter: 'blur(0)' },
+    from: { opacity: 0, filter: 'blur(5px)' },
+  }));
+  return { renderImg, setRenderImg, stopRenderImg };
+};
+
 export const useRotateY = (isReverse = false) => {
   const [rotateY, setRotateY, stopRotateY] = useSpring(() => ({
     to: { transform: isReverse ? 'rotateY(0deg)' : 'rotateY(180deg)' },

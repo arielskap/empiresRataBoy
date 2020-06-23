@@ -107,9 +107,7 @@ const ModalHero = ({ dataCard, data, compareHeroes }) => {
                   </div>
                 </div>
                 <div className='cara detras'>
-                  <div className='w-full h-full bg-black overflow-y-auto'>
-                    <BackCard json={dataCard.json} />
-                  </div>
+                  <BackCard json={dataCard.json} />
                 </div>
               </animated.div>
             </animated.div>

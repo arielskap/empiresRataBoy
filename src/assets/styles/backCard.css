@@ -1,0 +1,26 @@
+.bg-backCard {
+  background: rgb(30, 62, 90);
+  background: radial-gradient(circle, rgba(30, 62, 90, 1) 70%, rgba(20, 27, 41, 1) 100%);
+}
+
+.bg-talent-active {
+  background: rgb(161, 212, 220);
+  background: radial-gradient(circle, rgba(161, 212, 220, 1) 50%, rgba(29, 127, 180, 1) 70%, rgba(15, 76, 110, 1) 100%);
+
+  @apply border-4 border-yellow-600 rounded-lg;
+}
+
+.bg-talent {
+  background: rgb(215, 215, 215);
+  background: radial-gradient(circle, rgba(215, 215, 215, 1) 0%, rgba(75, 75, 75, 1) 100%);
+
+  @apply border-4 rounded-lg border-gray-500;
+}
+
+.bg-talent:hover {
+  @apply bg-talent-active;
+}
+
+.rotate-n-45 {
+  transform: rotate(-45deg);
+}

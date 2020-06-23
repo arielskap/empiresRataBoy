@@ -1,1 +1,1 @@
-export { useFade, useSlide, useRotateY } from './useSpring';
+export { useFade, useSlide, useRotateY, useRenderImg } from './useSpring';

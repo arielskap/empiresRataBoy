@@ -1,0 +1,1716 @@
+[{
+  "id": 1,
+  "className": "Rebelde",
+  "talents": [{
+    "id": 1,
+    "skill": true,
+    "title": "Evadir",
+    "text": "+4% de probabilidad de evadir ataques especiales ",
+    "skillData": "4%"
+  }, {
+    "id": 2,
+    "title": "Bonificacion de ataque",
+    "text": "Aumenta el ataque en 15 puntos",
+    "skillData": "15"
+  }, {
+    "id": 3,
+    "title": "Bonificacion de vida",
+    "text": "Aumenta la vida  en 36 puntos",
+    "skillData": "36"
+  }, {
+    "id": 4,
+    "title": "Bonificacion de vida",
+    "text": "Aumenta la vida  en 36 puntos",
+    "skillData": "36"
+  }, {
+    "id": 5,
+    "title": "Bonificacion de defensa",
+    "text": "Aumenta la defensa en 18 puntos",
+    "skillData": "18"
+  }, {
+    "id": 6,
+    "skill": true,
+    "title": "Evadir",
+    "text": "+4% de probabilidad de evadir ataques especiales ",
+    "skillData": "4%"
+  }, {
+    "id": 7,
+    "title": "Bonificacion de defensa",
+    "text": "Aumenta la defensa en 18 puntos",
+    "skillData": "18"
+  }, {
+    "id": 8,
+    "title": "Bonificacion de ataque",
+    "text": "Aumenta el ataque en 15 puntos",
+    "skillData": "15"
+  }, {
+    "id": 9,
+    "title": "Bonificacion de vida",
+    "text": "Aumenta la vida  en 36 puntos",
+    "skillData": "36"
+  }, {
+    "id": 10,
+    "title": "Bonificacion de defensa",
+    "text": "Aumenta la defensa en 18 puntos",
+    "skillData": "18"
+  }, {
+    "id": 11,
+    "skill": true,
+    "title": "Evadir",
+    "text": "+4% de probabilidad de evadir ataques especiales ",
+    "skillData": "4%"
+  }, {
+    "id": 12,
+    "title": "Bonificacion de vida Plus",
+    "text": "Aumenta la vida  en 3 % puntos",
+    "skillData": "40"
+  }, {
+    "id": 13,
+    "title": "Bonificacion de Mana",
+    "text": "Aumenta la velocidad de carga de mana 2%",
+    "skillData": "2%"
+  }, {
+    "id": 14,
+    "title": "Bonificacion de ataque",
+    "text": "Aumenta el ataque en 15 puntos",
+    "skillData": "15"
+  }, {
+    "id": 15,
+    "title": "Bonificacion de defensa",
+    "text": "Aumenta la defensa en 18 puntos",
+    "skillData": "18"
+  }, {
+    "id": 16,
+    "title": "Bonificacion de ataque plus",
+    "text": "Aumenta el ataque en 3%",
+    "skillData": "22"
+  }, {
+    "id": 17,
+    "title": "Bonificacion de vida",
+    "text": "Aumenta la vida  en 36 puntos",
+    "skillData": "36"
+  }, {
+    "id": 18,
+    "title": "Bonificacion de ataque",
+    "text": "Aumenta el ataque en 15 puntos",
+    "skillData": "15"
+  }, {
+    "id": 19,
+    "skill": true,
+    "title": "Evadir",
+    "text": "+4% de probabilidad de evadir ataques especiales ",
+    "skillData": "4%"
+  }, {
+    "id": 20,
+    "title": "Bonificacion de ataque",
+    "text": "Aumenta el ataque en 15 puntos",
+    "skillData": "15"
+  }, {
+    "id": 21,
+    "title": "Bonificacion de defensa",
+    "text": "Aumenta la defensa en 18 puntos",
+    "skillData": "18"
+  }, {
+    "id": 22,
+    "title": "Bonificacion de defensa",
+    "text": "Aumenta la defensa en 18 puntos",
+    "skillData": "18"
+  }, {
+    "id": 23,
+    "title": "Bonificacion de vida",
+    "text": "Aumenta la vida  en 36 puntos",
+    "skillData": "36"
+  }, {
+    "id": 24,
+    "skill": true,
+    "title": "Evadir",
+    "text": "+4% de probabilidad de evadir ataques especiales ",
+    "skillData": "4%"
+  }, {
+    "id": 25,
+    "title": "Bonificacion de vida",
+    "text": "Aumenta la vida  en 36 puntos",
+    "skillData": "36"
+  }, {
+    "id": 26,
+    "title": "Bonificacion de defensa",
+    "text": "Aumenta la defensa en 18 puntos",
+    "skillData": "18"
+  }, {
+    "id": 27,
+    "title": "Bonificacion de ataque",
+    "text": "Aumenta el ataque en 15 puntos",
+    "skillData": "15"
+  }, {
+    "id": 28,
+    "title": "Bonificacion de vida",
+    "text": "Aumenta la vida  en 36 puntos",
+    "skillData": "36"
+  }, {
+    "id": 29,
+    "title": "Bonificacion de ataque",
+    "text": "Aumenta el ataque en 15 puntos",
+    "skillData": "15"
+  }, {
+    "id": 30,
+    "title": "Bonificacion de defensa plus",
+    "text": "Aumenta la defensa en 3%",
+    "skillData": "21"
+  }, {
+    "id": 31,
+    "skill": true,
+    "title": "Curacion extra",
+    "text": "+2% de curacion extra",
+    "skillData": "2%"
+  }, {
+    "id": 32,
+    "skill": true,
+    "title": "critico",
+    "text": "+4% de probabilidad de evadir ataques especiales  de critico",
+    "skillData": "4%"
+  }]
+}, {
+  "id": 2,
+  "className": "Guardabosques",
+  "talents": [{
+    "id": 1,
+    "skill": true,
+    "title": "Perforar",
+    "text": "+5% de probabilidad de ignorar bendiciones de defensa del enemigo ",
+    "skillData": "5%"
+  }, {
+    "id": 2,
+    "title": "Bonificacion de ataque",
+    "text": "Aumenta el ataque en 15 puntos",
+    "skillData": "15"
+  }, {
+    "id": 3,
+    "title": "Bonificacion de defensa",
+    "text": "Aumenta la defensa en 18 puntos",
+    "skillData": "18"
+  }, {
+    "id": 4,
+    "title": "Bonificacion de defensa",
+    "text": "Aumenta la defensa en 18 puntos",
+    "skillData": "18"
+  }, {
+    "id": 5,
+    "title": "Bonificacion de vida",
+    "text": "Aumenta la vida  en 36 puntos",
+    "skillData": "36"
+  }, {
+    "id": 6,
+    "skill": true,
+    "title": "Perforar",
+    "text": "+5% de probabilidad de ignorar bendiciones de defensa del enemigo ",
+    "skillData": "5%"
+  }, {
+    "id": 7,
+    "title": "Bonificacion de vida",
+    "text": "Aumenta la vida  en 36 puntos",
+    "skillData": "36"
+  }, {
+    "id": 8,
+    "title": "Bonificacion de ataque",
+    "text": "Aumenta el ataque en 15 puntos",
+    "skillData": "15"
+  }, {
+    "id": 9,
+    "title": "Bonificacion de defensa",
+    "text": "Aumenta la defensa en 18 puntos",
+    "skillData": "18"
+  }, {
+    "id": 10,
+    "title": "Bonificacion de vida",
+    "text": "Aumenta la vida  en 36 puntos",
+    "skillData": "36"
+  }, {
+    "id": 11,
+    "skill": true,
+    "title": "Perforar",
+    "text": "+5% de probabilidad de ignorar bendiciones de defensa del enemigo ",
+    "skillData": "5%"
+  }, {
+    "id": 12,
+    "title": "Bonificacion de defensa Plus",
+    "text": "Aumenta la vida  en 3 % puntos",
+    "skillData": "22"
+  }, {
+    "id": 13,
+    "skill": true,
+    "title": "Bonificacion de Mana",
+    "text": "Aumenta la velocidad de carga de mana 2%",
+    "skillData": "2%"
+  }, {
+    "id": 14,
+    "title": "Bonificacion de ataque",
+    "text": "Aumenta el ataque en 15 puntos",
+    "skillData": "15"
+  }, {
+    "id": 15,
+    "title": "Bonificacion de vida",
+    "text": "Aumenta la vida  en 36 puntos",
+    "skillData": "36"
+  }, {
+    "id": 16,
+    "title": "Bonificacion de ataque plus",
+    "text": "Aumenta el ataque en 3%",
+    "skillData": "22"
+  }, {
+    "id": 17,
+    "title": "Bonificacion de defensa",
+    "text": "Aumenta la defensa en 18 puntos",
+    "skillData": "18"
+  }, {
+    "id": 18,
+    "title": "Bonificacion de ataque",
+    "text": "Aumenta el ataque en 15 puntos",
+    "skillData": "15"
+  }, {
+    "id": 19,
+    "skill": true,
+    "title": "Perforar",
+    "text": "+5% de probabilidad de ignorar bendiciones de defensa del enemigo ",
+    "skillData": "5%"
+  }, {
+    "id": 20,
+    "title": "Bonificacion de ataque",
+    "text": "Aumenta el ataque en 15 puntos",
+    "skillData": "15"
+  }, {
+    "id": 21,
+    "title": "Bonificacion de vida",
+    "text": "Aumenta la vida  en 36 puntos",
+    "skillData": "36"
+  }, {
+    "id": 22,
+    "title": "Bonificacion de vida",
+    "text": "Aumenta la vida  en 36 puntos",
+    "skillData": "36"
+  }, {
+    "id": 23,
+    "title": "Bonificacion de defensa",
+    "text": "Aumenta la defensa en 18 puntos",
+    "skillData": "18"
+  }, {
+    "id": 24,
+    "skill": true,
+    "title": "Perforar",
+    "text": "+5% de probabilidad de ignorar bendiciones de defensa del enemigo ",
+    "skillData": "5%"
+  }, {
+    "id": 25,
+    "title": "Bonificacion de defensa",
+    "text": "Aumenta la defensa en 18 puntos",
+    "skillData": "18"
+  }, {
+    "id": 26,
+    "title": "Bonificacion de vida",
+    "text": "Aumenta la vida  en 36 puntos",
+    "skillData": "36"
+  }, {
+    "id": 27,
+    "title": "Bonificacion de ataque",
+    "text": "Aumenta el ataque en 15 puntos",
+    "skillData": "15"
+  }, {
+    "id": 28,
+    "title": "Bonificacion de defensa",
+    "text": "Aumenta la defensa en 18 puntos",
+    "skillData": "18"
+  }, {
+    "id": 29,
+    "title": "Bonificacion de ataque",
+    "text": "Aumenta el ataque en 15 puntos",
+    "skillData": "15"
+  }, {
+    "id": 30,
+    "title": "Bonificacion de vida",
+    "text": "Aumenta la vida  en 3% puntos",
+    "skillData": "38"
+  }, {
+    "id": 31,
+    "skill": true,
+    "title": "Curacion extra",
+    "text": "+2% de curacion extra",
+    "skillData": "2%"
+  }, {
+    "id": 32,
+    "skill": true,
+    "title": "critico",
+    "text": "+4% de probabilidad de evadir ataques especiales  de critico",
+    "skillData": "4%"
+  }]
+}, {
+  "id": 3,
+  "className": "Monje",
+  "talents": [{
+    "id": 1,
+    "skill": true,
+    "title": "Resistir",
+    "text": "+6% de probabilidad de resistir efectos negativos ",
+    "skillData": "6%"
+  }, {
+    "id": 2,
+    "title": "Bonificacion de vida",
+    "text": "Aumenta la vida  en 36 puntos",
+    "skillData": "36"
+  }, {
+    "id": 3,
+    "title": "Bonificacion de defensa",
+    "text": "Aumenta la defensa en 18 puntos",
+    "skillData": "18"
+  }, {
+    "id": 4,
+    "title": "Bonificacion de defensa",
+    "text": "Aumenta la defensa en 18 puntos",
+    "skillData": "18"
+  }, {
+    "id": 5,
+    "title": "Bonificacion de ataque",
+    "text": "Aumenta el ataque en 15 puntos",
+    "skillData": "15"
+  }, {
+    "id": 6,
+    "skill": true,
+    "title": "Resistir",
+    "text": "+6% de probabilidad de resistir efectos negativos ",
+    "skillData": "6%"
+  }, {
+    "id": 7,
+    "title": "Bonificacion de ataque",
+    "text": "Aumenta el ataque en 15 puntos",
+    "skillData": "15"
+  }, {
+    "id": 8,
+    "title": "Bonificacion de vida",
+    "text": "Aumenta la vida  en 36 puntos",
+    "skillData": "36"
+  }, {
+    "id": 9,
+    "title": "Bonificacion de defensa",
+    "text": "Aumenta la defensa en 18 puntos",
+    "skillData": "18"
+  }, {
+    "id": 10,
+    "title": "Bonificacion de ataque",
+    "text": "Aumenta el ataque en 15 puntos",
+    "skillData": "15"
+  }, {
+    "id": 11,
+    "skill": true,
+    "title": "Resistir",
+    "text": "+6% de probabilidad de resistir efectos negativos ",
+    "skillData": "6%"
+  }, {
+    "id": 12,
+    "title": "Bonificacion de defensa plus",
+    "text": "Aumenta la defensa en 3%",
+    "skillData": "18"
+  }, {
+    "id": 13,
+    "title": "Bonificacion de vida Plus",
+    "text": "Aumenta la vida  en 3 % puntos",
+    "skillData": "29"
+  }, {
+    "id": 14,
+    "title": "Bonificacion de vida",
+    "text": "Aumenta la vida  en 36 puntos",
+    "skillData": "36"
+  }, {
+    "id": 15,
+    "title": "Bonificacion de ataque",
+    "text": "Aumenta el ataque en 15 puntos",
+    "skillData": "15"
+  }, {
+    "id": 16,
+    "skill": true,
+    "title": "critico",
+    "text": "+2% de probabilidad de evadir ataques especiales  de critico",
+    "skillData": "2%"
+  }, {
+    "id": 17,
+    "title": "Bonificacion de defensa",
+    "text": "Aumenta la defensa en 18 puntos",
+    "skillData": "18"
+  }, {
+    "id": 18,
+    "title": "Bonificacion de vida",
+    "text": "Aumenta la vida  en 36 puntos",
+    "skillData": "36"
+  }, {
+    "id": 19,
+    "skill": true,
+    "title": "Resistir",
+    "text": "+6% de probabilidad de resistir efectos negativos ",
+    "skillData": "6%"
+  }, {
+    "id": 20,
+    "title": "Bonificacion de vida",
+    "text": "Aumenta la vida  en 36 puntos",
+    "skillData": "36"
+  }, {
+    "id": 21,
+    "title": "Bonificacion de ataque",
+    "text": "Aumenta el ataque en 15 puntos",
+    "skillData": "15"
+  }, {
+    "id": 22,
+    "title": "Bonificacion de ataque",
+    "text": "Aumenta el ataque en 15 puntos",
+    "skillData": "15"
+  }, {
+    "id": 23,
+    "title": "Bonificacion de defensa",
+    "text": "Aumenta la defensa en 18 puntos",
+    "skillData": "18"
+  }, {
+    "id": 24,
+    "skill": true,
+    "title": "Resistir",
+    "text": "+6% de probabilidad de resistir efectos negativos ",
+    "skillData": "6%"
+  }, {
+    "id": 25,
+    "title": "Bonificacion de defensa",
+    "text": "Aumenta la defensa en 18 puntos",
+    "skillData": "18"
+  }, {
+    "id": 26,
+    "title": "Bonificacion de ataque",
+    "text": "Aumenta el ataque en 15 puntos",
+    "skillData": "15"
+  }, {
+    "id": 27,
+    "title": "Bonificacion de vida",
+    "text": "Aumenta la vida  en 36 puntos",
+    "skillData": "36"
+  }, {
+    "id": 28,
+    "title": "Bonificacion de defensa",
+    "text": "Aumenta la defensa en 18 puntos",
+    "skillData": "18"
+  }, {
+    "id": 29,
+    "title": "Bonificacion de vida",
+    "text": "Aumenta la vida  en 36 puntos",
+    "skillData": "36"
+  }, {
+    "id": 30,
+    "skill": true,
+    "title": "Curacion extra",
+    "text": "+2% de curacion extra",
+    "skillData": "2%"
+  }, {
+    "id": 31,
+    "title": "Bonificacion de ataque plus",
+    "text": "Aumenta el ataque en 3%",
+    "skillData": "21"
+  }, {
+    "id": 32,
+    "title": "Bonificacion de Mana",
+    "text": "Aumenta la velocidad de carga de mana 4%",
+    "skillData": "4%"
+  }]
+}, {
+  "id": 4,
+  "className": "Luchador",
+  "talents": [{
+    "id": 1,
+    "skill": true,
+    "title": "revivir",
+    "text": "+6% de probabilidad de revivir con 1 punto de vida",
+    "skillData": "6%"
+  }, {
+    "id": 2,
+    "title": "Bonificacion de defensa",
+    "text": "Aumenta la defensa en 18 puntos",
+    "skillData": "18"
+  }, {
+    "id": 3,
+    "title": "Bonificacion de ataque",
+    "text": "Aumenta el ataque en 15 puntos",
+    "skillData": "15"
+  }, {
+    "id": 4,
+    "title": "Bonificacion de ataque",
+    "text": "Aumenta el ataque en 15 puntos",
+    "skillData": "15"
+  }, {
+    "id": 5,
+    "title": "Bonificacion de vida",
+    "text": "Aumenta la vida  en 36 puntos",
+    "skillData": "36"
+  }, {
+    "id": 6,
+    "skill": true,
+    "title": "revivir",
+    "text": "+6% de probabilidad de revivir con 1 punto de vida",
+    "skillData": "6%"
+  }, {
+    "id": 7,
+    "title": "Bonificacion de vida",
+    "text": "Aumenta la vida  en 36 puntos",
+    "skillData": "36"
+  }, {
+    "id": 8,
+    "title": "Bonificacion de defensa",
+    "text": "Aumenta la defensa en 18 puntos",
+    "skillData": "18"
+  }, {
+    "id": 9,
+    "title": "Bonificacion de ataque",
+    "text": "Aumenta el ataque en 15 puntos",
+    "skillData": "15"
+  }, {
+    "id": 10,
+    "title": "Bonificacion de vida",
+    "text": "Aumenta la vida  en 36 puntos",
+    "skillData": "36"
+  }, {
+    "id": 11,
+    "skill": true,
+    "title": "revivir",
+    "text": "+6% de probabilidad de revivir con 1 punto de vida",
+    "skillData": "6%"
+  }, {
+    "id": 12,
+    "title": "Bonificacion de vida Plus",
+    "text": "Aumenta la vida  en 3 % puntos",
+    "skillData": "40"
+  }, {
+    "id": 13,
+    "skill": true,
+    "title": "Curacion extra",
+    "text": "+2% de curacion extra",
+    "skillData": "2%"
+  }, {
+    "id": 14,
+    "title": "Bonificacion de defensa",
+    "text": "Aumenta la defensa en 18 puntos",
+    "skillData": "18"
+  }, {
+    "id": 15,
+    "title": "Bonificacion de vida",
+    "text": "Aumenta la vida  en 36 puntos",
+    "skillData": "36"
+  }, {
+    "id": 16,
+    "title": "Bonificacion de defensa Plus",
+    "text": "Aumenta la vida  en 3 % puntos",
+    "skillData": "21"
+  }, {
+    "id": 17,
+    "title": "Bonificacion de ataque",
+    "text": "Aumenta el ataque en 15 puntos",
+    "skillData": "15"
+  }, {
+    "id": 18,
+    "title": "Bonificacion de defensa",
+    "text": "Aumenta la defensa en 18 puntos",
+    "skillData": "18"
+  }, {
+    "id": 19,
+    "skill": true,
+    "title": "revivir",
+    "text": "+6% de probabilidad de revivir con 1 punto de vida",
+    "skillData": "6%"
+  }, {
+    "id": 20,
+    "title": "Bonificacion de defensa",
+    "text": "Aumenta la defensa en 18 puntos",
+    "skillData": "18"
+  }, {
+    "id": 21,
+    "title": "Bonificacion de vida",
+    "text": "Aumenta la vida  en 36 puntos",
+    "skillData": "36"
+  }, {
+    "id": 22,
+    "title": "Bonificacion de vida",
+    "text": "Aumenta la vida  en 36 puntos",
+    "skillData": "36"
+  }, {
+    "id": 23,
+    "title": "Bonificacion de ataque",
+    "text": "Aumenta el ataque en 15 puntos",
+    "skillData": "15"
+  }, {
+    "id": 24,
+    "skill": true,
+    "title": "revivir",
+    "text": "+6% de probabilidad de revivir con 1 punto de vida",
+    "skillData": "6%"
+  }, {
+    "id": 25,
+    "title": "Bonificacion de ataque",
+    "text": "Aumenta el ataque en 15 puntos",
+    "skillData": "15"
+  }, {
+    "id": 26,
+    "title": "Bonificacion de vida",
+    "text": "Aumenta la vida  en 36 puntos",
+    "skillData": "36"
+  }, {
+    "id": 27,
+    "title": "Bonificacion de defensa",
+    "text": "Aumenta la defensa en 18 puntos",
+    "skillData": "18"
+  }, {
+    "id": 28,
+    "title": "Bonificacion de ataque",
+    "text": "Aumenta el ataque en 15 puntos",
+    "skillData": "15"
+  }, {
+    "id": 29,
+    "title": "Bonificacion de defensa",
+    "text": "Aumenta la defensa en 18 puntos",
+    "skillData": "18"
+  }, {
+    "id": 30,
+    "skill": true,
+    "title": "Bonificacion de Mana",
+    "text": "Aumenta la velocidad de carga de mana 2%",
+    "skillData": "2%"
+  }, {
+    "id": 31,
+    "skill": true,
+    "title": "critico",
+    "text": "+2% de probabilidad de evadir ataques especiales  de critico",
+    "skillData": "2%"
+  }, {
+    "id": 32,
+    "title": "Bonificacion de ataque plus",
+    "text": "Aumenta el ataque en 4%",
+    "skillData": "21"
+  }]
+}, {
+  "id": 5,
+  "className": "Barbaro",
+  "talents": [{
+    "id": 1,
+    "skill": true,
+    "title": "Herida",
+    "text": "+6% de probabilidad de generar un sangrado y generar 60% de daño normal durante 5 turnos  por cada ataque normal ",
+    "skillData": "6%"
+  }, {
+    "id": 2,
+    "title": "Bonificacion de ataque",
+    "text": "Aumenta el ataque en 15 puntos",
+    "skillData": "15"
+  }, {
+    "id": 3,
+    "title": "Bonificacion de vida",
+    "text": "Aumenta la vida  en 36 puntos",
+    "skillData": "36"
+  }, {
+    "id": 4,
+    "title": "Bonificacion de vida",
+    "text": "Aumenta la vida  en 36 puntos",
+    "skillData": "36"
+  }, {
+    "id": 5,
+    "title": "Bonificacion de defensa",
+    "text": "Aumenta la defensa en 18 puntos",
+    "skillData": "18"
+  }, {
+    "id": 6,
+    "skill": true,
+    "title": "Herida",
+    "text": "+6% de probabilidad de generar un sangrado y generar 60% de daño normal durante 5 turnos  por cada ataque normal ",
+    "skillData": "6%"
+  }, {
+    "id": 7,
+    "title": "Bonificacion de defensa",
+    "text": "Aumenta la defensa en 18 puntos",
+    "skillData": "18"
+  }, {
+    "id": 8,
+    "title": "Bonificacion de ataque",
+    "text": "Aumenta el ataque en 15 puntos",
+    "skillData": "15"
+  }, {
+    "id": 9,
+    "title": "Bonificacion de vida",
+    "text": "Aumenta la vida  en 36 puntos",
+    "skillData": "36"
+  }, {
+    "id": 10,
+    "title": "Bonificacion de defensa",
+    "text": "Aumenta la defensa en 18 puntos",
+    "skillData": "18"
+  }, {
+    "id": 11,
+    "skill": true,
+    "title": "Herida",
+    "text": "+6% de probabilidad de generar un sangrado y generar 60% de daño normal durante 5 turnos  por cada ataque normal ",
+    "skillData": "6%"
+  }, {
+    "id": 12,
+    "skill": true,
+    "title": "Curacion extra",
+    "text": "+2% de curacion extra",
+    "skillData": "2%"
+  }, {
+    "id": 13,
+    "title": "Bonificacion de ataque plus",
+    "text": "Aumenta el ataque en 3%",
+    "skillData": "21"
+  }, {
+    "id": 14,
+    "title": "Bonificacion de ataque",
+    "text": "Aumenta el ataque en 15 puntos",
+    "skillData": "15"
+  }, {
+    "id": 15,
+    "title": "Bonificacion de defensa",
+    "text": "Aumenta la defensa en 18 puntos",
+    "skillData": "18"
+  }, {
+    "id": 16,
+    "skill": true,
+    "title": "critico",
+    "text": "+2% de probabilidad de evadir ataques especiales  de critico",
+    "skillData": "2%"
+  }, {
+    "id": 17,
+    "title": "Bonificacion de vida",
+    "text": "Aumenta la vida  en 36 puntos",
+    "skillData": "36"
+  }, {
+    "id": 18,
+    "title": "Bonificacion de ataque",
+    "text": "Aumenta el ataque en 15 puntos",
+    "skillData": "15"
+  }, {
+    "id": 19,
+    "skill": true,
+    "title": "Herida",
+    "text": "+6% de probabilidad de generar un sangrado y generar 60% de daño normal durante 5 turnos  por cada ataque normal ",
+    "skillData": "6%"
+  }, {
+    "id": 20,
+    "title": "Bonificacion de ataque",
+    "text": "Aumenta el ataque en 15 puntos",
+    "skillData": "15"
+  }, {
+    "id": 21,
+    "title": "Bonificacion de defensa",
+    "text": "Aumenta la defensa en 18 puntos",
+    "skillData": "18"
+  }, {
+    "id": 22,
+    "title": "Bonificacion de defensa",
+    "text": "Aumenta la defensa en 18 puntos",
+    "skillData": "18"
+  }, {
+    "id": 23,
+    "title": "Bonificacion de vida",
+    "text": "Aumenta la vida  en 36 puntos",
+    "skillData": "36"
+  }, {
+    "id": 24,
+    "skill": true,
+    "title": "Herida",
+    "text": "+6% de probabilidad de generar un sangrado y generar 60% de daño normal durante 5 turnos  por cada ataque normal ",
+    "skillData": "6%"
+  }, {
+    "id": 25,
+    "title": "Bonificacion de vida",
+    "text": "Aumenta la vida  en 36 puntos",
+    "skillData": "36"
+  }, {
+    "id": 26,
+    "title": "Bonificacion de defensa",
+    "text": "Aumenta la defensa en 18 puntos",
+    "skillData": "18"
+  }, {
+    "id": 27,
+    "title": "Bonificacion de ataque",
+    "text": "Aumenta el ataque en 15 puntos",
+    "skillData": "15"
+  }, {
+    "id": 28,
+    "title": "Bonificacion de vida",
+    "text": "Aumenta la vida  en 36 puntos",
+    "skillData": "36"
+  }, {
+    "id": 29,
+    "title": "Bonificacion de ataque",
+    "text": "Aumenta el ataque en 15 puntos",
+    "skillData": "15"
+  }, {
+    "id": 30,
+    "title": "Bonificacion de Mana",
+    "text": "Aumenta la velocidad de carga de mana 2%",
+    "skillData": "2%"
+  }, {
+    "id": 31,
+    "title": "Bonificacion de defensa plus",
+    "text": "Aumenta la defensa en 3%",
+    "skillData": "15"
+  }, {
+    "id": 32,
+    "title": "Bonificacion de vida Plus",
+    "text": "Aumenta la vida  en 4 % puntos",
+    "skillData": "45"
+  }]
+}, {
+  "id": 6,
+  "className": "Clerigo",
+  "talents": [{
+    "id": 1,
+    "skill": true,
+    "title": "Escudo mana",
+    "text": "+7% de probabilidad de resisitir efecto negativo de mana o uso de habilidad especial",
+    "skillData": "7%"
+  }, {
+    "id": 2,
+    "title": "Bonificacion de vida",
+    "text": "Aumenta la vida  en 36 puntos",
+    "skillData": "36"
+  }, {
+    "id": 3,
+    "title": "Bonificacion de defensa",
+    "text": "Aumenta la defensa en 18 puntos",
+    "skillData": "18"
+  }, {
+    "id": 4,
+    "title": "Bonificacion de defensa",
+    "text": "Aumenta la defensa en 18 puntos",
+    "skillData": "18"
+  }, {
+    "id": 5,
+    "title": "Bonificacion de ataque",
+    "text": "Aumenta el ataque en 15 puntos",
+    "skillData": "15"
+  }, {
+    "id": 6,
+    "skill": true,
+    "title": "Escudo mana",
+    "text": "+7% de probabilidad de resisitir efecto negativo de mana o uso de habilidad especial",
+    "skillData": "7%"
+  }, {
+    "id": 7,
+    "title": "Bonificacion de ataque",
+    "text": "Aumenta el ataque en 15 puntos",
+    "skillData": "15"
+  }, {
+    "id": 8,
+    "title": "Bonificacion de vida",
+    "text": "Aumenta la vida  en 36 puntos",
+    "skillData": "36"
+  }, {
+    "id": 9,
+    "title": "Bonificacion de defensa",
+    "text": "Aumenta la defensa en 18 puntos",
+    "skillData": "18"
+  }, {
+    "id": 10,
+    "title": "Bonificacion de ataque",
+    "text": "Aumenta el ataque en 15 puntos",
+    "skillData": "15"
+  }, {
+    "id": 11,
+    "skill": true,
+    "title": "Escudo mana",
+    "text": "+7% de probabilidad de resisitir efecto negativo de mana o uso de habilidad especial",
+    "skillData": "7%"
+  }, {
+    "id": 12,
+    "title": "Bonificacion de ataque plus",
+    "text": "Aumenta el ataque en 3%",
+    "skillData": "18"
+  }, {
+    "id": 13,
+    "title": "Bonificacion de defensa plus",
+    "text": "Aumenta la defensa en 3%",
+    "skillData": "24"
+  }, {
+    "id": 14,
+    "title": "Bonificacion de vida",
+    "text": "Aumenta la vida  en 36 puntos",
+    "skillData": "36"
+  }, {
+    "id": 15,
+    "title": "Bonificacion de ataque",
+    "text": "Aumenta el ataque en 15 puntos",
+    "skillData": "15"
+  }, {
+    "id": 16,
+    "title": "Bonificacion de vida Plus",
+    "text": "Aumenta la vida  en 3 % puntos",
+    "skillData": "42"
+}, {
+  "id": 17,
+  "title": "Bonificacion de defensa",
+  "text": "Aumenta la defensa en 18 puntos",
+  "skillData": "18"
+}, {
+  "id": 18,
+  "title": "Bonificacion de vida",
+  "text": "Aumenta la vida  en 36 puntos",
+  "skillData": "36"
+}, {
+  "id": 19,
+  "skill": true,
+  "title": "Escudo mana",
+  "text": "+7% de probabilidad de resisitir efecto negativo de mana o uso de habilidad especial",
+  "skillData": "7%"
+}, {
+  "id": 20,
+  "title": "Bonificacion de vida",
+  "text": "Aumenta la vida  en 36 puntos",
+  "skillData": "36"
+}, {
+  "id": 21,
+  "title": "Bonificacion de ataque",
+  "text": "Aumenta el ataque en 15 puntos",
+  "skillData": "15"
+}, {
+  "id": 22,
+  "title": "Bonificacion de ataque",
+  "text": "Aumenta el ataque en 15 puntos",
+  "skillData": "15"
+}, {
+  "id": 23,
+  "title": "Bonificacion de defensa",
+  "text": "Aumenta la defensa en 18 puntos",
+  "skillData": "18"
+}, {
+  "id": 24,
+  "skill": true,
+  "title": "Escudo mana",
+  "text": "+7% de probabilidad de resisitir efecto negativo de mana o uso de habilidad especial",
+  "skillData": "7%"
+}, {
+  "id": 25,
+  "title": "Bonificacion de defensa",
+  "text": "Aumenta la defensa en 18 puntos",
+  "skillData": "18"
+}, {
+  "id": 26,
+  "title": "Bonificacion de ataque",
+  "text": "Aumenta el ataque en 15 puntos",
+  "skillData": "15"
+}, {
+  "id": 27,
+  "title": "Bonificacion de vida",
+  "text": "Aumenta la vida  en 36 puntos",
+  "skillData": "36"
+}, {
+  "id": 28,
+  "title": "Bonificacion de defensa",
+  "text": "Aumenta la defensa en 18 puntos",
+  "skillData": "18"
+}, {
+  "id": 29,
+  "title": "Bonificacion de vida",
+  "text": "Aumenta la vida  en 36 puntos",
+  "skillData": "36"
+}, {
+  "id": 30,
+  "skill": true,
+  "title": "critico",
+  "text": "+2% de probabilidad de evadir ataques especiales  de critico",
+  "skillData": "2%"
+}, {
+  "id": 31,
+  "skill": true,
+  "title": "Bonificacion de Mana",
+  "text": "Aumenta la velocidad de carga de mana 2%",
+  "skillData": "2%"
+}, {
+  "id": 32,
+  "skill": true,
+  "title": "Curacion extra",
+  "text": "+4% de curacion extra",
+  "skillData": "4%"
+}]
+}, {
+  "id": 7,
+  "className": "Brujo",
+  "talents": [{
+    "id": 1,
+    "skill": true,
+    "title": "Maldecir",
+    "text": "+5% de probabilidad de inflingir 15% de daño adicional por cada potenciador que los enemigos tengan activado ",
+    "skillData": "5%"
+  }, {
+    "id": 2,
+    "title": "Bonificacion de ataque",
+    "text": "Aumenta el ataque en 15 puntos",
+    "skillData": "15"
+  }, {
+    "id": 3,
+    "title": "Bonificacion de defensa",
+    "text": "Aumenta la defensa en 18 puntos",
+    "skillData": "18"
+  }, {
+    "id": 4,
+    "title": "Bonificacion de defensa",
+    "text": "Aumenta la defensa en 18 puntos",
+    "skillData": "18"
+  }, {
+    "id": 5,
+    "title": "Bonificacion de vida",
+    "text": "Aumenta la vida  en 36 puntos",
+    "skillData": "36"
+  }, {
+    "id": 6,
+    "skill": true,
+    "title": "Maldecir",
+    "text": "+5% de probabilidad de inflingir 15% de daño adicional por cada potenciador que los enemigos tengan activado ",
+    "skillData": "5%"
+  }, {
+    "id": 7,
+    "title": "Bonificacion de vida",
+    "text": "Aumenta la vida  en 36 puntos",
+    "skillData": "36"
+  }, {
+    "id": 8,
+    "title": "Bonificacion de ataque",
+    "text": "Aumenta el ataque en 15 puntos",
+    "skillData": "15"
+  }, {
+    "id": 9,
+    "title": "Bonificacion de defensa",
+    "text": "Aumenta la defensa en 18 puntos",
+    "skillData": "18"
+  }, {
+    "id": 10,
+    "title": "Bonificacion de vida",
+    "text": "Aumenta la vida  en 36 puntos",
+    "skillData": "36"
+  }, {
+    "id": 11,
+    "skill": true,
+    "title": "Maldecir",
+    "text": "+5% de probabilidad de inflingir 15% de daño adicional por cada potenciador que los enemigos tengan activado ",
+    "skillData": "5%"
+  }, {
+    "id": 12,
+    "title": "Bonificacion de vida Plus",
+    "text": "Aumenta la vida  en 3 % puntos",
+    "skillData": "36"
+  }, {
+    "id": 13,
+    "title": "Bonificacion de defensa plus",
+    "text": "Aumenta la defensa en 3%",
+    "skillData": "19"
+  }, {}, {
+    "id": 14,
+    "title": "Bonificacion de ataque",
+    "text": "Aumenta el ataque en 15 puntos",
+    "skillData": "15"
+  }, {
+    "id": 15,
+    "title": "Bonificacion de vida",
+    "text": "Aumenta la vida  en 36 puntos",
+    "skillData": "36"
+  }, {
+    "id": 16,
+    "skill": true,
+    "title": "critico",
+    "text": "+2% de probabilidad de evadir ataques especiales  de critico",
+    "skillData": "2%"
+  }, {
+    "id": 17,
+    "title": "Bonificacion de defensa",
+    "text": "Aumenta la defensa en 18 puntos",
+    "skillData": "18"
+  }, {
+    "id": 18,
+    "title": "Bonificacion de ataque",
+    "text": "Aumenta el ataque en 15 puntos",
+    "skillData": "15"
+  }, {
+    "id": 19,
+    "skill": true,
+    "title": "Maldecir",
+    "text": "+5% de probabilidad de inflingir 15% de daño adicional por cada potenciador que los enemigos tengan activado ",
+    "skillData": "5%"
+  }, {
+    "id": 20,
+    "title": "Bonificacion de ataque",
+    "text": "Aumenta el ataque en 15 puntos",
+    "skillData": "15"
+  }, {
+    "id": 21,
+    "title": "Bonificacion de vida",
+    "text": "Aumenta la vida  en 36 puntos",
+    "skillData": "36"
+  }, {
+    "id": 22,
+    "title": "Bonificacion de vida",
+    "text": "Aumenta la vida  en 36 puntos",
+    "skillData": "36"
+  }, {
+    "id": 23,
+    "title": "Bonificacion de defensa",
+    "text": "Aumenta la defensa en 18 puntos",
+    "skillData": "18"
+  }, {
+    "id": 24,
+    "skill": true,
+    "title": "Maldecir",
+    "text": "+5% de probabilidad de inflingir 15% de daño adicional por cada potenciador que los enemigos tengan activado ",
+    "skillData": "5%"
+  }, {
+    "id": 25,
+    "title": "Bonificacion de defensa",
+    "text": "Aumenta la defensa en 18 puntos",
+    "skillData": "18"
+  }, {
+    "id": 26,
+    "title": "Bonificacion de vida",
+    "text": "Aumenta la vida  en 36 puntos",
+    "skillData": "36"
+  }, {
+    "id": 27,
+    "title": "Bonificacion de ataque",
+    "text": "Aumenta el ataque en 15 puntos",
+    "skillData": "15"
+  }, {
+    "id": 28,
+    "title": "Bonificacion de defensa",
+    "text": "Aumenta la defensa en 18 puntos",
+    "skillData": "18"
+  }, {
+    "id": 29,
+    "title": "Bonificacion de ataque",
+    "text": "Aumenta el ataque en 15 puntos",
+    "skillData": "15"
+  }, {
+    "id": 30,
+    "skill": true,
+    "title": "Curacion extra",
+    "text": "+2% de curacion extra",
+    "skillData": "2%"
+  }, {
+    "id": 31,
+    "skill": true,
+    "title": "Bonificacion de Mana",
+    "text": "Aumenta la velocidad de carga de mana 2%",
+    "skillData": "2%"
+  }, {
+    "id": 32,
+    "title": "Bonificacion de ataque plus",
+    "text": "Aumenta el ataque en 4%",
+    "skillData": "31"
+  }]
+}, {
+  "id": 8,
+  "className": "Druida",
+  "talents": [{
+    "id": 1,
+    "skill": true,
+    "title": "acompañante",
+    "text": "+3% de probabilidad de invocar un minion al recibir daño ",
+    "skillData": "3%"
+  }, {
+    "id": 2,
+    "title": "Bonificacion de vida",
+    "text": "Aumenta la vida  en 36 puntos",
+    "skillData": "36"
+  }, {
+    "id": 3,
+    "title": "Bonificacion de ataque",
+    "text": "Aumenta el ataque en 15 puntos",
+    "skillData": "15"
+  }, {
+    "id": 4,
+    "title": "Bonificacion de ataque",
+    "text": "Aumenta el ataque en 15 puntos",
+    "skillData": "15"
+  }, {
+    "id": 5,
+    "title": "Bonificacion de defensa",
+    "text": "Aumenta la defensa en 18 puntos",
+    "skillData": "18"
+  }, {
+    "id": 6,
+    "skill": true,
+    "title": "acompañante",
+    "text": "+3% de probabilidad de invocar un minion al recibir daño ",
+    "skillData": "3%"
+  }, {
+    "id": 7,
+    "title": "Bonificacion de defensa",
+    "text": "Aumenta la defensa en 18 puntos",
+    "skillData": "18"
+  }, {
+    "id": 8,
+    "title": "Bonificacion de vida",
+    "text": "Aumenta la vida  en 36 puntos",
+    "skillData": "36"
+  }, {
+    "id": 9,
+    "title": "Bonificacion de ataque",
+    "text": "Aumenta el ataque en 15 puntos",
+    "skillData": "15"
+  }, {
+    "id": 10,
+    "title": "Bonificacion de defensa",
+    "text": "Aumenta la defensa en 18 puntos",
+    "skillData": "18"
+  }, {
+    "id": 11,
+    "skill": true,
+    "title": "acompañante",
+    "text": "+3% de probabilidad de invocar un minion al recibir daño ",
+    "skillData": "3%"
+  }, {
+    "id": 12,
+    "title": "Curacion extra",
+    "text": "+2% de curacion extra",
+    "skillData": "2%"
+  }, {
+    "id": 13,
+    "title": "Bonificacion de ataque plus",
+    "text": "Aumenta el ataque en 3%",
+    "skillData": "22"
+  }, {
+    "id": 14,
+    "title": "Bonificacion de vida",
+    "text": "Aumenta la vida  en 36 puntos",
+    "skillData": "36"
+  }, {
+    "id": 15,
+    "title": "Bonificacion de defensa",
+    "text": "Aumenta la defensa en 18 puntos",
+    "skillData": "18"
+  }, {
+    "id": 16,
+    "title": "Bonificacion de vida plus",
+    "text": "Aumenta la vida  en 3%",
+    "skillData": "31"
+  }, {
+    "id": 17,
+    "title": "Bonificacion de ataque",
+    "text": "Aumenta el ataque en 15 puntos",
+    "skillData": "15"
+  }, {
+    "id": 18,
+    "title": "Bonificacion de vida",
+    "text": "Aumenta la vida  en 36 puntos",
+    "skillData": "36"
+  }, {
+    "id": 19,
+    "skill": true,
+    "title": "acompañante",
+    "text": "+3% de probabilidad de invocar un minion al recibir daño ",
+    "skillData": "3%"
+  }, {
+    "id": 20,
+    "title": "Bonificacion de vida",
+    "text": "Aumenta la vida  en 36 puntos",
+    "skillData": "36"
+  }, {
+    "id": 21,
+    "title": "Bonificacion de defensa",
+    "text": "Aumenta la defensa en 18 puntos",
+    "skillData": "18"
+  }, {
+    "id": 22,
+    "title": "Bonificacion de defensa",
+    "text": "Aumenta la defensa en 18 puntos",
+    "skillData": "18"
+  }, {
+    "id": 23,
+    "title": "Bonificacion de ataque",
+    "text": "Aumenta el ataque en 15 puntos",
+    "skillData": "15"
+  }, {
+    "id": 24,
+    "skill": true,
+    "title": "acompañante",
+    "text": "+3% de probabilidad de invocar un minion al recibir daño ",
+    "skillData": "3%"
+  }, {
+    "id": 25,
+    "title": "Bonificacion de ataque",
+    "text": "Aumenta el ataque en 15 puntos",
+    "skillData": "15"
+  }, {
+    "id": 26,
+    "title": "Bonificacion de defensa",
+    "text": "Aumenta la defensa en 18 puntos",
+    "skillData": "18"
+  }, {
+    "id": 27,
+    "title": "Bonificacion de vida",
+    "text": "Aumenta la vida  en 36 puntos",
+    "skillData": "36"
+  }, {
+    "id": 28,
+    "title": "Bonificacion de ataque",
+    "text": "Aumenta el ataque en 15 puntos",
+    "skillData": "15"
+  }, {
+    "id": 29,
+    "title": "Bonificacion de vida",
+    "text": "Aumenta la vida  en 36 puntos",
+    "skillData": "36"
+  }, {
+    "id": 30,
+    "skill": true,
+    "title": "critico",
+    "text": "+2% de probabilidad de evadir ataques especiales  de critico",
+    "skillData": "2%"
+  }, {
+    "id": 31,
+    "title": "Bonificacion de defensa Plus",
+    "text": "Aumenta la vida  en 3 % puntos",
+    "skillData": "18"
+  }, {
+    "id": 32,
+    "skill": true,
+    "title": "Bonificacion de Mana",
+    "text": "Aumenta la velocidad de carga de mana 4%",
+    "skillData": "4%"
+  }]
+}, {
+  "id": 9,
+  "className": "Paladin",
+  "talents": [{
+    "id": 1,
+    "skill": true,
+    "title": "Proteger",
+    "text": "+5% de probabilidad de obtener +25% defensa por 2 turnos al recibir daño",
+    "skillData": "25%"
+  }, {
+    "id": 2,
+    "title": "Bonificacion de defensa",
+    "text": "Aumenta la defensa en 18 puntos",
+    "skillData": "18"
+  }, {
+    "id": 3,
+    "title": "Bonificacion de ataque",
+    "text": "Aumenta el ataque en 15 puntos",
+    "skillData": "15"
+  }, {
+    "id": 4,
+    "title": "Bonificacion de ataque",
+    "text": "Aumenta el ataque en 15 puntos",
+    "skillData": "15"
+  }, {
+    "id": 5,
+    "title": "Bonificacion de vida",
+    "text": "Aumenta la vida  en 36 puntos",
+    "skillData": "36"
+  }, {
+    "id": 6,
+    "skill": true,
+    "title": "Proteger",
+    "text": "+5% de probabilidad de obtener +25% defensa por 2 turnos al recibir daño",
+    "skillData": "25%"
+  }, {
+    "id": 7,
+    "title": "Bonificacion de vida",
+    "text": "Aumenta la vida  en 36 puntos",
+    "skillData": "36"
+  }, {
+    "id": 8,
+    "title": "Bonificacion de defensa",
+    "text": "Aumenta la defensa en 18 puntos",
+    "skillData": "18"
+  }, {
+    "id": 9,
+    "title": "Bonificacion de ataque",
+    "text": "Aumenta el ataque en 15 puntos",
+    "skillData": "15"
+  }, {
+    "id": 10,
+    "title": "Bonificacion de vida",
+    "text": "Aumenta la vida  en 36 puntos",
+    "skillData": "36"
+  }, {
+    "id": 11,
+    "skill": true,
+    "title": "Proteger",
+    "text": "+5% de probabilidad de obtener +25% defensa por 2 turnos al recibir daño",
+    "skillData": "25%"
+  }, {
+    "id": 12,
+    "title": "Bonificacion de vida Plus",
+    "text": "Aumenta la vida  en 3 % puntos",
+    "skillData": "40"
+  }, {
+    "id": 13,
+    "skill": true,
+    "title": "Curacion extra",
+    "text": "+2% de curacion extra",
+    "skillData": "2%"
+  }, {
+    "id": 14,
+    "title": "Bonificacion de defensa",
+    "text": "Aumenta la defensa en 18 puntos",
+    "skillData": "18"
+  }, {
+    "id": 15,
+    "title": "Bonificacion de vida",
+    "text": "Aumenta la vida  en 36 puntos",
+    "skillData": "36"
+  }, {
+    "id": 16,
+    "title": "Bonificacion de ataque plus",
+    "text": "Aumenta el ataque en 3%",
+    "skillData": "16"
+  }, {
+    "id": 17,
+    "title": "Bonificacion de ataque",
+    "text": "Aumenta el ataque en 15 puntos",
+    "skillData": "15"
+  }, {
+    "id": 18,
+    "title": "Bonificacion de defensa",
+    "text": "Aumenta la defensa en 18 puntos",
+    "skillData": "18"
+  }, {
+    "id": 19,
+    "skill": true,
+    "title": "Proteger",
+    "text": "+5% de probabilidad de obtener +25% defensa por 2 turnos al recibir daño",
+    "skillData": "25%"
+  }, {
+    "id": 20,
+    "title": "Bonificacion de defensa",
+    "text": "Aumenta la defensa en 18 puntos",
+    "skillData": "18"
+  }, {
+    "id": 21,
+    "title": "Bonificacion de vida",
+    "text": "Aumenta la vida  en 36 puntos",
+    "skillData": "36"
+  }, {
+    "id": 22,
+    "title": "Bonificacion de vida",
+    "text": "Aumenta la vida  en 36 puntos",
+    "skillData": "36"
+  }, {
+    "id": 23,
+    "title": "Bonificacion de ataque",
+    "text": "Aumenta el ataque en 15 puntos",
+    "skillData": "15"
+  }, {
+    "id": 24,
+    "skill": true,
+    "title": "Proteger",
+    "text": "+5% de probabilidad de obtener +25% defensa por 2 turnos al recibir daño",
+    "skillData": "25%"
+  }, {
+    "id": 25,
+    "title": "Bonificacion de ataque",
+    "text": "Aumenta el ataque en 15 puntos",
+    "skillData": "15"
+  }, {
+    "id": 26,
+    "title": "Bonificacion de vida",
+    "text": "Aumenta la vida  en 36 puntos",
+    "skillData": "36"
+  }, {
+    "id": 27,
+    "title": "Bonificacion de defensa",
+    "text": "Aumenta la defensa en 18 puntos",
+    "skillData": "18"
+  }, {
+    "id": 28,
+    "title": "Bonificacion de ataque",
+    "text": "Aumenta el ataque en 15 puntos",
+    "skillData": "15"
+  }, {
+    "id": 29,
+    "title": "Bonificacion de defensa",
+    "text": "Aumenta la defensa en 18 puntos",
+    "skillData": "18"
+  }, {
+    "id": 30,
+    "title": "Bonificacion de Mana",
+    "text": "Aumenta la velocidad de carga de mana 2%",
+    "skillData": "2%"
+  }, {
+    "id": 31,
+    "skill": true,
+    "title": "critico",
+    "text": "+2% de probabilidad de evadir ataques especiales  de critico",
+    "skillData": "2%"
+  }, {
+    "id": 32,
+    "title": "Bonificacion de defensa plus",
+    "text": "Aumenta la defensa en 4%",
+    "skillData": "24"
+  }]
+}, {
+  "id": 10,
+  "className": "Hechicero",
+  "talents": [{
+    "id": 1,
+    "skill": true,
+    "title": "Retrasar",
+    "text": "+3% de probabilidad de reducir el mana del enemigo -50% despues de una daño ",
+    "skillData": "3%"
+  }, {
+    "id": 2,
+    "title": "Bonificacion de ataque",
+    "text": "Aumenta el ataque en 15 puntos",
+    "skillData": "15"
+  }, {
+    "id": 3,
+    "title": "Bonificacion de vida",
+    "text": "Aumenta la vida  en 36 puntos",
+    "skillData": "36"
+  }, {
+    "id": 4,
+    "title": "Bonificacion de vida",
+    "text": "Aumenta la vida  en 36 puntos",
+    "skillData": "36"
+  }, {
+    "id": 5,
+    "title": "Bonificacion de defensa",
+    "text": "Aumenta la defensa en 18 puntos",
+    "skillData": "18"
+  }, {
+    "id": 6,
+    "skill": true,
+    "title": "Retrasar",
+    "text": "+3% de probabilidad de reducir el mana del enemigo -50% despues de una daño ",
+    "skillData": "3%"
+  }, {
+    "id": 7,
+    "title": "Bonificacion de defensa",
+    "text": "Aumenta la defensa en 18 puntos",
+    "skillData": "18"
+  }, {
+    "id": 8,
+    "title": "Bonificacion de ataque",
+    "text": "Aumenta el ataque en 15 puntos",
+    "skillData": "15"
+  }, {
+    "id": 9,
+    "title": "Bonificacion de vida",
+    "text": "Aumenta la vida  en 36 puntos",
+    "skillData": "36"
+  }, {
+    "id": 10,
+    "title": "Bonificacion de defensa",
+    "text": "Aumenta la defensa en 18 puntos",
+    "skillData": "18"
+  }, {
+    "id": 11,
+    "skill": true,
+    "title": "Retrasar",
+    "text": "+3% de probabilidad de reducir el mana del enemigo -50% despues de una daño ",
+    "skillData": "3%"
+  }, {
+    "id": 12,
+    "title": "Bonificacion de vida Plus",
+    "text": "Aumenta la vida  en 3 % puntos",
+    "skillData": "40"
+  }, {
+    "id": 13,
+    "title": "Bonificacion de Mana",
+    "text": "Aumenta la velocidad de carga de mana 2%",
+    "skillData": "2%"
+  }, {
+    "id": 14,
+    "title": "Bonificacion de ataque",
+    "text": "Aumenta el ataque en 15 puntos",
+    "skillData": "15"
+  }, {
+    "id": 15,
+    "title": "Bonificacion de defensa",
+    "text": "Aumenta la defensa en 18 puntos",
+    "skillData": "18"
+  }, {
+    "id": 16,
+    "title": "Bonificacion de ataque plus",
+    "text": "Aumenta el ataque en 3%",
+    "skillData": "22"
+  }, {
+    "id": 17,
+    "title": "Bonificacion de vida",
+    "text": "Aumenta la vida  en 36 puntos",
+    "skillData": "36"
+  }, {
+    "id": 18,
+    "title": "Bonificacion de ataque",
+    "text": "Aumenta el ataque en 15 puntos",
+    "skillData": "15"
+  }, {
+    "id": 19,
+    "skill": true,
+    "title": "Retrasar",
+    "text": "+3% de probabilidad de reducir el mana del enemigo -50% despues de una daño ",
+    "skillData": "3%"
+  }, {
+    "id": 20,
+    "title": "Bonificacion de ataque",
+    "text": "Aumenta el ataque en 15 puntos",
+    "skillData": "15"
+  }, {
+    "id": 21,
+    "title": "Bonificacion de defensa",
+    "text": "Aumenta la defensa en 18 puntos",
+    "skillData": "18"
+  }, {
+    "id": 22,
+    "title": "Bonificacion de defensa",
+    "text": "Aumenta la defensa en 18 puntos",
+    "skillData": "18"
+  }, {
+    "id": 23,
+    "title": "Bonificacion de vida",
+    "text": "Aumenta la vida  en 36 puntos",
+    "skillData": "36"
+  }, {
+    "id": 24,
+    "skill": true,
+    "title": "Retrasar",
+    "text": "+3% de probabilidad de reducir el mana del enemigo -50% despues de una daño ",
+    "skillData": "3%"
+  }, {
+    "id": 25,
+    "title": "Bonificacion de vida",
+    "text": "Aumenta la vida  en 36 puntos",
+    "skillData": "36"
+  }, {
+    "id": 26,
+    "title": "Bonificacion de defensa",
+    "text": "Aumenta la defensa en 18 puntos",
+    "skillData": "18"
+  }, {
+    "id": 27,
+    "title": "Bonificacion de ataque",
+    "text": "Aumenta el ataque en 15 puntos",
+    "skillData": "15"
+  }, {
+    "id": 28,
+    "title": "Bonificacion de vida",
+    "text": "Aumenta la vida  en 36 puntos",
+    "skillData": "36"
+  }, {
+    "id": 29,
+    "title": "Bonificacion de ataque",
+    "text": "Aumenta el ataque en 15 puntos",
+    "skillData": "15"
+  }, {
+    "id": 30,
+    "title": "Bonificacion de defensa plus",
+    "text": "Aumenta la defensa en 3%",
+    "skillData": "18"
+  }, {
+    "id": 31,
+    "skill": true,
+    "title": "Curacion extra",
+    "text": "+2% de curacion extra",
+    "skillData": "2%"
+  }, {
+    "id": 32,
+    "skill": true,
+    "title": "critico",
+    "text": "+2% de probabilidad de evadir ataques especiales  de critico",
+    "skillData": "2%"
+  }
+]
+}]

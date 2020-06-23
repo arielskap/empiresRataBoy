@@ -60,7 +60,7 @@ const useDataPj = (data) => {
       case 'barbaro':
         className = barbarian;
         break;
-      case 'clerico':
+      case 'clerigo':
         className = cleric;
         break;
       case 'druida':
@@ -81,7 +81,7 @@ const useDataPj = (data) => {
       case 'rebelde':
         className = rogue;
         break;
-      case 'hechizero':
+      case 'hechicero':
         className = sorcer;
         break;
       case 'brujo':
