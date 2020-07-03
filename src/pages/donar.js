@@ -9,7 +9,7 @@ import qr from '../assets/static/qr.jpg';
 
 export default () => {
   const { fade } = useFade();
-  const { open, setOpen, errorResponse, data } = useFetch('5edf0d421f9e4e57881a1dde');
+  const { open, setOpen, errorResponse, data } = useFetch('5efe76cb7f16b71d48aa39aa');
 
   useEffect(() => {
     const isBrowser = typeof window !== 'undefined';
@@ -51,7 +51,7 @@ export default () => {
           <div className='flex items-center justify-center flex-col lg:border-2 lg:border-blue-500 lg:rounded lg:p-4 mt-12 lg:mt-0 lg:row-span-2'>
             <img className='object-contain bg-white p-2 rounded mb-5' src={mercadoPago} alt='Mercado Pago' />
             <div className='grid grid-cols-1 gap-4 mx-4'>
-              {data && !data.message && data.map((donativo) => {
+              {data && Array.isArray(data) && data.map((donativo) => {
                 const { id, name, cost, link } = donativo;
                 return (
                   <a target='_blank' rel='noopener noreferrer' className='bg-transparent text-gold font-semibold hover:bg-yellow-500 hover:text-white py-2 px-4 border border-gold hover:border-transparent rounded text-center' mp-mode='dftl' href={link} name='MP-payButton' key={id}>
@@ -61,7 +61,7 @@ export default () => {
               })}
             </div>
           </div>
-          <div className='hidden lg:block lg:flex lg:flex-col lg:justify-start lg:h-full'>
+          <div className='hidden lg:flex lg:flex-col lg:justify-start lg:h-full'>
             <h2 className='text-center text-xl font-bold'>Pagar con Qr</h2>
             <h3 className='text-center mb-4 text-lg font-bold'>Mercado Pago</h3>
             <div className='flex items-center justify-center'>

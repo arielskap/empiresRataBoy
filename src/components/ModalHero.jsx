@@ -93,7 +93,7 @@ const ModalHero = ({ dataCard, data, compareHeroes }) => {
       <animated.div className='Modal z-30 overflow-y-auto overflow-x-hidden' style={fade}>
         <div className='Modal__bg w-full min-h-screen pb-6 md:py-6 flex flex-col-reverse md:space-y-0 md:grid md:grid-cols-3'>
           <div className='mb-6 flex items-center justify-end px-4 md:px-0 md:mb-0'>
-            <button type='button' className='rounded px-4 py-2 w-full md:w-auto border-4 border-pink-600 text-white bg-pink-700 hover:bg-pink-600 focus:bg-pink-600 font-bold md:text-2xl' onClick={rotate}>{isRotate ? 'Ver Carta' : 'Red de Talentos'}</button>
+            {/*<button type='button' className='rounded px-4 py-2 w-full md:w-auto border-4 border-pink-600 text-white bg-pink-700 hover:bg-pink-600 focus:bg-pink-600 font-bold md:text-2xl' onClick={rotate}>{isRotate ? 'Ver Carta' : 'Red de Talentos'}</button>*/}
           </div>
           <div className='col-start-2 flex justify-center items-center'>
             <animated.div className='Modal__container rounded-lg carta-box' style={slide}>

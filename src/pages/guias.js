@@ -6,7 +6,7 @@ import { useFade } from '../animations';
 
 export default () => {
   const { fade } = useFade();
-  const { open, setOpen, errorResponse, data } = useFetch('5edebd64655d87580c46763d');
+  const { open, setOpen, errorResponse, data } = useFetch('5efe77017f16b71d48aa39c3');
 
   return (
     <>
@@ -23,7 +23,7 @@ export default () => {
         <div className='mt-4'>
           <h2 className='text-lg font-bold'>Listado de Guías</h2>
           <ul className='rounded border-2 border-pink-500 flex flex-col items-center mt-2 sm:grid sm:grid-cols-2 p-2'>
-            {data && data.map((guia) => {
+            {data && Array.isArray(data) && data.map((guia) => {
               const { id } = guia;
               return (
                 <li className='text-center mb-1' key={id}>

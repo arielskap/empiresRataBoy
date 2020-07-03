@@ -6,7 +6,7 @@ import { CardAlianza, Modal, MessageErrorFetch, SEO } from '../components';
 
 export default () => {
   const { fade } = useFade();
-  const { open, setOpen, errorResponse, data } = useFetch('5edebdbd655d87580c467674');
+  const { open, setOpen, errorResponse, data } = useFetch('5efe7684bb5fbb1d256316ae');
 
   return (
     <>
@@ -18,7 +18,7 @@ export default () => {
           que Conforman la Red
         </h2>
         <div className='grid grid-cols-3 lg:grid-cols-6 gap-4 mx-2 lg:mx-6'>
-          {data && data.map((alianza) => {
+          {data && Array.isArray(data) && data.map((alianza) => {
             const { id } = alianza;
             return (
               <div key={id}>

@@ -66,7 +66,7 @@ export const fetchJson = (name, link, setFunctions) => {
 export const fetchJson2 = (url) => {
   return fetch(`https://api.jsonbin.io/b/${url}`, {
     headers: {
-      'secret-key': '$2b$10$rMiLIzrwZN3L0coOy9YBuO.EbU9bdYqwH79HBShMOATzq1YNKzSvC',
+      'secret-key': '$2b$10$eXuE8LaH5rObba2/EXN62ubykgkFAuJpQhfJKmcfwUp8WpirYSXhW',
     },
   })
     .then((response) => {

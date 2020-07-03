@@ -39,7 +39,7 @@ export default () => {
     alt: '',
   }]);
   const { fade } = useFade();
-  const { open, setOpen, errorResponse, data } = useFetch('5edebde42f5fd957fda675ee');
+  const { open, setOpen, errorResponse, data } = useFetch('5efe782cbb5fbb1d2563175f');
 
   const { data: dataHeroes, setData, jsonSearch, setClean } = useSearchHeroes(data);
 

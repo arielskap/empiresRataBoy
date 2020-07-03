@@ -10,8 +10,8 @@ import redDeAlianzas from '../assets/static/redDeAlianzas.png';
 
 export default () => {
   const { fade } = useFade();
-  const { open, setOpen, errorResponse, data } = useFetch('5edebe04655d87580c467697');
-
+  const { open, setOpen, errorResponse, data } = useFetch('5efe77127f16b71d48aa39cb');
+  console.log(data);
   return (
     <>
       <SEO title='Home' />
@@ -36,7 +36,7 @@ export default () => {
           <div>
             <h2 className='text-center mb-4 text-xl md:text-2xl font-bold'>¡Listas de Reproducción!</h2>
             <div className='grid grid-cols-1 md:grid-cols-3 gap-4'>
-              {data && data.map((video) => {
+              {data && Array.isArray(data) && data.map((video) => {
                 const { id, name, link } = video;
                 return (
                   <div className='mt-2 md:mt-0' key={id}>
