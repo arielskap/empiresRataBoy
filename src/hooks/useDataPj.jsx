@@ -1,19 +1,5 @@
 import { useEffect, useState } from 'react';
-import hielo from '../assets/static/hielo.png';
-import naturaleza from '../assets/static/naturaleza.png';
-import fuego from '../assets/static/fuego.png';
-import oscuro from '../assets/static/oscuro.png';
-import sagrado from '../assets/static/sagrado.png';
-import barbarian from '../assets/static/barbarian.png';
-import cleric from '../assets/static/cleric.png';
-import druid from '../assets/static/druid.png';
-import fighter from '../assets/static/fighter.png';
-import monk from '../assets/static/monk.png';
-import paladin from '../assets/static/paladin.png';
-import ranger from '../assets/static/ranger.png';
-import rogue from '../assets/static/rogue.png';
-import sorcer from '../assets/static/sorcer.png';
-import wizard from '../assets/static/wizard.png';
+import { getImgClassHero } from '../localFunction';
 
 const useDataPj = (data) => {
   const [dataPj, setDataPj] = useState({
@@ -34,62 +20,29 @@ const useDataPj = (data) => {
     className = data.classHero.toLowerCase();
     switch (type) {
       case 'azul hielo':
-        type = hielo;
+        type = './static/hielo.png';
         color = 'blue';
         break;
       case 'violeta oscuro':
-        type = oscuro;
+        type = './static/oscuro.png';
         color = 'purple';
         break;
       case 'verde naturaleza':
-        type = naturaleza;
+        type = './static/naturaleza.png';
         color = 'green';
         break;
       case 'rojo fuego':
-        type = fuego;
+        type = './static/fuego.png';
         color = 'red';
         break;
       case 'amarillo sagrado':
-        type = sagrado;
+        type = './static/sagrado.png';
         color = 'yellow';
         break;
       default:
         break;
     }
-    switch (className) {
-      case 'barbaro':
-        className = barbarian;
-        break;
-      case 'clerigo':
-        className = cleric;
-        break;
-      case 'druida':
-        className = druid;
-        break;
-      case 'luchador':
-        className = fighter;
-        break;
-      case 'monje':
-        className = monk;
-        break;
-      case 'paladin':
-        className = paladin;
-        break;
-      case 'guardabosques':
-        className = ranger;
-        break;
-      case 'rebelde':
-        className = rogue;
-        break;
-      case 'hechicero':
-        className = sorcer;
-        break;
-      case 'brujo':
-        className = wizard;
-        break;
-      default:
-        break;
-    }
+    className = getImgClassHero(className);
     setDataPj({
       starsNode: stars,
       srcElement: type,

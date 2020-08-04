@@ -1,8 +1,7 @@
-import React, { useEffect } from 'react';
+import { useEffect } from 'react';
+import ReactDOM from 'react-dom';
 import { animated } from 'react-spring';
-import '../assets/styles/modal.css';
-import Portal from './Portal';
-import { useFade, useSlide } from '../animations';
+import { useSlide } from '../animations';
 
 const Modal = ({ children, data }) => {
 
@@ -11,12 +10,11 @@ const Modal = ({ children, data }) => {
   }
 
   const { slide, setSlide } = useSlide(0, -500);
-  const { fade, setFade } = useFade();
 
   const closeModal = () => {
-    setSlide({ transform: 'translate(0px, -500px)' });
-    setFade({
-      to: { opacity: 0 },
+    document.querySelector('.Modal').classList.remove('Modal_active')
+    setSlide({
+      transform: 'translate(0px, -500px)',
       onRest: () => {
         if (document.body.classList.contains('overflow-hidden')) {
           document.body.classList.remove('overflow-hidden');
@@ -48,20 +46,18 @@ const Modal = ({ children, data }) => {
     };
   }, []);
 
-  return (
-    <Portal>
-      <animated.div className='Modal z-30 overflow-y-auto overflow-x-hidden' style={fade}>
-        <div className='Modal__bg w-full min-h-screen py-6 flex justify-center items-center'>
-          <animated.div className='Modal__container rounded-lg' style={slide}>
-            <button className='Modal__close-button leading-none z-10 text-white text-border-black bg-red-800 hover:bg-red-600 shadow border border-black px-2 py-1 rounded-lg font-bold text-xl absolute' type='button' onClick={() => { closeModal(); }}>
+  return ReactDOM.createPortal(
+    <div className='z-30 overflow-x-hidden overflow-y-auto Modal Modal_active'>
+      <div className='flex items-center justify-center w-full min-h-screen py-6 Modal__bg'>
+        <animated.div className='rounded-lg Modal__container' style={slide}>
+          <button className='absolute z-10 px-2 py-1 text-xl font-bold leading-none text-white bg-red-800 border border-black rounded-lg shadow Modal__close-button text-border-black hover:bg-red-600' type='button' onClick={() => { closeModal(); }}>
               x
-            </button>
-            {children}
-          </animated.div>
-        </div>
-      </animated.div>
-    </Portal>
-  );
+          </button>
+          {children}
+        </animated.div>
+      </div>
+    </div>
+    , document.getElementById('modal'));
 };
 
 export default Modal;

@@ -1,31 +1,3 @@
-export const pageActive = (className) => {
-  const ALL_LINKS = 4;
-  if (!document.querySelector(`.${className}`).classList.contains('font-bold')) {
-    for (let i = 1; i <= ALL_LINKS; i++) {
-      if (`Link_${i}` === className) {
-        document.querySelector(`.${className}`).classList.remove('text-white');
-        document.querySelector(`.${className}`).classList.add('font-bold', 'text-pink-500');
-      } else {
-        if (document.querySelector(`.Link_${i}`).classList.contains('font-bold')) {
-          document.querySelector(`.Link_${i}`).classList.add('text-white');
-          document.querySelector(`.Link_${i}`).classList.remove('font-bold', 'text-pink-500');
-        }
-      }
-    }
-    if (className === 'Link_5') {
-      document.querySelector(`.${className}`).classList.remove('text-white');
-      document.querySelector(`.${className}`).classList.add('text-gold', 'font-bold', 'border-gold');
-      document.querySelector('.Link_donar_center').classList.add('hidden');
-    } else {
-      document.querySelector('.Link_5').classList.add('text-white');
-      document.querySelector('.Link_5').classList.remove('text-gold', 'font-bold', 'border-gold');
-      if (document.querySelector('.Link_donar_center').classList.contains('hidden')) {
-        document.querySelector('.Link_donar_center').classList.remove('hidden');
-      }
-    }
-  }
-};
-
 export const fetchJson = (name, link, setFunctions) => {
   const { setOpen, setErrorResponse, setJson } = setFunctions;
   const storage = sessionStorage.getItem(name);
@@ -64,13 +36,57 @@ export const fetchJson = (name, link, setFunctions) => {
 };
 
 export const fetchJson2 = (url) => {
-  return fetch(`https://api.jsonbin.io/b/${url}`, {
+  return fetch(`https://ratabboy-api.herokuapp.com/${url}`, {
     headers: {
-      'secret-key': '$2b$10$eXuE8LaH5rObba2/EXN62ubykgkFAuJpQhfJKmcfwUp8WpirYSXhW',
+      'Content-Type': 'application/json',
     },
   })
-    .then((response) => {
-      return response.json();
-    });
+    .then((res) => {
+      return res.json();
+    })
+    .catch((res) => {
+      return { ...res, error: res.message }
+    })
+    .then((res) => {
+      return res;
+    })
 };
 
+export const getImgClassHero = (className) => {
+  let classNameSrc;
+  switch (className.toLowerCase()) {
+    case 'barbaro':
+      classNameSrc = './static/barbarian.png';
+      break;
+    case 'clerigo':
+      classNameSrc = './static/cleric.png';
+      break;
+    case 'druida':
+      classNameSrc = './static/druid.png';
+      break;
+    case 'luchador':
+      classNameSrc = './static/fighter.png';
+      break;
+    case 'monje':
+      classNameSrc = './static/monk.png';
+      break;
+    case 'paladin':
+      classNameSrc = './static/paladin.png';
+      break;
+    case 'guardabosques':
+      classNameSrc = './static/ranger.png';
+      break;
+    case 'rebelde':
+      classNameSrc = './static/rogue.png';
+      break;
+    case 'hechicero':
+      classNameSrc = './static/sorcer.png';
+      break;
+    case 'brujo':
+      classNameSrc = './static/wizard.png';
+      break;
+    default:
+      break;
+  }
+  return classNameSrc;
+};

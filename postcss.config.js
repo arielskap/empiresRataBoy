@@ -20,3 +20,17 @@ module.exports = {
     autoprefixer,
   ],
 };
+
+module.exports = {
+  plugins: [
+    'postcss-import',
+    'tailwindcss',
+    [
+      'postcss-preset-env',
+      {
+        stage: 0,
+      },
+    ],
+    'postcss-sort-media-queries'
+  ]
+};

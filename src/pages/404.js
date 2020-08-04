@@ -1,23 +1,20 @@
-import React from 'react';
-import { Link } from 'gatsby';
+import Link from 'next/link';
 import { animated } from 'react-spring';
-import SEO from '../components/seo';
-import muggy from '../assets/static/muggy.png';
+import Layout from '../components/Layout';
 import { useFade } from '../animations';
 
 export default () => {
   const { fade } = useFade();
   return (
-    <>
-      <SEO title='404: Not found' />
-      <animated.main className='flex flex-col justify-center items-center py-12 space-y-4' style={fade}>
+    <Layout title='404: Not found'>
+      <animated.main className='flex flex-col items-center justify-center py-12 space-y-4' style={fade}>
         <div>
-          <h1 className='text-center font-bold text-lg'>Pagina No Encontrada</h1>
-          <h2 className='text-center font-bold'>Error 404</h2>
+          <h1 className='text-lg font-bold text-center'>Pagina No Encontrada</h1>
+          <h2 className='font-bold text-center'>Error 404</h2>
         </div>
-        <img className='object-contain rounded' src={muggy} alt='muggy not found' />
-        <Link className='hover:underline hover:scale-105 font-bold text-lg' to='/'>Volver al Home</Link>
+        <img className='object-contain rounded' src='../assets/static/muggy.png' alt='muggy not found' />
+        <Link className='text-lg font-bold hover:underline hover:scale-105' href='/'><a>Volver al Home</a></Link>
       </animated.main>
-    </>
+    </Layout>
   );
 };

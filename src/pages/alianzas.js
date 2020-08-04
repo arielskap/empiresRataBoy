@@ -1,23 +1,23 @@
-import React from 'react';
 import { animated } from 'react-spring';
-import { useFetch } from '../hooks';
+import { useVerifyFetch } from '../hooks';
 import { useFade } from '../animations';
-import { CardAlianza, Modal, MessageErrorFetch, SEO } from '../components';
+import { CardAlianza, Modal, MessageErrorFetch } from '../components';
+import Layout from '../components/Layout';
+import { fetchJson2 } from '../localFunction';
 
-export default () => {
+export default ({ response }) => {
   const { fade } = useFade();
-  const { open, setOpen, errorResponse, data } = useFetch('5efe7684bb5fbb1d256316ae');
+  const { open, setOpen, errorResponse, data } = useVerifyFetch(response);
 
   return (
-    <>
-      <SEO title='Alianzas' />
+    <Layout title='Alianzas'>
       <animated.main style={fade}>
-        <h2 className='text-center mb-4 text-2xl font-bold'>
+        <h2 className='mb-4 text-2xl font-bold text-center'>
           Alianzas
           <br />
           que Conforman la Red
         </h2>
-        <div className='grid grid-cols-3 lg:grid-cols-6 gap-4 mx-2 lg:mx-6'>
+        <div className='grid grid-cols-3 gap-4 mx-2 lg:grid-cols-6 lg:mx-6'>
           {data && Array.isArray(data) && data.map((alianza) => {
             const { id } = alianza;
             return (
@@ -31,7 +31,12 @@ export default () => {
       <Modal data={{ open, setOpen }}>
         <MessageErrorFetch errorResponse={errorResponse}>Traer la de Alianzas</MessageErrorFetch>
       </Modal>
-    </>
+    </Layout>
   );
 };
 
+export async function getServerSideProps() {
+  const data = await fetchJson2('alianzas')
+
+  return { props: { response: data } }
+}

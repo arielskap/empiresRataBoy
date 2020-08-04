@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import ButtonModal from './ButtonModal';
 import Modal from './Modal';
 
@@ -11,17 +11,17 @@ const CardAlianza = ({ json }) => {
         <img className='object-contain lg:w-48' src={json.picture} alt={json.name} />
       </ButtonModal>
       <Modal data={{ open, setOpen }}>
-        <div className='max-w-sm rounded shadow-lg text-black'>
+        <div className='max-w-sm text-black rounded shadow-lg'>
           <div className='relative text-white'>
-            <div className='absolute top-0 flex w-full justify-center'>
-              <h2 className='text-center bg-black-transparent px-3 py-1 rounded-b text-lg'>{json.name}</h2>
+            <div className='absolute top-0 flex justify-center w-full'>
+              <h2 className='px-3 py-1 text-lg text-center rounded-b bg-black-transparent'>{json.name}</h2>
             </div>
-            <div className='flex justify-center items-center w-full pt-10'>
+            <div className='flex items-center justify-center w-full pt-10'>
               <img className='object-contain w-64' src={json.picture} alt={json.name} />
             </div>
           </div>
           <div className='px-6 py-4'>
-            <h3 className='font-bold text-xl mb-2 text-center'>Información</h3>
+            <h3 className='mb-2 text-xl font-bold text-center'>Información</h3>
             <div>
               <p>
                 <span className='font-bold'>Titanes:</span>

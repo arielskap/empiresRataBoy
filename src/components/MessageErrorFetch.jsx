@@ -1,10 +1,8 @@
-import React from 'react';
-
 const MessageErrorFetch = ({ errorResponse, children }) => {
 
   return (
     <div className='w-full max-w-lg p-4'>
-      <h1 className='text-center font-bold text-lg'>
+      <h1 className='text-lg font-bold text-center'>
         Error al
         {` ${children}`}
       </h1>
