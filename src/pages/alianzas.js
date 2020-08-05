@@ -1,17 +1,14 @@
-import { animated } from 'react-spring';
 import { useVerifyFetch } from '../hooks';
-import { useFade } from '../animations';
 import { CardAlianza, Modal, MessageErrorFetch } from '../components';
 import Layout from '../components/Layout';
 import { fetchJson2, sortById } from '../localFunction';
 
 export default ({ response }) => {
-  const { fade } = useFade();
   const { open, setOpen, errorResponse, data } = useVerifyFetch(response);
 
   return (
     <Layout title='Alianzas'>
-      <animated.main style={fade}>
+      <main style={fade}>
         <h2 className='mb-4 text-2xl font-bold text-center'>
           Alianzas
           <br />
@@ -27,7 +24,7 @@ export default ({ response }) => {
             );
           })}
         </div>
-      </animated.main>
+      </main>
       <Modal data={{ open, setOpen }}>
         <MessageErrorFetch errorResponse={errorResponse}>Traer la de Alianzas</MessageErrorFetch>
       </Modal>

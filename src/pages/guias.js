@@ -1,18 +1,15 @@
-import { animated } from 'react-spring';
 import { Modal, MessageErrorFetch } from '../components';
 import CardGuias from '../components/guias/CardGuias';
-import { useFade } from '../animations';
 import Layout from '../components/Layout';
 import { useVerifyFetch } from '../hooks';
 import { fetchJson2, sortById } from '../localFunction';
 
 export default ({ response }) => {
-  const { fade } = useFade();
   const { open, setOpen, errorResponse, data } = useVerifyFetch(response);
 
   return (
     <Layout title='Guias'>
-      <animated.main className='mx-4 lg:grid lg:grid-cols-2' style={fade}>
+      <main className='mx-4 lg:grid lg:grid-cols-2'>
         <div className='lg:flex lg:flex-col lg:justify-center lg:items-center'>
           <div className='py-4'>
             <h1 className='text-xl font-bold text-center'>¡Todas mis Guías!</h1>
@@ -34,7 +31,7 @@ export default ({ response }) => {
             })}
           </ul>
         </div>
-      </animated.main>
+      </main>
       <Modal data={{ open, setOpen }}>
         <MessageErrorFetch errorResponse={errorResponse}>Traer la Lista de Guias</MessageErrorFetch>
       </Modal>

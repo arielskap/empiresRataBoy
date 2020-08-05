@@ -1,5 +1,3 @@
-import { animated } from 'react-spring';
-import { useFade } from '../animations';
 import { MessageErrorFetch, Modal } from '../components';
 import Twitch from '../components/index/Twitch';
 import LinkH1 from '../components/index/LinkH1';
@@ -8,12 +6,11 @@ import { fetchJson2, sortById } from '../localFunction';
 import { useVerifyFetch } from '../hooks';
 
 export default ({ response }) => {
-  const { fade } = useFade();
   const { open, setOpen, errorResponse, data } = useVerifyFetch(response);
 
   return (
     <Layout title='Home'>
-      <animated.main style={fade}>
+      <main>
         <div className='md:hidden'>
           <img className='object-contain w-full max-h-screen' src='./static/redAlianzas2.png' alt='Red Alianzas' />
           <LinkH1 />
@@ -46,7 +43,7 @@ export default ({ response }) => {
             </div>
           </div>
         </div>
-      </animated.main>
+      </main>
       <Modal data={{ open, setOpen }}>
         <MessageErrorFetch errorResponse={errorResponse}>Traer la Lista de Reproducción</MessageErrorFetch>
       </Modal>

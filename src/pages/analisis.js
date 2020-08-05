@@ -1,11 +1,9 @@
 import { useState } from 'react';
-import { animated } from 'react-spring';
 import { useVerifyFetch, useSearchHeroes } from '../hooks';
-import { useFade } from '../animations';
 import { Modal, MessageErrorFetch } from '../components';
 import { Face, ModalHero, CompareHeroes, Buscador } from '../components/analisis';
 import Layout from '../components/Layout';
-import { fetchJson2, sortById } from '../localFunction';
+import { fetchJson2 } from '../localFunction';
 
 export default ({ response }) => {
   const [compareHeroes, setCompareHeroes] = useState([{
@@ -21,14 +19,13 @@ export default ({ response }) => {
     img: './static/black.png',
     alt: '',
   }]);
-  const { fade } = useFade();
   const { open, setOpen, errorResponse, data } = useVerifyFetch(response);
 
   const { data: dataHeroes, setData, jsonSearch, setClean } = useSearchHeroes(data);
 
   return (
     <Layout title='Analisis'>
-      <animated.main className='pt-2 mx-2 lg:grid lg:grid-cols-12 lg:gap-2' style={fade}>
+      <main className='pt-2 mx-2 lg:grid lg:grid-cols-12 lg:gap-2'>
         <div className='mb-4 lg:col-span-2'>
           <div className='lg:sticky lg:top-0 lg:w-full lg:top_search'>
             <div className='mb-2 text-center'>
@@ -66,7 +63,7 @@ export default ({ response }) => {
             })}
           </div>
         </div>
-      </animated.main>
+      </main>
       {data && <ModalHero data={{ open, setOpen }} setCompareHeroes={setCompareHeroes} dataCard={{ img: data.img, json: data.json }} />}
       <Modal data={{ open, setOpen }}>
         <MessageErrorFetch errorResponse={errorResponse}>Traer la Lista de Heroes</MessageErrorFetch>

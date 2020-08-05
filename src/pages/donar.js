@@ -1,13 +1,10 @@
 import { useEffect } from 'react';
-import { animated } from 'react-spring';
 import { useVerifyFetch } from '../hooks';
 import { MessageErrorFetch, Modal } from '../components';
-import { useFade } from '../animations';
 import Layout from '../components/Layout';
 import { fetchJson2, sortById } from '../localFunction';
 
 export default ({ response }) => {
-  const { fade } = useFade();
   const { open, setOpen, errorResponse, data } = useVerifyFetch(response);
 
   useEffect(() => {
@@ -34,7 +31,7 @@ export default ({ response }) => {
 
   return (
     <Layout title='Donar'>
-      <animated.main style={fade}>
+      <main>
         <h1 className='my-4 text-2xl font-bold text-center'>
           <span role='img' aria-label='$'>💸</span>
           Donaciones
@@ -67,7 +64,7 @@ export default ({ response }) => {
             </div>
           </div>
         </div>
-      </animated.main>
+      </main>
       <Modal data={{ open, setOpen }}>
         <MessageErrorFetch errorResponse={errorResponse}>Traer la de Alianzas</MessageErrorFetch>
       </Modal>
