@@ -27,11 +27,11 @@ const Layout = ({ children, title }) => {
   return (
     <div className='relative min-h-screen'>
       <Head>
-        <title>{ title }</title>
+        <title>{`${title} | Empires and Puzzles: Rata B Boy`}</title>
         <meta charSet='UTF-8' />
         <meta name='viewport' content='width=device-width, initial-scale=1.0' />
-        <meta name='description' content='Ramon Chozas SA Hoja De Ruta' />
-        <link rel='shortcut icon' href='./static/logo_chozas2.png' />
+        <meta name='description' content='Rata B Boy Empires and Puzzles Guias y Tutoriales' />
+        <link rel='shortcut icon' href='./static/logo.png' />
       </Head>
       <Header />
       <div className='absolute left-0 z-10 hidden w-full h-auto bg-black opacity-50 nav-bg-black' />

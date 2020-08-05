@@ -1,18 +1,10 @@
 {
-  "./dev/noop": [
-    {
-      "id": "./node_modules/next/dist/client/dev/noop.js",
-      "name": "./node_modules/next/dist/client/dev/noop.js",
-      "file": "static/chunks/0.js",
-      "publicPath": "static/chunks/0.js"
-    }
-  ],
   "intersection-observer": [
     {
-      "id": "./node_modules/intersection-observer/intersection-observer.js",
+      "id": "Wr5T",
       "name": "./node_modules/intersection-observer/intersection-observer.js",
-      "file": "static/chunks/1.js",
-      "publicPath": "static/chunks/1.js"
+      "file": "static/chunks/16.f184e3118ad09eda096a.js",
+      "publicPath": "static/chunks/16.f184e3118ad09eda096a.js"
     }
   ]
 }

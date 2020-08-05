@@ -3,7 +3,7 @@ import { useVerifyFetch } from '../hooks';
 import { useFade } from '../animations';
 import { CardAlianza, Modal, MessageErrorFetch } from '../components';
 import Layout from '../components/Layout';
-import { fetchJson2 } from '../localFunction';
+import { fetchJson2, sortById } from '../localFunction';
 
 export default ({ response }) => {
   const { fade } = useFade();
@@ -37,6 +37,6 @@ export default ({ response }) => {
 
 export async function getServerSideProps() {
   const data = await fetchJson2('alianzas')
-
+  sortById(data)
   return { props: { response: data } }
 }

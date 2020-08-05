@@ -4,7 +4,7 @@ import { useVerifyFetch } from '../hooks';
 import { MessageErrorFetch, Modal } from '../components';
 import { useFade } from '../animations';
 import Layout from '../components/Layout';
-import { fetchJson2 } from '../localFunction';
+import { fetchJson2, sortById } from '../localFunction';
 
 export default ({ response }) => {
   const { fade } = useFade();
@@ -33,7 +33,7 @@ export default ({ response }) => {
   }, []);
 
   return (
-    <Layout title='donar'>
+    <Layout title='Donar'>
       <animated.main style={fade}>
         <h1 className='my-4 text-2xl font-bold text-center'>
           <span role='img' aria-label='$'>💸</span>
@@ -77,6 +77,6 @@ export default ({ response }) => {
 
 export async function getServerSideProps() {
   const data = await fetchJson2('donaciones')
-
+  sortById(data)
   return { props: { response: data } }
 }

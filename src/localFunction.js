@@ -90,3 +90,18 @@ export const getImgClassHero = (className) => {
   }
   return classNameSrc;
 };
+
+export const sortById = (data) => {
+  if (data.body) {
+    const dataOrdened = data.body.sort((a, b) => {
+      if (a.id > b.id) {
+        return 1;
+      }
+      if (a.id < b.id) {
+        return -1;
+      }
+      return 0;
+    });
+    data = { ...data, body: dataOrdened }
+  }
+}

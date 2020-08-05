@@ -1,0 +1,84 @@
+.bg-black-transparent {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+.text-border-black {
+  text-shadow: 2px 0 0 #000, -2px 0 0 #000, 0 2px 0 #000, 0 -2px 0 #000, 1px 1px #000, -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000;
+}
+
+.bg-blue-rataBBoy {
+  background-color: rgba(1, 31, 105, 0.99);
+}
+
+.center-horizontally-absolute {
+  left: 50%;
+  transform: translate(-50%, 0);
+}
+
+.max-w-85 {
+  max-width: 85%;
+}
+
+.buttonClassSearch-active {
+  @apply scale-110 border-purple-600;
+}
+
+.max-w-xxs {
+  max-width: 10rem;
+}
+
+.min-h-75 {
+  min-height: 75px;
+}
+
+.max-w-75 {
+  max-width: 75%;
+}
+
+.Modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  animation: fadeOut 2s;
+}
+
+.Modal_active {
+  animation: fadein 2s;
+}
+
+.Modal__container {
+  position: relative;
+  background-color: rgb(255, 255, 255);
+}
+
+.Modal__close-button {
+  top: -0.5rem;
+  right: -0.5rem;
+}
+
+@keyframes fadein {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes fadeOut {
+  from { opacity: 1; }
+  to { opacity: 0; }
+}
+
+.filter-gray {
+  filter: grayscale(100%);
+}
+
+.hover\:filter-gray-none:hover {
+  filter: grayscale(0%);
+}
+
+@media screen and (min-width: 1024px) {
+  .lg\:top_search {
+    top: 4.5rem;
+  }
+}

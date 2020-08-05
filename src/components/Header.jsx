@@ -2,6 +2,7 @@ import { useEffect } from 'react';
 import Link from 'next/link';
 
 const Header = () => {
+
   const handleMenu = () => {
     document.querySelector('.header_content').classList.toggle('menuOpen');
   };
@@ -23,19 +24,19 @@ const Header = () => {
           document.querySelector('.Link_home').classList.remove('text-white');
           document.querySelector('.Link_home').classList.add('text-pink-500', 'font-bold');
           break;
-        case '/Guias/':
+        case '/guias':
           document.querySelector('.Link_guias').classList.remove('text-white');
           document.querySelector('.Link_guias').classList.add('text-pink-500', 'font-bold');
           break;
-        case '/Alianzas/':
+        case '/alianzas':
           document.querySelector('.Link_alianzas').classList.remove('text-white');
           document.querySelector('.Link_alianzas').classList.add('text-pink-500', 'font-bold');
           break;
-        case '/Analisis/':
+        case '/analisis':
           document.querySelector('.Link_analisis').classList.remove('text-white');
           document.querySelector('.Link_analisis').classList.add('text-pink-500', 'font-bold');
           break;
-        case '/Donar/':
+        case '/donar':
           document.querySelector('.Link_donar').classList.remove('text-white');
           document.querySelector('.Link_donar').classList.add('text-gold', 'font-bold', 'border-gold');
           document.querySelector('.Link_donar_center').classList.add('hidden');

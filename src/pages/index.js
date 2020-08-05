@@ -4,7 +4,7 @@ import { MessageErrorFetch, Modal } from '../components';
 import Twitch from '../components/index/Twitch';
 import LinkH1 from '../components/index/LinkH1';
 import Layout from '../components/Layout';
-import { fetchJson2 } from '../localFunction';
+import { fetchJson2, sortById } from '../localFunction';
 import { useVerifyFetch } from '../hooks';
 
 export default ({ response }) => {
@@ -79,6 +79,6 @@ export default ({ response }) => {
 
 export async function getServerSideProps() {
   const data = await fetchJson2('inicioVideos')
-
+  sortById(data)
   return { props: { response: data } }
 }

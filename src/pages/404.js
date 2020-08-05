@@ -9,11 +9,11 @@ export default () => {
     <Layout title='404: Not found'>
       <animated.main className='flex flex-col items-center justify-center py-12 space-y-4' style={fade}>
         <div>
-          <h1 className='text-lg font-bold text-center'>Pagina No Encontrada</h1>
-          <h2 className='font-bold text-center'>Error 404</h2>
+          <h1 className='text-xl font-bold text-center'>Pagina No Encontrada</h1>
+          <h2 className='text-lg font-bold text-center'>Error 404</h2>
         </div>
-        <img className='object-contain rounded' src='../assets/static/muggy.png' alt='muggy not found' />
-        <Link className='text-lg font-bold hover:underline hover:scale-105' href='/'><a>Volver al Home</a></Link>
+        <img className='object-contain rounded' src='./static/muggy.png' alt='muggy not found' />
+        <Link href='/'><a className='text-lg font-bold underline duration-300 transform hover:scale-105'>Volver al Home</a></Link>
       </animated.main>
     </Layout>
   );

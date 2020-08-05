@@ -104,19 +104,6 @@ const Card = ({ img, json }) => {
             right: -0.75rem;
             top: -0.75rem;
           }
-
-          .button-tutorial {
-            bottom: -1.5rem;
-          }
-
-          .div-name {
-            top: -1rem;
-          }
-
-          .img-element {
-            left: -1rem;
-            top: -0.4rem;
-          }
         `}
       </style>
     </div>

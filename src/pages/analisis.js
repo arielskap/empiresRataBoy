@@ -5,7 +5,7 @@ import { useFade } from '../animations';
 import { Modal, MessageErrorFetch } from '../components';
 import { Face, ModalHero, CompareHeroes, Buscador } from '../components/analisis';
 import Layout from '../components/Layout';
-import { fetchJson2 } from '../localFunction';
+import { fetchJson2, sortById } from '../localFunction';
 
 export default ({ response }) => {
   const [compareHeroes, setCompareHeroes] = useState([{
@@ -39,7 +39,7 @@ export default ({ response }) => {
           </div>
         </div>
         <div className='lg:col-span-10'>
-          <div className='grid grid-cols-3 gap-4 sm:grid-cols-5 md:grid-cols-8 lg:mr-12 xl:grid-cols-10'>
+          <div className='grid grid-cols-3 gap-3 sm:grid-cols-5 md:grid-cols-7 lg:mr-12 xl:grid-cols-8'>
             {jsonSearch && jsonSearch.map((heroe) => {
               const { id, name, power, element, stars, attack, defense, health, manaSpeed, family, event, effect, video, img } = heroe;
               const classHero = heroe.class;
@@ -77,6 +77,5 @@ export default ({ response }) => {
 
 export async function getServerSideProps() {
   const data = await fetchJson2('heroes')
-
   return { props: { response: data } }
 }

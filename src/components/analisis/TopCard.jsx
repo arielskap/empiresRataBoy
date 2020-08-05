@@ -5,6 +5,17 @@ const TopCard = ({ data }) => {
         <img className='absolute object-contain w-10 img-element' src={data.src} alt={data.alt} />
       </div>
       <h2 className='px-12 text-lg font-bold text-center text-white truncate'>{data.name}</h2>
+      <style jsx>
+        {`
+          .div-name {
+            top: -1rem;
+          }
+          .img-element {
+            left: -1rem;
+            top: -0.4rem;
+          }
+        `}
+      </style>
     </div>
   );
 };

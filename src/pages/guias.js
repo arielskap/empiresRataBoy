@@ -4,7 +4,7 @@ import CardGuias from '../components/guias/CardGuias';
 import { useFade } from '../animations';
 import Layout from '../components/Layout';
 import { useVerifyFetch } from '../hooks';
-import { fetchJson2 } from '../localFunction';
+import { fetchJson2, sortById } from '../localFunction';
 
 export default ({ response }) => {
   const { fade } = useFade();
@@ -44,7 +44,7 @@ export default ({ response }) => {
 
 export async function getServerSideProps() {
   const data = await fetchJson2('guias')
-
+  sortById(data)
   return { props: { response: data } }
 }
 

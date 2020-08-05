@@ -3,7 +3,7 @@ import { useEffect, useState } from 'react';
 const useVerifyFetch = (response) => {
   const [open, setOpen] = useState(false);
   const [errorResponse, setErrorResponse] = useState(false);
-  console.log(response)
+  //console.log(response)
   useEffect(() => {
     const error = response.error || response.message;
     if (error) {

@@ -33,12 +33,13 @@ integration-tests/gatsby-cli/execution-folder/*
 dist
 bin/published.js
 .next/
+.next
 
 # Build Path of Test Fixtures
 test/**/public
 .gatsby-context.js
 .DS_Store
-public/
+# public/
 node_modules/
 e2e-tests/gatsby-pnp/
 .cache/

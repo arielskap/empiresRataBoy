@@ -6,6 +6,13 @@ const ButtonTutorial = ({ video }) => {
           Tutorial
         </div>
       </a>
+      <style jsx>
+        {`
+          .button-tutorial {
+            bottom: -1.5rem;
+          }
+        `}
+      </style>
     </div>
   );
 };
