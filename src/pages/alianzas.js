@@ -8,7 +8,7 @@ export default ({ response }) => {
 
   return (
     <Layout title='Alianzas'>
-      <main style={fade}>
+      <main>
         <h2 className='mb-4 text-2xl font-bold text-center'>
           Alianzas
           <br />
