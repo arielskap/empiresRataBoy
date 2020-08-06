@@ -9,6 +9,7 @@ const useSearchHeroes = (json) => {
     class: '',
     family: '',
     event: '',
+    effect: ''
   });
   const [clean, setClean] = useState(false);
   const [jsonSearch, setJsonSearch] = useState(false);
@@ -16,43 +17,43 @@ const useSearchHeroes = (json) => {
   const createFuse = (json, options) => {
     let newOptions = options.keys.filter((option) => option !== '');
     newOptions = { threshold: 0.3, keys: newOptions };
+
     return new Fuse(json, newOptions);
   };
 
   const createOperator = (key) => {
-    let flag = 0;
-    let operator;
-    let newKey;
-
-    const result = key.some((object) => {
+    const newKey = key.reduce((result, object) => {
       const value = Object.values(object);
+      const key = Object.keys(object);
       if (value[0] !== '') {
-        flag++;
-        operator = value[0];
+        if (Array.isArray(value[0])) {
+          const newObject = value[0].map((o) => {
+            return { [key]: o }
+          })
+          result.push({ $or: newObject })
+        } else {
+          result.push(object)
+        }
       }
-      return flag >= 2;
-    });
-    if (result) {
-      newKey = key.filter((object) => {
-        const value = Object.values(object);
-        return value[0] !== '';
-      });
-      operator = {
-        $and: newKey,
-      };
-    }
+      return result
+    }, []);
+    const operator = {
+      $and: newKey,
+    };
     return operator;
   };
 
   const searching = (json, options, key) => {
     const newJson = [];
     const fuse = createFuse(json, options);
+
     const operator = createOperator(key);
+
     const search = fuse.search(operator);
     search.forEach((element) => {
       newJson.push(element.item);
     });
-    console.log(newJson);
+
     return newJson;
   };
 
@@ -68,7 +69,7 @@ const useSearchHeroes = (json) => {
 
   useMemo(() => {
     let newJson;
-    const { query, stars, element, class: classHero, family, event } = data;
+    const { query, stars, element, class: classHero, family, event, effect } = data;
     if (clean) {
       setData({
         query: '',
@@ -77,11 +78,12 @@ const useSearchHeroes = (json) => {
         class: '',
         family: '',
         event: '',
+        effect: ''
       });
       setJsonSearch(json);
       setClean(false);
     } else {
-      if (query === '' && stars === '' && element === '' && classHero === '' && family === '' && event === '') { //No tiene nada
+      if (query === '' && stars === '' && element === '' && classHero === '' && family === '' && event === '' && effect === '') { //No tiene nada
         if (json) {
           newJson = json.sort(compare);
           setJsonSearch(newJson);
@@ -108,6 +110,9 @@ const useSearchHeroes = (json) => {
             event && {
               name: 'event',
             },
+            effect && {
+              name: 'effect.data',
+            },
           ],
         },
         [
@@ -117,6 +122,7 @@ const useSearchHeroes = (json) => {
           { class: classHero },
           { family },
           { event },
+          { 'effect.data': effect }
         ]);
         setJsonSearch(newJson);
       }

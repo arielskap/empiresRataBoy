@@ -29,8 +29,8 @@ const ModalHero = ({ dataCard, data, compareHeroes }) => {
     });
   };
 
-  const handleClickBackground = (e) => {
-    if (e.target === document.querySelector('.Modal__bg')) {
+  const handleClickBackground = (e, index) => {
+    if (e.target === document.querySelectorAll('.bg-modal')[index]) {
       closeModal();
     }
   };
@@ -77,9 +77,12 @@ const ModalHero = ({ dataCard, data, compareHeroes }) => {
       if (!document.body.classList.contains('overflow-hidden')) {
         document.body.classList.add('overflow-hidden');
       }
-      document.querySelector('.Modal__bg').addEventListener('click', (e) => {
-        handleClickBackground(e);
-      });
+      const bgModals = document.querySelectorAll('.bg-modal');
+      bgModals.forEach((bg, index) => {
+        bg.addEventListener('click', (e) => {
+          handleClickBackground(e, index);
+        });
+      })
     }
     return () => {
       if (document.body.classList.contains('overflow-hidden')) {
@@ -90,11 +93,11 @@ const ModalHero = ({ dataCard, data, compareHeroes }) => {
 
   return ReactDOM.createPortal(
     <div className='z-30 overflow-x-hidden overflow-y-auto Modal Modal_active'>
-      <div className='flex flex-col-reverse w-full min-h-screen pb-6 Modal__bg md:py-6 md:space-y-0 md:grid md:grid-cols-3'>
-        <div className='items-center justify-end hidden md:flex md:px-0 md:mb-0'>
+      <div className='flex flex-col-reverse w-full min-h-screen pb-6 bg-modal md:py-6 md:space-y-0 md:grid md:grid-cols-3'>
+        <div className='items-center justify-end hidden bg-modal md:flex md:px-0 md:mb-0'>
           {/*<button type='button' className='w-full px-4 py-2 font-bold text-white bg-pink-700 border-4 border-pink-600 rounded md:w-auto hover:bg-pink-600 focus:bg-pink-600 md:text-2xl' onClick={rotate}>{isRotate ? 'Ver Carta' : 'Red de Talentos'}</button>*/}
         </div>
-        <div className='flex items-center justify-center col-start-2'>
+        <div className='flex items-center justify-center col-start-2 bg-modal'>
           <animated.div className={`rounded-lg ${styles.Modal__container} ${styles.cartaBox}`} style={slide}>
             <animated.div className={styles.carta} style={rotateY}>
               <div className={`flex items-center justify-center ${styles.cara}`}>
@@ -114,7 +117,7 @@ const ModalHero = ({ dataCard, data, compareHeroes }) => {
         {/*<div className='flex items-center justify-end px-4 mb-6 md:hidden'>
           <button type='button' className='w-full px-4 py-2 font-bold text-white bg-pink-700 border-4 border-pink-600 rounded md:w-auto hover:bg-pink-600 focus:bg-pink-600 md:text-2xl' onClick={rotate}>{isRotate ? 'Ver Carta' : 'Red de Talentos'}</button>
   </div>*/}
-        <div className='flex items-center px-4 mb-6 md:px-0 md:mb-0'>
+        <div className='flex items-center px-4 mb-6 bg-modal md:px-0 md:mb-0'>
           <button type='button' className='w-full px-4 py-2 font-bold text-white bg-purple-700 border-4 border-purple-600 rounded md:w-auto hover:bg-purple-600 focus:bg-purple-600 md:text-2xl' onClick={addCompareHeroes}>Comparar</button>
         </div>
       </div>
