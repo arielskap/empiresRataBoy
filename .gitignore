@@ -33,7 +33,6 @@ integration-tests/gatsby-cli/execution-folder/*
 dist
 bin/published.js
 .next/
-.next
 
 # Build Path of Test Fixtures
 test/**/public
