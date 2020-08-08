@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
-@import './vars.css';
 @import './tailwind.css';
+@import './vars.css';
 @import './googleTranslate.css';
 
 body {

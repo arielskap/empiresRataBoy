@@ -5,19 +5,24 @@ import ButtonClassSearch from './ButtonClassSearch';
 const Buscador = ({ dataHeroes, setData, setClean }) => {
 
   const handleFilterStars = (cantStars) => {
-    for (let i = 1; i <= cantStars; i++) {
-      if (document.querySelector(`.star-${i}`).classList.contains('filter-gray')) {
-        document.querySelector(`.star-${i}`).classList.remove('filter-gray');
+    if (cantStars === 0) {
+      for (let i = cantStars + 1; i <= 5; i++) {
+        if (!document.querySelector(`.star-${i}`).classList.contains('filter-gray')) {
+          document.querySelector(`.star-${i}`).classList.add('filter-gray');
+        }
       }
-    }
-    for (let i = cantStars + 1; i <= 5; i++) {
-      if (!document.querySelector(`.star-${i}`).classList.contains('filter-gray')) {
-        document.querySelector(`.star-${i}`).classList.add('filter-gray');
+    } else if (document.querySelector(`.star-${cantStars}`).classList.contains('filter-gray')) {
+      const { stars } = dataHeroes;
+      document.querySelector(`.star-${cantStars}`).classList.remove('filter-gray');
+      if (stars) {
+        cantStars = typeof stars === 'string' ? [stars, `${cantStars}`] : [...stars, `${cantStars}`]
+      } else {
+        cantStars = `${cantStars}`
       }
     }
     setData({
       ...dataHeroes,
-      stars: `${cantStars !== 0 ? cantStars : ''}`,
+      stars: cantStars !== 0 ? cantStars : '',
     });
   };
 
@@ -154,6 +159,20 @@ const Buscador = ({ dataHeroes, setData, setClean }) => {
             }}
           >
             Evento:
+          </LabelInput>
+        </div>
+        <div>
+          <LabelInput
+            placeholder='El héroe cambia...'
+            value={dataHeroes.effect}
+            handleChange={(e) => {
+              setData({
+                ...dataHeroes,
+                effect: e.target.value,
+              });
+            }}
+          >
+            Efecto:
           </LabelInput>
         </div>
       </div>
