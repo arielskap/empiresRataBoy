@@ -5,10 +5,14 @@
         "node": true
     },
     "extends": [
+        "airbnb-typescript",
+        "airbnb/hooks",
+        "plugin:@typescript-eslint/recommended",
         "eslint:recommended",
         "plugin:react/recommended"
     ],
-    "plugins": ["react", "jsx-a11y", "import", "react-hooks"],
+    "plugins": ["react", "jsx-a11y", "import", "react-hooks", "@typescript-eslint"],
+    "parser": "@typescript-eslint/parser",
     "parserOptions": {
         "sourceType": "module"
     },
@@ -74,7 +78,7 @@
         "no-dupe-args": 2,
         "no-dupe-keys": 2,
         "no-duplicate-case": 2,
-        "import/no-dynamic-require":0, //Lo desactive por las variables del require
+        "import/no-dynamic-require": 0, //Lo desactive por las variables del require
         "no-else-return": 2,
         "no-empty": 0,
         "no-empty-character-class": 2,

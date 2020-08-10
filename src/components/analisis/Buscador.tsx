@@ -1,41 +1,61 @@
+import React from 'react';
 import LabelInput from './LabelInput'
 import FilterButton from './FilterButton'
 import ButtonClassSearch from './ButtonClassSearch';
+import { isArray } from 'util';
 
 const Buscador = ({ dataHeroes, setData, setClean }) => {
 
-  const handleFilterStars = (cantStars) => {
+  const handleFilterStars = (cantStars: number) => {
+    const { stars } = dataHeroes;
+    let result: string[] | string | number = 0;
+    let documentCurrentStar = document.querySelector(`.star-${cantStars}`);
     if (cantStars === 0) {
       for (let i = cantStars + 1; i <= 5; i++) {
-        if (!document.querySelector(`.star-${i}`).classList.contains('filter-gray')) {
-          document.querySelector(`.star-${i}`).classList.add('filter-gray');
+        let documentStar = document.querySelector(`.star-${i}`);
+        if (documentStar !== null && !documentStar.classList.contains('filter-gray')) {
+          documentStar.classList.add('filter-gray');
         }
       }
-    } else if (document.querySelector(`.star-${cantStars}`).classList.contains('filter-gray')) {
-      const { stars } = dataHeroes;
-      document.querySelector(`.star-${cantStars}`).classList.remove('filter-gray');
-      if (stars) {
-        cantStars = typeof stars === 'string' ? [stars, `${cantStars}`] : [...stars, `${cantStars}`]
+    } else if (documentCurrentStar !== null) {
+      if (documentCurrentStar.classList.contains('filter-gray')) {
+        documentCurrentStar.classList.remove('filter-gray');
+        if (stars) {
+          result = [...stars, `${cantStars}`]
+        } else {
+          result = `${cantStars}`
+        }
       } else {
-        cantStars = `${cantStars}`
+        documentCurrentStar.classList.add('filter-gray');
+        if (stars === `${cantStars}`) {
+          result = 0;
+        } else {
+          result = stars.filter((star: string) => star !== `${cantStars}`);
+          if ((result as string[]).length === 1 && isArray(result)) {
+            result = `${(result)[0]}`;
+          }
+        }
       }
     }
     setData({
       ...dataHeroes,
-      stars: cantStars !== 0 ? cantStars : '',
+      stars: result !== 0 ? result : '',
     });
   };
 
-  const handleElement = (element) => {
+  const handleElement = (element: number) => {
     let nameElement;
+    let documentElement
     for (let i = 1; i <= 5; i++) {
       if (i === element) {
-        if (document.querySelector(`.element-${element}`).classList.contains('filter-gray')) {
-          document.querySelector(`.element-${element}`).classList.remove('filter-gray');
+        documentElement = document.querySelector(`.element-${element}`);
+        if (documentElement !== null && documentElement.classList.contains('filter-gray')) {
+          documentElement.classList.remove('filter-gray');
         }
       } else {
-        if (!document.querySelector(`.element-${i}`).classList.contains('filter-gray')) {
-          document.querySelector(`.element-${i}`).classList.add('filter-gray');
+        documentElement = document.querySelector(`.element-${i}`);
+        if (documentElement !== null && !documentElement.classList.contains('filter-gray')) {
+          documentElement.classList.add('filter-gray');
         }
       }
     }
@@ -62,7 +82,7 @@ const Buscador = ({ dataHeroes, setData, setClean }) => {
     });
   };
 
-  const handleClassSearch = (e, name) => {
+  const handleClassSearch = (e, name: string) => {
     if (!e.currentTarget.classList.contains('buttonClassSearch-active')) {
       document.querySelectorAll('.buttonClassSearch').forEach((button) => {
         if (button.classList.contains('buttonClassSearch-active')) {
