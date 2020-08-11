@@ -3,7 +3,7 @@ import LabelInput from './LabelInput'
 import FilterButton from './FilterButton'
 import ButtonClassSearch from './ButtonClassSearch';
 
-const Buscador = ({ dataHeroes, setData, setClean }) => {
+const Buscador = ({ dataHeroes, setData, setClean }: any) => {
 
   const handleFilterStars = (cantStars: number) :void => {
     const { stars } = dataHeroes;
