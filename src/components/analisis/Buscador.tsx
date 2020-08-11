@@ -2,11 +2,10 @@ import React from 'react';
 import LabelInput from './LabelInput'
 import FilterButton from './FilterButton'
 import ButtonClassSearch from './ButtonClassSearch';
-import { isArray } from 'util';
 
 const Buscador = ({ dataHeroes, setData, setClean }) => {
 
-  const handleFilterStars = (cantStars: number) => {
+  const handleFilterStars = (cantStars: number) :void => {
     const { stars } = dataHeroes;
     let result: string[] | string | number = 0;
     let documentCurrentStar = document.querySelector(`.star-${cantStars}`);
@@ -31,7 +30,7 @@ const Buscador = ({ dataHeroes, setData, setClean }) => {
           result = 0;
         } else {
           result = stars.filter((star: string) => star !== `${cantStars}`);
-          if ((result as string[]).length === 1 && isArray(result)) {
+          if (Array.isArray(result) && result.length === 1 ) {
             result = `${(result)[0]}`;
           }
         }
@@ -43,7 +42,7 @@ const Buscador = ({ dataHeroes, setData, setClean }) => {
     });
   };
 
-  const handleElement = (element: number) => {
+  const handleElement = (element: number): void => {
     let nameElement;
     let documentElement
     for (let i = 1; i <= 5; i++) {
@@ -82,7 +81,7 @@ const Buscador = ({ dataHeroes, setData, setClean }) => {
     });
   };
 
-  const handleClassSearch = (e, name: string) => {
+  const handleClassSearch = (e: React.FormEvent<HTMLInputElement>, name: string): void => {
     if (!e.currentTarget.classList.contains('buttonClassSearch-active')) {
       document.querySelectorAll('.buttonClassSearch').forEach((button) => {
         if (button.classList.contains('buttonClassSearch-active')) {
@@ -114,10 +113,10 @@ const Buscador = ({ dataHeroes, setData, setClean }) => {
       <h2 className='flex items-center justify-center text-xl font-bold md:text-lg md:block'>Buscador:</h2>
       <LabelInput
         value={dataHeroes.query}
-        handleChange={(e) => {
+        handleChange={(e: React.FormEvent<HTMLInputElement>): void => {
           setData({
             ...dataHeroes,
-            query: e.target.value,
+            query: e.currentTarget.value,
           });
         }}
         placeholder='Ameonna'
@@ -157,10 +156,10 @@ const Buscador = ({ dataHeroes, setData, setClean }) => {
           <LabelInput
             placeholder='Sakura'
             value={dataHeroes.family}
-            handleChange={(e) => {
+            handleChange={(e: React.FormEvent<HTMLInputElement>): void => {
               setData({
                 ...dataHeroes,
-                family: e.target.value,
+                family: e.currentTarget.value,
               });
             }}
           >
@@ -171,10 +170,10 @@ const Buscador = ({ dataHeroes, setData, setClean }) => {
           <LabelInput
             placeholder='Segunda Temporada'
             value={dataHeroes.event}
-            handleChange={(e) => {
+            handleChange={(e: React.FormEvent<HTMLInputElement>): void => {
               setData({
                 ...dataHeroes,
-                event: e.target.value,
+                event: e.currentTarget.value,
               });
             }}
           >
@@ -185,10 +184,10 @@ const Buscador = ({ dataHeroes, setData, setClean }) => {
           <LabelInput
             placeholder='El héroe cambia...'
             value={dataHeroes.effect}
-            handleChange={(e) => {
+            handleChange={(e: React.FormEvent<HTMLInputElement>): void => {
               setData({
                 ...dataHeroes,
-                effect: e.target.value,
+                effect: e.currentTarget.value,
               });
             }}
           >

@@ -4,7 +4,7 @@ import { MessageErrorFetch, Modal } from '../components';
 import Layout from '../components/Layout';
 import { fetchJson2, sortById } from '../localFunction';
 
-export default ({ response }) => {
+const Donar = ({ response }) => {
   const { open, setOpen, errorResponse, data } = useVerifyFetch(response);
 
   useEffect(() => {
@@ -77,3 +77,5 @@ export async function getServerSideProps() {
   sortById(data)
   return { props: { response: data } }
 }
+
+export default Donar;

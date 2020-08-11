@@ -15,9 +15,10 @@ const useSearchHeroes = (json) => {
   const [jsonSearch, setJsonSearch] = useState(false);
 
   const createFuse = (json, options) => {
+    const threshold = options.threshold;
     let newOptions = options.keys.filter((option) => option !== '');
-    newOptions = { threshold: 0.3, keys: newOptions };
-
+    newOptions = { threshold, keys: newOptions, ignoreLocation: true };
+    console.log(newOptions)
     return new Fuse(json, newOptions);
   };
 
@@ -69,6 +70,7 @@ const useSearchHeroes = (json) => {
 
   useMemo(() => {
     let newJson;
+    let threshold;
     const { query, stars, element, class: classHero, family, event, effect } = data;
     if (clean) {
       setData({
@@ -89,8 +91,9 @@ const useSearchHeroes = (json) => {
           setJsonSearch(newJson);
         }
       } else {
+        threshold = effect ? 0.3 : 0.3;
         newJson = searching(json, {
-          threshold: 0.3,
+          threshold,
           keys: [
             query && {
               name: 'name',

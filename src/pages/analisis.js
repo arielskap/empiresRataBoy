@@ -5,7 +5,7 @@ import { Face, ModalHero, CompareHeroes, Buscador } from '../components/analisis
 import Layout from '../components/Layout';
 import { fetchJson2 } from '../localFunction';
 
-export default ({ response }) => {
+const Analisis = ({ response }) => {
   const [compareHeroes, setCompareHeroes] = useState([{
     id: 1,
     img: './static/black.png',
@@ -76,3 +76,5 @@ export async function getServerSideProps() {
   const data = await fetchJson2('heroes')
   return { props: { response: data } }
 }
+
+export default Analisis;

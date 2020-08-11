@@ -3,7 +3,7 @@ import { CardAlianza, Modal, MessageErrorFetch } from '../components';
 import Layout from '../components/Layout';
 import { fetchJson2, sortById } from '../localFunction';
 
-export default ({ response }) => {
+const Alianzas = ({ response }) => {
   const { open, setOpen, errorResponse, data } = useVerifyFetch(response);
 
   return (
@@ -37,3 +37,5 @@ export async function getServerSideProps() {
   sortById(data)
   return { props: { response: data } }
 }
+
+export default Alianzas;

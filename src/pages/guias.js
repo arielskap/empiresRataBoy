@@ -4,7 +4,7 @@ import Layout from '../components/Layout';
 import { useVerifyFetch } from '../hooks';
 import { fetchJson2, sortById } from '../localFunction';
 
-export default ({ response }) => {
+const Guias = ({ response }) => {
   const { open, setOpen, errorResponse, data } = useVerifyFetch(response);
 
   return (
@@ -45,3 +45,4 @@ export async function getServerSideProps() {
   return { props: { response: data } }
 }
 
+export default Guias;

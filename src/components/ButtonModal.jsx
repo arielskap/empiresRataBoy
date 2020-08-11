@@ -1,11 +1,9 @@
 import React from 'react';
-import useNearScreen from '../hooks/useNearScreen';
 
-const ButtonModal = ({ children, ref, onClick = () => {} }) => {
-  const [element, show] = useNearScreen();
+const ButtonModal = ({ children, onClick = () => {} }) => {
   return (
-    <button ref={element} type='button' className='w-full min-h-75 flex justify-center items-center relative transform duration-200 hover:scale-110 border-transparent border-2 hover:border-pink-500 rounded' onClick={() => { onClick(); }}>
-      {show && children}
+    <button type='button' className='relative flex items-center justify-center w-full duration-200 transform border-2 border-transparent rounded min-h-75 hover:scale-110 hover:border-pink-500' onClick={() => { onClick(); }}>
+      {children}
     </button>
   );
 };

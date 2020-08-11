@@ -5,7 +5,7 @@ import Layout from '../components/Layout';
 import { fetchJson2, sortById } from '../localFunction';
 import { useVerifyFetch } from '../hooks';
 
-export default ({ response }) => {
+const Home = ({ response }) => {
   const { open, setOpen, errorResponse, data } = useVerifyFetch(response);
 
   return (
@@ -79,3 +79,5 @@ export async function getServerSideProps() {
   sortById(data)
   return { props: { response: data } }
 }
+
+export default Home;

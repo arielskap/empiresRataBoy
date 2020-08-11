@@ -5,14 +5,10 @@
         "node": true
     },
     "extends": [
-        "airbnb-typescript",
-        "airbnb/hooks",
-        "plugin:@typescript-eslint/recommended",
         "eslint:recommended",
         "plugin:react/recommended"
     ],
-    "plugins": ["react", "jsx-a11y", "import", "react-hooks", "@typescript-eslint"],
-    "parser": "@typescript-eslint/parser",
+    "plugins": ["react", "jsx-a11y", "import", "react-hooks"],
     "parserOptions": {
         "sourceType": "module"
     },

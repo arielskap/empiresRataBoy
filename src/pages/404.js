@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import Layout from '../components/Layout';
 
-export default () => {
+const Error404 = () => {
   return (
     <Layout title='404: Not found'>
       <main className='flex flex-col items-center justify-center py-12 space-y-4'>
@@ -15,3 +15,5 @@ export default () => {
     </Layout>
   );
 };
+
+export default Error404;
