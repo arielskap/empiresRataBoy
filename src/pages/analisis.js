@@ -1,11 +1,12 @@
 import { useState } from 'react';
 import { useVerifyFetch, useSearchHeroes } from '../hooks';
 import { Modal, MessageErrorFetch } from '../components';
-import { Face, ModalHero, CompareHeroes, Buscador } from '../components/analisis';
+import { Face, CompareHeroes, Buscador } from '../components/analisis';
 import Layout from '../components/Layout';
 import { fetchJson2 } from '../localFunction';
 
-const Analisis = ({ response }) => {
+const Analisis = ({ response, responseTalents }) => {
+
   const [compareHeroes, setCompareHeroes] = useState([{
     id: 1,
     img: './static/black.png',
@@ -19,7 +20,9 @@ const Analisis = ({ response }) => {
     img: './static/black.png',
     alt: '',
   }]);
+
   const { open, setOpen, errorResponse, data } = useVerifyFetch(response);
+  const { open: openTalents, setOpen: setOpenTalents, errorResponse: errorResponseTalents, data: dataTalents } = useVerifyFetch(responseTalents);
 
   const { data: dataHeroes, setData, jsonSearch, setClean } = useSearchHeroes(data);
 
@@ -32,7 +35,7 @@ const Analisis = ({ response }) => {
               <h1 className='text-xl font-bold'>Analisis de Heroes</h1>
             </div>
             <Buscador dataHeroes={dataHeroes} setData={setData} setClean={setClean} />
-            <CompareHeroes state={{ compareHeroes, setCompareHeroes }} />
+            <CompareHeroes state={{ compareHeroes, setCompareHeroes }} dataTalents={dataTalents} />
           </div>
         </div>
         <div className='lg:col-span-10'>
@@ -57,16 +60,18 @@ const Analisis = ({ response }) => {
               };
               return (
                 <div key={id}>
-                  <Face data={{ id, img, json: newJson }} compareHeroes={{ compareHeroes, setCompareHeroes }}>{name}</Face>
+                  <Face dataTalents={dataTalents} data={{ id, img, json: newJson }} compareHeroes={{ compareHeroes, setCompareHeroes }}>{name}</Face>
                 </div>
               );
             })}
           </div>
         </div>
       </main>
-      {data && <ModalHero data={{ open, setOpen }} setCompareHeroes={setCompareHeroes} dataCard={{ img: data.img, json: data.json }} />}
       <Modal data={{ open, setOpen }}>
         <MessageErrorFetch errorResponse={errorResponse}>Traer la Lista de Heroes</MessageErrorFetch>
+      </Modal>
+      <Modal data={{ openTalents, setOpenTalents }}>
+        <MessageErrorFetch errorResponse={errorResponseTalents}>Traer la Lista de Talentos</MessageErrorFetch>
       </Modal>
     </Layout>
   );
@@ -74,7 +79,8 @@ const Analisis = ({ response }) => {
 
 export async function getServerSideProps() {
   const data = await fetchJson2('heroes')
-  return { props: { response: data } }
+  const talents = await fetchJson2('talentosHeroes')
+  return { props: { response: data, responseTalents: talents } }
 }
 
 export default Analisis;

@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from 'react';
+import { ModalCompareHeroes } from './index.js';
 import ButtonModal from '../ButtonModal';
-import ModalCompareHeroes from './ModalCompareHeroes';
 import { changeDevice, viewportOrientation } from '../../funciones';
 import Modal from '../Modal';
 
-const CompareHeroes = ({ state }) => {
+const CompareHeroes = ({ state, dataTalents }) => {
   const [readyCompare, setReadyCompare] = useState(false);
   const [open, setOpen] = useState(false);
   const [openError, setOpenError] = useState(false);
@@ -86,7 +86,7 @@ const CompareHeroes = ({ state }) => {
           <p className='py-4 text-lg font-bold text-center'>Debe Girar la Pantalla</p>
         </div>
       </Modal>
-      <ModalCompareHeroes dataCards={state.compareHeroes} data={{ open, setOpen }} />
+      <ModalCompareHeroes dataCards={state.compareHeroes} data={{ open, setOpen }} dataTalents={dataTalents} />
     </>
   );
 };

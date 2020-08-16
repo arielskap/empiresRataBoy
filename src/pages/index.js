@@ -17,7 +17,7 @@ const Home = ({ response }) => {
         </div>
         <div className='hidden md:flex md:flex-col md:items-center md:justify-center md:my-6'>
           <LinkH1 />
-          <img className='object-contain md:max-w-4xl xl:max-w-6xl' src='./static/redDeAlianzas.png' alt='Red de Alianzas' />
+          <img className='object-contain w-full md:max-w-4xl xl:max-w-6xl' src='./static/redDeAlianzas.png' alt='Red de Alianzas' />
         </div>
         <div className='px-8'>
           <hr className='my-8 hr-home md:hidden' />
@@ -32,11 +32,17 @@ const Home = ({ response }) => {
             <h2 className='mb-4 text-xl font-bold text-center md:text-2xl'>¡Listas de Reproducción!</h2>
             <div className='grid grid-cols-1 gap-4 md:grid-cols-3'>
               {data && Array.isArray(data) && data.map((video) => {
-                const { id, name, link } = video;
+                const { id, name, link, img } = video;
                 return (
-                  <div className='mt-2 md:mt-0' key={id}>
+                  <div className={`mt-2 md:mt-0 ${img && 'md:col-span-3'}`} key={id}>
                     <h3 className='mb-2 font-bold text-center underline text-md'>{name}</h3>
-                    <iframe className='w-full rounded md:h-64' title={name} src={link} frameBorder='0' allow='accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture' allowFullScreen />
+                    {img ? (
+                      <div className='flex justify-center'>
+                        <img className='object-contain' src={img} alt={name} />
+                      </div>
+                    ) : (
+                      <iframe className='w-full rounded md:h-64' title={name} src={link} frameBorder='0' allow='accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture' allowFullScreen />
+                    )}
                   </div>
                 );
               })}
