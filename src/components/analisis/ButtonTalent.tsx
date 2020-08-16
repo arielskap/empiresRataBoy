@@ -119,8 +119,8 @@ const ButtonTalent: React.FunctionComponent<props> = ({ data, powerUp, uniqueId 
           result = newSkill('-', data.title, true)
           setButtonIsActive(false)
         }
-      } else if (!isActiveNextButton) {
-        if (!buttonIsActive && isActiveBeforeButton) {
+      } else if (!isActiveNextButton && isActiveBeforeButton) {
+        if (!buttonIsActive) {
           result = newSkill('+', data.title, true)
           setButtonIsActive(true)
         } else {
