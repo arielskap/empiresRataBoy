@@ -7,12 +7,10 @@ const CompleteCard = ({img, json, rotateY, dataTalents, closeModal, uniqueId}: a
   return (
     <animated.div className={`${styles.carta} card-${uniqueId}`} style={rotateY}>
       <div className={`flex items-center justify-center ${styles.cara}`}>
-        <div className='relative'>
-          <button className='absolute z-10 px-2 py-1 text-xl font-bold leading-none text-white bg-red-800 border border-black rounded-lg shadow Modal__close-button text-border-black hover:bg-red-600' type='button' onClick={() => { closeModal(); }}>
-              x
-          </button>
-          <Card img={img} json={json} />
-        </div>
+        <button className='absolute z-10 px-2 py-1 text-xl font-bold leading-none text-white bg-red-800 border border-black rounded-lg shadow Modal__close-button text-border-black hover:bg-red-600' type='button' onClick={() => { closeModal(); }}>
+            x
+        </button>
+        <Card img={img} json={json} />
       </div>
       <div className={styles.detras}>
         <BackCard dataTalents={dataTalents} json={json} uniqueId={uniqueId} />

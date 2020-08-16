@@ -61,6 +61,16 @@ export const changeDevice = () => {
   return null;
 };
 
+export const changeDeviceTablet = () => {
+  const isBrowser = typeof window !== 'undefined';
+  if (isBrowser) {
+    const TAM_TABLET = 768;
+    const tamaño = window.innerWidth ;
+    return tamaño < TAM_TABLET ? 'mobile' : 'tablet';
+  }
+  return null;
+};
+
 export const viewportOrientation = () => {
   return window.innerHeight > window.innerWidth ? 'portrait' : 'landscape';
 };

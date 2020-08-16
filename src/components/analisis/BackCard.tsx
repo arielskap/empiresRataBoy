@@ -58,7 +58,7 @@ const BackCard: React.FunctionComponent<props> = ({ json, dataTalents, uniqueId 
         <BackCardHeader upgrade={upgrade} color={dataPj.color} json={{ attack: json.attack, defense: json.defense, health: json.health, classHero: json.classHero }} />
         <div className='grid flex-grow grid-cols-2 row-gap-8 px-10 pt-6 overflow-y-auto shadow-inner bg-backCard'>
           {talents && talents.map((talent, index) => {
-            const { id, skill, title, text, skillData, alone } = talent;
+            const { id, skill, title, skillData, alone } = talent;
             if (!alone) {
               if (!noSingleTalent.nextRowIsOther) {
                 if (noSingleTalent.firstFlag) {

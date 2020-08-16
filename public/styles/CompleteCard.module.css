@@ -1,26 +1,69 @@
 
+/* .card {
+  perspective: 1000px;
+} */
+
 .carta {
+  /* position: relative; */
   transform-style: preserve-3d;
 }
 
-.cara {
+.cara,
+.detras {
   backface-visibility: hidden;
   margin: auto;
   position: absolute;
-  position: relative;
   top: 0;
   left: 0;
   bottom: 0;
   right: 0;
 }
 
-.detras {
-  backface-visibility: hidden;
-  transform: rotateY(180deg);
-  margin: auto;
-  position: absolute;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  right: 0;
+.cara {
+  position: relative;
 }
+
+.detras {
+  transform: rotateY(180deg);
+}
+
+/* .card {
+  background-color: transparent;
+  width: 300px;
+  height: 300px;
+  perspective: 1000px;
+}
+
+.innerCard {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.6s 2s;
+  transform-style: preserve-3d;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+}
+
+.card:hover .innerCard {
+  transform: rotateY(180deg);
+}
+
+.cara,
+.detras {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+
+.cara {
+  background-color: #bbb;
+  color: black;
+}
+
+.detras {
+  background-color: #2980b9;
+  color: white;
+  transform: rotateY(180deg);
+} */

@@ -20,8 +20,8 @@ const Card = ({ img, json }) => {
           }
         </div>
       </div>
-      <div className='relative'>
-        <div className='absolute flex items-start justify-center div-power'>
+      <div>
+        <div className='absolute flex items-start justify-center div-power' style={{ top: '2rem', right: '0.5rem' }}>
           <div className='relative'>
             <p className='px-4 text-lg font-bold text-center bg-red-900 border-4 border-red-500 rounded-full text-border-black'>
               {`${json.power}`}
@@ -31,7 +31,7 @@ const Card = ({ img, json }) => {
             </div>
           </div>
         </div>
-        <img className='object-contain w-full rounded-lg' src={img} alt={json.name} />
+        <img className='object-contain w-full h-56 rounded-lg' src={img} alt={json.name} />
       </div>
       <div className='my-2 rounded-lg shadow-inner'>
         <div className={`px-4 py-2 grid grid-cols-3 gap-4 rounded-t-lg bg-${dataPj.color}-800`}>

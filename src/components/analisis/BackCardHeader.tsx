@@ -9,7 +9,7 @@ interface props {
 const BackCardHeader: React.FunctionComponent<props> = ({ color, json, upgrade }) => {
 
   return (
-    <div className={`px-2 pt-6 pb-2 rounded-t-lg bg-${color}-800`}>
+    <div className={`px-2 pt-6 pb-2 rounded-t-lg bg-${color}-800 text-xs md:text-sm lg:text-base`}>
       <div className='grid grid-cols-12 gap-1 p-1 bg-gray-900 bg-opacity-75 rounded-lg'>
         <div className='col-span-3 space-y-2 text-white'>
           <div className='flex'>
