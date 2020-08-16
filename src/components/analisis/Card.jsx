@@ -31,7 +31,7 @@ const Card = ({ img, json }) => {
             </div>
           </div>
         </div>
-        <img className='object-contain w-full h-56 rounded-lg' src={img} alt={json.name} />
+        <img className='object-contain w-full h-64 rounded-lg' src={img} alt={json.name} />
       </div>
       <div className='my-2 rounded-lg shadow-inner'>
         <div className={`px-4 py-2 grid grid-cols-3 gap-4 rounded-t-lg bg-${dataPj.color}-800`}>
