@@ -53,7 +53,7 @@ export const fetchJson2 = (url) => {
 };
 
 export const fetchJson3 = (url) => {
-  const dev = process.env.NODE_ENV !== 'prod';
+  const dev = process.env.NODE_ENV !== 'production';
   const path = dev ? 'http://localhost:3000' : 'https://ratabboy.com.ar';
   return fetch(`${path}/api/${url}`, {
     headers: {
