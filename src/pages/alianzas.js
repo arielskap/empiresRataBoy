@@ -1,7 +1,7 @@
 import { useVerifyFetch } from '../hooks';
 import { CardAlianza, Modal, MessageErrorFetch } from '../components';
 import Layout from '../components/Layout';
-import { fetchJson2, sortById } from '../localFunction';
+import { fetchJson3, sortById } from '../utils/localFunction';
 
 const Alianzas = ({ response }) => {
   const { open, setOpen, errorResponse, data } = useVerifyFetch(response);
@@ -33,7 +33,7 @@ const Alianzas = ({ response }) => {
 };
 
 export async function getServerSideProps() {
-  const data = await fetchJson2('alianzas')
+  const data = await fetchJson3('alianzas')
   sortById(data)
   return { props: { response: data } }
 }

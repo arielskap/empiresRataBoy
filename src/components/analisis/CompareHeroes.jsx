@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { ModalCompareHeroes } from './index.js';
 import ButtonModal from '../ButtonModal';
-import { changeDevice, viewportOrientation } from '../../funciones';
+import { changeDevice, viewportOrientation } from '../../utils/funciones';
 import Modal from '../Modal';
 
 const CompareHeroes = ({ state, dataTalents }) => {

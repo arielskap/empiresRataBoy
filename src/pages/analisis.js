@@ -3,7 +3,7 @@ import { useVerifyFetch, useSearchHeroes } from '../hooks';
 import { Modal, MessageErrorFetch } from '../components';
 import { Face, CompareHeroes, Buscador } from '../components/analisis';
 import Layout from '../components/Layout';
-import { fetchJson2 } from '../localFunction';
+import { fetchJson3 } from '../utils/localFunction';
 
 const Analisis = ({ response, responseTalents }) => {
 
@@ -78,8 +78,8 @@ const Analisis = ({ response, responseTalents }) => {
 };
 
 export async function getServerSideProps() {
-  const data = await fetchJson2('heroes')
-  const talents = await fetchJson2('talentosHeroes')
+  const data = await fetchJson3('heroes')
+  const talents = await fetchJson3('talentosHeroes')
   return { props: { response: data, responseTalents: talents } }
 }
 

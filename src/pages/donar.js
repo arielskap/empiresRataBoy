@@ -2,7 +2,7 @@ import { useEffect } from 'react';
 import { useVerifyFetch } from '../hooks';
 import { MessageErrorFetch, Modal } from '../components';
 import Layout from '../components/Layout';
-import { fetchJson2, sortById } from '../localFunction';
+import { fetchJson3, sortById } from '../utils/localFunction';
 
 const Donar = ({ response }) => {
   const { open, setOpen, errorResponse, data } = useVerifyFetch(response);
@@ -73,7 +73,7 @@ const Donar = ({ response }) => {
 };
 
 export async function getServerSideProps() {
-  const data = await fetchJson2('donaciones')
+  const data = await fetchJson3('donaciones')
   sortById(data)
   return { props: { response: data } }
 }

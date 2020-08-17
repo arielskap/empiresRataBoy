@@ -1,4 +1,4 @@
-import { getImgClassHero } from '../../localFunction';
+import { getImgClassHero } from '../../utils/localFunction';
 
 interface props {
   color: any,
