@@ -5,7 +5,7 @@ import { useSlide } from '../../animations';
 import styles from '../../../public/styles/ModalHero.module.css'
 import ButtonShowTalents from './ButtonShowTalents';
 import useRotateCard from '../../hooks/useRotateCard';
-import { changeDeviceTablet } from '../../funciones';
+import { changeDeviceTablet } from '../../utils/funciones';
 import CompleteCard from './CompleteCard';
 
 const ModalHero = ({ dataCard, data, compareHeroes, dataTalents }: any) => {

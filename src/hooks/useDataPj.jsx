@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { getImgClassHero } from '../localFunction';
+import { getImgClassHero } from '../utils/localFunction';
 
 const useDataPj = (data) => {
   const [dataPj, setDataPj] = useState({

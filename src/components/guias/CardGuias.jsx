@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import Modal from '../Modal';
-import { changeDevice } from '../../funciones';
+import { changeDevice } from '../../utils/funciones';
 
 const CardGuias = ({ json }) => {
   const [open, setOpen] = useState(false);

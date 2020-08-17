@@ -52,6 +52,25 @@ export const fetchJson2 = (url) => {
     })
 };
 
+export const fetchJson3 = (url) => {
+  const dev = process.env.NODE_ENV !== 'prod';
+  const path = dev ? 'http://localhost:3000' : 'https://ratabboy.com.ar';
+  return fetch(`${path}/api/${url}`, {
+    headers: {
+      'Content-Type': 'application/json',
+    },
+  })
+    .then((res) => {
+      return res.json();
+    })
+    .catch((res) => {
+      return { ...res, error: res.message }
+    })
+    .then((res) => {
+      return res;
+    })
+};
+
 export const getImgClassHero = (className) => {
   let classNameSrc;
   switch (className.toLowerCase()) {

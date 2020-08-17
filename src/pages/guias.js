@@ -2,7 +2,7 @@ import { Modal, MessageErrorFetch } from '../components';
 import CardGuias from '../components/guias/CardGuias';
 import Layout from '../components/Layout';
 import { useVerifyFetch } from '../hooks';
-import { fetchJson2, sortById } from '../localFunction';
+import { fetchJson3, sortById } from '../utils/localFunction';
 
 const Guias = ({ response }) => {
   const { open, setOpen, errorResponse, data } = useVerifyFetch(response);
@@ -40,7 +40,7 @@ const Guias = ({ response }) => {
 };
 
 export async function getServerSideProps() {
-  const data = await fetchJson2('guias')
+  const data = await fetchJson3('guias')
   sortById(data)
   return { props: { response: data } }
 }

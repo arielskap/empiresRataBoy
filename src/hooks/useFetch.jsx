@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import useSWR from 'swr';
-import { fetchJson2 } from '../localFunction';
+import { fetchJson2 } from '../utils/localFunction';
 //import json from '../json/analisis.json';
 
 const useFetch = (id) => {
