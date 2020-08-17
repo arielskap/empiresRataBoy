@@ -1,5 +1,5 @@
 import { animated } from 'react-spring';
-import styles from '../../../public/styles/CompleteCard.module.css'
+import styles from '../../styles/CompleteCard.module.css'
 import Card from './Card';
 import BackCard from './BackCard';
 

@@ -75,34 +75,34 @@ export const getImgClassHero = (className) => {
   let classNameSrc;
   switch (className.toLowerCase()) {
     case 'barbaro':
-      classNameSrc = './static/barbarian.png';
+      classNameSrc = './barbarian.png';
       break;
     case 'clerigo':
-      classNameSrc = './static/cleric.png';
+      classNameSrc = './cleric.png';
       break;
     case 'druida':
-      classNameSrc = './static/druid.png';
+      classNameSrc = './druid.png';
       break;
     case 'luchador':
-      classNameSrc = './static/fighter.png';
+      classNameSrc = './fighter.png';
       break;
     case 'monje':
-      classNameSrc = './static/monk.png';
+      classNameSrc = './monk.png';
       break;
     case 'paladin':
-      classNameSrc = './static/paladin.png';
+      classNameSrc = './paladin.png';
       break;
     case 'guardabosques':
-      classNameSrc = './static/ranger.png';
+      classNameSrc = './ranger.png';
       break;
     case 'rebelde':
-      classNameSrc = './static/rogue.png';
+      classNameSrc = './rogue.png';
       break;
     case 'hechicero':
-      classNameSrc = './static/sorcer.png';
+      classNameSrc = './sorcer.png';
       break;
     case 'brujo':
-      classNameSrc = './static/wizard.png';
+      classNameSrc = './wizard.png';
       break;
     default:
       break;

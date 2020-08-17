@@ -1,18 +1,27 @@
 import { useEffect } from 'react';
 import Head from 'next/head';
 import Router from 'next/router';
-import PropTypes from 'prop-types';
 import NProgress from 'nprogress';
-import Header from './Header';
-import Footer from './Footer';
+import styles, { globalStyles } from './styles';
+import Header from '../Header';
+import Footer from '../Footer';
 
-Router.onRouteChangeStart = () => {
-  NProgress.start();
-};
-Router.onRouteChangeComplete = () => NProgress.done();
-Router.onRouteChangeError = () => NProgress.done();
 
-const Layout = ({ children, title }) => {
+if (typeof window !== "undefined") {
+  Router.events.on("routeChangeStart", () => {
+    NProgress.start();
+  });
+
+  Router.events.on("routeChangeComplete", () => {
+    NProgress.done();
+  });
+
+  Router.events.on("routeChangeError", () => {
+    NProgress.done();
+  });
+}
+
+const Layout = ({ children, title }: {children: React.ReactNode, title: string}) => {
 
   useEffect(() => {
     if (typeof window !== 'undefined') {
@@ -31,7 +40,7 @@ const Layout = ({ children, title }) => {
         <meta charSet='UTF-8' />
         <meta name='viewport' content='width=device-width, initial-scale=1.0' />
         <meta name='description' content='Rata B Boy Empires and Puzzles Guias y Tutoriales' />
-        <link rel='shortcut icon' href='./static/logo.png' />
+        <link rel='shortcut icon' href='./logo.png' />
       </Head>
       <Header />
       <div className='absolute left-0 z-10 hidden w-full h-auto bg-black opacity-50 nav-bg-black' />
@@ -43,21 +52,10 @@ const Layout = ({ children, title }) => {
       </div>
       <Footer />
       <div id='modal' />
-      <style jsx>
-        {`
-          .nav-bg-black{
-            top: 114px;
-            min-height: calc(100% - 114px);
-          }
-        `}
-      </style>
+      <style jsx>{styles}</style>
+      <style jsx global>{globalStyles}</style>
     </div>
   );
-};
-
-Layout.propTypes = {
-  children: PropTypes.node.isRequired,
-  title: PropTypes.string.isRequired,
 };
 
 export default Layout;

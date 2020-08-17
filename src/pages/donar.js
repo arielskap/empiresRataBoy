@@ -40,11 +40,11 @@ const Donar = ({ response }) => {
         <div className='flex flex-col items-center justify-around w-full mt-5 lg:grid lg:grid-cols-2 lg:gap-4 lg:px-40'>
           <div className='flex flex-col items-center justify-center lg:border-2 lg:border-blue-500 lg:rounded lg:p-4'>
             <a className='px-4 py-2 border-2 rounded border-gold hover:border-transparent hover:bg-yellow-500' href='https://www.paypal.me/ratabboy' target='__blank'>
-              <img className='object-contain p-2 bg-white rounded' src='./static/payPal.png' alt='Pay Pal' />
+              <img className='object-contain p-2 bg-white rounded' src='./payPal.png' alt='Pay Pal' />
             </a>
           </div>
           <div className='flex flex-col items-center justify-center mt-12 lg:border-2 lg:border-blue-500 lg:rounded lg:p-4 lg:mt-0 lg:row-span-2'>
-            <img className='object-contain p-2 mb-5 bg-white rounded' src='./static/mercadoPago.png' alt='Mercado Pago' />
+            <img className='object-contain p-2 mb-5 bg-white rounded' src='./mercadoPago.png' alt='Mercado Pago' />
             <div className='grid grid-cols-1 gap-4 mx-4'>
               {data && Array.isArray(data) && data.map((donativo) => {
                 const { id, name, cost, link } = donativo;
@@ -60,7 +60,7 @@ const Donar = ({ response }) => {
             <h2 className='text-xl font-bold text-center'>Pagar con Qr</h2>
             <h3 className='mb-4 text-lg font-bold text-center'>Mercado Pago</h3>
             <div className='flex items-center justify-center'>
-              <img className='object-contain rounded' src='./static/qr.jpg' alt='qr' />
+              <img className='object-contain rounded' src='./qr.jpg' alt='qr' />
             </div>
           </div>
         </div>

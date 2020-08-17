@@ -5,7 +5,7 @@ import { useSlide } from '../../animations';
 import ButtonShowTalents from './ButtonShowTalents';
 import useRotateCard from '../../hooks/useRotateCard';
 import CompleteCard from './CompleteCard';
-import styles from '../../../public/styles/ModalCompareHeroes.module.css'
+import styles from '../../styles/ModalCompareHeroes.module.css'
 
 const ModalCompareHeroes = ({ dataCards, data, dataTalents }: any) => {
 

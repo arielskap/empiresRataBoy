@@ -20,23 +20,23 @@ const useDataPj = (data) => {
     className = data.classHero.toLowerCase();
     switch (type) {
       case 'azul hielo':
-        type = './static/hielo.png';
+        type = './hielo.png';
         color = 'blue';
         break;
       case 'violeta oscuro':
-        type = './static/oscuro.png';
+        type = './oscuro.png';
         color = 'purple';
         break;
       case 'verde naturaleza':
-        type = './static/naturaleza.png';
+        type = './naturaleza.png';
         color = 'green';
         break;
       case 'rojo fuego':
-        type = './static/fuego.png';
+        type = './fuego.png';
         color = 'red';
         break;
       case 'amarillo sagrado':
-        type = './static/sagrado.png';
+        type = './sagrado.png';
         color = 'yellow';
         break;
       default:

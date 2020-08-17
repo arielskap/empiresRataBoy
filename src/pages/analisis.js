@@ -9,15 +9,15 @@ const Analisis = ({ response, responseTalents }) => {
 
   const [compareHeroes, setCompareHeroes] = useState([{
     id: 1,
-    img: './static/black.png',
+    img: './black.png',
     alt: '',
   }, {
     id: 2,
-    img: './static/black.png',
+    img: './black.png',
     alt: '',
   }, {
     id: 3,
-    img: './static/black.png',
+    img: './black.png',
     alt: '',
   }]);
 

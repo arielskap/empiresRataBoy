@@ -18,7 +18,7 @@ const LinkH1 = () => {
       <button type='button' onClick={() => copyText('#titleCopy')} className='px-2 py-1 text-lg font-bold break-all bg-black bg-opacity-25 rounded sm:text-xl lg:bg-transparent'>
         <span className='text-sm tooltiptext' id='myTooltip'>Copiar Link</span>
         <h1 id='titleCopy' className='hidden'>https://ratabboy.herokuapp.com/</h1>
-        <img className='object-contain md:max-w-2xl xl:max-w-4xl' src='./static/herokuLink.png' alt='https://ratabboy.herokuapp.com/' />
+        <img className='object-contain md:max-w-2xl xl:max-w-4xl' src='./herokuLink.png' alt='https://ratabboy.herokuapp.com/' />
       </button>
       <style jsx>
         {`
