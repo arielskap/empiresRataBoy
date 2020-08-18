@@ -15,7 +15,7 @@ const CompareHeroes = ({ state, dataTalents }) => {
       if (id === idHero) {
         return {
           id,
-          img: './static/black.png',
+          img: './black.png',
           alt: '',
         };
       }
@@ -82,7 +82,7 @@ const CompareHeroes = ({ state, dataTalents }) => {
       </div>
       <Modal data={{ open: openError, setOpen: setOpenError }}>
         <div>
-          <img className='object-contain w-64' src='./static/girar.jpg' alt='Landscape' />
+          <img className='object-contain w-64' src='./girar.jpg' alt='Landscape' />
           <p className='py-4 text-lg font-bold text-center'>Debe Girar la Pantalla</p>
         </div>
       </Modal>

@@ -50,7 +50,7 @@ const Header = () => {
       <nav className='flex flex-wrap items-center justify-between w-full'>
         <Link href='/'>
           <a>
-            <img className='object-contain w-8 h-full mb-0' src='./static/logo.png' alt='logo' />
+            <img className='object-contain w-8 h-full mb-0' src='./logo.png' alt='logo' />
           </a>
         </Link>
         <Link href='/donar'>

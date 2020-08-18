@@ -1,5 +1,5 @@
 import PropTypes from 'prop-types';
-import '../../public/styles/app.css';
+import '../styles/app.css';
 
 const MyApp = ({ Component, pageProps }) => {
   return (
