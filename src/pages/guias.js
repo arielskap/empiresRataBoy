@@ -39,10 +39,10 @@ const Guias = ({ response }) => {
   );
 };
 
-export async function getServerSideProps() {
+export async function getStaticProps() {
   const data = await fetchJson3('guias')
   sortById(data)
-  return { props: { response: data } }
+  return { props: { response: data }, revalidate: 1 }
 }
 
 export default Guias;

@@ -12,12 +12,12 @@ const Home = ({ response }) => {
     <Layout title='Home'>
       <main>
         <div className='md:hidden'>
-          <img className='object-contain w-full max-h-screen' src='./static/redAlianzas2.png' alt='Red Alianzas' />
+          <img className='object-contain w-full max-h-screen' src='./redAlianzas2.png' alt='Red Alianzas' />
           <LinkH1 />
         </div>
         <div className='hidden md:flex md:flex-col md:items-center md:justify-center md:my-6'>
           <LinkH1 />
-          <img className='object-contain w-full md:max-w-4xl xl:max-w-6xl' src='./static/redDeAlianzas.png' alt='Red de Alianzas' />
+          <img className='object-contain w-full md:max-w-4xl xl:max-w-6xl' src='./redDeAlianzas.png' alt='Red de Alianzas' />
         </div>
         <div className='px-8'>
           <hr className='my-8 hr-home md:hidden' />
@@ -80,10 +80,10 @@ const Home = ({ response }) => {
   );
 };
 
-export async function getServerSideProps() {
+export async function getStaticProps() {
   const data = await fetchJson3('inicioVideos')
   sortById(data)
-  return { props: { response: data } }
+  return { props: { response: data }, revalidate: 1 }
 }
 
 export default Home;

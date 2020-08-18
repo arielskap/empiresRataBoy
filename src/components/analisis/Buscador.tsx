@@ -125,31 +125,31 @@ const Buscador = ({ dataHeroes, setData, setClean }: any) => {
       </LabelInput>
       <div className='w-full mt-1 space-y-4'>
         <div className='grid grid-cols-5 gap-1'>
-          <FilterButton handleOnClick={handleFilterStars} number={1} img='./static/star.png' identity='star'>star</FilterButton>
-          <FilterButton handleOnClick={handleFilterStars} number={2} img='./static/star.png' identity='star'>star</FilterButton>
-          <FilterButton handleOnClick={handleFilterStars} number={3} img='./static/star.png' identity='star'>star</FilterButton>
-          <FilterButton handleOnClick={handleFilterStars} number={4} img='./static/star.png' identity='star'>star</FilterButton>
-          <FilterButton handleOnClick={handleFilterStars} number={5} img='./static/star.png' identity='star'>star</FilterButton>
+          <FilterButton handleOnClick={handleFilterStars} number={1} img='./star.png' identity='star'>star</FilterButton>
+          <FilterButton handleOnClick={handleFilterStars} number={2} img='./star.png' identity='star'>star</FilterButton>
+          <FilterButton handleOnClick={handleFilterStars} number={3} img='./star.png' identity='star'>star</FilterButton>
+          <FilterButton handleOnClick={handleFilterStars} number={4} img='./star.png' identity='star'>star</FilterButton>
+          <FilterButton handleOnClick={handleFilterStars} number={5} img='./star.png' identity='star'>star</FilterButton>
         </div>
         <div className='grid grid-cols-5 gap-1'>
-          <FilterButton handleOnClick={handleElement} number={1} img='./static/fuego.png' identity='element'>Fuego</FilterButton>
-          <FilterButton handleOnClick={handleElement} number={2} img='./static/hielo.png' identity='element'>Hielo</FilterButton>
-          <FilterButton handleOnClick={handleElement} number={3} img='./static/naturaleza.png' identity='element'>Naturaleza</FilterButton>
-          <FilterButton handleOnClick={handleElement} number={4} img='./static/oscuro.png' identity='element'>Oscuro</FilterButton>
-          <FilterButton handleOnClick={handleElement} number={5} img='./static/sagrado.png' identity='element'>Sagrado</FilterButton>
+          <FilterButton handleOnClick={handleElement} number={1} img='./fuego.png' identity='element'>Fuego</FilterButton>
+          <FilterButton handleOnClick={handleElement} number={2} img='./hielo.png' identity='element'>Hielo</FilterButton>
+          <FilterButton handleOnClick={handleElement} number={3} img='./naturaleza.png' identity='element'>Naturaleza</FilterButton>
+          <FilterButton handleOnClick={handleElement} number={4} img='./oscuro.png' identity='element'>Oscuro</FilterButton>
+          <FilterButton handleOnClick={handleElement} number={5} img='./sagrado.png' identity='element'>Sagrado</FilterButton>
         </div>
       </div>
       <div className='grid grid-cols-5 gap-2 p-2 mt-4 border border-pink-400 rounded lg:p-1 xl:p-2'>
-        <ButtonClassSearch image='./static/barbarian.png' name='Barbaro' handleClick={handleClassSearch} />
-        <ButtonClassSearch image='./static/cleric.png' name='Clerigo' handleClick={handleClassSearch} />
-        <ButtonClassSearch image='./static/druid.png' name='Druida' handleClick={handleClassSearch} />
-        <ButtonClassSearch image='./static/fighter.png' name='Luchador' handleClick={handleClassSearch} />
-        <ButtonClassSearch image='./static/monk.png' name='Monje' handleClick={handleClassSearch} />
-        <ButtonClassSearch image='./static/paladin.png' name='Paladin' handleClick={handleClassSearch} />
-        <ButtonClassSearch image='./static/ranger.png' name='Guardabosques' handleClick={handleClassSearch} />
-        <ButtonClassSearch image='./static/rogue.png' name='Rebelde' handleClick={handleClassSearch} />
-        <ButtonClassSearch image='./static/sorcer.png' name='Hechicero' handleClick={handleClassSearch} />
-        <ButtonClassSearch image='./static/wizard.png' name='Brujo' handleClick={handleClassSearch} />
+        <ButtonClassSearch image='./barbarian.png' name='Barbaro' handleClick={handleClassSearch} />
+        <ButtonClassSearch image='./cleric.png' name='Clerigo' handleClick={handleClassSearch} />
+        <ButtonClassSearch image='./druid.png' name='Druida' handleClick={handleClassSearch} />
+        <ButtonClassSearch image='./fighter.png' name='Luchador' handleClick={handleClassSearch} />
+        <ButtonClassSearch image='./monk.png' name='Monje' handleClick={handleClassSearch} />
+        <ButtonClassSearch image='./paladin.png' name='Paladin' handleClick={handleClassSearch} />
+        <ButtonClassSearch image='./ranger.png' name='Guardabosques' handleClick={handleClassSearch} />
+        <ButtonClassSearch image='./rogue.png' name='Rebelde' handleClick={handleClassSearch} />
+        <ButtonClassSearch image='./sorcer.png' name='Hechicero' handleClick={handleClassSearch} />
+        <ButtonClassSearch image='./wizard.png' name='Brujo' handleClick={handleClassSearch} />
       </div>
       <div className='w-full mt-2 space-y-2'>
         <div>

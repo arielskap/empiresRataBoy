@@ -150,15 +150,15 @@ const ButtonTalent: React.FunctionComponent<props> = ({ data, powerUp, uniqueId 
       <img
         className='object-contain rotate-n-45'
         src={
-          titleLower === 'bonificacion de ataque' ? './static/attack.png' :
-          titleLower === 'bonificacion de defensa' ? './static/defense.png' :
-          titleLower === 'bonificacion de vida' ? './static/health.png' :
-          titleLower === 'bonificacion de ataque plus' ? './static/attackPlus.webp' :
-          titleLower === 'bonificacion de defensa plus' ? './static/defensePlus.webp' :
-          titleLower === 'bonificacion de vida plus' ? './static/vidaPlus.webp' :
-          titleLower === 'bonificacion de mana' ? './static/mana.webp' :
-          titleLower === 'curacion extra' ? './static/heart.svg' :
-          titleLower === 'critico' ? './static/critic.webp' :
+          titleLower === 'bonificacion de ataque' ? './attack.png' :
+          titleLower === 'bonificacion de defensa' ? './defense.png' :
+          titleLower === 'bonificacion de vida' ? './health.png' :
+          titleLower === 'bonificacion de ataque plus' ? './attackPlus.webp' :
+          titleLower === 'bonificacion de defensa plus' ? './defensePlus.webp' :
+          titleLower === 'bonificacion de vida plus' ? './vidaPlus.webp' :
+          titleLower === 'bonificacion de mana' ? './mana.webp' :
+          titleLower === 'curacion extra' ? './heart.svg' :
+          titleLower === 'critico' ? './critic.webp' :
           data.srcClassHero
         }
         alt={data.classHero}

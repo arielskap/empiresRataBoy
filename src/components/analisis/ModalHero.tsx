@@ -2,7 +2,7 @@ import { useEffect } from 'react';
 import ReactDOM from 'react-dom';
 import { animated } from 'react-spring';
 import { useSlide } from '../../animations';
-import styles from '../../../public/styles/ModalHero.module.css'
+import styles from '../../styles/ModalHero.module.css'
 import ButtonShowTalents from './ButtonShowTalents';
 import useRotateCard from '../../hooks/useRotateCard';
 import { changeDeviceTablet } from '../../utils/funciones';
