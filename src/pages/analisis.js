@@ -77,10 +77,10 @@ const Analisis = ({ response, responseTalents }) => {
   );
 };
 
-export async function getServerSideProps() {
+export async function getStaticProps() {
   const data = await fetchJson3('heroes')
   const talents = await fetchJson3('talentosHeroes')
-  return { props: { response: data, responseTalents: talents } }
+  return { props: { response: data, responseTalents: talents }, revalidate: 1 }
 }
 
 export default Analisis;

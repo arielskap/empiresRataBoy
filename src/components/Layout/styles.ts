@@ -1,13 +1,6 @@
 import css from 'styled-jsx/css';
 
 export const globalStyles = css.global`
-  @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
-  @import '../../styles/tailwind.css';
-
-  /* @import './vars.css'; */
-
-  /* @import './googleTranslate.css'; */
-
   body {
     background-color: #1c065d;
     color: #ac59c2;
@@ -95,9 +88,11 @@ export const globalStyles = css.global`
   }
 `
 
-export default css`
+const styles = css`
   .nav-bg-black {
     top: 114px;
     min-height: calc(100% - 114px);
   }
 `
+
+export default styles;
