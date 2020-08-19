@@ -15,8 +15,6 @@ const CompareHeroes = ({ state, dataTalents }) => {
       if (id === idHero) {
         return {
           id,
-          img: './black.png',
-          alt: '',
         };
       }
       return hero;
@@ -57,22 +55,24 @@ const CompareHeroes = ({ state, dataTalents }) => {
     <>
       <div className='pt-4'>
         <h2 className='text-lg font-bold'>Comparación de Heroes:</h2>
-        <div className='grid grid-cols-3 gap-4 pt-2'>
+        <div className='grid grid-cols-3 gap-3 pt-2'>
           {state.compareHeroes.map((hero) => {
             const { id, img, alt } = hero;
             return (
-              <div className='relative flex justify-center' key={`${alt}-${id}`}>
-                <div className='max-w-xxs'>
-                  <ButtonModal onClick={readyCompare ? handleCompare : () => {}}>
-                    <img className='object-contain w-full rounded' src={img} alt={alt} />
-                    <h3 className='absolute bottom-0 w-full text-lg font-bold text-center truncate bg-black-transparent'>{alt}</h3>
-                  </ButtonModal>
-                  {alt && (
-                    <button className='absolute z-10 px-2 py-1 font-bold leading-none text-white bg-red-800 border border-black rounded-lg shadow Modal__close-button text-border-black hover:bg-red-600' type='button' onClick={() => removeCompare(id)}>
+              <div className={`flex items-center justify-center ${!img && 'w-full max-w-xxs mx-auto min-h-75 bg-black rounded'}`} key={`${alt}-${id}`}>
+                { img && (
+                  <div className='relative max-w-xxs'>
+                    <>
+                      <ButtonModal onClick={readyCompare ? handleCompare : () => {}}>
+                        <img className='object-contain w-full rounded' src={img} alt={alt} />
+                        <h3 className='absolute bottom-0 w-full text-lg font-bold text-center truncate bg-black-transparent'>{alt}</h3>
+                      </ButtonModal>
+                      <button className='absolute z-10 px-2 py-1 font-bold leading-none text-white bg-red-800 border border-black rounded-lg shadow Modal__close-button text-border-black hover:bg-red-600' type='button' onClick={() => removeCompare(id)}>
                       x
-                    </button>
-                  )}
-                </div>
+                      </button>
+                    </>
+                  </div>
+                )}
               </div>
             );
           })}

@@ -35,13 +35,13 @@ const Home = ({ response }) => {
                 const { id, name, link, img } = video;
                 return (
                   <div className={`mt-2 md:mt-0 ${img && 'md:col-span-3'}`} key={id}>
-                    <h3 className='mb-2 font-bold text-center underline text-md'>{name}</h3>
+                    <h3 className='mb-2 text-lg font-bold text-center underline'>{name}</h3>
                     {img ? (
                       <div className='flex justify-center'>
                         <img className='object-contain' src={img} alt={name} />
                       </div>
                     ) : (
-                      <iframe className='w-full rounded md:h-64' title={name} src={link} frameBorder='0' allow='accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture' allowFullScreen />
+                      <iframe className='w-full h-48 rounded md:h-64' title={name} src={link} frameBorder='0' allow='accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture' allowFullScreen />
                     )}
                   </div>
                 );

@@ -1,6 +1,6 @@
 import { useState } from 'react';
-import ButtonModal from './ButtonModal';
-import Modal from './Modal';
+import ButtonModal from '../ButtonModal';
+import Modal from '../Modal';
 
 const CardAlianza = ({ json }) => {
   const [open, setOpen] = useState(false);
@@ -10,7 +10,7 @@ const CardAlianza = ({ json }) => {
       <ButtonModal onClick={() => setOpen(true)}>
         <img className='object-contain lg:w-48' src={json.picture} alt={json.name} />
       </ButtonModal>
-      <Modal data={{ open, setOpen }}>
+      <Modal bgColor='bg-purple-400' data={{ open, setOpen }}>
         <div className='max-w-sm text-black rounded shadow-lg'>
           <div className='relative text-white'>
             <div className='absolute top-0 flex justify-center w-full'>

@@ -1,5 +1,6 @@
 import { useVerifyFetch } from '../hooks';
-import { CardAlianza, Modal, MessageErrorFetch } from '../components';
+import { Modal, MessageErrorFetch } from '../components';
+import CardAlianza from '../components/alianzas/CardAlianza';
 import Layout from '../components/Layout';
 import { fetchJson3, sortById } from '../utils/localFunction';
 

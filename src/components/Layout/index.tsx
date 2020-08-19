@@ -39,7 +39,7 @@ const Layout = ({ children, title }: {children: React.ReactNode, title: string})
         <title>{`${title} | Empires and Puzzles: Rata B Boy`}</title>
         <meta charSet='UTF-8' />
         <meta name='viewport' content='width=device-width, initial-scale=1.0' />
-        <meta name='description' content='Rata B Boy Empires and Puzzles Guias y Tutoriales' />
+        <meta name='description' content='Rata B Boy Empires and Puzzles Guias y Tutoriales | Pagina anterior https://ratabboy.herokuapp.com/' />
         <link rel='shortcut icon' href='./logo.png' />
       </Head>
       <Header />

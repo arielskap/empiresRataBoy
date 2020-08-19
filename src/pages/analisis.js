@@ -9,16 +9,10 @@ const Analisis = ({ response, responseTalents }) => {
 
   const [compareHeroes, setCompareHeroes] = useState([{
     id: 1,
-    img: './black.png',
-    alt: '',
   }, {
     id: 2,
-    img: './black.png',
-    alt: '',
   }, {
     id: 3,
-    img: './black.png',
-    alt: '',
   }]);
 
   const { open, setOpen, errorResponse, data } = useVerifyFetch(response);

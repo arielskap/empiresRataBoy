@@ -9,13 +9,15 @@ const Guias = ({ response }) => {
 
   return (
     <Layout title='Guias'>
-      <main className='mx-4 lg:grid lg:grid-cols-2'>
+      <main className='mx-4 mt-4 lg:mt-0 lg:grid lg:grid-cols-2'>
         <div className='lg:flex lg:flex-col lg:justify-center lg:items-center'>
-          <div className='py-4'>
-            <h1 className='text-xl font-bold text-center'>¡Todas mis Guías!</h1>
-          </div>
-          <div className='flex items-center justify-center w-full'>
-            <a target='_blank' rel='noopener noreferrer' href='https://drive.google.com/drive/folders/1DqpgV7wugGVlbo5TvehZ7YrBG5NpMPEA' className='px-4 py-2 font-bold text-white bg-pink-500 border-b-4 border-pink-700 rounded hover:bg-pink-400 hover:border-pink-500'>Ir al Drive</a>
+          <div className='p-2 py-4 border-2 border-pink-500 rounded'>
+            <div className='pb-4'>
+              <h1 className='text-xl font-bold text-center'>¡Todas mis Guías!</h1>
+            </div>
+            <div className='flex items-center justify-center w-full'>
+              <a target='_blank' rel='noopener noreferrer' href='https://drive.google.com/drive/folders/1DqpgV7wugGVlbo5TvehZ7YrBG5NpMPEA' className='px-4 py-2 font-bold text-white bg-pink-500 border-b-4 border-pink-700 rounded hover:bg-pink-400 hover:border-pink-500'>Ir al Drive</a>
+            </div>
           </div>
         </div>
         <div className='mt-4'>
