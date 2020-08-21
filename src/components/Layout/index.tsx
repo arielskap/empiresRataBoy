@@ -6,22 +6,26 @@ import styles, { globalStyles } from './styles';
 import Header from '../Header';
 import Footer from '../Footer';
 
-
-if (typeof window !== "undefined") {
-  Router.events.on("routeChangeStart", () => {
+if (typeof window !== 'undefined') {
+  Router.events.on('routeChangeStart', () => {
     NProgress.start();
   });
 
-  Router.events.on("routeChangeComplete", () => {
+  Router.events.on('routeChangeComplete', () => {
     NProgress.done();
   });
 
-  Router.events.on("routeChangeError", () => {
+  Router.events.on('routeChangeError', () => {
     NProgress.done();
   });
 }
 
-const Layout = ({ children, title }: {children: React.ReactNode, title: string}) => {
+interface props {
+  children: React.ReactNode,
+  title:string
+}
+
+const Layout:React.FunctionComponent<props> = ({ children, title }) => {
 
   useEffect(() => {
     if (typeof window !== 'undefined') {

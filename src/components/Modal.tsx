@@ -3,7 +3,16 @@ import ReactDOM from 'react-dom';
 import { animated } from 'react-spring';
 import { useSlide } from '../animations';
 
-const Modal = ({ children, data, bgColor }) => {
+interface props {
+  children: React.ReactNode,
+  data: {
+    open: boolean,
+    setOpen: React.Dispatch<React.SetStateAction<boolean>>
+  },
+  bgColor?: string
+}
+
+const Modal: React.FunctionComponent<props> = ({ children, data, bgColor }) => {
 
   if (!data.open) {
     return null;
@@ -12,9 +21,11 @@ const Modal = ({ children, data, bgColor }) => {
   const { slide, setSlide } = useSlide(0, -500);
 
   const closeModal = () => {
-    document.querySelector('.Modal').classList.remove('Modal_active')
+    document.querySelector('.Modal')?.classList.remove('Modal_active')
     setSlide({
-      transform: 'translate(0px, -500px)',
+      to: {
+        transform: 'translate(0px, -500px)',
+      },
       onRest: () => {
         if (document.body.classList.contains('overflow-hidden')) {
           document.body.classList.remove('overflow-hidden');
@@ -24,7 +35,7 @@ const Modal = ({ children, data, bgColor }) => {
     });
   };
 
-  const handleClickBackground = (e) => {
+  const handleClickBackground = (e: Event) => {
     if (e.target === document.querySelector('.Modal__bg')) {
       closeModal();
     }
@@ -35,7 +46,7 @@ const Modal = ({ children, data, bgColor }) => {
       if (!document.body.classList.contains('overflow-hidden')) {
         document.body.classList.add('overflow-hidden');
       }
-      document.querySelector('.Modal__bg').addEventListener('click', (e) => {
+      document.querySelector('.Modal__bg')?.addEventListener('click', (e) => {
         handleClickBackground(e);
       });
     }
@@ -57,7 +68,7 @@ const Modal = ({ children, data, bgColor }) => {
         </animated.div>
       </div>
     </div>
-    , document.getElementById('modal'));
+    , (document.getElementById('modal') as HTMLElement));
 };
 
 export default Modal;

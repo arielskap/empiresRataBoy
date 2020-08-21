@@ -6,11 +6,17 @@
     },
     "extends": [
         "eslint:recommended",
-        "plugin:react/recommended"
+        "plugin:react/recommended",
+        "plugin:@typescript-eslint/recommended"
     ],
     "plugins": ["react", "jsx-a11y", "import", "react-hooks"],
+    "parser": "@typescript-eslint/parser",
     "parserOptions": {
-        "sourceType": "module"
+        "ecmaVersion": 2020,
+        "sourceType": "module",
+        "ecmaFeatures": {
+            "jsx": true // Allows for the parsing of JSX}
+        }
     },
     "rules": {
         "react/jsx-filename-extension": 0,
@@ -187,7 +193,7 @@
         "react/no-did-update-set-state": 2,
         "react/no-multi-comp": 0,
         "react/no-unknown-property": 2,
-        "react/prop-types": 2,
+        "react/prop-types": 0,
         "react/forbid-prop-types": 0,
         "react/prefer-stateless-function": 0,
         "react/require-default-props": 0,

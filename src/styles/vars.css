@@ -19,6 +19,19 @@
   max-width: 85%;
 }
 
+.element {
+  height: 100%;
+  overflow: auto;
+}
+
+.hiddenElement {
+  max-height: 0;
+}
+
+.showElement {
+  max-height: 48rem;
+}
+
 .buttonClassSearch-active {
   @apply scale-110 border-purple-600;
 }
