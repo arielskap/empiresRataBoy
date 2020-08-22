@@ -53,8 +53,8 @@ const CardPj: React.FunctionComponent<props> = ({ data, reload }) => {
       <div className='p-2 rounded-lg shadow-inner bg-tertiary'>
         <p className='mt-1 mb-3 text-center sm:text-lg'>¿Aceptar solicitud para unirse?</p>
         <div className='flex justify-center space-x-6'>
-          <Button3D disabled={selected.state} transition={true} color={selected.state ? !selected.button ? 'red' : 'gray' : 'red'} onClick={() => handleClick(false)}>Rechazar</Button3D>
-          <Button3D disabled={selected.state} transition={true} color={selected.state ? selected.button ? 'blue' : 'gray' : 'blue'} onClick={() => handleClick(true)}>¡Aceptar!</Button3D>
+          <Button3D disabled={selected.state} color={selected.state ? !selected.button ? 'red' : 'gray' : 'red'} onClick={() => handleClick(false)}>Rechazar</Button3D>
+          <Button3D disabled={selected.state} color={selected.state ? selected.button ? 'blue' : 'gray' : 'blue'} onClick={() => handleClick(true)}>¡Aceptar!</Button3D>
         </div>
       </div>
       <style jsx>
