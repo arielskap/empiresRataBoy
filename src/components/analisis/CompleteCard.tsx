@@ -4,7 +4,8 @@ import Card from './Card';
 import BackCard from './BackCard';
 
 const CompleteCard = ({ img, json, rotateY, dataTalents, closeModal, uniqueId }: any) => {
-  const trimUniqueId = uniqueId.replace(/\s+/g, '');
+  let trimUniqueId = uniqueId.replace(/\s+/g, '');
+  trimUniqueId = trimUniqueId.replace('/', '');
   return (
     <animated.div className={`${styles.carta} card-${trimUniqueId}`} style={rotateY}>
       <div className={`flex items-center justify-center ${styles.cara}`}>
