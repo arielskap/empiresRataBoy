@@ -60,7 +60,12 @@ const miniJuego: React.FunctionComponent<resMiniJuego> = ({ response }) => {
 
   const pjSelected = () => {
     const isWrong = [...document.querySelectorAll('.pj')].some((pjElement) => {
-      return (!pjElement.classList.contains('pj-accept') && pjElement.classList.contains('pj-selected')) || (pjElement.classList.contains('pj-accept') && !pjElement.classList.contains('pj-selected'));
+      const pjAccept = pjElement.classList.contains('pj-accept');
+      const pjSelected = pjElement.classList.contains('pj-selected');
+      if (!pjSelected) {
+        return true;
+      }
+      return pjAccept && !pjSelected;
     })
 
     if (isWrong) {
