@@ -3,8 +3,7 @@ import Head from 'next/head';
 import Router from 'next/router';
 import NProgress from 'nprogress';
 import styles, { globalStyles } from './styles';
-import Header from '../Header';
-import Footer from '../Footer';
+import { Header, Footer } from '../';
 
 if (typeof window !== 'undefined') {
   Router.events.on('routeChangeStart', () => {

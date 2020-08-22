@@ -1,5 +1,5 @@
 export { default as Footer } from './Footer';
-export { default as Header } from './Header';
+export { default as Header } from './Header.tsx';
 export { default as BlackBackground } from './BlackBackground';
 export { default as ButtonModal } from './ButtonModal';
 export { default as SEO } from './seo';

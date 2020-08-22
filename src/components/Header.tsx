@@ -4,12 +4,12 @@ import Link from 'next/link';
 const Header = () => {
 
   const handleMenu = () => {
-    document.querySelector('.header_content').classList.toggle('menuOpen');
+    document.querySelector('.header_content')?.classList.toggle('menuOpen');
   };
 
   const closeMenu = () => {
-    if (document.querySelector('.header_content').classList.contains('menuOpen')) {
-      document.querySelector('.header_content').classList.remove('menuOpen');
+    if (document.querySelector('.header_content')?.classList.contains('menuOpen')) {
+      document.querySelector('.header_content')?.classList.remove('menuOpen');
     }
   };
 
@@ -21,25 +21,29 @@ const Header = () => {
       });
       switch (window.location.pathname) {
         case '/':
-          document.querySelector('.Link_home').classList.remove('text-white');
-          document.querySelector('.Link_home').classList.add('text-pink-500', 'font-bold');
+          document.querySelector('.Link_home')?.classList.remove('text-white');
+          document.querySelector('.Link_home')?.classList.add('text-pink-500', 'font-bold');
           break;
         case '/guias':
-          document.querySelector('.Link_guias').classList.remove('text-white');
-          document.querySelector('.Link_guias').classList.add('text-pink-500', 'font-bold');
+          document.querySelector('.Link_guias')?.classList.remove('text-white');
+          document.querySelector('.Link_guias')?.classList.add('text-pink-500', 'font-bold');
           break;
         case '/alianzas':
-          document.querySelector('.Link_alianzas').classList.remove('text-white');
-          document.querySelector('.Link_alianzas').classList.add('text-pink-500', 'font-bold');
+          document.querySelector('.Link_alianzas')?.classList.remove('text-white');
+          document.querySelector('.Link_alianzas')?.classList.add('text-pink-500', 'font-bold');
           break;
         case '/analisis':
-          document.querySelector('.Link_analisis').classList.remove('text-white');
-          document.querySelector('.Link_analisis').classList.add('text-pink-500', 'font-bold');
+          document.querySelector('.Link_analisis')?.classList.remove('text-white');
+          document.querySelector('.Link_analisis')?.classList.add('text-pink-500', 'font-bold');
+          break;
+        case '/miniJuego':
+          document.querySelector('.Link_miniJuego')?.classList.remove('text-white');
+          document.querySelector('.Link_miniJuego')?.classList.add('text-pink-500', 'font-bold');
           break;
         case '/donar':
-          document.querySelector('.Link_donar').classList.remove('text-white');
-          document.querySelector('.Link_donar').classList.add('text-gold', 'font-bold', 'border-gold');
-          document.querySelector('.Link_donar_center').classList.add('hidden');
+          document.querySelector('.Link_donar')?.classList.remove('text-white');
+          document.querySelector('.Link_donar')?.classList.add('text-gold', 'font-bold', 'border-gold');
+          document.querySelector('.Link_donar_center')?.classList.add('hidden');
           break;
       }
     }
@@ -92,8 +96,13 @@ const Header = () => {
                 Analisis de Heroes
               </a>
             </Link>
+            <Link href='/miniJuego'>
+              <a className='block mt-4 text-white Link_miniJuego Link_5 lg:inline-block lg:mt-0 hover:text-pink-500 lg:text-lg'>
+                Mini Juego
+              </a>
+            </Link>
             <Link href='/donar'>
-              <a className='inline-block px-4 py-2 mt-4 text-sm leading-none text-white border border-white rounded Link_donar Link_5 hover:border-gold hover:text-gold lg:mt-0 lg:ml-4'>
+              <a className='inline-block px-4 py-2 mt-4 text-sm leading-none text-white border border-white rounded Link_donar Link_6 hover:border-gold hover:text-gold lg:mt-0 lg:ml-4'>
                 <span role='img' aria-label='$'>💰</span>
                 {' '}
                 ¡Donar!
