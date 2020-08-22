@@ -3,7 +3,7 @@ import styles from '../../styles/CompleteCard.module.css'
 import Card from './Card';
 import BackCard from './BackCard';
 
-const CompleteCard = ({img, json, rotateY, dataTalents, closeModal, uniqueId}: any) => {
+const CompleteCard = ({ img, json, rotateY, dataTalents, closeModal, uniqueId }: any) => {
   const trimUniqueId = uniqueId.replace(/\s+/g, '');
   return (
     <animated.div className={`${styles.carta} card-${trimUniqueId}`} style={rotateY}>
