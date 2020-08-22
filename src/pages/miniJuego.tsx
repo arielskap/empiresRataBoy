@@ -60,12 +60,17 @@ const miniJuego: React.FunctionComponent<resMiniJuego> = ({ response }) => {
 
   const pjSelected = () => {
     const isWrong = [...document.querySelectorAll('.pj')].some((pjElement) => {
+      const pjRefused = pjElement.classList.contains('pj-refused');
       const pjAccept = pjElement.classList.contains('pj-accept');
-      const pjSelected = pjElement.classList.contains('pj-selected');
-      if (!pjSelected) {
-        return true;
+      console.log(pjAccept);
+      console.log(pjRefused);
+      if (pjAccept) {
+        return pjRefused;
       }
-      return pjAccept && !pjSelected;
+      if (pjRefused) {
+        return false
+      }
+      return true
     })
 
     if (isWrong) {
@@ -98,10 +103,17 @@ const miniJuego: React.FunctionComponent<resMiniJuego> = ({ response }) => {
     setEndGame(false)
   }
 
+  const hotWin = () => {
+    setEndGame(true)
+  }
+
   return (
     <Layout title='Mini Juego'>
       <div className='mb-2'>
         <h1 className='text-2xl font-bold text-center'>Mini Juego</h1>
+        <div className='text-center'>
+          <button onClick={hotWin}>Hot Win</button>
+        </div>
       </div>
       {endGame ? (
         <>

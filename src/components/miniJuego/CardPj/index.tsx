@@ -41,7 +41,7 @@ const CardPj: React.FunctionComponent<props> = ({ data, reload }) => {
   }, [])
 
   return (
-    <div className={`${accept && 'pj-accept'} ${(selected.button === true || selected.button === false) && 'pj-selected'} fadeIn pj p-2 text-blue-200 border border-black rounded shadow-inner text-semibold text-border bg-gradient-to-r from-primary via-secondary to-primary`}>
+    <div className={`${accept && 'pj-accept'} ${selected.button === true ? 'pj-accepted' : selected.button === false && 'pj-refused'} fadeIn pj p-2 text-blue-200 border border-black rounded shadow-inner text-semibold text-border bg-gradient-to-r from-primary via-secondary to-primary`}>
       <div className='flex items-center justify-between text-sm truncate rounded-lg shadow-inner sm:text-lg bg-tertiary'>
         <div className='flex items-center'>
           <img className='object-cover object-top w-16 h-10 border border-black rounded-tl-lg rounded-bl-lg' src={img} alt={name} />
