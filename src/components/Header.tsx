@@ -97,7 +97,7 @@ const Header = () => {
               </a>
             </Link>
             <Link href='/miniJuego'>
-              <a className='block mt-4 text-white Link_miniJuego Link_5 lg:inline-block lg:mt-0 hover:text-pink-500 lg:text-lg'>
+              <a className='block mt-4 text-white Link_miniJuego Link_5 lg:inline-block lg:mt-0 hover:text-pink-500 lg:mr-4 lg:text-lg'>
                 Mini Juego
               </a>
             </Link>
