@@ -1,15 +1,16 @@
 import { getImgClassHero } from '../../utils/localFunction';
 
-interface props {
-  color: any,
-  json: any,
-  upgrade: any
+interface Props {
+  color: string | undefined;
+  json: any;
+  upgrade: any;
 }
 
-const BackCardHeader: React.FunctionComponent<props> = ({ color, json, upgrade }) => {
+const BackCardHeader: React.FunctionComponent<Props> = ({ color, json, upgrade }) => {
+  const bgColor = `bg-${color}-800`
 
   return (
-    <div className={`px-2 pt-6 pb-2 rounded-t-lg bg-${color}-800 text-xs md:text-sm lg:text-base`}>
+    <div className={`px-2 pt-6 pb-2 rounded-t-lg ${bgColor} text-xs md:text-sm lg:text-base`}>
       <div className='grid grid-cols-12 gap-1 p-1 bg-gray-900 bg-opacity-75 rounded-lg'>
         <div className='col-span-3 space-y-2 text-white'>
           <div className='flex'>

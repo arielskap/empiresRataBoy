@@ -2,8 +2,13 @@ module.exports = {
   future: {
     removeDeprecatedGapUtilities: true,
   },
-  // purge: ['./src/**/*.{js,ts,jsx,tsx}'],
-  purge: false,
+  purge: {
+    enabled: process.env.NODE_ENV === 'production' ? true : false,
+    content: ['./src/**/*.{js,ts,jsx,tsx}'],
+    options: {
+      whitelistPatterns: [/^bg-/, /^border-/],
+    }
+  },
   theme: {
     gradientColorStops: theme => ({
       ...theme('colors'),

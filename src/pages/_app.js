@@ -1,9 +1,15 @@
 import PropTypes from 'prop-types';
+import { DefaultSeo } from 'next-seo'
 import '../styles/app.css';
+
+import SEO from '../../next-seo.config'
 
 const MyApp = ({ Component, pageProps }) => {
   return (
-    <Component {...pageProps} />
+    <>
+      <DefaultSeo {...SEO} />
+      <Component {...pageProps} />
+    </>
   );
 };
 

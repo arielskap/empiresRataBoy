@@ -1,23 +1,39 @@
 import { useEffect, useState } from 'react';
 import { getImgClassHero } from '../utils/localFunction';
 
-const useDataPj = (data) => {
-  const [dataPj, setDataPj] = useState({
+type Props = {
+  stars: number,
+  element: string,
+  classHero: string,
+}
+
+type Return = {
+  starsNode: number[];
+  srcElement: string;
+  srcClassHero: string | undefined;
+  color: string | undefined;
+}
+
+const useDataPj = (data: Props):{ dataPj: Return } => {
+  const [dataPj, setDataPj] = useState<Return>({
     starsNode: [],
     srcElement: '',
     srcClassHero: '',
     color: '',
   });
   useEffect(() => {
-    let type,
-      className,
-      color;
+    let type: string,
+      className: string | undefined,
+      color: string | undefined;
     const stars = [];
     for (let i = 0; i < data.stars; i++) {
       stars.push(i);
     }
+
     type = data.element.toLowerCase();
-    className = data.classHero.toLowerCase();
+    if (data.classHero) {
+      className = getImgClassHero(data.classHero.toLowerCase());
+    }
     switch (type) {
       case 'azul hielo':
         type = './hielo.png';
@@ -42,7 +58,6 @@ const useDataPj = (data) => {
       default:
         break;
     }
-    className = getImgClassHero(className);
     setDataPj({
       starsNode: stars,
       srcElement: type,

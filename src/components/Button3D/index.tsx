@@ -1,14 +1,14 @@
 import React from 'react'
 
-interface props {
-  children: React.ReactNode,
-  color?: string,
-  transition?: boolean,
-  disabled?: boolean,
-  onClick?: (() => void),
+interface Props {
+  children: React.ReactNode;
+  color?: string;
+  transition?: boolean;
+  disabled?: boolean;
+  onClick?: (() => void);
 }
 
-const Button3D: React.FunctionComponent<props> = ({ children, color = 'blue', onClick, transition, disabled }) => {
+const Button3D: React.FunctionComponent<Props> = ({ children, color = 'blue', onClick, transition, disabled }) => {
   const colorButton = `bg-${color}-500 border-${color}-700 hover:bg-${color}-400 hover:border-${color}-500`
 
   return (

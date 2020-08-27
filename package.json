@@ -7,7 +7,8 @@
     "dev": "next",
     "build": "next build",
     "start": "next start -p $PORT",
-    "heroku-postbuild": "npm run build"
+    "heroku-postbuild": "npm run build",
+    "export": "next export"
   },
   "keywords": [],
   "author": "",
@@ -19,6 +20,8 @@
     "mongoose": "^5.10.0",
     "next": "^9.5.2",
     "next-connect": "^0.8.1",
+    "next-offline": "^5.0.2",
+    "next-seo": "^4.7.3",
     "nprogress": "^0.2.0",
     "prop-types": "^15.7.2",
     "react": "^16.13.1",

@@ -1,29 +1,29 @@
 import { useEffect, useState } from 'react';
 import TopCard from './TopCard';
-import { useDataPj } from '../../hooks';
+import useDataPj from '../../hooks/useDataPj';
 import { ButtonTutorial, ButtonTalent, BackCardHeader } from './index.js';
+import { Analisis } from '../../interfaces';
 
 enum Side {
   Left = 'left',
   Right = 'right'
 }
 
-interface props {
-  json: any,
-  dataTalents: any,
-  uniqueId: any
+interface Props {
+  json: Analisis;
+  dataTalents: any;
+  uniqueId: string;
 }
 
-interface noSingleTalent {
-  nextRowIsOther: boolean,
-  side: Side,
-  row: number,
-  firstFlag: boolean
+type noSingleTalent = {
+  nextRowIsOther: boolean;
+  side: Side;
+  row: number;
+  firstFlag: boolean;
 }
 
-const BackCard: React.FunctionComponent<props> = ({ json, dataTalents, uniqueId }) => {
-
-  const { dataPj } = useDataPj({ stars: json.stars, element: json.element, classHero: json.classHero });
+const BackCard: React.FunctionComponent<Props> = ({ json, dataTalents, uniqueId }) => {
+  const { dataPj } = useDataPj({ stars: json.stars, element: json.element, classHero: json.class });
   const [talents, setTalents] = useState([]);
   const [upgrade, setUpgrade] = useState({
     attack: 0,
@@ -35,6 +35,8 @@ const BackCard: React.FunctionComponent<props> = ({ json, dataTalents, uniqueId 
     mana: 0,
   });
 
+  const BGCOLOR = `bg-${dataPj.color}-800`;
+
   const noSingleTalent: noSingleTalent = {
     nextRowIsOther: false,
     side: Side.Left,
@@ -44,10 +46,10 @@ const BackCard: React.FunctionComponent<props> = ({ json, dataTalents, uniqueId 
 
   useEffect(() => {
     dataTalents.some((element: any) => {
-      if (element.className.trim() === json.classHero) {
+      if (element.className.trim() === json.class) {
         setTalents(element.talents);
       }
-      return element.className === json.classHero;
+      return element.className === json.class;
     });
   }, []);
 
@@ -55,7 +57,7 @@ const BackCard: React.FunctionComponent<props> = ({ json, dataTalents, uniqueId 
     <div className='w-full h-full'>
       <TopCard data={{ src: dataPj.srcElement, alt: json.element, name: json.name }} />
       <div className='flex flex-col h-full'>
-        <BackCardHeader upgrade={upgrade} color={dataPj.color} json={{ attack: json.attack, defense: json.defense, health: json.health, classHero: json.classHero }} />
+        <BackCardHeader upgrade={upgrade} color={dataPj.color} json={{ attack: json.attack, defense: json.defense, health: json.health, classHero: json.class }} />
         <div className='grid flex-grow grid-cols-2 px-10 pt-6 overflow-y-auto shadow-inner gap-y-8 bg-backCard'>
           {talents && talents.map((talent, index) => {
             const { id, skill, title, skillData, alone } = talent;
@@ -80,12 +82,12 @@ const BackCard: React.FunctionComponent<props> = ({ json, dataTalents, uniqueId 
             }
             return (
               <div key={`button:${title}-${id}`} className={`${alone ? 'col-span-2' : 'col-span-1'} flex justify-center`}>
-                <ButtonTalent powerUp={{ upgrade, setUpgrade }} data={{ title, srcClassHero: dataPj.srcClassHero, classHero: json.classHero, index, row: noSingleTalent.row, skill, alone, skillData, side: noSingleTalent.side }} uniqueId={uniqueId} />
+                <ButtonTalent powerUp={{ upgrade, setUpgrade }} data={{ title, srcClassHero: dataPj.srcClassHero, classHero: json.class, index, row: noSingleTalent.row, skill, alone, skillData, side: noSingleTalent.side }} uniqueId={uniqueId} />
               </div>
             );
           })}
         </div>
-        <div className={`w-full h-20 rounded-b-lg bg-${dataPj.color}-800`} />
+        <div className={`w-full h-20 rounded-b-lg ${BGCOLOR}`} />
       </div>
       <ButtonTutorial video={json.video} />
       <style jsx>

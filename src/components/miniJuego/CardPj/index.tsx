@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react'
 import styles from './styles';
 import Button3D from '../../Button3D';
 
-interface props {
+interface Props {
   data: {
     id: number;
     name: string;
@@ -10,10 +10,10 @@ interface props {
     text: string;
     accept?: boolean;
   },
-  reload: boolean
+  reload: boolean;
 }
 
-const CardPj: React.FunctionComponent<props> = ({ data, reload }) => {
+const CardPj: React.FunctionComponent<Props> = ({ data, reload }) => {
   const [selected, setSelected] = useState<{ state: boolean, button: undefined | boolean }>({
     state: false,
     button: undefined
@@ -37,7 +37,7 @@ const CardPj: React.FunctionComponent<props> = ({ data, reload }) => {
   }, [reload])
 
   useEffect(() => {
-    setTime(Math.floor(59 * Math.random()));
+    setTime(Math.floor(Math.random() * (60 - 1) + 1));
   }, [])
 
   return (

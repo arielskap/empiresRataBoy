@@ -33,6 +33,7 @@ integration-tests/gatsby-cli/execution-folder/*
 dist
 bin/published.js
 .next/
+out/
 
 # Build Path of Test Fixtures
 test/**/public
@@ -69,3 +70,5 @@ package-lock.json
 static.json
 
 .env
+
+out.zip

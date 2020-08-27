@@ -1,13 +1,20 @@
 import { useEffect } from 'react';
-import ReactDOM from 'react-dom';
 import { animated } from 'react-spring';
 import { useSlide } from '../../animations';
 import ButtonShowTalents from './ButtonShowTalents';
 import useRotateCard from '../../hooks/useRotateCard';
 import CompleteCard from './CompleteCard';
 import styles from '../../styles/ModalCompareHeroes.module.css'
+import { Modal, Analisis } from '../../interfaces';
+import ClientOnlyPortal from '../ClientOnlyPortal';
 
-const ModalCompareHeroes = ({ dataCards, data, dataTalents }: any) => {
+interface Props {
+  dataCards: Analisis[];
+  data: Modal;
+  dataTalents: any;
+}
+
+const ModalCompareHeroes: React.FunctionComponent<Props> = ({ dataCards, data, dataTalents }) => {
 
   if (!data.open) {
     return null;
@@ -56,34 +63,30 @@ const ModalCompareHeroes = ({ dataCards, data, dataTalents }: any) => {
     };
   }, []);
 
-  return ReactDOM.createPortal(
-    <div className='z-30 overflow-x-hidden overflow-y-auto Modal Modal_active'>
-      <div className='flex justify-center mt-2'>
-        <ButtonShowTalents setIsRotate={setIsRotate} isRotate={isRotate} />
+  return (
+    <ClientOnlyPortal selector='#modal'>
+      <div className='z-30 overflow-x-hidden overflow-y-auto Modal Modal_active'>
+        <div className='flex justify-center mt-2'>
+          <ButtonShowTalents setIsRotate={setIsRotate} isRotate={isRotate} />
+        </div>
+        <div className='flex items-start justify-center w-full min-h-screen py-6 space-x-3 Modal__bg'>
+          {dataCards.map((card, index) => {
+            const { id, img } = card;
+            if (!img) {
+              return null;
+            }
+            return (
+              <div key={`${id}-${card.name}`} className='flex justify-center'>
+                <animated.div className={`rounded-lg ${styles.Modal__container}`} style={slide}>
+                  <CompleteCard img={img} json={card} rotateY={rotateY} dataTalents={dataTalents} closeModal={closeModal} uniqueId={`${card.name}-${index}`} />
+                </animated.div>
+              </div>
+            );
+          })}
+        </div>
       </div>
-      <div className='flex items-start justify-center w-full min-h-screen py-6 space-x-3 Modal__bg'>
-        {dataCards.map((card: any, index:number) => {
-          const { id, img, json } = card;
-          if (!json) {
-            return null;
-          }
-          return (
-            <div key={`${id}-${json.name}`} className='flex justify-center'>
-              <animated.div className={`rounded-lg ${styles.Modal__container}`} style={slide}>
-                <CompleteCard img={img} json={json} rotateY={rotateY} dataTalents={dataTalents} closeModal={closeModal} uniqueId={`${json.name}-${index}`} />
-              </animated.div>
-              {/*<animated.div className='rounded-lg Modal__container' style={slide}>
-                <button className='absolute z-10 px-2 py-1 text-xl font-bold leading-none text-white bg-red-800 border border-black rounded-lg shadow Modal__close-button text-border-black hover:bg-red-600' type='button' onClick={() => { closeModal(); }}>
-                  x
-                </button>
-                <Card img={img} json={json} />
-          </animated.div>*/}
-            </div>
-          );
-        })}
-      </div>
-    </div>
-    , (document.getElementById('modal') as HTMLElement));
+    </ClientOnlyPortal>
+  )
 };
 
 export default ModalCompareHeroes;

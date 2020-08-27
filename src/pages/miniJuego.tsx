@@ -8,35 +8,35 @@ import { useVerifyFetch } from '../hooks';
 import Button3D from '../components/Button3D';
 import CardPj from '../components/miniJuego/CardPj';
 
-interface resMiniJuego {
+interface ResMiniJuego {
   response: {
-    error: string,
-    body: miniJuego[]
+    error: string;
+    body: MiniJuego[];
   }
 }
 
-interface miniJuego {
+interface MiniJuego {
   dataPj: [{
-    id: number,
-    name: string,
-    img: string,
-    text: string,
-    accept?: boolean
+    id: number;
+    name: string;
+    img: string;
+    text: string;
+    accept?: boolean;
   }],
-  _id: string,
-  id: number,
-  objetive: string
+  _id: string;
+  id: number;
+  objetive: string;
 }
 
-interface resVerifyFetch {
-  open: boolean,
-  setOpen: React.Dispatch<React.SetStateAction<boolean>>,
-  errorResponse: boolean,
-  data: miniJuego[]
+type ResVerifyFetch = {
+  open: boolean;
+  setOpen: React.Dispatch<React.SetStateAction<boolean>>;
+  errorResponse: boolean;
+  data: MiniJuego[];
 }
 
-const miniJuego: React.FunctionComponent<resMiniJuego> = ({ response }) => {
-  const { open, setOpen, errorResponse, data }: resVerifyFetch = useVerifyFetch(response);
+const miniJuego: React.FunctionComponent<ResMiniJuego> = ({ response }) => {
+  const { open, setOpen, errorResponse, data }: ResVerifyFetch = useVerifyFetch(response);
   const [openGameModal, setOpenGameModal] = useState(false);
   const [round, setRound] = useState({
     number: 1,
@@ -62,8 +62,7 @@ const miniJuego: React.FunctionComponent<resMiniJuego> = ({ response }) => {
     const isWrong = [...document.querySelectorAll('.pj')].some((pjElement) => {
       const pjRefused = pjElement.classList.contains('pj-refused');
       const pjAccept = pjElement.classList.contains('pj-accept');
-      console.log(pjAccept);
-      console.log(pjRefused);
+
       if (pjAccept) {
         return pjRefused;
       }
@@ -128,7 +127,7 @@ const miniJuego: React.FunctionComponent<resMiniJuego> = ({ response }) => {
             <button type='button' className='px-2 py-1 mb-1 text-xl border border-purple-500 rounded hover:bg-pink-200' onClick={() => showHidden('reglasText')}>{stateELement ? 'Ocultar' : 'Mostrar'} Reglas:</button>
             <p className='text-lg element reglasText showElement'>Intenta llegar al final del juego sin equivocarte, cada consigna es diferente y siempre abra algunos que intentaran hacer trampas para entrar. nos regimos por reglas básicas de convivencia y sentido común. ten en cuenta que si pierdes volverás al principio. esto ademas de un juego de humor es una herramienta para que los chicos de las alianzas no aprieten el botón equivocado a la hora de aceptar un miembro</p>
           </div>
-          <div className='max-w-xl p-2 m-auto border-2 border-pink-500 rounded-lg'>
+          <div className='max-w-xl p-2 m-auto border-2 border-pink-500 rounded-lg' aria-live='polite'>
             <h3 className='text-xl text-center'>Nivel {round.number}/{data.length}</h3>
             <p className='mt-2 mb-4 text-lg'><span className='font-semibold'>Objetivo:</span> {DATA_ACTUAL.objetive}</p>
             <div className='space-y-4'>
