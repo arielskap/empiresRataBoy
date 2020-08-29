@@ -48,14 +48,14 @@ const ModalCompareHeroes: React.FunctionComponent<Props> = ({ dataCards, data, d
   };
 
   useEffect(() => {
-    if (document.querySelector('.Modal')) {
       if (!document.body.classList.contains('overflow-hidden')) {
         document.body.classList.add('overflow-hidden');
       }
-      document.querySelector('.Modal__bg')?.addEventListener('click', (e) => {
-        handleClickBackground(e);
-      });
-    }
+      setTimeout(() => {
+        document.querySelector('.Modal__bg')?.addEventListener('click', (e) => {
+          handleClickBackground(e);
+        });
+      }, 0);
     return () => {
       if (document.body.classList.contains('overflow-hidden')) {
         document.body.classList.remove('overflow-hidden');

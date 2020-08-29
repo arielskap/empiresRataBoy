@@ -42,14 +42,14 @@ const Modal: React.FunctionComponent<Props> = ({ children, data, bgColor }) => {
   };
 
   useEffect(() => {
-    if (document.querySelector('.Modal')) {
       if (!document.body.classList.contains('overflow-hidden')) {
         document.body.classList.add('overflow-hidden');
       }
-      document.querySelector('.Modal__bg')?.addEventListener('click', (e) => {
-        handleClickBackground(e);
-      });
-    }
+      setTimeout(() => {
+        document.querySelector('.Modal__bg')?.addEventListener('click', (e) => {
+          handleClickBackground(e);
+        });
+      }, 0);
     return () => {
       if (document.body.classList.contains('overflow-hidden')) {
         document.body.classList.remove('overflow-hidden');

@@ -21,6 +21,7 @@ const useDataPj = (data: Props):{ dataPj: Return } => {
     srcClassHero: '',
     color: '',
   });
+
   useEffect(() => {
     let type: string,
       className: string | undefined,

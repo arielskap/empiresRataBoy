@@ -3,7 +3,7 @@ import { useDataPj } from '../../hooks';
 import ButtonTutorial from './ButtonTutorial';
 
 const Card = ({ img, json }) => {
-  const { dataPj } = useDataPj({ stars: json.stars, element: json.element, classHero: json.classHero });
+  const { dataPj } = useDataPj({ stars: json.stars, element: json.element, classHero: json.class });
   const color = {
     border500: `border-${dataPj.color}-500`,
     border600: `border-${dataPj.color}-600`,

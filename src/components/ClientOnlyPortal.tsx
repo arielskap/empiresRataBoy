@@ -15,7 +15,7 @@ const ClientOnlyPortal: React.FunctionComponent<Props> = ({ children, selector }
     setMounted(true)
   }, [selector])
 
-  return mounted ? createPortal(children, (ref.current as Element)) : null
+  return mounted ? createPortal(children, (ref.current as HTMLElement)) : null
 }
 
 export default ClientOnlyPortal
