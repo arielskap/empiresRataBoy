@@ -2,8 +2,18 @@ import { animated } from 'react-spring';
 import styles from '../../styles/CompleteCard.module.css'
 import Card from './Card';
 import BackCard from './BackCard';
+import { Analisis } from '../../interfaces';
 
-const CompleteCard = ({ img, json, rotateY, dataTalents, closeModal, uniqueId }: any) => {
+interface Props {
+  img: string;
+  json: Analisis;
+  rotateY: any;
+  dataTalents: any;
+  closeModal: () => void;
+  uniqueId: string;
+}
+
+const CompleteCard: React.FunctionComponent<Props> = ({ img, json, rotateY, dataTalents, closeModal, uniqueId }) => {
   let trimUniqueId = uniqueId.replace(/\s+/g, '');
   trimUniqueId = trimUniqueId.replace('/', '');
   return (

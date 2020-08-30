@@ -3,9 +3,16 @@ import { useDataPj } from '../../hooks';
 import ButtonTutorial from './ButtonTutorial';
 
 const Card = ({ img, json }) => {
-  const { dataPj } = useDataPj({ stars: json.stars, element: json.element, classHero: json.classHero });
+  const { dataPj } = useDataPj({ stars: json.stars, element: json.element, classHero: json.class });
+  const color = {
+    border500: `border-${dataPj.color}-500`,
+    border600: `border-${dataPj.color}-600`,
+    bg700: `bg-${dataPj.color}-700`,
+    bg800: `bg-${dataPj.color}-800`,
+    bg900: `bg-${dataPj.color}-900`
+  }
   return (
-    <div className={`Card max-w-sm rounded-lg shadow-lg text-white pt-5 pb-6 px-4 bg-${dataPj.color}-700 border-2 border-${dataPj.color}-500`}>
+    <div className={`Card max-w-sm rounded-lg shadow-lg text-white pt-5 pb-6 px-4 ${color.bg700} ${color.border500} border-2`}>
       <TopCard data={{ src: dataPj.srcElement, alt: json.element, name: json.name }} />
       <div className='flex justify-center'>
         <div className='flex items-center justify-center w-2/5 p-1 bg-gray-900 border-l-4 border-r-4 border-gray-800'>
@@ -34,7 +41,7 @@ const Card = ({ img, json }) => {
         <img className='object-contain w-full rounded-lg' src={img} alt={json.name} />
       </div>
       <div className='my-2 rounded-lg shadow-inner'>
-        <div className={`px-4 py-2 grid grid-cols-3 gap-4 rounded-t-lg bg-${dataPj.color}-800`}>
+        <div className={`px-4 py-2 grid grid-cols-3 gap-4 rounded-t-lg ${color.bg800}`}>
           <div className='flex items-center justify-center'>
             <img className='object-contain w-6 h-full mr-1' src='./attack.png' alt='Attack' />
             <p className='text-lg font-bold text-center lg:text-3xl text-border-black'>{json.attack}</p>
@@ -48,7 +55,7 @@ const Card = ({ img, json }) => {
             <p className='text-lg font-bold text-center lg:text-3xl text-border-black'>{json.health}</p>
           </div>
         </div>
-        <div className={`px-4 py-2 bg-${dataPj.color}-900 border-t border-b border-${dataPj.color}-600 text-lg`}>
+        <div className={`px-4 py-2 ${color.bg900} border-t border-b ${color.border600} text-lg`}>
           <h3 className='mb-2 text-xl font-bold text-center'>Informacion Extra</h3>
           <div>
             <p>
@@ -74,7 +81,7 @@ const Card = ({ img, json }) => {
             </p>
           </div>
         </div>
-        <div className={`px-4 py-2 bg-${dataPj.color}-900 rounded-b-lg`}>
+        <div className={`px-4 py-2 ${color.bg900} rounded-b-lg`}>
           <div>
             <h3 className='mb-2 text-xl font-bold text-center'>Efectos</h3>
             <ul className='list-disc list-inside'>

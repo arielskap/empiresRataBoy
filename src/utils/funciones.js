@@ -74,3 +74,25 @@ export const changeDeviceTablet = () => {
 export const viewportOrientation = () => {
   return window.innerHeight > window.innerWidth ? 'portrait' : 'landscape';
 };
+
+export const initialStateCompareHeroes = (id) => ({
+  _id: '',
+  id,
+  name: '',
+  power: 0,
+  element: '',
+  stars: 0,
+  attack: 0,
+  defense: 0,
+  health: 0,
+  manaSpeed: '',
+  class: '',
+  family: '',
+  event: '',
+  effect: [{
+    id: 0,
+    data: ''
+  }],
+  video: '',
+  img: ''
+})

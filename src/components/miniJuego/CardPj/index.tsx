@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react'
 import styles from './styles';
 import Button3D from '../../Button3D';
 
-interface props {
+interface Props {
   data: {
     id: number;
     name: string;
@@ -10,10 +10,10 @@ interface props {
     text: string;
     accept?: boolean;
   },
-  reload: boolean
+  reload: boolean;
 }
 
-const CardPj: React.FunctionComponent<props> = ({ data, reload }) => {
+const CardPj: React.FunctionComponent<Props> = ({ data, reload }) => {
   const [selected, setSelected] = useState<{ state: boolean, button: undefined | boolean }>({
     state: false,
     button: undefined
@@ -37,11 +37,11 @@ const CardPj: React.FunctionComponent<props> = ({ data, reload }) => {
   }, [reload])
 
   useEffect(() => {
-    setTime(Math.floor(59 * Math.random()));
+    setTime(Math.floor(Math.random() * (60 - 1) + 1));
   }, [])
 
   return (
-    <div className={`${accept && 'pj-accept'} ${selected.button && 'pj-selected'} fadeIn pj p-2 text-blue-200 border border-black rounded shadow-inner text-semibold text-border bg-gradient-to-r from-primary via-secondary to-primary`}>
+    <div className={`${accept && 'pj-accept'} ${selected.button === true ? 'pj-accepted' : selected.button === false && 'pj-refused'} fadeIn pj p-2 text-blue-200 border border-black rounded shadow-inner text-semibold text-border bg-gradient-to-r from-primary via-secondary to-primary`}>
       <div className='flex items-center justify-between text-sm truncate rounded-lg shadow-inner sm:text-lg bg-tertiary'>
         <div className='flex items-center'>
           <img className='object-cover object-top w-16 h-10 border border-black rounded-tl-lg rounded-bl-lg' src={img} alt={name} />
@@ -53,8 +53,8 @@ const CardPj: React.FunctionComponent<props> = ({ data, reload }) => {
       <div className='p-2 rounded-lg shadow-inner bg-tertiary'>
         <p className='mt-1 mb-3 text-center sm:text-lg'>¿Aceptar solicitud para unirse?</p>
         <div className='flex justify-center space-x-6'>
-          <Button3D disabled={selected.state} transition={true} color={selected.state ? !selected.button ? 'red' : 'gray' : 'red'} onClick={() => handleClick(false)}>Rechazar</Button3D>
-          <Button3D disabled={selected.state} transition={true} color={selected.state ? selected.button ? 'blue' : 'gray' : 'blue'} onClick={() => handleClick(true)}>¡Aceptar!</Button3D>
+          <Button3D disabled={selected.state} color={selected.state ? !selected.button ? 'red' : 'gray' : 'red'} onClick={() => handleClick(false)}>Rechazar</Button3D>
+          <Button3D disabled={selected.state} color={selected.state ? selected.button ? 'blue' : 'gray' : 'blue'} onClick={() => handleClick(true)}>¡Aceptar!</Button3D>
         </div>
       </div>
       <style jsx>

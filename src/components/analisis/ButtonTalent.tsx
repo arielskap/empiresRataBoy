@@ -17,28 +17,28 @@ enum Title {
   Mana = 'bonificacion de mana'
 }
 
-interface props {
+interface Props {
   data: {
-    title: string,
-    srcClassHero: string,
-    classHero: string,
-    index: number,
-    row: number,
-    skill: boolean,
-    alone: boolean,
-    skillData: string,
-    side: Side
-  },
+    title: string;
+    srcClassHero: string | undefined;
+    classHero: string;
+    index: number;
+    row: number;
+    skill: boolean;
+    alone: boolean;
+    skillData: string;
+    side: Side;
+  };
   powerUp: {
     upgrade: {
-      attack: number,
-      defense: number,
-      health: number,
-      specialSkill: number,
-      critic: number,
-      extraHealth: number,
-      mana: number,
-    },
+      attack: number;
+      defense: number;
+      health: number;
+      specialSkill: number;
+      critic: number;
+      extraHealth: number;
+      mana: number;
+    };
     setUpgrade: React.Dispatch<React.SetStateAction<{
       attack: number;
       defense: number;
@@ -47,13 +47,13 @@ interface props {
       critic: number;
       extraHealth: number;
       mana: number;
-    }>>
-  },
-  uniqueId: string
+    }>>;
+  };
+  uniqueId: string;
 }
 
 
-const ButtonTalent: React.FunctionComponent<props> = ({ data, powerUp, uniqueId }) => {
+const ButtonTalent: React.FunctionComponent<Props> = ({ data, powerUp, uniqueId }) => {
   const [buttonIsActive, setButtonIsActive] = useState(false);
   const titleLower = data.title.toLowerCase();
 

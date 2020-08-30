@@ -1,21 +1,25 @@
 import React, { useState, useEffect } from 'react';
 import { ModalCompareHeroes } from './index.js';
 import ButtonModal from '../ButtonModal';
-import { changeDevice, viewportOrientation } from '../../utils/funciones';
+import { changeDevice, viewportOrientation, initialStateCompareHeroes } from '../../utils/funciones';
 import Modal from '../Modal';
+import { compareHeroes } from '../../interfaces/index.js';
 
-const CompareHeroes = ({ state, dataTalents }) => {
+interface Props {
+  state: compareHeroes;
+  dataTalents: any;
+}
+
+const CompareHeroes: React.FunctionComponent<Props> = ({ state, dataTalents }) => {
   const [readyCompare, setReadyCompare] = useState(false);
   const [open, setOpen] = useState(false);
   const [openError, setOpenError] = useState(false);
 
-  const removeCompare = (id) => {
+  const removeCompare = (id: number) => {
     const newCompareHeroes = state.compareHeroes.map((hero) => {
       const { id: idHero } = hero;
       if (id === idHero) {
-        return {
-          id,
-        };
+        return initialStateCompareHeroes(id)
       }
       return hero;
     });
@@ -33,15 +37,10 @@ const CompareHeroes = ({ state, dataTalents }) => {
   };
 
   useEffect(() => {
-    return () => {
-    };
-  }, []);
-
-  useEffect(() => {
     let count = 0;
     state.compareHeroes.forEach((hero) => {
-      const { alt } = hero;
-      if (alt) {
+      const { name } = hero;
+      if (name) {
         count++;
       }
     });
@@ -57,15 +56,15 @@ const CompareHeroes = ({ state, dataTalents }) => {
         <h2 className='text-lg font-bold'>Comparación de Heroes:</h2>
         <div className='grid grid-cols-3 gap-3 pt-2'>
           {state.compareHeroes.map((hero) => {
-            const { id, img, alt } = hero;
+            const { id, img, name } = hero;
             return (
-              <div className={`flex items-center justify-center ${!img && 'w-full max-w-xxs mx-auto min-h-75 bg-black rounded'}`} key={`${alt}-${id}`}>
+              <div className={`flex items-center justify-center ${!img && 'w-full max-w-xxs mx-auto min-h-75 bg-black rounded'}`} key={`${name}-${id}`}>
                 { img && (
                   <div className='relative max-w-xxs'>
                     <>
-                      <ButtonModal onClick={readyCompare ? handleCompare : () => {}}>
-                        <img className='object-contain w-full rounded' src={img} alt={alt} />
-                        <h3 className='absolute bottom-0 w-full text-lg font-bold text-center truncate bg-black-transparent'>{alt}</h3>
+                      <ButtonModal onClick={readyCompare ? handleCompare : () => { null }}>
+                        <img className='object-contain w-full rounded' src={img} alt={name} />
+                        <h3 className='absolute bottom-0 w-full text-lg font-bold text-center truncate bg-black-transparent'>{name}</h3>
                       </ButtonModal>
                       <button className='absolute z-10 px-2 py-1 font-bold leading-none text-white bg-red-800 border border-black rounded-lg shadow Modal__close-button text-border-black hover:bg-red-600' type='button' onClick={() => removeCompare(id)}>
                       x

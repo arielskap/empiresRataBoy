@@ -1,3 +1,5 @@
+import { GetStaticProps } from 'next';
+import YouTube from 'react-youtube';
 import { MessageErrorFetch, Modal } from '../components';
 import Twitch from '../components/index/Twitch';
 import LinkH1 from '../components/index/LinkH1';
@@ -5,7 +7,11 @@ import Layout from '../components/Layout';
 import { sortById, fetchJson3 } from '../utils/localFunction';
 import { useVerifyFetch } from '../hooks';
 
-const Home = ({ response }) => {
+interface Props {
+  response: any;
+}
+
+const Home: React.FunctionComponent<Props> = ({ response }) => {
   const { open, setOpen, errorResponse, data } = useVerifyFetch(response);
 
   return (
@@ -24,7 +30,7 @@ const Home = ({ response }) => {
           <div>
             <h2 className='mb-4 text-xl font-bold text-center md:text-2xl'>¡Ver Directo Ahora!</h2>
             <div className='flex items-center justify-center'>
-              <Twitch theme='dark' width='100%' height={480} channel='ratabboypda' />
+              <Twitch theme='dark' width='100%' height='480' channel='ratabboypda' />
             </div>
           </div>
           <hr className='my-8 hr-home' />
@@ -32,7 +38,12 @@ const Home = ({ response }) => {
             <h2 className='mb-4 text-xl font-bold text-center md:text-2xl'>¡Listas de Reproducción!</h2>
             <div className='grid grid-cols-1 gap-4 md:grid-cols-3'>
               {data && Array.isArray(data) && data.map((video) => {
-                const { id, name, link, img } = video;
+                const { id, name, link, img }: { id: number, name: string, link: string, img: string } = video;
+                let newLink= '';
+                if(link) {
+                  const arrayLink = link.split('/')
+                  newLink = arrayLink[arrayLink.length-1]
+                }
                 return (
                   <div className={`mt-2 md:mt-0 ${img && 'md:col-span-3'}`} key={id}>
                     <h3 className='mb-2 text-lg font-bold text-center underline'>{name}</h3>
@@ -41,7 +52,7 @@ const Home = ({ response }) => {
                         <img className='object-contain' src={img} alt={name} />
                       </div>
                     ) : (
-                      <iframe className='w-full h-48 rounded md:h-64' title={name} src={link} frameBorder='0' allow='accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture' allowFullScreen />
+                      <YouTube className='w-full h-48 rounded md:h-64' videoId={newLink}  />
                     )}
                   </div>
                 );
@@ -80,7 +91,7 @@ const Home = ({ response }) => {
   );
 };
 
-export async function getStaticProps() {
+export const getStaticProps: GetStaticProps = async () => {
   const data = await fetchJson3('inicioVideos')
   sortById(data)
   return { props: { response: data }, revalidate: 1 }

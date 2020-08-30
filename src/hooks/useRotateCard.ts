@@ -6,21 +6,23 @@ const useRotateCard = () => {
   const [rotateY, setRotateY] = useSpring(() => ({ transform: 'rotateY(0deg)' }));
 
   useEffect(() => {
-    const elementModal = document.querySelector('.Modal');
-    if (isRotate) {
-      (elementModal as HTMLInputElement).style.overflowY = 'hidden';
-      setRotateY({ config: { duration: 500 },
-        transform: 'rotateY(180deg)',
-        onRest: () => {
-          (elementModal as HTMLInputElement).style.overflowY = 'auto';
-        } });
-    } else {
-      (elementModal as HTMLInputElement).style.overflowY = 'hidden';
-      setRotateY({ config: { duration: 500 },
-        transform: 'rotateY(0deg)',
-        onRest: () => {
-          (elementModal as HTMLInputElement).style.overflowY = 'auto';
-        } });
+    const elementModal = document.querySelector('.Modal') as HTMLElement;
+    if (elementModal) {
+      if (isRotate) {
+        elementModal.style.overflowY = 'hidden';
+        setRotateY({ config: { duration: 500 },
+          transform: 'rotateY(180deg)',
+          onRest: () => {
+            elementModal.style.overflowY = 'auto';
+          } });
+      } else {
+        elementModal.style.overflowY = 'hidden';
+        setRotateY({ config: { duration: 500 },
+          transform: 'rotateY(0deg)',
+          onRest: () => {
+            elementModal.style.overflowY = 'auto';
+          } });
+      }
     }
   }, [isRotate])
 
