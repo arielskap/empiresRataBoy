@@ -13,6 +13,11 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
+  "cordova": {
+    "plugins": {
+      "cordova-plugin-whitelist": {}
+    }
+  },
   "dependencies": {
     "axios": "^0.20.0",
     "fuse.js": "^6.4.1",
@@ -43,6 +48,7 @@
     "@typescript-eslint/eslint-plugin": "^3.10.1",
     "@typescript-eslint/parser": "^3.10.1",
     "babel-eslint": "^10.1.0",
+    "cordova-plugin-whitelist": "^1.3.4",
     "eslint": "^7.7.0",
     "eslint-config-airbnb": "^18.2.0",
     "eslint-plugin-import": "^2.22.0",
