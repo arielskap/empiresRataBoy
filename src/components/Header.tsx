@@ -14,38 +14,35 @@ const Header: React.FunctionComponent  = () => {
   };
 
   useEffect(() => {
-    const isBrowser = typeof window !== 'undefined';
-    if (isBrowser) {
-      window.addEventListener('scroll', () => {
-        closeMenu();
-      });
-      switch (window.location.pathname) {
-        case '/':
-          document.querySelector('.Link_home')?.classList.remove('text-white');
-          document.querySelector('.Link_home')?.classList.add('text-pink-500', 'font-bold');
-          break;
-        case '/guias':
-          document.querySelector('.Link_guias')?.classList.remove('text-white');
-          document.querySelector('.Link_guias')?.classList.add('text-pink-500', 'font-bold');
-          break;
-        case '/alianzas':
-          document.querySelector('.Link_alianzas')?.classList.remove('text-white');
-          document.querySelector('.Link_alianzas')?.classList.add('text-pink-500', 'font-bold');
-          break;
-        case '/analisis':
-          document.querySelector('.Link_analisis')?.classList.remove('text-white');
-          document.querySelector('.Link_analisis')?.classList.add('text-pink-500', 'font-bold');
-          break;
-        case '/miniJuego':
-          document.querySelector('.Link_miniJuego')?.classList.remove('text-white');
-          document.querySelector('.Link_miniJuego')?.classList.add('text-pink-500', 'font-bold');
-          break;
-        case '/donar':
-          document.querySelector('.Link_donar')?.classList.remove('text-white');
-          document.querySelector('.Link_donar')?.classList.add('text-gold', 'font-bold', 'border-gold');
-          document.querySelector('.Link_donar_center')?.classList.add('hidden');
-          break;
-      }
+    // window.addEventListener('scroll', () => {
+    //   closeMenu();
+    // });
+    switch (window.location.pathname) {
+      case '/':
+        document.querySelector('.Link_home')?.classList.remove('text-white');
+        document.querySelector('.Link_home')?.classList.add('text-pink-500', 'font-bold');
+        break;
+      case '/guias':
+        document.querySelector('.Link_guias')?.classList.remove('text-white');
+        document.querySelector('.Link_guias')?.classList.add('text-pink-500', 'font-bold');
+        break;
+      case '/alianzas':
+        document.querySelector('.Link_alianzas')?.classList.remove('text-white');
+        document.querySelector('.Link_alianzas')?.classList.add('text-pink-500', 'font-bold');
+        break;
+      case '/analisis':
+        document.querySelector('.Link_analisis')?.classList.remove('text-white');
+        document.querySelector('.Link_analisis')?.classList.add('text-pink-500', 'font-bold');
+        break;
+      case '/miniJuego':
+        document.querySelector('.Link_miniJuego')?.classList.remove('text-white');
+        document.querySelector('.Link_miniJuego')?.classList.add('text-pink-500', 'font-bold');
+        break;
+      case '/donar':
+        document.querySelector('.Link_donar')?.classList.remove('text-white');
+        document.querySelector('.Link_donar')?.classList.add('text-gold', 'font-bold', 'border-gold');
+        document.querySelector('.Link_donar_center')?.classList.add('hidden');
+        break;
     }
   }, []);
 
@@ -53,7 +50,7 @@ const Header: React.FunctionComponent  = () => {
     <header className='sticky top-0 left-0 z-10 w-full px-6 py-4 border-b border-black'>
       <nav className='flex flex-wrap items-center justify-between w-full'>
           <Link href='/'>
-            <img className='object-contain w-8 h-full mb-0' src='./logo.png' alt='logo' />
+            <img className='object-contain w-8 h-full mb-0' src='/logo.png' alt='logo' />
           </Link>
           <Link href='/donar' className='inline-block px-4 py-2 text-sm leading-none text-white border border-white rounded Link_donar_center hover:border-gold hover:text-gold lg:hidden'>
             <span role='img' aria-label='$'>💰</span>
@@ -63,7 +60,7 @@ const Header: React.FunctionComponent  = () => {
             <span role='img' aria-label='$'>💰</span>
           </Link>
         <div className='block lg:hidden'>
-          <button type='button' className='flex items-center px-3 py-2 text-pink-200 border border-pink-400 rounded button_header hover:text-white hover:border-white' onClick={() => { handleMenu(); }}>
+          <button onClick={handleMenu} type='button' className='flex items-center px-3 py-2 text-pink-200 border border-pink-400 rounded button_header hover:text-white hover:border-white'>
             <svg className='w-3 h-3 fill-current' viewBox='0 0 20 20' xmlns='http://www.w3.org/2000/svg'>
               <title>Menu</title>
               <path d='M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z' />
@@ -84,9 +81,9 @@ const Header: React.FunctionComponent  = () => {
               <Link href='/analisis' className='block text-white Link_analisis Link_4 lg:inline-block hover:text-pink-500 lg:text-lg'>
                 Analisis de Heroes
               </Link>
-              <Link href='/miniJuego' className='block text-white Link_miniJuego Link_5 lg:inline-block hover:text-pink-500 lg:text-lg'>
+              {process.env.NODE_ENV !== 'production' && <Link href='/desarrollo/miniJuego' className='block text-white Link_miniJuego Link_5 lg:inline-block hover:text-pink-500 lg:text-lg'>
                 Mini Juego
-              </Link>
+              </Link>}
               <Link href='/donar' className='inline-block px-4 py-2 text-sm leading-none text-white border border-white rounded Link_donar Link_6 hover:border-gold hover:text-gold'>
                 <span role='img' aria-label='$'>💰</span>
                 {' '}

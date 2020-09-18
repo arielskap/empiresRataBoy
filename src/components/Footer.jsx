@@ -49,7 +49,7 @@ const Footer = () => {
         <div className='border-t-2 border-pink-500 lg:border-0'>
           <div>
             <div className='flex items-center justify-center lg:hidden'>
-              <img className='object-contain w-full max-w-sm lg:max-w-lg' src='./firma.png' alt='firma' />
+              <img className='object-contain w-full max-w-sm lg:max-w-lg' src='/firma.png' alt='firma' />
             </div>
             <div className='lg:flex lg:justify-center'>
               <div className='lg:flex lg:flex-col lg:items-center lg:justify-center'>
@@ -57,17 +57,17 @@ const Footer = () => {
                 <div className='grid grid-cols-3 gap-4'>
                   <div className='flex justify-center'>
                     <a href='https://www.facebook.com/groups/alianzaratabboy' target='_blank' rel='noopener noreferrer'>
-                      <img className='object-contain w-10 h-full' src='./facebook.svg' alt='' />
+                      <img className='object-contain w-10 h-full' src='/facebook.svg' alt='' />
                     </a>
                   </div>
                   <div className='flex justify-center'>
                     <a href='https://www.twitch.tv/ratabboypda' target='_blank' rel='noopener noreferrer'>
-                      <img className='object-contain w-10 h-full' src='./twitch.png' alt='twitch' />
+                      <img className='object-contain w-10 h-full' src='/twitch.png' alt='twitch' />
                     </a>
                   </div>
                   <div className='flex justify-center'>
                     <a href='https://www.youtube.com/user/ratabboy' target='_blank' rel='noopener noreferrer'>
-                      <img className='object-contain w-10 h-full' src='./youtube.svg' alt='' />
+                      <img className='object-contain w-10 h-full' src='/youtube.svg' alt='' />
                     </a>
                   </div>
                 </div>
@@ -86,7 +86,7 @@ const Footer = () => {
               </Link>
             </div>
             <div className='flex items-center justify-center'>
-              <img className='object-contain w-full max-w-sm lg:max-w-lg' src='./firma.png' alt='firma' />
+              <img className='object-contain w-full max-w-sm lg:max-w-lg' src='/firma.png' alt='firma' />
             </div>
           </div>
           <div className='p-4 my-6 border-t-2 border-pink-500 rounded lg:p-2 lg:ml-3'>
@@ -95,7 +95,7 @@ const Footer = () => {
             <div className='flex items-center justify-center'>
               <a className='flex' href='https://play.google.com/store/apps/developer?id=Marte&hl=es_419' target='_blank' rel='noopener noreferrer'>
                 <p className='mr-4 text-sm font-bold text-center'>Marte</p>
-                <img className='object-contain w-6 h-6' src='./logoDeveloper.png' alt='Marte Industria' />
+                <img className='object-contain w-6 h-6' src='/logoDeveloper.png' alt='Marte Industria' />
               </a>
             </div>
             <div className='mt-4'>
@@ -103,12 +103,12 @@ const Footer = () => {
               <div className='flex justify-center my-4 space-x-12'>
                 <div className='flex items-center justify-center'>
                   <a href='https://github.com/arielskap' target='_blank' rel='noopener noreferrer'>
-                    <img className='object-contain w-10 h-full' src='./github.svg' alt='Github' />
+                    <img className='object-contain w-10 h-full' src='/github.svg' alt='Github' />
                   </a>
                 </div>
                 <div className='flex items-center justify-center'>
                   <a href='https://www.instagram.com/ecstasy_ring/' target='_blank' rel='noopener noreferrer'>
-                    <img className='object-contain w-10 h-full' src='./instagram.svg' alt='Instagram' />
+                    <img className='object-contain w-10 h-full' src='/instagram.svg' alt='Instagram' />
                   </a>
                 </div>
               </div>

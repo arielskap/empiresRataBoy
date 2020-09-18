@@ -1,9 +1,10 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { GetStaticProps } from 'next';
+import lozad from 'lozad'
 import { useVerifyFetch, useSearchHeroes } from '../hooks';
-import { Modal, MessageErrorFetch } from '../components';
-import { Face, CompareHeroes, Buscador } from '../components/analisis';
-import Layout from '../components/Layout';
+import { Modal, MessageErrorFetch } from '@components/index';
+import { Face, CompareHeroes, Buscador } from '@components/analisis';
+import Layout from '@components/Layout';
 import { fetchJson3 } from '../utils/localFunction';
 import { Analisis } from '../interfaces'
 import { initialStateCompareHeroes } from '../utils/funciones';
@@ -26,6 +27,11 @@ const AnalisisPage: React.FunctionComponent<Props> = ({ response, responseTalent
   const { open: openTalents, setOpen: setOpenTalents, errorResponse: errorResponseTalents, data: dataTalents } = useVerifyFetch(responseTalents);
 
   const { data: dataHeroes, setData, jsonSearch, setClean } = useSearchHeroes(data);
+
+  useEffect(() => {
+    const observer = lozad();
+    observer.observe();
+  }, [dataHeroes])
 
   return (
     <Layout title='Analisis'>

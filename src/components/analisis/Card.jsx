@@ -20,7 +20,7 @@ const Card = ({ img, json }) => {
             dataPj.starsNode.map((id) => {
               return (
                 <div key={`star-${id}`}>
-                  <img className='object-contain w-6 h-full' src='./star.png' alt='star' />
+                  <img className='object-contain w-6 h-full' src='/star.png' alt='star' />
                 </div>
               );
             })
@@ -43,15 +43,15 @@ const Card = ({ img, json }) => {
       <div className='my-2 rounded-lg shadow-inner'>
         <div className={`px-4 py-2 grid grid-cols-3 gap-4 rounded-t-lg ${color.bg800}`}>
           <div className='flex items-center justify-center'>
-            <img className='object-contain w-6 h-full mr-1' src='./attack.png' alt='Attack' />
+            <img className='object-contain w-6 h-full mr-1' src='/attack.png' alt='Attack' />
             <p className='text-lg font-bold text-center lg:text-3xl text-border-black'>{json.attack}</p>
           </div>
           <div className='flex items-center justify-center'>
-            <img className='object-contain w-6 h-full mr-1' src='./defense.png' alt='Defense' />
+            <img className='object-contain w-6 h-full mr-1' src='/defense.png' alt='Defense' />
             <p className='text-lg font-bold text-center lg:text-3xl text-border-black'>{json.defense}</p>
           </div>
           <div className='flex items-center justify-center'>
-            <img className='object-contain w-6 h-full mr-1' src='./health.png' alt='Health' />
+            <img className='object-contain w-6 h-full mr-1' src='/health.png' alt='Health' />
             <p className='text-lg font-bold text-center lg:text-3xl text-border-black'>{json.health}</p>
           </div>
         </div>

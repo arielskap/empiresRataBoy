@@ -9,7 +9,7 @@ const Error404 = () => {
           <h1 className='text-xl font-bold text-center'>Pagina No Encontrada</h1>
           <h2 className='text-lg font-bold text-center'>Error 404</h2>
         </div>
-        <img className='object-contain rounded' src='./muggy.png' alt='muggy not found' />
+        <img className='object-contain rounded' src='/muggy.png' alt='muggy not found' />
         <Link href='/'><a className='text-lg font-bold underline duration-300 transform hover:scale-105'>Volver al Home</a></Link>
       </main>
     </Layout>

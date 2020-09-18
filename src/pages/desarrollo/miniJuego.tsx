@@ -1,12 +1,12 @@
 import { useState } from 'react';
 import { GetStaticProps } from 'next'
-import Layout from '../components/Layout'
-import { fetchJson3, sortById } from '../utils/localFunction'
-import Modal from '../components/Modal';
-import MessageErrorFetch from '../components/MessageErrorFetch';
-import { useVerifyFetch } from '../hooks';
-import Button3D from '../components/Button3D';
-import CardPj from '../components/miniJuego/CardPj';
+import Layout from '@components/Layout'
+import { fetchJson3, sortById } from '@utils/localFunction'
+import Modal from '@components/Modal';
+import MessageErrorFetch from '@components/MessageErrorFetch';
+import { useVerifyFetch } from '@hooks/index';
+import Button3D from '@components/Button3D';
+import CardPj from '@components/miniJuego/CardPj';
 
 interface ResMiniJuego {
   response: {
@@ -116,7 +116,7 @@ const miniJuego: React.FunctionComponent<ResMiniJuego> = ({ response }) => {
       </div>
       {endGame ? (
         <>
-          <img className='object-contain w-full my-4 border border-black rounded-lg fadeIn' src='./win.jpeg' alt='¡ganaste!' />
+          <img className='object-contain w-full my-4 border border-black rounded-lg fadeIn' src='/win.jpeg' alt='¡ganaste!' />
           <div className='text-center'>
             <Button3D color='pink' onClick={reset}>¿Reiniciar?</Button3D>
           </div>

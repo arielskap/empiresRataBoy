@@ -1,4 +1,6 @@
+import { useEffect } from 'react';
 import { GetStaticProps } from 'next';
+import lozad from 'lozad'
 import YouTube from 'react-youtube';
 import { MessageErrorFetch, Modal } from '../components';
 import Twitch from '../components/index/Twitch';
@@ -13,17 +15,20 @@ interface Props {
 
 const Home: React.FunctionComponent<Props> = ({ response }) => {
   const { open, setOpen, errorResponse, data } = useVerifyFetch(response);
-
+  useEffect(() => {
+    const observer = lozad(); // lazy loads elements with default selector as '.lozad'
+    observer.observe();
+  }, [])
   return (
     <Layout title='Home'>
       <main>
         <div className='md:hidden'>
-          <img className='object-contain w-full max-h-screen' src='./redAlianzas2.png' alt='Red Alianzas' />
+          <img className='object-contain w-full max-h-screen' src='/redAlianzas2.png' alt='Red Alianzas' />
           <LinkH1 />
         </div>
         <div className='hidden md:flex md:flex-col md:items-center md:justify-center md:my-6'>
           <LinkH1 />
-          <img className='object-contain w-full md:max-w-4xl xl:max-w-6xl' src='./redDeAlianzas.png' alt='Red de Alianzas' />
+          <img className='object-contain w-full md:max-w-4xl xl:max-w-6xl' src='/redDeAlianzas.png' alt='Red de Alianzas' />
         </div>
         <div className='px-8'>
           <hr className='my-8 hr-home md:hidden' />
@@ -52,7 +57,7 @@ const Home: React.FunctionComponent<Props> = ({ response }) => {
                         <img className='object-contain' src={img} alt={name} />
                       </div>
                     ) : (
-                      <YouTube className='w-full h-48 rounded md:h-64' videoId={newLink}  />
+                      <YouTube className='w-full h-48 rounded md:h-64 lozad' videoId={newLink}  />
                     )}
                   </div>
                 );

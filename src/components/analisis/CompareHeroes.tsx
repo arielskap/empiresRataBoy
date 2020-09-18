@@ -81,7 +81,7 @@ const CompareHeroes: React.FunctionComponent<Props> = ({ state, dataTalents }) =
       </div>
       <Modal data={{ open: openError, setOpen: setOpenError }}>
         <div>
-          <img className='object-contain w-64' src='./girar.jpg' alt='Landscape' />
+          <img className='object-contain w-64' src='/girar.jpg' alt='Landscape' />
           <p className='py-4 text-lg font-bold text-center'>Debe Girar la Pantalla</p>
         </div>
       </Modal>
