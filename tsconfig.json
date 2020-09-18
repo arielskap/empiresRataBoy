@@ -64,7 +64,7 @@
     "resolveJsonModule": true,
     "isolatedModules": true
   },
-  "exclude": ["node_modules", ".next", "out"],
+  "exclude": ["node_modules", ".next", "www", ".cache", "out"],
   "include": [
     "next-env.d.ts",
     "**/*.ts",

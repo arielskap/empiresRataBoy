@@ -27,3 +27,14 @@ module.exports = withOffline({
     ]
   },
 })
+
+// module.exports = {
+//   assetPrefix: './',
+//   exportTrailingSlash: true,
+// }
+
+if (process.env.MOBILE !== 'false') {
+  module.exports = {
+    assetPrefix: process.env.NODE_ENV === 'production' ? './' : '',
+  }
+}

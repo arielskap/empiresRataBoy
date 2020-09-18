@@ -1,5 +1,5 @@
 import { useState, useRef } from 'react';
-import Link from 'next/link';
+import Link from './Link';
 
 const Footer = () => {
   const [buttonTranslate, setButtonTranslate] = useState(true);
@@ -49,7 +49,7 @@ const Footer = () => {
         <div className='border-t-2 border-pink-500 lg:border-0'>
           <div>
             <div className='flex items-center justify-center lg:hidden'>
-              <img className='object-contain max-w-sm lg:max-w-lg' src='./firma.png' alt='firma' />
+              <img className='object-contain w-full max-w-sm lg:max-w-lg' src='./firma.png' alt='firma' />
             </div>
             <div className='lg:flex lg:justify-center'>
               <div className='lg:flex lg:flex-col lg:items-center lg:justify-center'>
@@ -77,18 +77,16 @@ const Footer = () => {
               </div>
             </div>
             <div className='flex items-center justify-center mt-4'>
-              <Link href='/donar'>
-                <a className='inline-block px-6 py-2 text-lg leading-none text-white border border-white rounded hover:border-gold hover:text-gold'>
-                  <span role='img' aria-label='$'>💰</span>
-                  {' '}
-                  ¡Donar!
-                  {' '}
-                  <span role='img' aria-label='$'>💰</span>
-                </a>
+              <Link href='/donar' className='inline-block px-6 py-2 text-lg leading-none text-white border border-white rounded hover:border-gold hover:text-gold'>
+                <span role='img' aria-label='$'>💰</span>
+                {' '}
+                ¡Donar!
+                {' '}
+                <span role='img' aria-label='$'>💰</span>
               </Link>
             </div>
             <div className='flex items-center justify-center'>
-              <img className='object-contain max-w-sm lg:max-w-lg' src='./firma.png' alt='firma' />
+              <img className='object-contain w-full max-w-sm lg:max-w-lg' src='./firma.png' alt='firma' />
             </div>
           </div>
           <div className='p-4 my-6 border-t-2 border-pink-500 rounded lg:p-2 lg:ml-3'>

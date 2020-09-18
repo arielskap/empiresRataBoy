@@ -1,7 +1,7 @@
 import { useEffect } from 'react';
-import Link from 'next/link';
+import Link from './Link';
 
-const Header = () => {
+const Header: React.FunctionComponent  = () => {
 
   const handleMenu = () => {
     document.querySelector('.header_content')?.classList.toggle('menuOpen');
@@ -36,10 +36,10 @@ const Header = () => {
           document.querySelector('.Link_analisis')?.classList.remove('text-white');
           document.querySelector('.Link_analisis')?.classList.add('text-pink-500', 'font-bold');
           break;
-        // case '/miniJuego':
-        //   document.querySelector('.Link_miniJuego')?.classList.remove('text-white');
-        //   document.querySelector('.Link_miniJuego')?.classList.add('text-pink-500', 'font-bold');
-        //   break;
+        case '/miniJuego':
+          document.querySelector('.Link_miniJuego')?.classList.remove('text-white');
+          document.querySelector('.Link_miniJuego')?.classList.add('text-pink-500', 'font-bold');
+          break;
         case '/donar':
           document.querySelector('.Link_donar')?.classList.remove('text-white');
           document.querySelector('.Link_donar')?.classList.add('text-gold', 'font-bold', 'border-gold');
@@ -52,20 +52,16 @@ const Header = () => {
   return (
     <header className='sticky top-0 left-0 z-10 w-full px-6 py-4 border-b border-black'>
       <nav className='flex flex-wrap items-center justify-between w-full'>
-        <Link href='/'>
-          <a>
+          <Link href='/'>
             <img className='object-contain w-8 h-full mb-0' src='./logo.png' alt='logo' />
-          </a>
-        </Link>
-        <Link href='/donar'>
-          <a className='inline-block px-4 py-2 text-sm leading-none text-white border border-white rounded Link_donar_center hover:border-gold hover:text-gold lg:hidden'>
+          </Link>
+          <Link href='/donar' className='inline-block px-4 py-2 text-sm leading-none text-white border border-white rounded Link_donar_center hover:border-gold hover:text-gold lg:hidden'>
             <span role='img' aria-label='$'>💰</span>
             {' '}
             ¡Donar!
             {' '}
             <span role='img' aria-label='$'>💰</span>
-          </a>
-        </Link>
+          </Link>
         <div className='block lg:hidden'>
           <button type='button' className='flex items-center px-3 py-2 text-pink-200 border border-pink-400 rounded button_header hover:text-white hover:border-white' onClick={() => { handleMenu(); }}>
             <svg className='w-3 h-3 fill-current' viewBox='0 0 20 20' xmlns='http://www.w3.org/2000/svg'>
@@ -75,41 +71,29 @@ const Header = () => {
           </button>
         </div>
         <div className='flex-grow block w-full text-center header_content lg:flex lg:items-center lg:w-auto'>
-          <div className='text-sm lg:flex-grow'>
-            <Link href='/'>
-              <a className='block mt-4 text-white Link_home Link_1 lg:inline-block lg:mt-0 hover:text-pink-500 lg:mr-4 lg:text-lg'>
+          <div className='mt-2 space-y-2 text-sm lg:mt-0 lg:space-y-0 lg:flex-grow lg:space-x-4'>
+              <Link href='/' className='block text-white Link_home Link_1 lg:inline-block hover:text-pink-500 lg:text-lg'>
                 Home
-              </a>
-            </Link>
-            <Link href='/guias'>
-              <a className='block mt-4 text-white Link_guias Link_2 lg:inline-block lg:mt-0 hover:text-pink-500 lg:mr-4 lg:text-lg'>
+              </Link>
+              <Link href='/guias' className='block text-white Link_guias Link_2 lg:inline-block hover:text-pink-500 lg:text-lg'>
                 Guías
-              </a>
-            </Link>
-            <Link href='/alianzas'>
-              <a className='block mt-4 text-white Link_alianzas Link_3 lg:inline-block lg:mt-0 hover:text-pink-500 lg:mr-4 lg:text-lg'>
+              </Link>
+              <Link href='/alianzas' className='block text-white Link_alianzas Link_3 lg:inline-block hover:text-pink-500 lg:text-lg'>
                 Alianzas
-              </a>
-            </Link>
-            <Link href='/analisis'>
-              <a className='block mt-4 text-white Link_analisis Link_4 lg:inline-block lg:mt-0 hover:text-pink-500 lg:mr-4 lg:text-lg'>
+              </Link>
+              <Link href='/analisis' className='block text-white Link_analisis Link_4 lg:inline-block hover:text-pink-500 lg:text-lg'>
                 Analisis de Heroes
-              </a>
-            </Link>
-            {/* <Link href='/miniJuego'>
-              <a className='block mt-4 text-white Link_miniJuego Link_5 lg:inline-block lg:mt-0 hover:text-pink-500 lg:text-lg'>
+              </Link>
+              <Link href='/miniJuego' className='block text-white Link_miniJuego Link_5 lg:inline-block hover:text-pink-500 lg:text-lg'>
                 Mini Juego
-              </a>
-            </Link> */}
-            <Link href='/donar'>
-              <a className='inline-block px-4 py-2 mt-4 text-sm leading-none text-white border border-white rounded Link_donar Link_6 hover:border-gold hover:text-gold lg:mt-0 lg:ml-4'>
+              </Link>
+              <Link href='/donar' className='inline-block px-4 py-2 text-sm leading-none text-white border border-white rounded Link_donar Link_6 hover:border-gold hover:text-gold'>
                 <span role='img' aria-label='$'>💰</span>
                 {' '}
                 ¡Donar!
                 {' '}
                 <span role='img' aria-label='$'>💰</span>
-              </a>
-            </Link>
+              </Link>
           </div>
         </div>
       </nav>

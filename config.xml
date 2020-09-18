@@ -5,10 +5,10 @@
     <description>
         Probando 1 2 3
     </description>
-    <author email="marteindustria@gmail.com">
+    <author email="marteindustria@gmail.com" href="https://marte.org">
         Marte team
     </author>
-    <plugin name="cordova-plugin-whitelist" spec="1" />
+    <content src="index.html" />
     <access origin="*" />
     <allow-intent href="http://*/*" />
     <allow-intent href="https://*/*" />
@@ -24,7 +24,11 @@
         <icon src="./public/logo.png" density="xhdpi" />
         <allow-intent href="market:*" />
     </platform>
-    <preference name="android-minSdkVersion" value="16" />
+    <platform name="ios">
+        <allow-intent href="itms:*" />
+        <allow-intent href="itms-apps:*" />
+    </platform>
+    <preference name="android-minSdkVersion" value="22" />
     <preference name="android-targetSdkVersion" value="29" />
-    <content src="index.html" />
+    <!-- <plugin name="cordova-plugin-whitelist" spec="1" /> -->
 </widget>

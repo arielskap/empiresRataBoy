@@ -1,12 +1,12 @@
 import { useState } from 'react';
 import { GetStaticProps } from 'next'
-import Layout from '../../components/Layout'
-import { fetchJson3, sortById } from '../../utils/localFunction'
-import Modal from '../../components/Modal';
-import MessageErrorFetch from '../../components/MessageErrorFetch';
-import { useVerifyFetch } from '../../hooks';
-import Button3D from '../../components/Button3D';
-import CardPj from '../../components/miniJuego/CardPj';
+import Layout from '../components/Layout'
+import { fetchJson3, sortById } from '../utils/localFunction'
+import Modal from '../components/Modal';
+import MessageErrorFetch from '../components/MessageErrorFetch';
+import { useVerifyFetch } from '../hooks';
+import Button3D from '../components/Button3D';
+import CardPj from '../components/miniJuego/CardPj';
 
 interface ResMiniJuego {
   response: {

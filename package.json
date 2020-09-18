@@ -2,13 +2,14 @@
   "name": "empiresrataboy",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "./src/pages/index.tsx",
   "scripts": {
     "dev": "next",
     "build": "next build",
     "start": "next start -p $PORT",
     "heroku-postbuild": "npm run build",
-    "export": "next export"
+    "export": "next export",
+    "mobile": "set MOBILE=true && npm run build && npm run export"
   },
   "keywords": [],
   "author": "",
@@ -16,7 +17,11 @@
   "cordova": {
     "plugins": {
       "cordova-plugin-whitelist": {}
-    }
+    },
+    "platforms": [
+      "android",
+      "browser"
+    ]
   },
   "dependencies": {
     "axios": "^0.20.0",
@@ -48,6 +53,8 @@
     "@typescript-eslint/eslint-plugin": "^3.10.1",
     "@typescript-eslint/parser": "^3.10.1",
     "babel-eslint": "^10.1.0",
+    "cordova-android": "^9.0.0",
+    "cordova-browser": "^6.0.0",
     "cordova-plugin-whitelist": "^1.3.4",
     "eslint": "^7.7.0",
     "eslint-config-airbnb": "^18.2.0",
