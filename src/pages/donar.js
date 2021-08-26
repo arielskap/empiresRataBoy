@@ -72,10 +72,10 @@ const Donar = ({ response }) => {
   );
 };
 
-export async function getStaticProps() {
+export async function getServerSideProps() {
   const data = await fetchJson3('donaciones')
   sortById(data)
-  return { props: { response: data }, revalidate: 1 }
+  return { props: { response: data } }
 }
 
 export default Donar;

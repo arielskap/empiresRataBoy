@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { GetStaticProps } from 'next';
+import { GetServerSideProps } from 'next';
 import lozad from 'lozad'
 import { useVerifyFetch, useSearchHeroes } from '../hooks';
 import { Modal, MessageErrorFetch } from '@components/index';
@@ -69,10 +69,10 @@ const AnalisisPage: React.FunctionComponent<Props> = ({ response, responseTalent
   );
 };
 
-export const getStaticProps: GetStaticProps = async () => {
+export const getServerSideProps: GetServerSideProps = async () => {
   const data = await fetchJson3('heroes')
   const talents = await fetchJson3('talentosHeroes')
-  return { props: { response: data, responseTalents: talents }, revalidate: 1 }
+  return { props: { response: data, responseTalents: talents } }
 }
 
 export default AnalisisPage;

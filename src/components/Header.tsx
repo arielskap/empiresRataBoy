@@ -81,9 +81,9 @@ const Header: React.FunctionComponent  = () => {
               <Link href='/analisis' className='block text-white Link_analisis Link_4 lg:inline-block hover:text-pink-500 lg:text-lg'>
                 Analisis de Heroes
               </Link>
-              {process.env.NODE_ENV !== 'production' && <Link href='/desarrollo/miniJuego' className='block text-white Link_miniJuego Link_5 lg:inline-block hover:text-pink-500 lg:text-lg'>
+              {/* {process.env.NODE_ENV !== 'production' && <Link href='/desarrollo/miniJuego' className='block text-white Link_miniJuego Link_5 lg:inline-block hover:text-pink-500 lg:text-lg'>
                 Mini Juego
-              </Link>}
+              </Link>} */}
               <Link href='/donar' className='inline-block px-4 py-2 text-sm leading-none text-white border border-white rounded Link_donar Link_6 hover:border-gold hover:text-gold'>
                 <span role='img' aria-label='$'>💰</span>
                 {' '}

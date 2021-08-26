@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { GetStaticProps } from 'next'
+import { GetServerSideProps } from 'next'
 import Layout from '@components/Layout'
 import { fetchJson3, sortById } from '@utils/localFunction'
 import Modal from '@components/Modal';
@@ -153,10 +153,10 @@ const miniJuego: React.FunctionComponent<ResMiniJuego> = ({ response }) => {
   )
 }
 
-export const getStaticProps: GetStaticProps = async () => {
+export const getServerSideProps: GetServerSideProps = async () => {
   const data = await fetchJson3('miniJuego')
   sortById(data)
-  return { props: { response: data }, revalidate: 1 }
+  return { props: { response: data } }
 }
 
 export default miniJuego

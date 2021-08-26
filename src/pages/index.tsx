@@ -1,5 +1,5 @@
 import { useEffect } from 'react';
-import { GetStaticProps } from 'next';
+import { GetServerSideProps } from 'next';
 import lozad from 'lozad'
 import YouTube from 'react-youtube';
 import { MessageErrorFetch, Modal } from '../components';
@@ -96,10 +96,10 @@ const Home: React.FunctionComponent<Props> = ({ response }) => {
   );
 };
 
-export const getStaticProps: GetStaticProps = async () => {
+export const getServerSideProps: GetServerSideProps = async () => {
   const data = await fetchJson3('inicioVideos')
   sortById(data)
-  return { props: { response: data }, revalidate: 1 }
+  return { props: { response: data } }
 }
 
 export default Home;
