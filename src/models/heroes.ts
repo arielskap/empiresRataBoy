@@ -66,4 +66,4 @@ const mySchema = new Schema({
 
 globalAny.HeroesDatosSchema = globalAny.HeroesDatosSchema || mongoose.model('HeroesDatos', mySchema);
 
-export default HeroesDatosSchema;
+export default globalAny.HeroesDatosSchema;
